@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	   http://www.springframework.org/schema/context 
+	   http://www.springframework.org/schema/context/spring-context-4.1.xsd
+	   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+	   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+	   http://www.springframework.org/schema/mvc
+	   http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd 
+       ">
+
+	<!-- 加载数据库属性连接文件/系统属性文件 -->
+	<context:property-placeholder location="classpath:/*.properties" />
+
+	<!-- 对包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能 -->
+	<context:component-scan base-package="com.toolbox">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Service" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Repository" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Component" />
+	</context:component-scan>
+
+	<!-- AOP -->
+	<!-- 通过aop命名空间的<aop:aspectj-autoproxy/>声明自动为spring容器中那些配置@aspectJ切面的bean创建代理，织入切面; 
+		proxy-target-class=false，表示使用jdk动态代理织入增强; proxy-target-class=true，表示使用CGLib动态代理技术织入增强; 
+		不过即使proxy-target-class设置为false，如果目标类没有声明接口，则spring将自动使用CGLib动态代理。 -->
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="true">
+			<bean class="com.toolbox.framework.spring.message.JsonHttpMessageConverter" />
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<constructor-arg value="UTF-8" />
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/plain;charset=UTF-8</value>
+						<value>text/xml;charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+			<!--<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/> -->
+			<!--<bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/> -->
+			<!--<bean class="org.springframework.http.converter.FormHttpMessageConverter"/> -->
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+	<!-- 对静态资源文件的访问 -->
+	<mvc:resources mapping="/static/**" location="/WEB-INF/static/" />
+	<mvc:default-servlet-handler/>
+	<!-- 系统重定向 -->
+	<!-- <mvc:view-controller path="/" view-name="forward:/login" /> -->
+
+	<!-- 视图解析：多种viewClass设置，JExcel/PDF/FreeMark/Velocity/JsTl/Tiles/XsLt等等 -->
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="mediaTypes">
+			<map>
+				<entry key="atom" value="application/atom+xml" />
+				<entry key="html" value="text/html" />
+				<entry key="json" value="application/json" />
+			</map>
+		</property>
+		<property name="viewResolvers">
+			<list>
+				<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+				<bean
+					class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+					<property name="prefix" value="/WEB-INF/views/" />
+					<property name="suffix" value=".jsp" />
+					<property name="order" value="0" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 上传文件：大小限制为50M；50*1024*1024 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8"></property>
+		<property name="maxUploadSize" value="52428800"></property>
+		<property name="maxInMemorySize" value="4096"></property>
+	</bean>
+
+	<!-- 加载阿里数据源 -->
+	<bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		init-method="init" destroy-method="close">
+		<property name="url" value="${jdbc.mysql.url}" />
+		<property name="username" value="${jdbc.mysql.username}" />
+		<property name="password" value="${jdbc.mysql.password}" />
+		<property name="initialSize" value="1" />
+		<property name="maxActive" value="20" />
+		<property name="maxIdle" value="40" />
+		<property name="minIdle" value="10" />
+		<property name="maxWait" value="60000" />
+		<property name="validationQuery" value="${jdbc.mysql.validationQuery}" />
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" />
+		<property name="testWhileIdle" value="true" />
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<property name="minEvictableIdleTimeMillis" value="25200000" />
+		<property name="removeAbandoned" value="true" />
+		<property name="removeAbandonedTimeout" value="1800" />
+		<property name="logAbandoned" value="true" />
+		<property name="filters" value="mergeStat" />
+	</bean>
+
+	<!-- 加载jdbcTemplate数据源 -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+		p:dataSource-ref="dataSource" />
+
+	<!-- 通过AOP配置提供事务增强，让service包下所有Bean的所有方法拥有事务 -->
+	<aop:config proxy-target-class="true">
+		<aop:advisor pointcut="execution(* *..*Service.*(..))"
+			advice-ref="txAdvice" />
+	</aop:config>
+
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="insert*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="del*" propagation="REQUIRED" />
+			<tx:method name="add*" propagation="REQUIRED" />
+
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="find*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- redis start -->
+    <!-- 连接池配置 最大空闲数、最大连接数、最长等待时间、连接是否可用 -->  
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">  
+        <property name="maxIdle" value="${redis.maxIdle}" />  
+        <property name="maxTotal" value="${redis.maxActive}" />  
+        <property name="maxWaitMillis" value="${redis.maxWait}" />  
+        <property name="testOnBorrow" value="${redis.testOnBorrow}" />  
+    </bean>  
+      
+    <!-- 连接配置 地址、端口 -->  
+    <bean id="connectionFactory"  
+        class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" >  
+        <property name="hostName" value="${redis.hostName}" />  
+        <property name="port" value="${redis.port}" />
+        <property name="password" value="${redis.pass}"></property>  
+        <property name="database" value="${redis.default.db}"></property>
+        <property name="poolConfig" ref="poolConfig" />  
+    </bean>     
+      
+    <!-- 暴露一个redisTemplate 用作redis一系列操作 -->  
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">  
+        <property name="connectionFactory" ref="connectionFactory" />  
+    </bean>  
+    
+
+	<!-- redis end -->
+</beans>
