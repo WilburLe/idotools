@@ -10,4 +10,6 @@ import com.toolbox.entity.RadusergroupEntity;
 */
 public interface RadusergroupService {
     public List<RadusergroupEntity> findsByUsernames(List<String> usernames);
+
+    public void updateSubscribetype(String username, String groupname);
 }

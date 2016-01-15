@@ -5,12 +5,12 @@ package com.toolbox.common;
 * 
 */
 public enum RadgroupTypeEnum {
-    FREE("free", -1), //
-    VIP1("vip1", 7), //
-    VIP2("vip2", 30), //
-    VIP3("vip3", 365), //
-    VIP4("vip4", -1), //
-    VIP5("vip5", -1)//
+    FREE("Free", -1), //
+    VIP1("VIP1", 7), //
+    VIP2("VIP2", 30), //
+    VIP3("VIP3", 365), //
+    VIP4("VIP4", -1), //
+    VIP5("VIP5", -1)//
     ;
 
     private String name;

@@ -18,8 +18,15 @@ public class UsersDao extends BaseDao {
         return queryForList("select * from users limit ?, ?", UsersEntity.class, start, limit);
     }
 
+    public UsersEntity findByUsername(String username) {
+        return queryForBean("select * from users where username=?", UsersEntity.class, username);
+    }
+
     public int save(UsersEntity users) {
         return insertBean("users", users).intValue();
     }
 
+    public void update(UsersEntity users) {
+        updateBean("users", users, "username='" + users.getUsername() + "'");
+    }
 }

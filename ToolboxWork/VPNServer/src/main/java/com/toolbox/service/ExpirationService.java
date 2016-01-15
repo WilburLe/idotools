@@ -10,4 +10,8 @@ import com.toolbox.entity.ExpirationEntity;
 */
 public interface ExpirationService {
     public List<ExpirationEntity> findsByUsernames(List<String> usernames);
+
+    public ExpirationEntity findByUsername(String username);
+    
+    
 }

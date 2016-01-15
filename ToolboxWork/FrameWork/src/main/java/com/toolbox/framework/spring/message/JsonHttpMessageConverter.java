@@ -43,7 +43,7 @@ public class JsonHttpMessageConverter extends AbstractHttpMessageConverter<JSON>
         outputMessage.getHeaders().setContentType(MediaType.APPLICATION_JSON);
         //将返回的结果封装
         JSONObject rs = new JSONObject();
-        rs.put("status", 0);
+        rs.put("status", 200);
         rs.put("data", json);
         if (json instanceof JSONObject) {
             JSONObject data = JSONObject.parseObject(json.toJSONString());

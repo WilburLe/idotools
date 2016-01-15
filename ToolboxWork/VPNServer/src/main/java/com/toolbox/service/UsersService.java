@@ -10,5 +10,10 @@ import com.toolbox.entity.UsersEntity;
 */
 public interface UsersService {
     public List<UsersEntity> findsByPage(int start, int limit);
-    public int save(UsersEntity users);
+
+    public int regist(UsersEntity users);
+
+    public void update(UsersEntity users);
+
+    public UsersEntity findByUsername(String username);
 }

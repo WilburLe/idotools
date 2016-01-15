@@ -14,11 +14,16 @@ import com.toolbox.service.ExpirationService;
 * 
 */
 @Service("ExpirationService")
-public class ExpirationServiceImpl implements ExpirationService{
+public class ExpirationServiceImpl implements ExpirationService {
     @Autowired
     private ExpirationDao expirationDao;
-    
+
     public List<ExpirationEntity> findsByUsernames(List<String> usernames) {
         return expirationDao.findsByUsernames(usernames);
     }
+
+    public ExpirationEntity findByUsername(String username) {
+        return expirationDao.findByUsername(username);
+    }
+
 }

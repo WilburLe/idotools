@@ -49,11 +49,10 @@ public class UsersMgrController {
         JSONArray result = new JSONArray();
         for (UsersEntity user : users) {
             JSONObject data = new JSONObject();
-
             String username = user.getUsername();
-            RadacctEntity radacct = radacctService.findByUsername(username);
 
             ExpirationEntity expiration = expirationUserMap.get(username);
+
             if (RadgroupTypeEnum.FREE.getName().equals(expiration.getSubscribetype())) {
                 Date monthStart = DateUtility.parseDate(DateUtility.format(new Date()), "yyyy-MM-dd");
                 long freeaccts = radacctService.findUserFreeAcc(username, monthStart);
@@ -63,14 +62,17 @@ public class UsersMgrController {
                 int differDays = DateUtility.differDays(expiration.getExpireddate(), expiration.getSubscribedate());
                 data.put("differDays", differDays);
             }
-
             data.put("userid", user.getId());
             data.put("username", username);
             data.put("subscribetype", expiration.getSubscribetype());//等级
-            data.put("acctstarttime", radacct.getAcctstarttime()); //建立时间
-            data.put("acctstoptime", radacct.getAcctstoptime()); //终止时间，null 在线
-            data.put("acctinputoctets", radacct.getAcctinputoctets()); //下行
-            data.put("acctoutputoctets", radacct.getAcctoutputoctets());//上行
+
+            RadacctEntity radacct = radacctService.findByUsername(username);
+            if (radacct != null) {
+                data.put("acctstarttime", radacct.getAcctstarttime()); //建立时间
+                data.put("acctstoptime", radacct.getAcctstoptime()); //终止时间，null 在线
+                data.put("acctinputoctets", radacct.getAcctinputoctets()); //下行
+                data.put("acctoutputoctets", radacct.getAcctoutputoctets());//上行    
+            }
 
             result.add(data);
         }

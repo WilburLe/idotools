@@ -21,4 +21,13 @@ public class RadusergroupServiceImpl implements RadusergroupService {
     public List<RadusergroupEntity> findsByUsernames(List<String> usernames) {
         return radusergroupDao.findsByUsernames(usernames);
     }
+
+    public void updateSubscribetype(String username, String groupname) {
+        RadusergroupEntity radusergroup = radusergroupDao.findByUsername(username);
+        if (radusergroup != null && !radusergroup.getGroupname().equals(groupname)) {
+            radusergroup.setGroupname(groupname);
+            radusergroupDao.update(radusergroup);
+        }
+
+    }
 }
