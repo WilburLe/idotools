@@ -17,6 +17,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -24,11 +25,14 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.alibaba.fastjson.JSONObject;
+import com.toolbox.framework.utils.StringUtility;
 
 @Component
 @Aspect
 public class ApiControllerAspect {
     private final static Log log = LogFactory.getLog(ApiControllerAspect.class);
+    @Value("${log.view.time}")
+    private String           log_view_time;
 
     //execution(* cpm.pixshow.*Service*.*(..))
     @Pointcut("execution(* *..*Controller.*(..))")
@@ -62,17 +66,20 @@ public class ApiControllerAspect {
             error = true;
         }
         long end = System.currentTimeMillis();
-        if(error) {
+        long useTime = end - start;
+        if (error) {
             JSONObject rs = new JSONObject();
             rs.put("status", -999);
             rs.put("data", "error");
             obj = rs;
             log.error((end - start) + "ms " + className);
         } else {
-            log.info((end - start) + "ms " + className);
+            if (StringUtility.isEmpty(log_view_time) || useTime > Long.parseLong(log_view_time)) {
+                log.info((end - start) + "ms " + className);
+            }
         }
         return obj;
-        
+
     }
 
     //这一步将永远都不会走，因为上面不会抛出错误异常
@@ -95,9 +102,6 @@ public class ApiControllerAspect {
         return url.toString();
     }
 
-    
-    
-    
     public static String getRequestClassName(JoinPoint joinPoint) {
         String targetName = joinPoint.getTarget().getClass().getName(); //类名
         String methodName = joinPoint.getSignature().getName(); //方法名

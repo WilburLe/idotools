@@ -1,12 +1,3 @@
-/*
- * Copyright (c) 2010-2013 www.pixshow.net All Rights Reserved
- *
- * File:RegexUtility.java Project: LvFramework
- * 
- * Creator:<a href="mailto:jifangliang@163.com">Time</a> 
- * Date:Apr 8, 2013 7:00:14 PM
- * 
- */
 package com.toolbox.framework.utils;
 
 import java.util.ArrayList;

@@ -14,16 +14,6 @@ import java.util.TimerTask;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-/**
- * 
- * 
- * 
- * @author <a href="mailto:jifangliang@163.com">Time</a>
- * @author $Author:$
- * @version $Revision:$ $Date:$ 
- * @since Dec 26, 2012
- * 
- */
 
 public abstract class IgnoreExceptionTaskTimer extends TimerTask {
 

@@ -22,8 +22,6 @@ import org.apache.commons.lang.time.DateUtils;
 
 /**
  * 
- * @author <a href="mailto:jifangliang@163.com">Time</a>
- * @author $Author: jifangliang.300.cn $
  * @version $Revision: 1.1 $ $Date: 2012/03/13 02:27:03 $
  * @since Mar 13, 2012
  * 
@@ -37,7 +35,6 @@ public class DateUtility extends DateUtils {
     }
 
     public static String format(Date date, String pattern) {
-
         return date == null ? null : DateFormatUtils.format(date, pattern);
     }
 
@@ -100,31 +97,6 @@ public class DateUtility extends DateUtils {
         return (int) (System.currentTimeMillis() / 1000);
     }
 
-    /**
-     * 
-     * 
-     * @deprecated
-     * @see #parseUnixTime(String)
-     * @param dateStr
-     * @author 颜超
-     * @return
-     */
-    public static int currentUnixTime(String dateStr) {
-        return parseUnixTime(dateStr);
-    }
-
-    /**
-     * 
-     * @deprecated
-     * @see #parseUnixTime(String)
-     * @param dateStr
-     * @author 颜超
-     * @return
-     */
-    public static Integer currentUnixTime(Date date) {
-        return parseUnixTime(date);
-    }
-
     public static int parseUnixTime(String dateStr, String parsePatter) {
         Date date = parseDate(dateStr, parsePatter);
         return (int) (date.getTime() / 1000);
@@ -141,57 +113,6 @@ public class DateUtility extends DateUtils {
         return (int) (date.getTime() / 1000);
     }
 
-    /**
-     * 根据时区计算这个时间属于哪一天
-     * 
-     * @param localTime
-     *            本地当天24点的时间戳
-     * @param paramTime
-     *            要计算的时间戳
-     * @return
-     * 
-     */
-    public static int timezone(int localTime, int paramTime) {
-        int day = 24 * 60 * 60;
-        int result = localTime;
-        if (paramTime > 0) {
-            result = (localTime - paramTime) % day + paramTime - day;
-        }
-        return result;
-    }
-
-    /**
-     * 判断时间是否属于今天
-     * 
-     * @param date
-     * @return
-     * 
-     */
-    public static boolean isToday(int date) {
-        Calendar c = Calendar.getInstance();
-        int tY = c.get(Calendar.YEAR);
-        int tM = c.get(Calendar.MONTH);
-        int tD = c.get(Calendar.DAY_OF_MONTH);
-
-        c.setTimeInMillis(date * 1000);
-        int Y = c.get(Calendar.YEAR);
-        int M = c.get(Calendar.MONTH);
-        int D = c.get(Calendar.DAY_OF_MONTH);
-
-        return tY == Y && tM == M && tD == D;
-    }
-
-    public static int getTodayToUnixTime() {
-        return (int) (getToday().getTime() / 1000);
-    }
-
-    public static Date getToday() {
-        Calendar c = Calendar.getInstance();
-        c.setTimeZone(timeZone);
-        c.set(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH), 0, 0, 0);
-        return c.getTime();
-    }
-
     public static String getCron(String date) {
         Date d = parseDate(date, DEFAULT_DATE_PATTERN);
         Calendar c = Calendar.getInstance();
@@ -199,45 +120,10 @@ public class DateUtility extends DateUtils {
         return c.get(Calendar.SECOND) + " " + c.get(Calendar.MINUTE) + " " + c.get(Calendar.HOUR_OF_DAY) + " " + c.get(Calendar.DAY_OF_MONTH) + " " + (c.get(Calendar.MONTH) + 1) + " ? " + c.get(Calendar.YEAR);
     }
 
-    public static int getDayOfWeek(Date date) {
-        Calendar c = Calendar.getInstance();
-        c.setTime(date);
-        int day = c.get(Calendar.DAY_OF_WEEK) - 1;
-        return day != 0 ? day : 7;
-    }
+    public static int differDays(Date start, Date end) {
+        long differ = end.getTime() - start.getTime();
 
-    /**
-     * 时间根据时区计算
-     * 
-     * @see 计算的区时=已知区时-（已知区时的时区-要计算区时的时区），（注：东时区为正，西时区为负）。
-     * 
-     * @param date  已知区时
-     * @param timezone  已知区时的时区
-     * @param caculzone  要计算区时的时区
-     * @return
-     *
-     */
-    public static int getUnixTime(Date date, int timezone, int caculzone) {
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-        return getUnixTime(cal, timezone, caculzone);
-    }
-
-    public static int getUnixTime(Calendar date, int timezone, int caculzone) {
-        int zone = timezone - caculzone;
-        int hour = date.get(Calendar.HOUR_OF_DAY);
-        int endHour = hour - zone;
-        if (endHour > 24) {
-            endHour = endHour - 24;
-            date.add(Calendar.DAY_OF_MONTH, 1);
-        }
-        if (endHour < 0) {
-            endHour = endHour + 24;
-            date.add(Calendar.DAY_OF_MONTH, -1);
-        }
-        date.set(Calendar.HOUR_OF_DAY, endHour);
-
-        return (int) (date.getTimeInMillis() / 1000);
+        return (int) (differ / 1000 / 60 / 60 / 24);
     }
 
 }

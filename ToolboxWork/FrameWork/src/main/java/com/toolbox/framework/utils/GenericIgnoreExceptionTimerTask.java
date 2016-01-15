@@ -9,16 +9,6 @@
  */
 package com.toolbox.framework.utils;
 
-/**
- * 
- * 
- * 
- * @author <a href="mailto:jifangliang@163.com">Time</a>
- * @author $Author:$
- * @version $Revision:$ $Date:$ 
- * @since Dec 27, 2012
- * 
- */
 
 public class GenericIgnoreExceptionTimerTask extends IgnoreExceptionTaskTimer {
 
