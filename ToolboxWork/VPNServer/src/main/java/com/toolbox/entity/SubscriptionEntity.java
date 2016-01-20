@@ -10,6 +10,7 @@ public class SubscriptionEntity {
     private int    id;
     private String username;
     private String subscribetype;
+    private String subscribeno;
     private Date   subscribedate;
 
     public int getId() {
@@ -42,6 +43,14 @@ public class SubscriptionEntity {
 
     public void setSubscribedate(Date subscribedate) {
         this.subscribedate = subscribedate;
+    }
+
+    public String getSubscribeno() {
+        return subscribeno;
+    }
+
+    public void setSubscribeno(String subscribeno) {
+        this.subscribeno = subscribeno;
     }
 
 }

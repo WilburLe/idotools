@@ -2,6 +2,7 @@ package com.toolbox.controller.server;
 
 import java.util.Date;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +16,6 @@ import com.toolbox.common.RadgroupTypeEnum;
 import com.toolbox.entity.ExpirationEntity;
 import com.toolbox.entity.UsersEntity;
 import com.toolbox.framework.utils.DateUtility;
-import com.toolbox.framework.utils.SHAUtility;
 import com.toolbox.framework.utils.StringUtility;
 import com.toolbox.service.ExpirationService;
 import com.toolbox.service.RadacctService;
@@ -37,6 +37,8 @@ public class UserController {
     @Autowired
     private RadacctService      radacctService;
 
+    private final static String pass_append = "f8Udt9diChCe";
+
     @RequestMapping(value = "regist/{username}/{bindid}/{deviceid}/{appid}/{version}", method = RequestMethod.GET)
     public @ResponseBody JSON regist(//
             @PathVariable(value = "username") String username //
@@ -49,6 +51,12 @@ public class UserController {
         if (users == null) {
             return reg(username, bindid, deviceid, appid, version);
         } else {
+            String pass = DigestUtils.sha256Hex(bindid + pass_append);
+            if (!pass.equals(users.getPassword())) {
+                JSONObject error = new JSONObject();
+                error.put("error", "pass is error");
+                return error;
+            }
             if (StringUtility.isNotEmpty(deviceid)) {
                 users.setDeviceid(deviceid);
             }
@@ -58,22 +66,27 @@ public class UserController {
             if (StringUtility.isNotEmpty(bindid)) {
                 users.setBindid(bindid);
             }
+            if (StringUtility.isNotEmpty(version)) {
+                users.setVersion(version);
+            }
             return login(users);
         }
     }
 
     private JSON reg(String username, String bindid, String deviceid, String appid, String version) {
-        String pass = SHAUtility.encryp(username);
+        String pass = DigestUtils.sha256Hex(bindid + pass_append);
+
         UsersEntity users = new UsersEntity();
         users.setUsername(username);
         users.setPassword(pass);
         users.setDeviceid(deviceid);
         users.setAppid(appid);
         users.setBindid(bindid);
+        users.setVersion(version);
         usersService.regist(users);
 
         JSONObject result = new JSONObject();
-        result.put("retType", 0);//新注册
+        result.put("regType", 0);//新注册
         result.put("isPro", 0); //普通用户
         //result.put("expresdDate", 0);
         result.put("dataRemain", 1024 * 1024); //剩余流量
@@ -99,7 +112,7 @@ public class UserController {
             result.put("expresdDate", expiration.getExpireddate().getTime());
             result.put("isPro", 1); //高级用户
         }
-        result.put("retType", 1); //已注册
+        result.put("regType", 1); //已注册
 
         return result;
     }

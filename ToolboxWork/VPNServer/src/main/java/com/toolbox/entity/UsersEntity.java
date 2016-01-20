@@ -12,6 +12,7 @@ public class UsersEntity {
     private String bindid;
     private String deviceid;
     private String appid;
+    private String version;
 
     public int getId() {
         return id;
@@ -59,6 +60,14 @@ public class UsersEntity {
 
     public void setAppid(String appid) {
         this.appid = appid;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 
 }

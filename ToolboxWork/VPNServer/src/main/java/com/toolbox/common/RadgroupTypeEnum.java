@@ -21,6 +21,40 @@ public enum RadgroupTypeEnum {
         this.days = days;
     }
 
+    public static RadgroupTypeEnum byName(String name) {
+        RadgroupTypeEnum result = null;
+        RadgroupTypeEnum[] valus = RadgroupTypeEnum.values();
+        for (int i = 0; i < valus.length; i++) {
+            RadgroupTypeEnum group = valus[i];
+            if (group.getName().equals(name)) {
+                result = group;
+                break;
+            }
+        }
+        return result;
+    }
+
+    public static RadgroupTypeEnum byDays(int days) {
+        RadgroupTypeEnum result = null;
+        if(days <= RadgroupTypeEnum.FREE.getDays()) {
+            result = RadgroupTypeEnum.FREE;
+            return result;
+        }
+        if(days <= RadgroupTypeEnum.VIP1.getDays()) {
+            result = RadgroupTypeEnum.VIP1 ;
+            return result;
+        }
+        if(days <= RadgroupTypeEnum.VIP2.getDays()) {
+            result = RadgroupTypeEnum.VIP2;
+            return result;
+        }
+        if(days <= RadgroupTypeEnum.VIP3.getDays()) {
+            result = RadgroupTypeEnum.VIP3;
+            return result;
+        }
+        return result;
+    }
+
     public String getName() {
         return name;
     }

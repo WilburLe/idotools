@@ -27,6 +27,6 @@ public class ExpirationDao extends BaseDao {
     }
     
     public void update(ExpirationEntity expiration) {
-        updateBean("expiration", expiration, "username="+expiration.getUsername());
+        updateBean("expiration", expiration, "username='"+expiration.getUsername()+"'");
     }
 }
