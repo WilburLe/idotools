@@ -43,6 +43,7 @@ public class SharehistoryController {
             result.put("isPro", 1); //高级用户
             result.put("regType", 1); //已注册
         } else {
+            
             result.put("error", "Only once a month");
         }
         return result;
