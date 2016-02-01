@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.toolbox.common.SystemErrorEnum;
 import com.toolbox.entity.SharehistoryEntity;
+import com.toolbox.entity.UsersEntity;
 import com.toolbox.framework.utils.DateUtility;
 import com.toolbox.service.SharehistoryService;
+import com.toolbox.service.UsersService;
 
 /**
 * @author E-mail:86yc@sina.com
@@ -23,15 +26,24 @@ import com.toolbox.service.SharehistoryService;
 public class SharehistoryController {
     @Autowired
     private SharehistoryService sharehistoryService;
+    @Autowired
+    private UsersService usersService;
 
     @RequestMapping(value = "share/{username}")
-    public @ResponseBody  JSON share(@PathVariable("username") String username) {
+    public @ResponseBody JSON share(@PathVariable("username") String username) {
+        JSONObject result = new JSONObject();
+        UsersEntity user =  usersService.findByUsername(username);
+        if(user == null) {
+            result.put("status", SystemErrorEnum.nouser.getStatus());
+            result.put("error", SystemErrorEnum.nouser.getError());
+            return result;
+        }
         SharehistoryEntity sharehistory = sharehistoryService.findByUsername(username);
         Calendar c = Calendar.getInstance();
         c.add(Calendar.MONTH, 1);
         c.set(c.get(Calendar.YEAR), c.get(Calendar.MONTH), 1, 0, 0);
         Date next_moth_date = DateUtility.parseDate(DateUtility.format(c, "yyyy-MM-dd"), "yyyy-MM-dd");
-        JSONObject result = new JSONObject();
+        
         //每个月只能分享一次
         if (sharehistory == null || sharehistory.getSharedate().after(next_moth_date)) {
             sharehistory = new SharehistoryEntity();
@@ -39,22 +51,14 @@ public class SharehistoryController {
             sharehistory.setSharedate(new Date());
             long date = sharehistoryService.save(sharehistory);
 
-            result.put("expresdDate", date);
+            result.put("expiredDate", date);
             result.put("isPro", 1); //高级用户
             result.put("regType", 1); //已注册
         } else {
-            
-            result.put("error", "Only once a month");
+            result.put("status", SystemErrorEnum.share.getStatus());
+            result.put("error", SystemErrorEnum.share.getError());
         }
         return result;
     }
 
-    public static void main(String[] args) {
-        Calendar c = Calendar.getInstance();
-        c.add(Calendar.MONTH, 1);
-        c.set(c.get(Calendar.YEAR), c.get(Calendar.MONTH), 1, 0, 0);
-        Date moth_date = DateUtility.parseDate(DateUtility.format(c, "yyyy-MM-dd"), "yyyy-MM-dd");
-
-        System.out.println(DateUtility.format(moth_date));
-    }
 }

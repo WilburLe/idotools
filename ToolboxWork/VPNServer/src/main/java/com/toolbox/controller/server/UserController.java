@@ -1,7 +1,9 @@
 package com.toolbox.controller.server;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
 
+import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.toolbox.common.RadgroupTypeEnum;
+import com.toolbox.common.SystemErrorEnum;
 import com.toolbox.entity.ExpirationEntity;
 import com.toolbox.entity.UsersEntity;
 import com.toolbox.framework.utils.DateUtility;
@@ -37,7 +40,8 @@ public class UserController {
     @Autowired
     private RadacctService      radacctService;
 
-    private final static String pass_append = "f8Udt9diChCe";
+    private final static String pass_append   = "f8Udt9diChCe";
+    private final static String pass_append_2 = "Jdsd8fdLfh7O";
 
     @RequestMapping(value = "regist/{username}/{bindid}/{deviceid}/{appid}/{version}", method = RequestMethod.GET)
     public @ResponseBody JSON regist(//
@@ -51,10 +55,11 @@ public class UserController {
         if (users == null) {
             return reg(username, bindid, deviceid, appid, version);
         } else {
-            String pass = DigestUtils.sha256Hex(bindid + pass_append);
+            String pass = getPass(username);
             if (!pass.equals(users.getPassword())) {
                 JSONObject error = new JSONObject();
-                error.put("error", "pass is error");
+                error.put("status", SystemErrorEnum.pass.getStatus());
+                error.put("error", SystemErrorEnum.pass.getError());
                 return error;
             }
             if (StringUtility.isNotEmpty(deviceid)) {
@@ -74,11 +79,9 @@ public class UserController {
     }
 
     private JSON reg(String username, String bindid, String deviceid, String appid, String version) {
-        String pass = DigestUtils.sha256Hex(bindid + pass_append);
-
         UsersEntity users = new UsersEntity();
         users.setUsername(username);
-        users.setPassword(pass);
+        users.setPassword(getPass(username));
         users.setDeviceid(deviceid);
         users.setAppid(appid);
         users.setBindid(bindid);
@@ -88,7 +91,7 @@ public class UserController {
         JSONObject result = new JSONObject();
         result.put("regType", 0);//新注册
         result.put("isPro", 0); //普通用户
-        //result.put("expresdDate", 0);
+        //result.put("expiredDate", 0);
         result.put("dataRemain", 1024 * 1024); //剩余流量
         return result;
     }
@@ -99,22 +102,34 @@ public class UserController {
         JSONObject result = new JSONObject();
         ExpirationEntity expiration = expirationService.findByUsername(users.getUsername());
         Date date = new Date();
-        if (expiration == null || expiration.getSubscribedate().before(date)) {
+        if (expiration == null || expiration.getExpireddate().before(date)) {
             result.put("isPro", 0); //普通用户
-
+            //计算剩余流量
             Date monthStart = DateUtility.parseDate(DateUtility.format(new Date()), "yyyy-MM-dd");
             long useaccts = radacctService.findUserFreeAcc(users.getUsername(), monthStart);
-            result.put("dataRemain", 1024 * 1024 - useaccts);
+            result.put("dataRemain", 1024 * 1024 - (useaccts / 1024));
 
             //过期需要将更新用户组表和订阅时效表
             radusergroupService.updateSubscribetype(users.getUsername(), RadgroupTypeEnum.FREE.getName());
         } else {
-            result.put("expresdDate", expiration.getExpireddate().getTime());
+            result.put("expiredDate", expiration.getExpireddate().getTime());
             result.put("isPro", 1); //高级用户
         }
         result.put("regType", 1); //已注册
 
         return result;
+    }
+
+    private String getPass(String username) {
+        String pass = DigestUtils.sha256Hex(username + pass_append);
+        String sha256Hex = DigestUtils.sha256Hex(pass + pass_append_2);
+        try {
+            String saltHex = Hex.encodeHexString(pass_append_2.getBytes("UTF-8"));
+            return sha256Hex + saltHex;
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

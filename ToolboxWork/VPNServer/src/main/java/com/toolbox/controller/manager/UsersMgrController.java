@@ -39,7 +39,6 @@ public class UsersMgrController {
 
     @RequestMapping(value = "/viewusers/{start}/{limit}")
     public ModelAndView viewusers(@PathVariable int start, @PathVariable int limit) {
-
         List<UsersEntity> users = usersService.findsByPage(start, limit);
         List<String> usernames = XPathUtility.getList(users, "username");
 
@@ -50,22 +49,31 @@ public class UsersMgrController {
         for (UsersEntity user : users) {
             JSONObject data = new JSONObject();
             String username = user.getUsername();
-
-            ExpirationEntity expiration = expirationUserMap.get(username);
-
-            if (RadgroupTypeEnum.FREE.getName().equals(expiration.getSubscribetype())) {
-                Date monthStart = DateUtility.parseDate(DateUtility.format(new Date()), "yyyy-MM-dd");
-                long freeaccts = radacctService.findUserFreeAcc(username, monthStart);
-                data.put("freeaccts", freeaccts);
-                data.put("differDays", -1);
-            } else {
-                int differDays = DateUtility.differDays(expiration.getExpireddate(), expiration.getSubscribedate());
-                data.put("differDays", differDays);
-            }
             data.put("userid", user.getId());
             data.put("username", username);
-            data.put("subscribetype", expiration.getSubscribetype());//等级
 
+            ExpirationEntity expiration = expirationUserMap.get(username);
+            /*
+             * 时效表为空 和 时效过期 的都是FREE用户
+             */
+            if (expiration == null || expiration.getExpireddate().before(new Date())) {
+                /*
+                 * 免费用户一个月有1G的免费流量
+                 * 计算当月已使用的流量，数据库中存的是byte
+                 * 展示要换算为kb，切是剩余的流量
+                 */
+                Date monthStart = DateUtility.parseDate(DateUtility.format(new Date()), "yyyy-MM-dd");
+                long freeaccts = 1024 * 1024 - (radacctService.findUserFreeAcc(username, monthStart) / 1024);
+                data.put("freeaccts", freeaccts);
+                data.put("differDays", -1);
+                data.put("subscribetype", RadgroupTypeEnum.FREE.getName());//等级
+            } else {
+                //计算剩余时间
+                int differDays = DateUtility.differDays(expiration.getSubscribedate(), expiration.getExpireddate());
+                data.put("differDays", differDays);
+                data.put("subscribetype", expiration.getSubscribetype());//等级
+            }
+            //用户最后一次的连接
             RadacctEntity radacct = radacctService.findByUsername(username);
             if (radacct != null) {
                 data.put("acctstarttime", radacct.getAcctstarttime()); //建立时间

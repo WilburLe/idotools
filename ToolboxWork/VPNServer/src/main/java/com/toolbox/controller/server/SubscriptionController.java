@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.toolbox.common.RadgroupTypeEnum;
 import com.toolbox.service.SubscriptionService;
 
 /**
@@ -25,9 +26,16 @@ public class SubscriptionController {
             , @PathVariable("subscribetype") String subscribetype//
             , @PathVariable("subscribeno") String subscribeno//
     ) {
-        long expresdDate = subscriptionService.updateSubscribe(username, subscribetype, subscribeno);
+        
         JSONObject result = new JSONObject();
-        result.put("expresdDate", expresdDate);
+        if (RadgroupTypeEnum.byName(subscribetype) == null) {
+            result.put("error", "can not find [subscribetype=" + subscribetype + "]");
+            return result;
+        }
+        
+        long expiredDate = subscriptionService.updateSubscribe(username, subscribetype, subscribeno);
+
+        result.put("expiredDate", expiredDate);
         result.put("isPro", 1); //高级用户
         result.put("regType", 1); //已注册
         return result;

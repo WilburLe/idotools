@@ -1,18 +1,14 @@
 package com.toolbox.service.impl;
 
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.toolbox.common.RadgroupTypeEnum;
-import com.toolbox.dao.ExpirationDao;
 import com.toolbox.dao.RadcheckDao;
 import com.toolbox.dao.RadusergroupDao;
 import com.toolbox.dao.UsersDao;
-import com.toolbox.entity.ExpirationEntity;
 import com.toolbox.entity.RadcheckEntity;
 import com.toolbox.entity.RadusergroupEntity;
 import com.toolbox.entity.UsersEntity;
@@ -30,8 +26,6 @@ public class UsersServiceImpl implements UsersService {
     private RadcheckDao     radcheckDao;
     @Autowired
     private RadusergroupDao radusergroupDao;
-    @Autowired
-    private ExpirationDao   expirationDao;
 
     public List<UsersEntity> findsByPage(int start, int limit) {
         return usersDao.findsByPage(start, limit);
@@ -57,15 +51,8 @@ public class UsersServiceImpl implements UsersService {
         RadusergroupEntity radusergroup = new RadusergroupEntity();
         radusergroup.setUsername(users.getUsername());
         radusergroup.setGroupname(RadgroupTypeEnum.FREE.getName());
+        radusergroup.setPriority(1);
         radusergroupDao.save(radusergroup);
-        //        //免费订阅
-        //        Date date = new Date();
-        //        ExpirationEntity expiration = new ExpirationEntity();
-        //        expiration.setUsername(users.getUsername());
-        //        expiration.setSubscribetype(RadgroupTypeEnum.FREE.getName());
-        //        expiration.setSubscribedate(date);
-        //        expiration.setExpireddate(date);
-        //        expirationDao.save(expiration);
         //用户注册
         return usersDao.save(users);
     }

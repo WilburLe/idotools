@@ -9,8 +9,8 @@ public enum RadgroupTypeEnum {
     VIP1("VIP1", 7), //
     VIP2("VIP2", 30), //
     VIP3("VIP3", 365), //
-    VIP4("VIP4", -1), //
-    VIP5("VIP5", -1)//
+    VIP4("VIP4", 365 * 2), //
+    VIP5("VIP5", 365 * 3)//
     ;
 
     private String name;
@@ -36,19 +36,24 @@ public enum RadgroupTypeEnum {
 
     public static RadgroupTypeEnum byDays(int days) {
         RadgroupTypeEnum result = null;
-        if(days <= RadgroupTypeEnum.FREE.getDays()) {
+        if (days <= RadgroupTypeEnum.FREE.getDays()) {
             result = RadgroupTypeEnum.FREE;
             return result;
         }
-        if(days <= RadgroupTypeEnum.VIP1.getDays()) {
-            result = RadgroupTypeEnum.VIP1 ;
+        if (days <= RadgroupTypeEnum.VIP1.getDays()) {
+            result = RadgroupTypeEnum.VIP1;
             return result;
         }
-        if(days <= RadgroupTypeEnum.VIP2.getDays()) {
+        if (days <= RadgroupTypeEnum.VIP2.getDays()) {
             result = RadgroupTypeEnum.VIP2;
             return result;
         }
-        if(days <= RadgroupTypeEnum.VIP3.getDays()) {
+        if (days <= RadgroupTypeEnum.VIP3.getDays()) {
+            result = RadgroupTypeEnum.VIP3;
+            return result;
+        }
+        //超过VIP3的都标记为VIP3
+        if (days > RadgroupTypeEnum.VIP3.getDays()) {
             result = RadgroupTypeEnum.VIP3;
             return result;
         }

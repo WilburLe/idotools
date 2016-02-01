@@ -46,14 +46,20 @@ public class JsonHttpMessageConverter extends AbstractHttpMessageConverter<JSON>
         rs.put("status", 200);
         rs.put("data", json);
         if (json instanceof JSONObject) {
+            
             JSONObject data = JSONObject.parseObject(json.toJSONString());
             //校验AOP错误信息
-            if (data.containsKey("status") && data.getIntValue("status") == -999) {
-                rs = data;
+            if (data.containsKey("status") && data.containsKey("error")) {
+                JSONObject errorJ = new JSONObject();
+                errorJ.put("error", data.getString("error"));
+                rs.put("data", errorJ);
+                rs.put("status", data.getString("status"));
+                
             }
         }
         
         FileCopyUtils.copy(rs.toString(), new OutputStreamWriter(outputMessage.getBody(), charset));
+//        FileCopyUtils.copy(json.toString(), new OutputStreamWriter(outputMessage.getBody(), charset));
     }
 
     protected Charset getContentTypeCharset(MediaType contentType) {

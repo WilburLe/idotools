@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ToolboxWork</groupId>
 	<artifactId>ToolboxWork</artifactId>
@@ -11,7 +12,8 @@
 		<module>ThemeCenterManager</module>
 		<module>BeautifyCenter</module>
 		<module>VPNServer</module>
-  </modules>
+		<module>?</module>
+	</modules>
 
 	<properties>
 		<org.springframework.version>4.1.4.RELEASE</org.springframework.version>
@@ -284,7 +286,7 @@
 			<version>2.4.2</version>
 		</dependency>
 		<!-- redis end -->
-
+		<!-- mongodb -->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb</artifactId>
@@ -297,7 +299,23 @@
 			<version>3.0.3</version>
 		</dependency>
 
+		<!-- Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>3.2.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>3.2.5.RELEASE</version>
+		</dependency>
 
+		<dependency>
+			<groupId>org.im4java</groupId>
+			<artifactId>im4java</artifactId>
+			<version>1.4.0</version>
+		</dependency>
 
 	</dependencies>
 

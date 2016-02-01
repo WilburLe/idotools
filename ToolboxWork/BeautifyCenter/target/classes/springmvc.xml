@@ -37,7 +37,18 @@
 		proxy-target-class=false，表示使用jdk动态代理织入增强; proxy-target-class=true，表示使用CGLib动态代理技术织入增强; 
 		不过即使proxy-target-class设置为false，如果目标类没有声明接口，则spring将自动使用CGLib动态代理。 -->
 	<aop:aspectj-autoproxy proxy-target-class="true" />
-
+	
+	    <!--配置拦截器, 多个拦截器,顺序执行 -->  
+    <mvc:interceptors>    
+        <mvc:interceptor>    
+            <!-- 匹配的是url路径， 如果不配置或/**,将拦截所有的Controller -->  
+            <mvc:mapping path="/mgr/**" />  
+            <bean class="com.toolbox.interceptor.CommonInterceptor"></bean>    
+        </mvc:interceptor>  
+        <!-- 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 -->  
+    </mvc:interceptors>  
+    
+	<!-- 视图 -->
 	<mvc:annotation-driven>
 		<mvc:message-converters register-defaults="true">
 			<bean class="com.toolbox.framework.spring.message.JsonHttpMessageConverter" />
@@ -93,60 +104,6 @@
 		<property name="maxInMemorySize" value="4096"></property>
 	</bean>
 
-	<!-- MYSQL START -->
-	<!-- 加载阿里数据源 -->
-	<bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
-		init-method="init" destroy-method="close">
-		<property name="url" value="${jdbc.mysql.url}" />
-		<property name="username" value="${jdbc.mysql.username}" />
-		<property name="password" value="${jdbc.mysql.password}" />
-		<property name="initialSize" value="1" />
-		<property name="maxActive" value="20" />
-		<property name="maxIdle" value="40" />
-		<property name="minIdle" value="10" />
-		<property name="maxWait" value="60000" />
-		<property name="validationQuery" value="${jdbc.mysql.validationQuery}" />
-		<property name="testOnBorrow" value="false" />
-		<property name="testOnReturn" value="false" />
-		<property name="testWhileIdle" value="true" />
-		<property name="timeBetweenEvictionRunsMillis" value="60000" />
-		<property name="minEvictableIdleTimeMillis" value="25200000" />
-		<property name="removeAbandoned" value="true" />
-		<property name="removeAbandonedTimeout" value="1800" />
-		<property name="logAbandoned" value="true" />
-		<property name="filters" value="mergeStat" />
-	</bean>
-
-	<!-- 加载jdbcTemplate数据源 -->
-	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-		<property name="dataSource" ref="dataSource"></property>
-	</bean>
-
-	<!-- 配置事务管理器 -->
-	<bean id="transactionManager"
-		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
-		p:dataSource-ref="dataSource" />
-
-	<!-- 通过AOP配置提供事务增强，让service包下所有Bean的所有方法拥有事务 -->
-	<aop:config proxy-target-class="true">
-		<aop:advisor pointcut="execution(* *..*Service.*(..))"
-			advice-ref="txAdvice" />
-	</aop:config>
-
-	<tx:advice id="txAdvice" transaction-manager="transactionManager">
-		<tx:attributes>
-			<tx:method name="save*" propagation="REQUIRED" />
-			<tx:method name="insert*" propagation="REQUIRED" />
-			<tx:method name="update*" propagation="REQUIRED" />
-			<tx:method name="del*" propagation="REQUIRED" />
-			<tx:method name="add*" propagation="REQUIRED" />
-
-			<tx:method name="get*" read-only="true" />
-			<tx:method name="find*" read-only="true" />
-		</tx:attributes>
-	</tx:advice>
-	<!-- MYSQL END -->
-	
 	<!-- redis start -->
 	<!-- 连接池配置 最大空闲数、最大连接数、最长等待时间、连接是否可用 -->
 	<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
@@ -173,16 +130,13 @@
 	<!-- redis end -->
 
 	<!-- Mongo START -->
-
 	<mongo:mongo host="${mongo.host}" port="${mongo.port}" />
-
 	<!-- Offers convenience methods and automatic mapping between MongoDB JSON 
 		documents and your domain classes. -->
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
 		<constructor-arg ref="mongo" />
 		<constructor-arg name="databaseName" value="${mongo.dbname}" />
 	</bean>
-
 	<!-- Mongo END -->
 
 </beans>

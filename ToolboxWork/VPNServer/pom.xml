@@ -17,6 +17,12 @@
 			<artifactId>FrameWork</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk15on</artifactId>
+			<version>1.50</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>VPNServer</finalName>

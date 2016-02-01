@@ -12,6 +12,15 @@ import com.toolbox.framework.spring.mongo.MongoBaseDao;
 
 @Service("TestService")
 public class TestService extends MongoBaseDao<TestEntity> {
+    @Override
+    protected Class<TestEntity> getEntityClass() {
+        return TestEntity.class;
+    }
+
+    @Override
+    protected String getCollection() {
+        return null;
+    }
 
     /**
      * 分页查询   对应mongodb操作中的  db.TestEntity.find().skip(10).limit(10);
@@ -83,11 +92,6 @@ public class TestService extends MongoBaseDao<TestEntity> {
         }
         update.set("name", TestEntity.getName());
         this.updateMulti(Query.query(Criteria.where("_id").is(TestEntity.getId())), update);
-    }
-
-    @Override
-    protected Class<TestEntity> getEntityClass() {
-        return TestEntity.class;
     }
 
 }

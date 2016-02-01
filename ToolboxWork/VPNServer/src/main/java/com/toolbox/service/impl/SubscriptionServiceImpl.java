@@ -41,7 +41,6 @@ public class SubscriptionServiceImpl implements SubscriptionService {
     }
 
     public long updateSubscribe(String username, String subscribetype, String subscribeno) {
-        //计算本次订阅的过期时间
         Date date = new Date();
         //订阅历史表新增记录
         SubscriptionEntity subscription = new SubscriptionEntity();
@@ -62,17 +61,17 @@ public class SubscriptionServiceImpl implements SubscriptionService {
          * 过期时间=上次订阅过期时间+本次订阅天数
          * 
          */
-        if (expiration.getExpireddate().after(date)) {
-            Calendar ce = Calendar.getInstance();
-            ce.setTime(expiration.getExpireddate());
-            ce.add(Calendar.DAY_OF_MONTH, RadgroupTypeEnum.byName(subscribetype).getDays());
-            expiration.setExpireddate(ce.getTime());
-        } else {
+        if(expiration.getExpireddate() == null || expiration.getExpireddate().before(date)) {    //没有订阅或者已经过期
             Calendar cn = Calendar.getInstance();
             cn.add(Calendar.DAY_OF_MONTH, RadgroupTypeEnum.byName(subscribetype).getDays());
             Date expireddate = cn.getTime();
 
             expiration.setExpireddate(expireddate);
+        } else {
+            Calendar ce = Calendar.getInstance();
+            ce.setTime(expiration.getExpireddate());
+            ce.add(Calendar.DAY_OF_MONTH, RadgroupTypeEnum.byName(subscribetype).getDays());
+            expiration.setExpireddate(ce.getTime());
         }
 
         //根据过期时间计算当前VIP等级

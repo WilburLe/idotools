@@ -1,3 +1,4 @@
+<%@page import="com.toolbox.common.RadgroupTypeEnum"%>
 <%@page import="com.alibaba.fastjson.JSONArray"%>
 <%@page import="com.alibaba.fastjson.JSON"%>
 <%@page import="com.alibaba.fastjson.JSONObject"%>
@@ -35,7 +36,13 @@ function refresh() {
 	<tr>
 		<td><%=useracc.getString("username")%></td>
 		<td><%=useracc.getString("subscribetype")%></td>
-		<td><%=useracc.getString("differDays")%>天-<%=useracc.getString("freeaccts")%></td>
+		<td>
+			<%if(useracc.getString("subscribetype").equals(RadgroupTypeEnum.FREE.getName())) {
+			    out.print(useracc.getString("freeaccts"));
+			} else {
+			    out.print(useracc.getString("differDays")+"天");
+			} %>
+		</td>
 		<td><%=useracc.getString("acctstoptime")%></td>
 		<td><%=useracc.getString("acctstarttime")%></td>
 		<td><%=useracc.getString("acctstoptime")%></td>

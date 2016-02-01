@@ -57,6 +57,7 @@ public class ApiControllerAspect {
         String className = getRequestUrl();
         Object obj = null;
         boolean error = false;
+        String errorMsg = null;
         try {
             //继续执行
             obj = pjp.proceed();
@@ -64,13 +65,14 @@ public class ApiControllerAspect {
             //将错误输出到控制台
             ex.printStackTrace();
             error = true;
+            errorMsg = ex.getMessage();
         }
         long end = System.currentTimeMillis();
         long useTime = end - start;
         if (error) {
             JSONObject rs = new JSONObject();
+            rs.put("error", errorMsg);
             rs.put("status", -999);
-            rs.put("data", "error");
             obj = rs;
             log.error((end - start) + "ms " + className);
         } else {
