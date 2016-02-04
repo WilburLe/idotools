@@ -19,19 +19,20 @@ import com.toolbox.service.TagEditService;
 */
 @Service("TagEditService")
 public class TagEditServiceImpl implements TagEditService {
+    private final static String COLLECTION = "tags";
     @Autowired
     private Mongo2JsonService mongo2JsonService;
 
     @Override
     public List<JSONObject> findAllTag() {
-        mongo2JsonService.setCollection("tags");
+        mongo2JsonService.setCollection(COLLECTION);
         Query query = new Query();
         return mongo2JsonService.getList(query);
     }
 
     @Override
     public JSONObject findTagByName(String name) {
-        mongo2JsonService.setCollection("tags");
+        mongo2JsonService.setCollection(COLLECTION);
         Query query = new Query();
         Criteria criteria = Criteria.where("name").is(name);
         query.addCriteria(criteria);
@@ -40,13 +41,13 @@ public class TagEditServiceImpl implements TagEditService {
 
     @Override
     public void save(JSONObject data) {
-        mongo2JsonService.setCollection("tags");
+        mongo2JsonService.setCollection(COLLECTION);
         mongo2JsonService.save(data);
     }
 
     @Override
     public void update(JSONObject data) {
-        mongo2JsonService.setCollection("tags");
+        mongo2JsonService.setCollection(COLLECTION);
         Update update = new Update();
         update.set("arr", data.getJSONArray("arr"));
         mongo2JsonService.updateFirst(Query.query(Criteria.where("_id").is(data.getString("_id"))), update);
@@ -54,7 +55,7 @@ public class TagEditServiceImpl implements TagEditService {
 
     @Override
     public void delete(String name, String uuid) {
-        mongo2JsonService.setCollection("tags");
+        mongo2JsonService.setCollection(COLLECTION);
         Criteria criteria = Criteria.where("name").is(name);
         Query query = new Query(criteria);
         JSONObject data = mongo2JsonService.getOne(query);

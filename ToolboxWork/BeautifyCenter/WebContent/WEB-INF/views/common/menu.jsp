@@ -1,4 +1,3 @@
-<%@page import="com.toolbox.common.SystemEnum"%>
 <%@page import="com.toolbox.framework.utils.WebUtility"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -47,10 +46,35 @@
 					<i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>')">Tab设置</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>#')">Tab设置</a></li>
 					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>tag/view/')">分类设置</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>#')">热门设置</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>#')">Banner设置</a></li>
 				</ul>				
 			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-link"></i>
+					<span>热门</span>
+					<i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>hot/recommend/internal')">国内</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>hot/recommend/googleplay')">GooglePlay</a></li>
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-link"></i>
+					<span>Banner</span>
+					<i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>wallpaper/banner/')">列表管理</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>wallpaper/banner/recycle/')">回收站</a></li>
+				</ul>
+			</li>			
+						
 			<li class="treeview">
 				<a href="#">
 					<i class="fa fa-link"></i>
@@ -60,7 +84,7 @@
 				<ul class="treeview-menu">
 					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>wallpaper/view/all/0/')">列表管理</a></li>
 					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>wallpaper/upload/')">批量上传</a></li>
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>wallpaper/banner/')">Banner</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>wallpaper/recycle/')">回收站</a></li>
 				</ul>
 			</li>
 			<li>

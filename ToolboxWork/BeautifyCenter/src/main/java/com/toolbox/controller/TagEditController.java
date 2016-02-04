@@ -30,12 +30,12 @@ public class TagEditController {
     @RequestMapping(value = "tag/add/", method = RequestMethod.POST)
     public @ResponseBody JSON tagadd(String tag) {
         JSONObject tagData = JSON.parseObject(tag);
-        String name = tagData.getString("name");
-        tagData.remove("name");
-        JSONObject data = tagEditService.findTagByName(name);
+        String tablename = tagData.getString("tablename");
+        tagData.remove("tablename");
+        JSONObject data = tagEditService.findTagByName(tablename);
         if(data == null) {
             data = new JSONObject();
-            data.put("name", name);
+            data.put("name", tablename);
         }
         JSONArray arr = data.getJSONArray("arr");
         if(arr == null) {

@@ -102,7 +102,12 @@ public abstract class MongoBaseDao<T> {
     }
 
     public void delete(Query query) {
-        this.delete(query);
+        if (StringUtility.isNotEmpty(getCollection())) {
+            mongoTemplate.remove(query, getCollection());            
+        } else {
+            mongoTemplate.remove(query);
+        }
+
     }
 
     /**

@@ -48,4 +48,14 @@ public class RadacctServiceImpl implements RadacctService {
     public RadacctEntity findByUsername(String username) {
         return radacctDao.findByUsername(username);
     }
+
+    @Override
+    public void deleteUserFreeAcc(String username, Date start) {
+        radacctDao.deleteUserFreeAcc(username, start);
+    }
+
+    @Override
+    public void save(RadacctEntity radacct) {
+        radacctDao.save(radacct);    
+    }
 }

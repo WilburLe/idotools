@@ -104,8 +104,8 @@ $(function() {
 JSONArray arr = tags==null?new JSONArray():tags.getJSONArray("arr");
 arr = arr==null?new JSONArray():arr;
 for(int i=0; i<arr.size(); i++) {
-JSONObject tag = arr.getJSONObject(i);%>
- 	 <input type="checkbox"  class="tag" value="<%=tag.getString("uuid")%>"><%=tag.getString("cnName") %>-<%=tag.getString("enName") %>
+	JSONObject tag = arr.getJSONObject(i);%>
+ 	 <input type="checkbox"  class="tag" value="<%=tag.getString("uuid")%>"><%=tag.getJSONObject("name").getString("zh_CN") %>-<%=tag.getJSONObject("name").getString("en_US") %>
 <%}%>
 	
 	<form action="/" class="dropzone" enctype="multipart/form-data" id="my-dropzone" method="post">

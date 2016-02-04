@@ -26,4 +26,15 @@ public class ExpirationServiceImpl implements ExpirationService {
         return expirationDao.findByUsername(username);
     }
 
+    @Override
+    public void update(ExpirationEntity expiration) {
+        expirationDao.update(expiration);
+    }
+
+    @Override
+    public void save(ExpirationEntity expiration) {
+        expirationDao.save(expiration);
+        
+    }
+
 }

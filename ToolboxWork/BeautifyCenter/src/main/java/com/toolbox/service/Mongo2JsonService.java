@@ -1,5 +1,6 @@
 package com.toolbox.service;
 
+import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.toolbox.framework.spring.annotation.SetMongoCollection;
 import com.toolbox.framework.spring.mongo.MongoBaseDao;
 import com.toolbox.framework.utils.StringUtility;
 import com.toolbox.framework.utils.UUIDUtility;
@@ -19,6 +21,7 @@ import com.toolbox.framework.utils.UUIDUtility;
 */
 @Service("Mongo2JsonService")
 public class Mongo2JsonService extends MongoBaseDao<String> {
+    
     private String collection;
 
     public void setCollection(String collection) {

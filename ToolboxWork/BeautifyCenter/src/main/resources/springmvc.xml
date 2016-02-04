@@ -5,6 +5,7 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xmlns:task="http://www.springframework.org/schema/task"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	   http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
 	   http://www.springframework.org/schema/context 
@@ -15,11 +16,16 @@
 	   http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd 
 	   http://www.springframework.org/schema/data/mongo  
        http://www.springframework.org/schema/data/mongo/spring-mongo-1.8.xsd
+        http://www.springframework.org/schema/task
+       http://www.springframework.org/schema/task/spring-task-4.1.xsd
        ">
 
 	<!-- 加载数据库属性连接文件/系统属性文件 -->
 	<context:property-placeholder location="classpath:/*.properties" />
 
+	<task:annotation-driven scheduler="qbScheduler" mode="proxy" />
+	<task:scheduler id="qbScheduler" pool-size="10" />
+	
 	<!-- 对包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能 -->
 	<context:component-scan base-package="com.toolbox">
 		<context:include-filter type="annotation"
@@ -118,7 +124,7 @@
 		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
 		<property name="hostName" value="${redis.hostName}" />
 		<property name="port" value="${redis.port}" />
-		<!-- <property name="password" value="${redis.pass}"></property> -->
+		<property name="password" value="${redis.pass}"></property>
 		<property name="database" value="${redis.default.db}"></property>
 		<property name="poolConfig" ref="poolConfig" />
 	</bean>

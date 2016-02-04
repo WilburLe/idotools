@@ -1,7 +1,7 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.Map"%>
-<%@page import="com.toolbox.common.SystemEnum"%>
+<%@page import="com.toolbox.common.CollectionEnum"%>
 <%@page import="com.alibaba.fastjson.JSONObject"%>
 <%@page import="com.alibaba.fastjson.JSONArray"%>
 <%@page import="com.toolbox.framework.utils.WebUtility"%>
@@ -42,14 +42,15 @@ $(function() {
 
 });
 function addTag(obj) {
-	var name = $(obj).attr("tag");
-	var cnName = $("#cnName").val();
-	var enName = $("#enName").val();
+	var tablename = $(obj).attr("tag");
+	var zh_CN = $("#cnName").val();
+	var en_US = $("#enName").val();
 	var tag = {};
+	tag.tablename = tablename;
+	var name = {};
+	name.zh_CN = zh_CN;
+	name.en_US = en_US;
 	tag.name = name;
-	tag.cnName = cnName;
-	tag.enName = enName;
-	
    $.post('<%=basePath%>tag/add/', {'tag': JSON.stringify(tag)}, function(data) {
     	dialog.dialog( "close" );
     	window.location.reload();
@@ -70,20 +71,21 @@ function addTagDialog(tablename, cname) {
 <body>
 <dl>
 <%
-SystemEnum[] types = SystemEnum.values();
+CollectionEnum[] types = CollectionEnum.values();
 for(int i=0; i<types.length; i++) {
-SystemEnum type  = types[i];%>
-	<dt style="background-color: gray;"><%=type.getCname() %>
+    CollectionEnum type  = types[i];%>
+	<dt style="background-color: gray;"><%=type.getCnName() %>
 	</dt>
 	<dd class="ddcontent">
 		<ul>
-		<% JSONArray arr = tagMap.get(type.getTablename());
+		<% JSONArray arr = tagMap.get(type.getCollection());
 			arr = arr==null?new JSONArray():arr;
 			for(int m=0; m<arr.size(); m++) {
 			JSONObject tag = arr.getJSONObject(m);%>
-			    <li><%=tag.getString("cnName") %>-<%=tag.getString("enName") %><button onclick="deleteTag('<%=type.getTablename()%>', '<%=tag.getString("uuid")%>')">X</button></li>
+			    <li><%=tag.getJSONObject("name").getString("zh_CN") %>-<%=tag.getJSONObject("name").getString("en_US") %>
+			    	<button onclick="deleteTag('<%=type.getCollection()%>', '<%=tag.getString("uuid")%>')">X</button></li>
 			<%}%>
-			<li><button onclick="addTagDialog('<%=type.getTablename()%>', '<%=type.getCname() %>')">+</button></li>
+			<li><button onclick="addTagDialog('<%=type.getCollection()%>', '<%=type.getCnName() %>')">+</button></li>
 		</ul>
 	</dd>    
 <%}%>

@@ -1,23 +1,22 @@
 package com.toolbox.service;
-
-import java.util.List;
-
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-
 /**
 * @author E-mail:86yc@sina.com
 * 
 */
 
-public interface WallpaperService {
+import java.util.List;
+
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+public interface HotRankConfigService {
+
     public void save(JSONArray datas);
 
     public void save(JSONObject data);
 
     public void update(JSONObject data);
 
-    public void deleteByElementId(String elementId);
+    public void delete(String id);
 
     public int count(String tag);
 

@@ -21,6 +21,13 @@ JSONObject tags = ( JSONObject ) request.getAttribute("tags");
 ul{list-style:none;} 
 ul li{float:left;} 
 </style>
+<script type="text/javascript">
+	function delwallpaper(elementId) {
+		$.get("<%=basePath%>wallpaper/delete/"+elementId, {}, function(result) {
+			window.location.reload();
+		});
+	}
+</script>
 </head>
 <body>
 <a href="<%=basePath %>wallpaper/view/all/0"><button>全部</button></a>
@@ -30,7 +37,7 @@ arr = arr==null?new JSONArray():arr;
 for(int i=0; i<arr.size(); i++) {
 	JSONObject tag = arr.getJSONObject(i);%>
  	 <a href="<%=basePath %>wallpaper/view/<%=tag.getString("uuid")%>/0">
- 	 	<button><%=tag.getString("cnName") %>-<%=tag.getString("enName") %></button>
+ 	 	<button><%=tag.getJSONObject("name").getString("zh_CN") %>-<%=tag.getJSONObject("name").getString("en_US") %></button>
  	 </a>
 <%}%>
 <ul class="test">
@@ -41,14 +48,18 @@ for(int i=0; i<wallpapers.size(); i++) {
 	<li>
 		<table>
 			<tr>
-				<td>
+				<td colspan="2">
 					<a href="<%=basePath%>wallpaper/info/<%=wallpaper.getString("elementId") %>">
 					<img alt="缩略图" src="<%=img_path%><%=wallpaper.getString("previewImageUrl")%>">
 					</a>
 				</td>
 			</tr>
 			<tr>
-				<td>ID:<%=wallpaper.getString("elementId") %></td>
+				<td colspan="2">ID:<%=wallpaper.getString("elementId") %></td>
+			</tr>
+			<tr>
+				<td>下载量：0</td>
+				<td><button onclick="delwallpaper('<%=wallpaper.getString("elementId")%>')">删除</button></td>
 			</tr>
 		</table>
 	</li>

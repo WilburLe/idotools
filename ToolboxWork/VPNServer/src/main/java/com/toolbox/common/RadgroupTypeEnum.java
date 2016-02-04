@@ -40,20 +40,17 @@ public enum RadgroupTypeEnum {
             result = RadgroupTypeEnum.FREE;
             return result;
         }
-        if (days <= RadgroupTypeEnum.VIP1.getDays()) {
+        if (days < RadgroupTypeEnum.VIP2.getDays()) {
             result = RadgroupTypeEnum.VIP1;
             return result;
         }
-        if (days <= RadgroupTypeEnum.VIP2.getDays()) {
+        
+        if (days < RadgroupTypeEnum.VIP3.getDays()) {
             result = RadgroupTypeEnum.VIP2;
             return result;
         }
-        if (days <= RadgroupTypeEnum.VIP3.getDays()) {
-            result = RadgroupTypeEnum.VIP3;
-            return result;
-        }
         //超过VIP3的都标记为VIP3
-        if (days > RadgroupTypeEnum.VIP3.getDays()) {
+        if (days >= RadgroupTypeEnum.VIP3.getDays()) {
             result = RadgroupTypeEnum.VIP3;
             return result;
         }

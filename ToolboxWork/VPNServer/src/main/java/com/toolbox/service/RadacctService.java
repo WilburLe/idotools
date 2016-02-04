@@ -19,4 +19,8 @@ public interface RadacctService {
      *
      */
     public long findUserFreeAcc(String username, Date start);
+
+    public void deleteUserFreeAcc(String username, Date start);
+
+    public void save(RadacctEntity radacct);
 }

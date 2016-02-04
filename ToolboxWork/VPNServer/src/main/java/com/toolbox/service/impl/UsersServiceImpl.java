@@ -57,4 +57,9 @@ public class UsersServiceImpl implements UsersService {
         return usersDao.save(users);
     }
 
+    @Override
+    public UsersEntity findById(int id) {
+        return usersDao.findById(id);
+    }
+
 }

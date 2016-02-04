@@ -22,6 +22,10 @@ public class UsersDao extends BaseDao {
         return queryForBean("select * from users where username=?", UsersEntity.class, username);
     }
 
+    public UsersEntity findById(int id) {
+        return queryForBean("select * from users where id=?", UsersEntity.class, id);
+    }
+
     public int save(UsersEntity users) {
         return insertBean("users", users).intValue();
     }

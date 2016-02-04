@@ -16,4 +16,6 @@ public interface UsersService {
     public void update(UsersEntity users);
 
     public UsersEntity findByUsername(String username);
+
+    public UsersEntity findById(int id);
 }

@@ -23,5 +23,13 @@ public class RadacctDao extends BaseDao {
     public List<Map<String, Object>> findUserFreeAcc(String username, Date start) {
         return getJdbcTemplate().queryForList("select acctinputoctets, acctoutputoctets from radacct where username=?  and acctstarttime>=? order by radacctid desc", username, start);
     }
+    
+    public void deleteUserFreeAcc(String username, Date start) {
+        update("delete from radacct where username=?  and acctstarttime>=?", username, start);
+    }
+    
+    public void save(RadacctEntity radacct) {
+        insertBean("radacct", radacct);
+    }
 
 }

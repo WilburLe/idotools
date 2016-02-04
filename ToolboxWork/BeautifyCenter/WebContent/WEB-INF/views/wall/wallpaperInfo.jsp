@@ -77,7 +77,8 @@ function changeTagDialog() {
 			        checked = true;    
 			    }
 			    %>
-			    <input type="checkbox"  class="cgtag" value="<%=tag.getString("uuid")%>" <%=checked?"checked":"" %>><%=tag.getString("cnName") %>-<%=tag.getString("enName") %>
+			    <input type="checkbox"  class="cgtag" value="<%=tag.getString("uuid")%>" <%=checked?"checked":"" %>>
+			    <%=tag.getJSONObject("name").getString("zh_CN") %>-<%=tag.getJSONObject("name").getString("en_US") %>
 		<%}%>		
 	</div>
 	<button onclick="javascript:history.back()">返回列表</button>
@@ -89,12 +90,12 @@ function changeTagDialog() {
 			<td>所属分类
 				<%
 				if(mytags==null || mytags.size() == 0) {
-				    out.print("其它");
+				    out.print("无");
 				} else {
 					for(int i=0; i<mytags.size(); i++) {
 					    String uuid = mytags.getString(i);
 					    JSONObject tag = tagmap.get(uuid);%>
-					    <%=tag.getString("cnName") %>-<%=tag.getString("enName") %>
+					    <%=tag.getJSONObject("name").getString("zh_CN") %>-<%=tag.getJSONObject("name").getString("en_US") %>
 					<%}
 				}%>
 				<button onclick="javascript:dialog.dialog('open')">编辑</button>
@@ -107,7 +108,7 @@ function changeTagDialog() {
 						<table>
 							<%if(wallpaper.getJSONObject("actionUrl").containsKey("hdpi")) {%>
 							<tr>
-								<td><%=wallpaper.getJSONObject("fileSize").getString("hdpi") %></td>
+								<td>1080p-<%=wallpaper.getJSONObject("fileSize").getLong("hdpi")/1024 %>k</td>
 							</tr>
 							<tr>
 								<td><a href="<%=img_path%><%=wallpaper.getJSONObject("actionUrl").getString("hdpi") %>" target="_blank">
@@ -120,7 +121,7 @@ function changeTagDialog() {
 						<table>
 							<%if(wallpaper.getJSONObject("actionUrl").containsKey("mdpi")) {%>
 							<tr>
-								<td><%=wallpaper.getJSONObject("fileSize").getString("mdpi") %></td>
+								<td>750p-<%=wallpaper.getJSONObject("fileSize").getLong("mdpi")/1024 %>k</td>
 							</tr>
 							<tr>
 								<td><a href="<%=img_path%><%=wallpaper.getJSONObject("actionUrl").getString("mdpi") %>" target="_blank">
@@ -133,7 +134,7 @@ function changeTagDialog() {
 						<table>
 							<%if(wallpaper.getJSONObject("actionUrl").containsKey("ldpi")) {%>
 							<tr>
-								<td><%=wallpaper.getJSONObject("fileSize").getString("ldpi") %></td>
+								<td>480p-<%=wallpaper.getJSONObject("fileSize").getLong("ldpi")/1024 %>k</td>
 							</tr>
 							<tr>
 								<td><a href="<%=img_path%><%=wallpaper.getJSONObject("actionUrl").getString("ldpi") %>" target="_blank">

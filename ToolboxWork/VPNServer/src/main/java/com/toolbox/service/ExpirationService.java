@@ -12,6 +12,9 @@ public interface ExpirationService {
     public List<ExpirationEntity> findsByUsernames(List<String> usernames);
 
     public ExpirationEntity findByUsername(String username);
-    
-    
+
+    public void update(ExpirationEntity expiration);
+
+    public void save(ExpirationEntity expiration);
+
 }
