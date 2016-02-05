@@ -1,64 +1,135 @@
 package com.toolbox.entity;
 
+import java.util.List;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 /**
 * @author E-mail:86yc@sina.com
 * 
 */
+@Document(collection = "wallpaper")
 public class WallpaperEntity {
-    private int    id;
-    private int    menuId;
-    private String name;
-    private String viewImages;
-    private String downloadUrl;
-    private String info;
+    @Id
+    private String id;
+    private String elementId;
+    private String src;
+    private String previewImageUrl;
     private long   createDate;
 
-    public int getId() {
+    private FileSize     fileSize;
+    private ActionUrl    actionUrl;
+    private List<String> tags;
+
+    public class FileSize {
+        private long hdpi;
+        private long mdpi;
+        private long ldpi;
+
+        public long getLdpi() {
+            return ldpi;
+        }
+
+        public void setLdpi(long ldpi) {
+            this.ldpi = ldpi;
+        }
+
+        public long getHdpi() {
+            return hdpi;
+        }
+
+        public void setHdpi(long hdpi) {
+            this.hdpi = hdpi;
+        }
+
+        public long getMdpi() {
+            return mdpi;
+        }
+
+        public void setMdpi(long mdpi) {
+            this.mdpi = mdpi;
+        }
+
+    }
+
+    public class ActionUrl {
+        private String hdpi;
+        private String mdpi;
+        private String ldpi;
+
+        public String getHdpi() {
+            return hdpi;
+        }
+
+        public void setHdpi(String hdpi) {
+            this.hdpi = hdpi;
+        }
+
+        public String getMdpi() {
+            return mdpi;
+        }
+
+        public void setMdpi(String mdpi) {
+            this.mdpi = mdpi;
+        }
+
+        public String getLdpi() {
+            return ldpi;
+        }
+
+        public void setLdpi(String ldpi) {
+            this.ldpi = ldpi;
+        }
+
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getMenuId() {
-        return menuId;
+    public String getElementId() {
+        return elementId;
     }
 
-    public void setMenuId(int menuId) {
-        this.menuId = menuId;
+    public void setElementId(String elementId) {
+        this.elementId = elementId;
     }
 
-    public String getName() {
-        return name;
+    public String getPreviewImageUrl() {
+        return previewImageUrl;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPreviewImageUrl(String previewImageUrl) {
+        this.previewImageUrl = previewImageUrl;
     }
 
-    public String getViewImages() {
-        return viewImages;
+    public FileSize getFileSize() {
+        return fileSize;
     }
 
-    public void setViewImages(String viewImages) {
-        this.viewImages = viewImages;
+    public void setFileSize(FileSize fileSize) {
+        this.fileSize = fileSize;
     }
 
-    public String getDownloadUrl() {
-        return downloadUrl;
+    public ActionUrl getActionUrl() {
+        return actionUrl;
     }
 
-    public void setDownloadUrl(String downloadUrl) {
-        this.downloadUrl = downloadUrl;
+    public void setActionUrl(ActionUrl actionUrl) {
+        this.actionUrl = actionUrl;
     }
 
-    public String getInfo() {
-        return info;
+    public List<String> getTags() {
+        return tags;
     }
 
-    public void setInfo(String info) {
-        this.info = info;
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
 
     public long getCreateDate() {
@@ -67,6 +138,14 @@ public class WallpaperEntity {
 
     public void setCreateDate(long createDate) {
         this.createDate = createDate;
+    }
+
+    public String getSrc() {
+        return src;
+    }
+
+    public void setSrc(String src) {
+        this.src = src;
     }
 
 }

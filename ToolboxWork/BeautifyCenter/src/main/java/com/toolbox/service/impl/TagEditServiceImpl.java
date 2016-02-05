@@ -19,7 +19,7 @@ import com.toolbox.service.TagEditService;
 */
 @Service("TagEditService")
 public class TagEditServiceImpl implements TagEditService {
-    private final static String COLLECTION = "tags";
+    private final static String COLLECTION = "apptags";
     @Autowired
     private Mongo2JsonService mongo2JsonService;
 

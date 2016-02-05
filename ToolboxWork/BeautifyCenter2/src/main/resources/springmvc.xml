@@ -77,7 +77,7 @@
 	<mvc:resources mapping="/static/**" location="/WEB-INF/static/" />
 	<mvc:default-servlet-handler />
 	<!-- 系统重定向 -->
-	<!-- <mvc:view-controller path="/" view-name="forward:/login" /> -->
+	<mvc:view-controller path="/" view-name="forward:/login" />
 
 	<!-- 视图解析：多种viewClass设置，JExcel/PDF/FreeMark/Velocity/JsTl/Tiles/XsLt等等 -->
 	<bean

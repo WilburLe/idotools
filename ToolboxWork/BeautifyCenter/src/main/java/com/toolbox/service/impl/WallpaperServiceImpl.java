@@ -27,6 +27,7 @@ public class WallpaperServiceImpl implements WallpaperService {
     private final static String COLLECTION = "wallpaper";
     
     @Autowired
+    
     private Mongo2JsonService   mongo2JsonService;
 
     @Override

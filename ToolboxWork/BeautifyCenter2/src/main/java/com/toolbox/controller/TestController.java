@@ -1,21 +1,27 @@
 package com.toolbox.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+import com.toolbox.entity.WallpaperEntity;
+import com.toolbox.service.WallpaperService;
 
 @Controller
+@RequestMapping("mgr/")
 public class TestController {
-    
-    @RequestMapping(value="aaaa")
-    public @ResponseBody JSON json1() {
-        JSONObject json = new JSONObject();
-        json.put("k1", "v1");
-        json.put("k2", "v2");
-        
-         return json;
+    @Autowired
+    private WallpaperService wallpaperService;
+
+    @RequestMapping(value = "aaa/{tag}/{start}/{size}")
+    public @ResponseBody List<WallpaperEntity> aaa(//
+            @PathVariable("tag") String tag//
+            , @PathVariable("start") int start//
+            , @PathVariable("size") int size) {
+        return wallpaperService.findByPage(tag, start, size);
     }
 }
