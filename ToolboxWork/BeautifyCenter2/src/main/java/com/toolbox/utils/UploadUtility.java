@@ -1,13 +1,15 @@
 package com.toolbox.utils;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.toolbox.entity.InActionCount;
+import com.toolbox.entity.WallpaperEntity;
 import com.toolbox.framework.utils.ConfigUtility;
 import com.toolbox.framework.utils.FileUtility;
 import com.toolbox.framework.utils.ImageUtility;
@@ -22,52 +24,40 @@ public class UploadUtility {
 
     private final static String wallpaper_path = "wallpaper/";
     private final static String theme_path     = "theme/";
+    private final static String banner_path    = "banner/";
 
-    public static JSON upload(List<MultipartFile> files, String tablename, String tags) {
-        switch (tablename) {
-            case "wallpaper":
-                return upload_wallpapers(files, wallpaper_path, tags);
-            case "theme":
-                return upload_zhuti(files, theme_path);
-            case "tianqi":
-                return null;
-            default:
-                return null;
-        }
-    }
-
-    private static JSON upload_wallpapers(List<MultipartFile> files, String path, String tags) {
-        JSONArray arr = new JSONArray();
+    public static List<WallpaperEntity> upload_wallpapers(List<MultipartFile> files, String tags) {
+        List<WallpaperEntity> wallpapers = new ArrayList<WallpaperEntity>();
         for (int i = 0; i < files.size(); i++) {
             try {
-                JSONObject json = new JSONObject();
                 MultipartFile file = files.get(i);
                 String fileName = file.getOriginalFilename();
                 String suffix = fileName.substring(fileName.lastIndexOf('.'));
                 String uuid = UUIDUtility.uuid32();
                 //原始文件保存路径
-                String src_path = base_path + path + uuid + suffix;
+                String src_path = base_path + wallpaper_path + uuid + suffix;
                 File newFile = new File(src_path);
                 // 转存文件  
                 file.transferTo(newFile);
 
+                WallpaperEntity wallpaper = new WallpaperEntity();
                 JSONObject fileSize = new JSONObject();
                 JSONObject actionUrl = new JSONObject();
-                json.put("elementId", uuid);
-                json.put("src", src_path);
-                json.put("tags", JSON.parseArray(tags));
-                json.put("createDate", System.currentTimeMillis());
+                wallpaper.setElementId(uuid);
+                wallpaper.setSrc(src_path);
+                wallpaper.setTags(JSON.parseArray(tags));
+                wallpaper.setCreateDate(System.currentTimeMillis());
                 //缩放/剪切
                 File preview_temp = ImageUtility.zoomImage1(newFile, 330, 292);
                 if (preview_temp != null) {
-                    String preview_path = path + uuid + "_preview" + suffix;
+                    String preview_path = wallpaper_path + uuid + "_preview" + suffix;
                     FileUtility.copyFile(preview_temp, new File(base_path + preview_path), false);
-                    json.put("previewImageUrl", preview_path);
+                    wallpaper.setPreviewImageUrl(preview_path);
                 }
 
                 File hdpi_temp = ImageUtility.zoomImage1(newFile, 1080 * 2, 1920);
                 if (hdpi_temp != null) {
-                    String hdpi_path = path + uuid + "_hdpi" + suffix;
+                    String hdpi_path = wallpaper_path + uuid + "_hdpi" + suffix;
                     FileUtility.copyFile(hdpi_temp, new File(base_path + hdpi_path), false);
                     fileSize.put("hdpi", hdpi_temp.length());
                     actionUrl.put("hdpi", hdpi_path);
@@ -75,7 +65,7 @@ public class UploadUtility {
 
                 File mdpi_temp = ImageUtility.zoomImage1(newFile, 720 * 2, 1280);
                 if (mdpi_temp != null) {
-                    String mdpi_path = path + uuid + "_mdpi" + suffix;
+                    String mdpi_path = wallpaper_path + uuid + "_mdpi" + suffix;
                     FileUtility.copyFile(mdpi_temp, new File(base_path + mdpi_path), false);
                     fileSize.put("mdpi", mdpi_temp.length());
                     actionUrl.put("mdpi", mdpi_path);
@@ -83,14 +73,15 @@ public class UploadUtility {
 
                 File ldpi_temp = ImageUtility.zoomImage1(newFile, 480 * 2, 854);
                 if (ldpi_temp != null) {
-                    String ldpi_path = path + uuid + "_ldpi" + suffix;
+                    String ldpi_path = wallpaper_path + uuid + "_ldpi" + suffix;
                     FileUtility.copyFile(ldpi_temp, new File(base_path + ldpi_path), false);
                     fileSize.put("ldpi", ldpi_temp.length());
                     actionUrl.put("ldpi", ldpi_path);
                 }
-                json.put("fileSize", fileSize);
-                json.put("actionUrl", actionUrl);
-                arr.add(json);
+                wallpaper.setFileSize(fileSize);
+                wallpaper.setActionUrl(actionUrl);
+                wallpaper.setActionCount(new InActionCount());
+                wallpapers.add(wallpaper);
                 try {
                     preview_temp.delete();
                     hdpi_temp.delete();
@@ -102,10 +93,10 @@ public class UploadUtility {
                 e.printStackTrace();
             }
         }
-        return arr;
+        return wallpapers;
     }
 
-    private static JSON upload_zhuti(List<MultipartFile> files, String path) {
+    public static JSON upload_theme(List<MultipartFile> files, String path) {
 
         return null;
     }

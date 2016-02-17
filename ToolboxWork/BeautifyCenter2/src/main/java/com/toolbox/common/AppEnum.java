@@ -4,24 +4,35 @@ package com.toolbox.common;
 * @author E-mail:86yc@sina.com
 * 
 */
-public enum CollectionEnum {
+public enum AppEnum {
     wallpaper("wallpaper", "wallpaper", "壁纸"), //
     theme("theme", "theme", "主题"), //
     lockscreen("lockscreen", "lockscreen", "锁屏"), //
     weather("weather", "weather", "天气"), //
     widget("widget", "widget", "小部件"),//
+    test("test", "test", "TEST"),//
     ;
 
     private String collection;
     private String enName;
     private String cnName;
 
-    CollectionEnum(String collection, String enName, String cnName) {
+    AppEnum(String collection, String enName, String cnName) {
         this.cnName = cnName;
         this.enName = enName;
         this.collection = collection;
     }
 
+    public static AppEnum byCollection(String collection) {
+        AppEnum[] appEnums = AppEnum.values();
+        for (AppEnum appEnum : appEnums) {
+            if(appEnum.getCollection().equals(collection)) {
+                return appEnum;
+            }
+        }
+        return null;
+    }
+    
     public String getCollection() {
         return collection;
     }

@@ -1,5 +1,4 @@
-<%@page import="com.toolbox.entity.tag.AppTagEntity"%>
-<%@page import="com.toolbox.entity.tag.AppTagGroupEntity"%>
+<%@page import="com.toolbox.entity.AppTagEntity"%>
 <%@page import="com.toolbox.entity.WallpaperEntity"%>
 <%@page import="com.toolbox.framework.utils.ConfigUtility"%>
 <%@page import="java.util.List"%>
@@ -10,7 +9,7 @@
 String img_path = ConfigUtility.getInstance().getString("file.server.path");
 String basePath = WebUtility.getBasePath(request);
 List<WallpaperEntity> wallpapers = (List<WallpaperEntity>) request.getAttribute("wallpapers");
-AppTagGroupEntity apptag = ( AppTagGroupEntity ) request.getAttribute("apptag");
+List<AppTagEntity> apptags = ( List<AppTagEntity> ) request.getAttribute("apptags");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -33,11 +32,10 @@ ul li{float:left;}
 <body>
 <a href="<%=basePath %>wallpaper/view/all/0"><button>全部</button></a>
 <%
-List<AppTagEntity> tags = apptag.getTags();
-for(int i=0; i<tags.size(); i++) {
-    AppTagEntity tag = tags.get(i);%>
- 	 <a href="<%=basePath %>wallpaper/view/<%=tag.getUuid()%>/0">
- 	 	<button><%=tag.getName().getZh_CN()  %>-<%=tag.getName().getEn_US() %></button>
+for(int i=0; i<apptags.size(); i++) {
+    AppTagEntity apptag = apptags.get(i);%>
+ 	 <a href="<%=basePath %>wallpaper/view/<%=apptag.getElementId()%>/0">
+ 	 	<button><%=apptag.getName().getString("zh_CN")  %>-<%=apptag.getName().getString("en_US") %></button>
  	 </a>
 <%}%>
 <ul class="test">

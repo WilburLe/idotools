@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.toolbox.common.CollectionEnum;
-import com.toolbox.framework.utils.ConfigUtility;
 import com.toolbox.framework.utils.ListUtiltiy;
 import com.toolbox.service.TagEditService;
 import com.toolbox.service.WallpaperService;
@@ -29,7 +28,7 @@ public class WallpaperCache extends AbstractRedisService<String, String> {
     private TagEditService   tagEditService;
 
     //壁纸
-    //    @Scheduled(fixedRate = 1000 * 60 * 2)
+//    @Scheduled(fixedRate = 1000 * 60 * 2)
     public void wallpaper() {
         //分类
         JSONObject wallpapertags = tagEditService.findTagByName(CollectionEnum.wallpaper.getCollection());

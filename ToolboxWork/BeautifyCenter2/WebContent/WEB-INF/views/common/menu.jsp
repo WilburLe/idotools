@@ -46,10 +46,10 @@
 					<i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>#')">Tab设置</a></li>
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>tag/view/')">分类设置</a></li>
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>#')">热门设置</a></li>
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>#')">Banner设置</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/tab')">Tab设置</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/tag')">分类设置</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/hot')">热门设置</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/banner')">Banner设置</a></li>
 				</ul>				
 			</li>
 			<li class="treeview">
@@ -59,8 +59,8 @@
 					<i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>hot/recommend/internal')">国内</a></li>
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>hot/recommend/googleplay')">GooglePlay</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>hot/rank/china/all')">国内</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>hot/rank/google/all')">GooglePlay</a></li>
 				</ul>
 			</li>
 			<li class="treeview">

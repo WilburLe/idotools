@@ -1,6 +1,6 @@
+<%@page import="com.alibaba.fastjson.JSONArray"%>
+<%@page import="com.toolbox.entity.AppTagEntity"%>
 <%@page import="com.toolbox.framework.utils.StringUtility"%>
-<%@page import="com.toolbox.entity.tag.AppTagEntity"%>
-<%@page import="com.toolbox.entity.tag.AppTagGroupEntity"%>
 <%@page import="com.toolbox.entity.WallpaperEntity"%>
 <%@page import="com.toolbox.framework.utils.ConfigUtility"%>
 <%@page import="java.util.Map"%>
@@ -13,7 +13,7 @@
 String img_path = ConfigUtility.getInstance().getString("file.server.path");
 String basePath = WebUtility.getBasePath(request);
 WallpaperEntity wallpaper  = (WallpaperEntity) request.getAttribute("wallpaper");
-AppTagGroupEntity apptag = ( AppTagGroupEntity ) request.getAttribute("apptag");
+List<AppTagEntity> apptags = ( List<AppTagEntity> ) request.getAttribute("apptags");
 
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -63,28 +63,28 @@ function changeTagDialog() {
 <body>
 	<div id="dialog" title="更改分类">
 		<%
-			List<String> dbtags = wallpaper.getTags();
+			JSONArray dbtags = wallpaper.getTags();
 			Map<String, AppTagEntity> dbtagmap = new HashMap<String, AppTagEntity>();
-			List<AppTagEntity> tags = apptag.getTags();
-			for(int i=0; i<tags.size(); i++) {
-		    	AppTagEntity tag = tags.get(i);
-			    String uuid = tag.getUuid();
+			for(int i=0; i<apptags.size(); i++) {
+		    	AppTagEntity apptag = apptags.get(i);
+			    String uuid = apptag.getElementId();
 			    boolean checked = false;
-			    for(String dbtag : dbtags) {
+			    for(int j=0; j<dbtags.size(); j++) {
+			        String dbtag = dbtags.getString(j);
 			        if(uuid.equals(dbtag)) {
 			            checked = true;
-			            dbtagmap.put(uuid, tag);
+			            dbtagmap.put(uuid, apptag);
 			        }
 			    }
 			    %>
-			    <input type="checkbox"  class="cgtag" value="<%=tag.getUuid()%>" <%=checked?"checked":"" %>>
-			    <%=tag.getName().getZh_CN() %>-<%=tag.getName().getEn_US() %>
+			    <input type="checkbox"  class="cgtag" value="<%=apptag.getElementId()%>" <%=checked?"checked":"" %>>
+			    <%=apptag.getName().getString("zh_CN") %>-<%=apptag.getName().getString("en_US") %>
 		<%}%>		
 	</div>
 	<button onclick="javascript:history.back()">返回列表</button>
 	<table>
 		<tr>
-			<td>壁纸图片<%=wallpaper.getElementId() %></td>
+			<td>壁纸图片ID <%=wallpaper.getElementId() %></td>
 		</tr>
 		<tr>
 			<td>所属分类
@@ -93,10 +93,14 @@ function changeTagDialog() {
 				    out.print("无");
 				} else {
 					for(int i=0; i<dbtags.size(); i++) {
-					    String uuid = dbtags.get(i);
-					    AppTagEntity tag = dbtagmap.get(uuid);%>
-					    <%=tag.getName().getZh_CN() %>-<%=tag.getName().getEn_US() %>
-					<%}
+					    String dbtag = dbtags.getString(i);
+					    AppTagEntity tag = dbtagmap.get(dbtag);
+					    if(tag == null) {
+					        out.print("Tag 异常请重新选择Tag");
+					    } else {
+					        out.print("["+tag.getName().getString("zh_CN")+" - "+tag.getName().getString("en_US")+"] ");
+					    }
+					}
 				}%>
 				<button onclick="javascript:dialog.dialog('open')">编辑</button>
 			</td>
@@ -106,25 +110,12 @@ function changeTagDialog() {
 				<ul>
 					<li>
 						<table>
-							<%if(StringUtility.isNotEmpty(wallpaper.getActionUrl().getHdpi()) ) {%>
+							<%if(StringUtility.isNotEmpty(wallpaper.getActionUrl().getString("hdpi")) ) {%>
 							<tr>
-								<td>1080p-<%=wallpaper.getFileSize().getHdpi()/1024 %>k</td>
+								<td>1080p-<%=wallpaper.getFileSize().getLong("hdpi")/1024 %>k</td>
 							</tr>
 							<tr>
-								<td><a href="<%=img_path%><%=wallpaper.getActionUrl().getHdpi() %>" target="_blank">
-									<img alt="hdpi" src="<%=img_path%><%=wallpaper.getPreviewImageUrl() %>"></a></td>
-							</tr>
-							<%}%>
-						</table>
-					</li>
-					<li>
-						<table>
-							<%if(StringUtility.isNotEmpty(wallpaper.getActionUrl().getMdpi()) ) {%>
-							<tr>
-								<td>1080p-<%=wallpaper.getFileSize().getMdpi()/1024 %>k</td>
-							</tr>
-							<tr>
-								<td><a href="<%=img_path%><%=wallpaper.getActionUrl().getMdpi() %>" target="_blank">
+								<td><a href="<%=img_path%><%=wallpaper.getActionUrl().getString("hdpi") %>" target="_blank">
 									<img alt="mdpi" src="<%=img_path%><%=wallpaper.getPreviewImageUrl() %>"></a></td>
 							</tr>
 							<%}%>
@@ -132,12 +123,25 @@ function changeTagDialog() {
 					</li>
 					<li>
 						<table>
-							<%if(StringUtility.isNotEmpty(wallpaper.getActionUrl().getLdpi()) ) {%>
+							<%if(StringUtility.isNotEmpty(wallpaper.getActionUrl().getString("mdpi")) ) {%>
 							<tr>
-								<td>1080p-<%=wallpaper.getFileSize().getLdpi()/1024 %>k</td>
+								<td>1080p-<%=wallpaper.getFileSize().getLong("mdpi")/1024 %>k</td>
 							</tr>
 							<tr>
-								<td><a href="<%=img_path%><%=wallpaper.getActionUrl().getLdpi() %>" target="_blank">
+								<td><a href="<%=img_path%><%=wallpaper.getActionUrl().getString("mdpi") %>" target="_blank">
+									<img alt="ldpi" src="<%=img_path%><%=wallpaper.getPreviewImageUrl() %>"></a></td>
+							</tr>
+							<%}%>
+						</table>
+					</li>
+					<li>
+						<table>
+							<%if(StringUtility.isNotEmpty(wallpaper.getActionUrl().getString("ldpi")) ) {%>
+							<tr>
+								<td>1080p-<%=wallpaper.getFileSize().getLong("ldpi")/1024 %>k</td>
+							</tr>
+							<tr>
+								<td><a href="<%=img_path%><%=wallpaper.getActionUrl().getString("ldpi") %>" target="_blank">
 									<img alt="ldpi" src="<%=img_path%><%=wallpaper.getPreviewImageUrl() %>"></a></td>
 							</tr>
 							<%}%>

@@ -1,13 +1,12 @@
-<%@page import="com.toolbox.entity.tag.AppTagEntity"%>
+<%@page import="com.toolbox.entity.AppTagEntity"%>
 <%@page import="java.util.List"%>
-<%@page import="com.toolbox.entity.tag.AppTagGroupEntity"%>
 <%@page import="com.toolbox.framework.utils.WebUtility"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
     String basePath = WebUtility.getBasePath(request);
 	String tablename = (String) request.getAttribute("tablename");
-	AppTagGroupEntity apptag = ( AppTagGroupEntity ) request.getAttribute("apptag");
+	List<AppTagEntity> apptags = ( List<AppTagEntity> ) request.getAttribute("apptags");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -102,10 +101,10 @@ $(function() {
 <body>
 选择分类：
 <%
-List<AppTagEntity> tags = apptag.getTags();
-for(int i=0; i<tags.size(); i++) {
-    AppTagEntity tag = tags.get(i);%>
- 	 <input type="checkbox"  class="tag" value="<%=tag.getUuid()%>"><%=tag.getName().getZh_CN() %>-<%=tag.getName().getEn_US() %>
+for(int i=0; i<apptags.size(); i++) {
+    AppTagEntity tag = apptags.get(i);%>
+ 	 <input type="checkbox"  class="tag" value="<%=tag.getElementId()%>">
+ 	 <%=tag.getName().getString("zh_CN") %>-<%=tag.getName().getString("en_US") %>
 <%}%>
 	
 	<form action="/" class="dropzone" enctype="multipart/form-data" id="my-dropzone" method="post">

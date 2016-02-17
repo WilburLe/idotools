@@ -29,7 +29,6 @@ public abstract class MongoBaseDao<T> {
      */
     protected abstract Class<T> getEntityClass();
 
-
     /**
      * 保存
      */
@@ -97,15 +96,16 @@ public abstract class MongoBaseDao<T> {
 
     public void delete(Query query) {
         if (StringUtility.isNotEmpty(getCollection())) {
-            mongoTemplate.remove(query, getCollection());            
+            mongoTemplate.remove(query, getCollection());
         } else {
-            mongoTemplate.remove(query);
+            mongoTemplate.remove(query, getEntityClass());
         }
 
     }
 
     /**
      *根据ID删除
+     * @deprecated
      */
     public void deleteById(String id) {
         Criteria criteria = Criteria.where("_id").in(id);
@@ -119,6 +119,7 @@ public abstract class MongoBaseDao<T> {
 
     /**
      * 删除对象
+     * @deprecated
      */
     public void delete(T t) {
         if (StringUtility.isNotEmpty(getCollection())) {

@@ -15,6 +15,7 @@ public class ConfigHotController {
     
     @RequestMapping(value = "hot", method = RequestMethod.GET)
     public ModelAndView confighot() {
+        
 
         return new ModelAndView("config/hot");
     }

@@ -1,21 +1,22 @@
-package com.toolbox.entity.tag;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.toolbox.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.alibaba.fastjson.JSONObject;
+
 /**
 * @author E-mail:86yc@sina.com
+* 
 */
-@Document(collection = "apptag")
-public class AppTagGroupEntity {
+@Document(collection = "app_tag")
+public class AppTagEntity {
     @Id
-    private String             id;
-    private String             appType;
-    private List<AppTagEntity> tags = new ArrayList<AppTagEntity>();
-    private int                sortNu;
+    private String     id;
+    private String     elementId;
+    private String     appType;
+    private JSONObject name;
+    private int        sortNu;
 
     public String getId() {
         return id;
@@ -23,6 +24,14 @@ public class AppTagGroupEntity {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getElementId() {
+        return elementId;
+    }
+
+    public void setElementId(String elementId) {
+        this.elementId = elementId;
     }
 
     public String getAppType() {
@@ -33,12 +42,12 @@ public class AppTagGroupEntity {
         this.appType = appType;
     }
 
-    public List<AppTagEntity> getTags() {
-        return tags;
+    public JSONObject getName() {
+        return name;
     }
 
-    public void setTags(List<AppTagEntity> tags) {
-        this.tags = tags;
+    public void setName(JSONObject name) {
+        this.name = name;
     }
 
     public int getSortNu() {

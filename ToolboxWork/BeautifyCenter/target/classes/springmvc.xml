@@ -21,7 +21,7 @@
        ">
 
 	<!-- 加载数据库属性连接文件/系统属性文件 -->
-	<context:property-placeholder location="classpath:/*.properties" />
+	<context:property-placeholder location="classpath:config/*.properties" />
 
 	<task:annotation-driven scheduler="qbScheduler" mode="proxy" />
 	<task:scheduler id="qbScheduler" pool-size="10" />

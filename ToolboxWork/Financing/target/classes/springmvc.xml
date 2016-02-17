@@ -16,7 +16,7 @@
        ">
 
 	<!-- 加载数据库属性连接文件/系统属性文件 -->
-	<context:property-placeholder location="classpath:/*.properties" />
+	<context:property-placeholder location="classpath:config/*.properties" />
 
 	<!-- 对包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能 -->
 	<context:component-scan base-package="com.toolbox">

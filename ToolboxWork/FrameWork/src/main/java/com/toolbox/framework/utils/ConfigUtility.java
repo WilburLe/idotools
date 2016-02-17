@@ -24,7 +24,7 @@ import com.toolbox.framework.spring.exception.SysException;
 
 public class ConfigUtility {
     private static final Log          log         = LogFactory.getLog(ConfigUtility.class);
-    private static final String       CONFIG_FILE = "classpath:*.properties";
+    private static final String       CONFIG_FILE = "classpath:**/*.properties";
     private final Map<String, String> configCache = new HashMap<String, String>();
     private static final ConfigUtility       instance    = new ConfigUtility();
 

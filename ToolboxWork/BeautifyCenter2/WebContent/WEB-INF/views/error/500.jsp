@@ -39,8 +39,6 @@ String basePath = WebUtility.getBasePath(request);
 </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
-<%@include file="../common/head.jsp" %>
-<%@include file="../common/menu.jsp" %>
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
@@ -81,7 +79,6 @@ String basePath = WebUtility.getBasePath(request);
         </section><!-- /.content -->
         </div>
         
-<%@include file="../common/foot.jsp" %>
 <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
     
