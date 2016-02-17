@@ -1,4 +1,4 @@
-package com.toolbox.controller;
+package com.toolbox.web.controller;
 /**
 * @author E-mail:86yc@sina.com
 * 
@@ -16,10 +16,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSON;
 import com.toolbox.common.AppEnum;
-import com.toolbox.entity.AppTagEntity;
-import com.toolbox.entity.WallpaperEntity;
-import com.toolbox.service.AppTagService;
-import com.toolbox.service.WallpaperService;
+import com.toolbox.web.entity.AppTagEntity;
+import com.toolbox.web.entity.WallpaperEntity;
+import com.toolbox.web.service.AppTagService;
+import com.toolbox.web.service.WallpaperService;
 
 @Controller
 public class WallpaperController {

@@ -10,7 +10,6 @@ public enum AppEnum {
     lockscreen("lockscreen", "lockscreen", "锁屏"), //
     weather("weather", "weather", "天气"), //
     widget("widget", "widget", "小部件"),//
-    test("test", "test", "TEST"),//
     ;
 
     private String collection;

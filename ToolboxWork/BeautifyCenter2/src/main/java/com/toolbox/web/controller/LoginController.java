@@ -1,4 +1,4 @@
-package com.toolbox.controller;
+package com.toolbox.web.controller;
 
 import javax.servlet.http.HttpServletRequest;
 

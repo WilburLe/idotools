@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
-import com.toolbox.entity.WallpaperEntity;
 import com.toolbox.schedule.job.HotRankScheduleJob;
-import com.toolbox.service.WallpaperService;
+import com.toolbox.web.entity.WallpaperEntity;
+import com.toolbox.web.service.WallpaperService;
 
 /**
 * @author E-mail:86yc@sina.com

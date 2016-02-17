@@ -1,4 +1,4 @@
-package com.toolbox.controller;
+package com.toolbox.web.controller;
 
 import java.util.List;
 
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.toolbox.common.SystemConfigEnum;
-import com.toolbox.entity.HotRankEntity;
-import com.toolbox.entity.SystemConfigEmtity;
-import com.toolbox.service.HotRankService;
-import com.toolbox.service.SystemConfigService;
+import com.toolbox.web.entity.HotRankEntity;
+import com.toolbox.web.entity.SystemConfigEmtity;
+import com.toolbox.web.service.HotRankService;
+import com.toolbox.web.service.SystemConfigService;
 
 /**
 * @author E-mail:86yc@sina.com

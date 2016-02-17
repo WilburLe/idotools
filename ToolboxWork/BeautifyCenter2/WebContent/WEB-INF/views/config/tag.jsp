@@ -1,5 +1,5 @@
+<%@page import="com.toolbox.web.entity.AppTagEntity"%>
 <%@page import="com.toolbox.common.AppEnum"%>
-<%@page import="com.toolbox.entity.AppTagEntity"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.toolbox.framework.utils.ListUtiltiy"%>
 <%@page import="java.util.List"%>

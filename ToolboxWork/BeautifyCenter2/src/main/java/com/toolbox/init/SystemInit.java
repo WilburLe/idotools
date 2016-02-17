@@ -11,10 +11,10 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.toolbox.common.AppEnum;
 import com.toolbox.common.SystemConfigEnum;
-import com.toolbox.entity.SystemConfigEmtity;
 import com.toolbox.schedule.SchedulerJobService;
 import com.toolbox.schedule.job.HotRankScheduleJob;
-import com.toolbox.service.SystemConfigService;
+import com.toolbox.web.entity.SystemConfigEmtity;
+import com.toolbox.web.service.SystemConfigService;
 
 /**
 * @author E-mail:86yc@sina.com

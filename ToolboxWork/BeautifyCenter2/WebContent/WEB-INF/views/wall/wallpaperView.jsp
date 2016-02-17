@@ -1,5 +1,5 @@
-<%@page import="com.toolbox.entity.AppTagEntity"%>
-<%@page import="com.toolbox.entity.WallpaperEntity"%>
+<%@page import="com.toolbox.web.entity.AppTagEntity"%>
+<%@page import="com.toolbox.web.entity.WallpaperEntity"%>
 <%@page import="com.toolbox.framework.utils.ConfigUtility"%>
 <%@page import="java.util.List"%>
 <%@page import="com.toolbox.framework.utils.WebUtility"%>

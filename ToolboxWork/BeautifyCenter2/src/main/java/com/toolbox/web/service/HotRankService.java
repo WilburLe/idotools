@@ -1,4 +1,4 @@
-package com.toolbox.service;
+package com.toolbox.web.service;
 
 import java.util.List;
 
@@ -12,11 +12,11 @@ import org.springframework.stereotype.Service;
 import com.alibaba.fastjson.JSONObject;
 import com.toolbox.common.AppEnum;
 import com.toolbox.common.SystemConfigEnum;
-import com.toolbox.entity.HotRankEntity;
-import com.toolbox.entity.SystemConfigEmtity;
-import com.toolbox.entity.WallpaperEntity;
 import com.toolbox.framework.spring.mongo.MongoBaseDao;
 import com.toolbox.framework.utils.StringUtility;
+import com.toolbox.web.entity.HotRankEntity;
+import com.toolbox.web.entity.SystemConfigEmtity;
+import com.toolbox.web.entity.WallpaperEntity;
 
 /**
 * @author E-mail:86yc@sina.com

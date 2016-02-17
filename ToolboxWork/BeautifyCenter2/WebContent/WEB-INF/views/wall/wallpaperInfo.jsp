@@ -1,7 +1,7 @@
+<%@page import="com.toolbox.web.entity.AppTagEntity"%>
+<%@page import="com.toolbox.web.entity.WallpaperEntity"%>
 <%@page import="com.alibaba.fastjson.JSONArray"%>
-<%@page import="com.toolbox.entity.AppTagEntity"%>
 <%@page import="com.toolbox.framework.utils.StringUtility"%>
-<%@page import="com.toolbox.entity.WallpaperEntity"%>
 <%@page import="com.toolbox.framework.utils.ConfigUtility"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.HashMap"%>

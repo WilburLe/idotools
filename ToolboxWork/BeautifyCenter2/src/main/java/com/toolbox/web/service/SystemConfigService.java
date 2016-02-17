@@ -1,18 +1,18 @@
-package com.toolbox.service;
+package com.toolbox.web.service;
 
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
-import com.toolbox.entity.SystemConfigEmtity;
 import com.toolbox.framework.spring.mongo.MongoBaseDao;
+import com.toolbox.web.entity.SystemConfigEmtity;
 
 /**
 * @author E-mail:86yc@sina.com
 * 
 */
-@Service("SystemConfigService")
+@Service()
 public class SystemConfigService extends MongoBaseDao<SystemConfigEmtity> {
 
     @Override

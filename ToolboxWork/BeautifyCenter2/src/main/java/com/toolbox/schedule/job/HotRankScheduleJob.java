@@ -6,8 +6,8 @@ import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
-import com.toolbox.service.HotRankService;
 import com.toolbox.utils.SpringUtility;
+import com.toolbox.web.service.HotRankService;
 
 /**
 * @author E-mail:86yc@sina.com

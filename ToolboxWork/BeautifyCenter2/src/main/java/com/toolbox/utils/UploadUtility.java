@@ -8,12 +8,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.toolbox.entity.InActionCount;
-import com.toolbox.entity.WallpaperEntity;
 import com.toolbox.framework.utils.ConfigUtility;
 import com.toolbox.framework.utils.FileUtility;
 import com.toolbox.framework.utils.ImageUtility;
 import com.toolbox.framework.utils.UUIDUtility;
+import com.toolbox.web.entity.InActionCount;
+import com.toolbox.web.entity.WallpaperEntity;
 
 /**
 * @author E-mail:86yc@sina.com
@@ -22,10 +22,41 @@ import com.toolbox.framework.utils.UUIDUtility;
 public class UploadUtility {
     private static String base_path = ConfigUtility.getInstance().getString("upload.base.path");
 
-    private final static String wallpaper_path = "wallpaper/";
-    private final static String theme_path     = "theme/";
-    private final static String banner_path    = "banner/";
+    private final static String wallpaper_path   = "wallpaper/";
+    private final static String theme_path       = "theme/";
+    private final static String weather_path     = "weather/";
+    public final static String  banner_voer_path = "banner/cover/";
 
+    /**
+    * 单张上传
+    * @param file
+    * @return   文件相对地址
+    *
+    */
+    public static String upload_file(MultipartFile file, String path) {
+        String src_path = null;
+        try {
+            String fileName = file.getOriginalFilename();
+            String suffix = fileName.substring(fileName.lastIndexOf('.'));
+            String uuid = UUIDUtility.uuid32();
+            //原始文件保存路径
+            src_path = path + uuid + suffix;
+            File newFile = new File(base_path + src_path);
+            // 转存文件  
+            file.transferTo(newFile);
+        } catch (Exception e) {
+
+        }
+        return src_path;
+    }
+
+    /**
+     * 壁纸上传
+     * @param files
+     * @param tags
+     * @return
+     *
+     */
     public static List<WallpaperEntity> upload_wallpapers(List<MultipartFile> files, String tags) {
         List<WallpaperEntity> wallpapers = new ArrayList<WallpaperEntity>();
         for (int i = 0; i < files.size(); i++) {

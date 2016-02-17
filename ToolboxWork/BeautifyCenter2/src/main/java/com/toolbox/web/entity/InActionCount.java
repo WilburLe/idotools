@@ -1,4 +1,4 @@
-package com.toolbox.entity;
+package com.toolbox.web.entity;
 
 /**
 * @author E-mail:86yc@sina.com

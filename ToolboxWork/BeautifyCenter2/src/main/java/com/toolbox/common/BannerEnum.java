@@ -5,7 +5,7 @@ package com.toolbox.common;
 * 
 */
 public enum BannerEnum {
-    h5("h5", "H5运营"), //
+    H5("h5", "H5运营"), //
     Subject("subject", "专题"), //
     SubjectGroup("subjectGroup", "专题合辑"),//
     ;
@@ -17,6 +17,15 @@ public enum BannerEnum {
         this.type = type;
     }
 
+    public static BannerEnum byType(String type) {
+        BannerEnum[] banners = values();
+        for (BannerEnum banner : banners) {
+            if(banner.type.equals(type)) {
+                return banner;
+            }
+        }
+        return null;
+    }
     public String getType() {
         return type;
     }

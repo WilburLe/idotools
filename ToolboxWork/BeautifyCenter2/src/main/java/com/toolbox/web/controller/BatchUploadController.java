@@ -1,4 +1,4 @@
-package com.toolbox.controller;
+package com.toolbox.web.controller;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,10 +17,10 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.toolbox.entity.WallpaperEntity;
 import com.toolbox.framework.utils.StringUtility;
-import com.toolbox.service.WallpaperService;
 import com.toolbox.utils.UploadUtility;
+import com.toolbox.web.entity.WallpaperEntity;
+import com.toolbox.web.service.WallpaperService;
 
 /**
 * @author E-mail:86yc@sina.com

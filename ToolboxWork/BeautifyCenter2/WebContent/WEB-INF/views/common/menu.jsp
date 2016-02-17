@@ -49,9 +49,20 @@
 					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/tab')">Tab设置</a></li>
 					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/tag')">分类设置</a></li>
 					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/hot')">热门设置</a></li>
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/banner')">Banner设置</a></li>
 				</ul>				
 			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-link"></i>
+					<span>Banner</span>
+					<i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>banner/view/all')">列表管理</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/banner')">展示设置</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>banner/view/all')">回收站</a></li>
+				</ul>
+			</li>			
 			<li class="treeview">
 				<a href="#">
 					<i class="fa fa-link"></i>
@@ -62,19 +73,7 @@
 					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>hot/rank/china/all')">国内</a></li>
 					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>hot/rank/google/all')">GooglePlay</a></li>
 				</ul>
-			</li>
-			<li class="treeview">
-				<a href="#">
-					<i class="fa fa-link"></i>
-					<span>Banner</span>
-					<i class="fa fa-angle-left pull-right"></i>
-				</a>
-				<ul class="treeview-menu">
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>wallpaper/banner/')">列表管理</a></li>
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>wallpaper/banner/recycle/')">回收站</a></li>
-				</ul>
-			</li>			
-						
+			</li>						
 			<li class="treeview">
 				<a href="#">
 					<i class="fa fa-link"></i>

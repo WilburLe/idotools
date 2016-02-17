@@ -1,4 +1,4 @@
-<%@page import="com.toolbox.entity.AppTagEntity"%>
+<%@page import="com.toolbox.web.entity.AppTagEntity"%>
 <%@page import="java.util.List"%>
 <%@page import="com.toolbox.framework.utils.WebUtility"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"

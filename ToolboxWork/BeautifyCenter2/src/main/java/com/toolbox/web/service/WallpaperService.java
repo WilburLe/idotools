@@ -1,19 +1,19 @@
-package com.toolbox.service;
+package com.toolbox.web.service;
 
 import java.util.List;
 
 import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Order;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.domain.Sort.Order;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import com.alibaba.fastjson.JSONArray;
-import com.toolbox.entity.WallpaperEntity;
 import com.toolbox.framework.spring.mongo.MongoBaseDao;
 import com.toolbox.framework.utils.StringUtility;
+import com.toolbox.web.entity.WallpaperEntity;
 
 /**
 * @author E-mail:86yc@sina.com

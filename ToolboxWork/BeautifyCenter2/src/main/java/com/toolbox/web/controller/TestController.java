@@ -1,4 +1,4 @@
-package com.toolbox.controller;
+package com.toolbox.web.controller;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.toolbox.entity.WallpaperEntity;
-import com.toolbox.service.WallpaperService;
+import com.toolbox.web.entity.WallpaperEntity;
+import com.toolbox.web.service.WallpaperService;
 
 @Controller
 @RequestMapping("mgr/")

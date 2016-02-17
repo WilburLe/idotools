@@ -12,12 +12,12 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.toolbox.common.AppEnum;
-import com.toolbox.entity.AppTagEntity;
-import com.toolbox.entity.WallpaperEntity;
 import com.toolbox.framework.utils.ListUtiltiy;
 import com.toolbox.redis.AbstractRedisService;
-import com.toolbox.service.AppTagService;
-import com.toolbox.service.WallpaperService;
+import com.toolbox.web.entity.AppTagEntity;
+import com.toolbox.web.entity.WallpaperEntity;
+import com.toolbox.web.service.AppTagService;
+import com.toolbox.web.service.WallpaperService;
 
 /**
 * @author E-mail:86yc@sina.com

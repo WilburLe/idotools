@@ -1,4 +1,4 @@
-package com.toolbox.controller;
+package com.toolbox.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,9 +9,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.toolbox.entity.AppTagEntity;
 import com.toolbox.framework.utils.UUIDUtility;
-import com.toolbox.service.AppTagService;
+import com.toolbox.web.entity.AppTagEntity;
+import com.toolbox.web.service.AppTagService;
 
 /**
 * @author E-mail:86yc@sina.com

@@ -1,13 +1,15 @@
-package com.toolbox.entity;
+package com.toolbox.web.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.alibaba.fastjson.JSONObject;
 
 /**
 * @author E-mail:86yc@sina.com
 * 
 */
-@Document(collection = "banner'")
+@Document(collection = "banner")
 public class BannerEntity {
     @Id
     private String id;
@@ -16,6 +18,7 @@ public class BannerEntity {
     private String title;
     private String intro;
     private String previewImageUrl;
+    private JSONObject content;
     private long   createDate;
 
     public String getId() {
@@ -72,6 +75,14 @@ public class BannerEntity {
 
     public void setCreateDate(long createDate) {
         this.createDate = createDate;
+    }
+
+    public JSONObject getContent() {
+        return content;
+    }
+
+    public void setContent(JSONObject content) {
+        this.content = content;
     }
 
 }
