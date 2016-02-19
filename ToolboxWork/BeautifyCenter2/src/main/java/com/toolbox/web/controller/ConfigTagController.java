@@ -18,7 +18,7 @@ import com.toolbox.web.service.AppTagService;
 * 
 */
 @Controller
-@RequestMapping("config/")
+@RequestMapping("config")
 public class ConfigTagController {
     @Autowired
     private AppTagService tagEditService;

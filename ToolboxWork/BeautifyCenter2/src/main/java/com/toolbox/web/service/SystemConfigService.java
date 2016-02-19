@@ -29,7 +29,7 @@ public class SystemConfigService extends MongoBaseDao<SystemConfigEmtity> {
         return this.queryOne(new Query(Criteria.where("configType").is(configType)));
     }
 
-    public void save(SystemConfigEmtity config) {
+    public void updateInser(SystemConfigEmtity config) {
         Update update = new Update();
         update.set("config", config.getConfig());
         this.updateInser(new Query(Criteria.where("configType").is(config.getConfigType())), update);

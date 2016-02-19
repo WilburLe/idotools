@@ -54,7 +54,7 @@ public class ApiControllerAspect {
     @Around("pointCut()")
     public Object around(ProceedingJoinPoint pjp) {
         long start = System.currentTimeMillis();
-        String className = getRequestUrl();
+        String requestUrl = getRequestUrl();
         Object obj = null;
         boolean error = false;
         String errorMsg = null;
@@ -74,10 +74,10 @@ public class ApiControllerAspect {
             rs.put("error", errorMsg);
             rs.put("status", -999);
             obj = rs;
-            log.error((end - start) + "ms " + className);
+            log.error((end - start) + "ms " + requestUrl);
         } else {
             if (StringUtility.isEmpty(log_view_time) || useTime > Long.parseLong(log_view_time)) {
-                log.info((end - start) + "ms " + className);
+                log.info((end - start) + "ms " + requestUrl);
             }
         }
         return obj;
@@ -101,7 +101,7 @@ public class ApiControllerAspect {
     public static String getRequestUrl() {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         StringBuffer url = request.getRequestURL();
-        return url.toString();
+        return request.getMethod() + " " + url.toString();
     }
 
     public static String getRequestClassName(JoinPoint joinPoint) {

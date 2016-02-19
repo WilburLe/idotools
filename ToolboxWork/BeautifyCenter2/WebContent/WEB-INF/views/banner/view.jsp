@@ -1,4 +1,3 @@
-<%@page import="com.toolbox.common.BannerEnum"%>
 <%@page import="com.toolbox.framework.utils.ConfigUtility"%>
 <%@page import="com.toolbox.web.entity.BannerEntity"%>
 <%@page import="java.util.List"%>
@@ -40,42 +39,10 @@ String bannerType = (String) request.getAttribute("bannerType");
 </script>
 </head>
 <body>
-<ul>
-	<li>
-		<a href="<%=basePath%>banner/view/all"><button>全部</button></a>
-	</li>
-	<li>
-		<a href="<%=basePath%>banner/view/<%=BannerEnum.H5.getType() %>"><button>H5运营</button></a>
-	</li>
-	<li>
-		<a href="<%=basePath%>banner/view/<%=BannerEnum.Subject.getType() %>"><button>专题</button></a>
-	</li>
-	<li>
-		<a href="<%=basePath%>banner/view/<%=BannerEnum.SubjectGroup.getType() %>"><button>专题合辑</button></a>
-	</li>
-	<li>
-		<button onclick="addBanner()">添加Banner</button>
-	</li>	
-</ul>
+<button onclick="addBanner()">添加Banner</button>
 <br />
 <form action="<%=basePath%>banner/add" method="post" enctype="multipart/form-data" style="display: none;" id="addForm">
 <table>
-	<tr>
-		<td>选择类型</td>
-		<td>
-			<select name="bannerType" id="bannerType">
-				<%BannerEnum[] bannerTypes = BannerEnum.values();
-					for(BannerEnum bt : bannerTypes) {
-						boolean selected = false;
-						if(bt.getType().equals(bannerType)) {
-						    selected = true;
-						}
-					%>
-				<option value="<%=bt.getType()%>" <%=selected?"selected":"" %>><%=bt.getName() %></option>
-				<%}%>
-			</select>
-		</td>
-	</tr>
 	<tr>
 		<td>选择封面</td>
 		<td><input type="file" name="cover"></td>
@@ -90,9 +57,9 @@ String bannerType = (String) request.getAttribute("bannerType");
 			<textarea rows="3" cols="13" name="intro"></textarea>
 		</td>
 	</tr>
-	<tr style="display: none" id="h5url">
-		<td>H5 Url</td>
-		<td><input type="text" name="h5url"></td>
+	<tr id="url">
+		<td>链接</td>
+		<td><input type="text" name="url"></td>
 	</tr>
 	<tr>
 		<td colspan="2"><button type="submit">保存</button></td>
@@ -118,7 +85,6 @@ String bannerType = (String) request.getAttribute("bannerType");
 				</tr>
 				<tr>
 					<td>
-						分类:<%=BannerEnum.byType(banner.getBannerType()).getName() %>
 						<a href="javascript:delBanner('<%=banner.getElementId()%>')">删除</a>
 						<a href="<%=basePath%>banner/edit/<%=banner.getElementId()%>">编辑</a>
 					</td>

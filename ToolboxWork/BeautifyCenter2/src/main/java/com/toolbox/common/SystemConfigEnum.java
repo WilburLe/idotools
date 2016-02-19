@@ -5,7 +5,8 @@ package com.toolbox.common;
 * 
 */
 public enum SystemConfigEnum {
-    config_hot("hot", "热门"),//
+    config_hot("hot", "热门"), //
+    config_banner("banner", "Banner"),//
     ;
     private String type;
     private String name;

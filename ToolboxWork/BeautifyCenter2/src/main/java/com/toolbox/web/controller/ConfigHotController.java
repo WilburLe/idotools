@@ -22,7 +22,7 @@ import com.toolbox.web.service.SystemConfigService;
 * 
 */
 @Controller
-@RequestMapping("config/")
+@RequestMapping("config")
 public class ConfigHotController {
     @Autowired
     private SystemConfigService systemConfigService;

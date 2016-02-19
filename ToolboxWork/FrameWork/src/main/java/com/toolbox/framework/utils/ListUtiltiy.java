@@ -30,7 +30,7 @@ import org.apache.commons.collections.ListUtils;
  */
 
 public class ListUtiltiy extends ListUtils {
-
+    
     @SuppressWarnings("unchecked")
     public static <K, T> Map<K, List<T>> groupToList(List<T> list, String name) {
         Map<K, List<T>> map = new HashMap<K, List<T>>();

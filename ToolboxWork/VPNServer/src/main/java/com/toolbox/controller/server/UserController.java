@@ -105,7 +105,7 @@ public class UserController {
         if (expiration == null || expiration.getExpireddate().before(date)) {
             result.put("isPro", 0); //普通用户
             //计算剩余流量
-            Date monthStart = DateUtility.parseDate(DateUtility.format(new Date()), "yyyy-MM-dd");
+            Date monthStart = DateUtility.parseDate(DateUtility.format(new Date()), "yyyy-MM");
             long useaccts = radacctService.findUserFreeAcc(users.getUsername(), monthStart);
             result.put("dataRemain", 1024 * 1024 - (useaccts / 1024));
 

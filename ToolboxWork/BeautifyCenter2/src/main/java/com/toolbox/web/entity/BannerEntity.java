@@ -3,8 +3,6 @@ package com.toolbox.web.entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.alibaba.fastjson.JSONObject;
-
 /**
 * @author E-mail:86yc@sina.com
 * 
@@ -14,11 +12,10 @@ public class BannerEntity {
     @Id
     private String id;
     private String elementId;
-    private String bannerType;  //H5/专题/合辑
+    private String previewImageUrl;
     private String title;
     private String intro;
-    private String previewImageUrl;
-    private JSONObject content;
+    private String url;
     private long   createDate;
 
     public String getId() {
@@ -37,12 +34,12 @@ public class BannerEntity {
         this.elementId = elementId;
     }
 
-    public String getBannerType() {
-        return bannerType;
+    public String getPreviewImageUrl() {
+        return previewImageUrl;
     }
 
-    public void setBannerType(String bannerType) {
-        this.bannerType = bannerType;
+    public void setPreviewImageUrl(String previewImageUrl) {
+        this.previewImageUrl = previewImageUrl;
     }
 
     public String getTitle() {
@@ -61,12 +58,12 @@ public class BannerEntity {
         this.intro = intro;
     }
 
-    public String getPreviewImageUrl() {
-        return previewImageUrl;
+    public String getUrl() {
+        return url;
     }
 
-    public void setPreviewImageUrl(String previewImageUrl) {
-        this.previewImageUrl = previewImageUrl;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public long getCreateDate() {
@@ -75,14 +72,6 @@ public class BannerEntity {
 
     public void setCreateDate(long createDate) {
         this.createDate = createDate;
-    }
-
-    public JSONObject getContent() {
-        return content;
-    }
-
-    public void setContent(JSONObject content) {
-        this.content = content;
     }
 
 }

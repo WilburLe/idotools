@@ -169,7 +169,7 @@ public class UsersMgrController {
                  * 计算当月已使用的流量，数据库中存的是byte
                  * 展示要换算为kb，切是剩余的流量
                  */
-                Date monthStart = DateUtility.parseDate(DateUtility.format(date), "yyyy-MM-dd");
+                Date monthStart = DateUtility.parseDate(DateUtility.format(date), "yyyy-MM");
                 long freeaccts = 1024 * 1024 - (radacctService.findUserFreeAcc(username, monthStart) / 1024);
                 data.put("freeaccts", freeaccts);
                 data.put("differDays", -1);

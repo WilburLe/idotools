@@ -15,14 +15,14 @@ import com.mongodb.DBCollection;
 import com.mongodb.MongoException;
 import com.toolbox.framework.spring.mongo.MongoBaseDao;
 import com.toolbox.framework.utils.StringUtility;
-import com.toolbox.web.entity.BannerEntity;
+import com.toolbox.web.entity.BannerResourceEntity;
 
 /**
 * @author E-mail:86yc@sina.com
 * 
 */
 @Service
-public class BannerService extends MongoBaseDao<BannerEntity> {
+public class BannerResourceService extends MongoBaseDao<BannerResourceEntity> {
 
     @Override
     protected String getCollection() {
@@ -30,44 +30,44 @@ public class BannerService extends MongoBaseDao<BannerEntity> {
     }
 
     @Override
-    protected Class<BannerEntity> getEntityClass() {
-        return BannerEntity.class;
+    protected Class<BannerResourceEntity> getEntityClass() {
+        return BannerResourceEntity.class;
     }
 
-    public BannerEntity findByElementId(String elementId) {
+    public BannerResourceEntity findByElementId(String elementId) {
         Query query = new Query();
         query.addCriteria(Criteria.where("elementId").is(elementId));
         return this.queryOne(query);
     }
 
-    public List<BannerEntity> findAll() {
+    public List<BannerResourceEntity> findAll() {
         return this.queryList(null);
     }
 
-    public List<BannerEntity> findByBannerType(String bannerType) {
+    public List<BannerResourceEntity> findByResourceType(String resourceType) {
         Query query = new Query();
-        if (StringUtility.isNotEmpty(bannerType) && !"all".equals(bannerType)) {
-            query.addCriteria(Criteria.where("bannerType").is(bannerType));
+        if (StringUtility.isNotEmpty(resourceType) && !"all".equals(resourceType)) {
+            query.addCriteria(Criteria.where("resourceType").is(resourceType));
         }
         query.with(new Sort(Direction.DESC, "createDate"));
         return this.queryList(query);
     }
 
-    public void upsertBanner(BannerEntity banner) {
+    public void upsertResource(BannerResourceEntity resource) {
         final BasicDBObject dbDoc = new BasicDBObject();
-        this.mongoTemplate.getConverter().write(banner, dbDoc);
-        this.mongoTemplate.execute(BannerEntity.class, new CollectionCallback<BannerEntity>() {
+        this.mongoTemplate.getConverter().write(resource, dbDoc);
+        this.mongoTemplate.execute(BannerResourceEntity.class, new CollectionCallback<BannerResourceEntity>() {
             @Override
-            public BannerEntity doInCollection(DBCollection collection) throws MongoException, DataAccessException {
+            public BannerResourceEntity doInCollection(DBCollection collection) throws MongoException, DataAccessException {
                 Query query = new Query();
-                query.addCriteria(Criteria.where("elementId").is(banner.getElementId()));
+                query.addCriteria(Criteria.where("elementId").is(resource.getElementId()));
                 collection.update(query.getQueryObject(), dbDoc, true, false);
                 return null;
             }
         });
     }
 
-    public void delBanner(String elementId) {
+    public void delResource(String elementId) {
         this.delete(new Query(Criteria.where("elementId").is(elementId)));
     }
 }

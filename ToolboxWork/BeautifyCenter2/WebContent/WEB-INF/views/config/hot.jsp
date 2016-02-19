@@ -86,9 +86,6 @@ function checkApp(code) {
 <body>
 <table border="1">
 	<tr>
-		<td><button>添加APP</button></td>
-	</tr>
-	<tr>
 		<td>APP</td>
 <%
 	AppEnum[] apps = AppEnum.values();

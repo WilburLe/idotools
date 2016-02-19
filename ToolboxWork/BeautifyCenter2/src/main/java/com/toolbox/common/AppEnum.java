@@ -6,10 +6,8 @@ package com.toolbox.common;
 */
 public enum AppEnum {
     wallpaper("wallpaper", "wallpaper", "壁纸"), //
-    theme("theme", "theme", "主题"), //
     lockscreen("lockscreen", "lockscreen", "锁屏"), //
     weather("weather", "weather", "天气"), //
-    widget("widget", "widget", "小部件"),//
     ;
 
     private String collection;
