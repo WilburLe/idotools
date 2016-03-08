@@ -3,6 +3,8 @@ package com.toolbox.web.entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.alibaba.fastjson.JSONObject;
+
 /**
 * @author E-mail:86yc@sina.com
 * 
@@ -10,13 +12,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "banner")
 public class BannerEntity {
     @Id
-    private String id;
-    private String elementId;
-    private String previewImageUrl;
-    private String title;
-    private String intro;
-    private String url;
-    private long   createDate;
+    private String     id;
+    private String     elementId;
+    private String     bannerType;     //H5/专题/合辑
+    private JSONObject title;
+    private String     shareUrl;
+    private String     previewImageUrl;
+    private JSONObject content;
+    private long       createDate;
 
     public String getId() {
         return id;
@@ -34,6 +37,30 @@ public class BannerEntity {
         this.elementId = elementId;
     }
 
+    public String getBannerType() {
+        return bannerType;
+    }
+
+    public void setBannerType(String bannerType) {
+        this.bannerType = bannerType;
+    }
+
+    public JSONObject getTitle() {
+        return title;
+    }
+
+    public void setTitle(JSONObject title) {
+        this.title = title;
+    }
+
+    public String getShareUrl() {
+        return shareUrl;
+    }
+
+    public void setShareUrl(String shareUrl) {
+        this.shareUrl = shareUrl;
+    }
+
     public String getPreviewImageUrl() {
         return previewImageUrl;
     }
@@ -42,28 +69,12 @@ public class BannerEntity {
         this.previewImageUrl = previewImageUrl;
     }
 
-    public String getTitle() {
-        return title;
+    public JSONObject getContent() {
+        return content;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getIntro() {
-        return intro;
-    }
-
-    public void setIntro(String intro) {
-        this.intro = intro;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
+    public void setContent(JSONObject content) {
+        this.content = content;
     }
 
     public long getCreateDate() {

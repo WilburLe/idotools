@@ -6,7 +6,7 @@ package com.toolbox.web.entity;
 */
 public class InActionCount {
     private int china;
-    private int google;
+    private int googlePlay;
 
     public int getChina() {
         return china;
@@ -16,12 +16,12 @@ public class InActionCount {
         this.china = china;
     }
 
-    public int getGoogle() {
-        return google;
+    public int getGooglePlay() {
+        return googlePlay;
     }
 
-    public void setGoogle(int google) {
-        this.google = google;
+    public void setGooglePlay(int googlePlay) {
+        this.googlePlay = googlePlay;
     }
 
 }

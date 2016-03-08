@@ -19,6 +19,7 @@ import com.toolbox.common.AppEnum;
 import com.toolbox.web.entity.AppTagEntity;
 import com.toolbox.web.entity.WallpaperEntity;
 import com.toolbox.web.service.AppTagService;
+import com.toolbox.web.service.CommonJSONService;
 import com.toolbox.web.service.WallpaperService;
 
 @Controller
@@ -27,20 +28,22 @@ public class WallpaperController {
     private WallpaperService wallpaperService;
     @Autowired
     private AppTagService   tagEditService;
+    @Autowired
+    private CommonJSONService commonJSONService;
 
     private final static String collection_name = AppEnum.wallpaper.getCollection();
     
     @RequestMapping(value = "wallpaper/upload", method = RequestMethod.GET)
     public ModelAndView uploadpage() {
         List<AppTagEntity> apptags = tagEditService.findTagByAppType(collection_name);
-        return new ModelAndView("upload").addObject("tablename", collection_name).addObject("apptags", apptags);
+        return new ModelAndView("wall/upload").addObject("tablename", collection_name).addObject("apptags", apptags);
     }
 
     @RequestMapping(value = "wallpaper/view/{tag}/{start}")
     public ModelAndView wallpaperView(@PathVariable("tag") String tag, @PathVariable("start") int start) {
         List<AppTagEntity> apptags = tagEditService.findTagByAppType(collection_name);
-        List<WallpaperEntity> wallpapers = wallpaperService.findByPage(tag, start, 100);
-        return new ModelAndView("wall/wallpaperView").addObject("wallpapers", wallpapers).addObject("apptags", apptags);
+        List<WallpaperEntity> wallpapers = wallpaperService.findByPage(tag, start, 1000);
+        return new ModelAndView("wall/wallpaperView").addObject("wallpapers", wallpapers).addObject("apptags", apptags).addObject("tag", tag);
     }
 
     @RequestMapping(value = "wallpaper/info/{elementId}")
@@ -57,7 +60,8 @@ public class WallpaperController {
 
     @RequestMapping(value = "wallpaper/delete/{elementId}", method = RequestMethod.GET)
     public @ResponseBody JSON delwallpaper(@PathVariable("elementId") String elementId) {
-        wallpaperService.deleteByElementId(elementId);
+//        wallpaperService.deleteByElementId(elementId);
+        commonJSONService.delApp(AppEnum.wallpaper.getCollection(), elementId);
         return null;
     }
 }

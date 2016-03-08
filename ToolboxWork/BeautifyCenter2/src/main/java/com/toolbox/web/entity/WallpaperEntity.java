@@ -3,7 +3,6 @@ package com.toolbox.web.entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
 /**
@@ -13,16 +12,16 @@ import com.alibaba.fastjson.JSONObject;
 @Document(collection = "wallpaper")
 public class WallpaperEntity {
     @Id
-    private String      id;
-    private String      elementId;
-    private String      src;
-    private String      previewImageUrl;
+    private String        id;
+    private String        elementId;
+    private String        src;
+    private String        previewImageUrl;
     private InActionCount actionCount;
-    private long        createDate;
-    private JSONObject  fileSize;
-    private JSONObject  actionUrl;
-    private JSONArray   tags;
-
+    private long          createDate;
+    private JSONObject    fileSize;
+    private JSONObject    actionUrl;
+    private String[]      tags;
+    private String[]      market;
 
     public String getId() {
         return id;
@@ -80,11 +79,11 @@ public class WallpaperEntity {
         this.actionUrl = actionUrl;
     }
 
-    public JSONArray getTags() {
+    public String[] getTags() {
         return tags;
     }
 
-    public void setTags(JSONArray tags) {
+    public void setTags(String[] tags) {
         this.tags = tags;
     }
 
@@ -94,6 +93,14 @@ public class WallpaperEntity {
 
     public void setActionCount(InActionCount actionCount) {
         this.actionCount = actionCount;
+    }
+
+    public String[] getMarket() {
+        return market;
+    }
+
+    public void setMarket(String[] market) {
+        this.market = market;
     }
 
 }

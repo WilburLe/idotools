@@ -12,7 +12,7 @@ import com.toolbox.web.entity.SystemConfigEmtity;
 * @author E-mail:86yc@sina.com
 * 
 */
-@Service()
+@Service
 public class SystemConfigService extends MongoBaseDao<SystemConfigEmtity> {
 
     @Override

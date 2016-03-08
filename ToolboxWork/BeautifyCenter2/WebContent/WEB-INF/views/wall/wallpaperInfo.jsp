@@ -23,7 +23,7 @@ List<AppTagEntity> apptags = ( List<AppTagEntity> ) request.getAttribute("apptag
 <title>wallpaperView</title>
 <script src="<%=basePath %>static/jquery-2.2.0.min.js"></script>
 <script src="<%=basePath %>static/jquery-ui.js"></script>
-<link rel="stylesheet" href="<%=basePath %>static/dialog.css">
+<link rel="stylesheet" href="<%=basePath %>static/dialog.css?<%=System.currentTimeMillis()%>">
 <style type="text/css">
 ul{list-style:none;} 
 ul li{float:left;}
@@ -63,14 +63,17 @@ function changeTagDialog() {
 <body>
 	<div id="dialog" title="更改分类">
 		<%
-			JSONArray dbtags = wallpaper.getTags();
+			String[] dbtags = wallpaper.getTags();
 			Map<String, AppTagEntity> dbtagmap = new HashMap<String, AppTagEntity>();
 			for(int i=0; i<apptags.size(); i++) {
 		    	AppTagEntity apptag = apptags.get(i);
+		    	if(apptag.getStatus() == -1) {
+		    	    continue;
+		    	}
 			    String uuid = apptag.getElementId();
 			    boolean checked = false;
-			    for(int j=0; j<dbtags.size(); j++) {
-			        String dbtag = dbtags.getString(j);
+			    for(int j=0; j<dbtags.length; j++) {
+			        String dbtag = dbtags[j];
 			        if(uuid.equals(dbtag)) {
 			            checked = true;
 			            dbtagmap.put(uuid, apptag);
@@ -89,11 +92,11 @@ function changeTagDialog() {
 		<tr>
 			<td>所属分类
 				<%
-				if(dbtags==null || dbtags.size() == 0) {
+				if(dbtags==null || dbtags.length == 0) {
 				    out.print("无");
 				} else {
-					for(int i=0; i<dbtags.size(); i++) {
-					    String dbtag = dbtags.getString(i);
+					for(int i=0; i<dbtags.length; i++) {
+					    String dbtag = dbtags[i];
 					    AppTagEntity tag = dbtagmap.get(dbtag);
 					    if(tag == null) {
 					        out.print("Tag 异常请重新选择Tag");
@@ -125,7 +128,7 @@ function changeTagDialog() {
 						<table>
 							<%if(StringUtility.isNotEmpty(wallpaper.getActionUrl().getString("mdpi")) ) {%>
 							<tr>
-								<td>1080p-<%=wallpaper.getFileSize().getLong("mdpi")/1024 %>k</td>
+								<td>720p-<%=wallpaper.getFileSize().getLong("mdpi")/1024 %>k</td>
 							</tr>
 							<tr>
 								<td><a href="<%=img_path%><%=wallpaper.getActionUrl().getString("mdpi") %>" target="_blank">
@@ -138,7 +141,7 @@ function changeTagDialog() {
 						<table>
 							<%if(StringUtility.isNotEmpty(wallpaper.getActionUrl().getString("ldpi")) ) {%>
 							<tr>
-								<td>1080p-<%=wallpaper.getFileSize().getLong("ldpi")/1024 %>k</td>
+								<td>480p-<%=wallpaper.getFileSize().getLong("ldpi")/1024 %>k</td>
 							</tr>
 							<tr>
 								<td><a href="<%=img_path%><%=wallpaper.getActionUrl().getString("ldpi") %>" target="_blank">

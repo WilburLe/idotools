@@ -8,6 +8,7 @@
 <%
 String basePath = WebUtility.getBasePath(request);
 SystemConfigEmtity hconfig =  (SystemConfigEmtity) request.getAttribute("hconfig");
+hconfig = hconfig==null?new SystemConfigEmtity():hconfig;
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -16,7 +17,7 @@ SystemConfigEmtity hconfig =  (SystemConfigEmtity) request.getAttribute("hconfig
 <title>Insert title here</title>
 <script src="<%=basePath %>static/jquery-2.2.0.min.js"></script>
 <script src="<%=basePath %>static/jquery-ui.js"></script>
-<link rel="stylesheet" href="<%=basePath %>static/dialog.css">
+<link rel="stylesheet" href="<%=basePath %>static/dialog.css?<%=System.currentTimeMillis()%>">
 <script type="text/javascript">
 var nudialog;
 $(function() {
@@ -90,6 +91,7 @@ function checkApp(code) {
 <%
 	AppEnum[] apps = AppEnum.values();
 	JSONObject hc = hconfig.getConfig();
+	hc = hc==null?new JSONObject():hc;
 	Iterator<String> it =hc.keySet().iterator();
 	while(it.hasNext()) {
 		String code = it.next();
@@ -98,7 +100,7 @@ function checkApp(code) {
 		AppEnum app = AppEnum.byCollection(code);
 %>
     	<td>
-    		<%=app.getCnName()+"-"+app.getEnName() %>
+    		<%=app.getAppName() %>
     	</td>
 <%}%>		
 	</tr>
@@ -155,7 +157,7 @@ function checkApp(code) {
 %>
     	<td>
  		    <button  onclick="openCycleDialog('<%=app.getCnName()+"-"+app.getEnName() %>', '<%=code%>', <%=cycle %>)">
-		   		Hour:<%=cycle %>
+		   		<%=cycle %>/Day
 		   	</button>
     	</td>
 <%}%>		

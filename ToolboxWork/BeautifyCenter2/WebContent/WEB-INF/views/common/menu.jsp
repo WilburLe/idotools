@@ -1,3 +1,4 @@
+<%@page import="com.toolbox.common.BannerEnum"%>
 <%@page import="com.toolbox.common.AppEnum"%>
 <%@page import="com.toolbox.framework.utils.WebUtility"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -47,7 +48,7 @@
 					<i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li><a href="#')">Tab设置</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/tab')">Tab设置</a></li>
 					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/tag')">分类设置</a></li>
 					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/hot')">热门设置</a></li>
 				</ul>				
@@ -59,8 +60,9 @@
 					<i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>banner/view')">Banner管理</a></li>
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>banner/resource/view/all')">资源管理</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>banner/<%=BannerEnum.Group.getType() %>/view')">合辑管理</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>banner/<%=BannerEnum.Subject.getType() %>/view')">专题管理</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>banner/<%=BannerEnum.H5.getType() %>/view')">H5管理</a></li>
 					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/banner/<%=AppEnum.wallpaper.getCollection()%>')">展示设置</a></li>
 					<li><a href="#">回收站</a></li>
 				</ul>
@@ -72,8 +74,8 @@
 					<i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>hot/rank/china/all')">国内</a></li>
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>hot/rank/google/all')">GooglePlay</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>hot/rank/china/<%=AppEnum.wallpaper.getCollection()%>')">国内</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>hot/rank/googlePlay/<%=AppEnum.wallpaper.getCollection()%>')">GooglePlay</a></li>
 				</ul>
 			</li>						
 			<li class="treeview">
@@ -89,11 +91,16 @@
 				</ul>
 			</li>
 			<li>
-				<a href="#"><i class="fa fa-link"></i> <span>天气</span></a>
+				<a href="#"><i class="fa fa-link"></i> <span>锁屏</span></a>
+				<ul class="treeview-menu">
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>lockscreen/view/all/0/')">列表管理</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>lockscreen/upload/')">批量上传</a></li>
+					<li><a href="#">回收站</a></li>
+				</ul>
 			</li>
 			<li>
-				<a href="#"><i class="fa fa-link"></i> <span>锁屏</span></a>
-			</li>					
+				<a href="#"><i class="fa fa-link"></i> <span>天气</span></a>
+			</li>
 		</ul>
 		<!-- /.sidebar-menu -->
 	</section>

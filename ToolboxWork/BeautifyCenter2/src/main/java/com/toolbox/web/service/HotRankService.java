@@ -11,10 +11,12 @@ import org.springframework.stereotype.Service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.toolbox.common.AppEnum;
+import com.toolbox.common.AppMarketEnum;
 import com.toolbox.common.SystemConfigEnum;
 import com.toolbox.framework.spring.mongo.MongoBaseDao;
 import com.toolbox.framework.utils.StringUtility;
 import com.toolbox.web.entity.HotRankEntity;
+import com.toolbox.web.entity.LockscreenEntity;
 import com.toolbox.web.entity.SystemConfigEmtity;
 import com.toolbox.web.entity.WallpaperEntity;
 
@@ -28,6 +30,8 @@ public class HotRankService extends MongoBaseDao<HotRankEntity> {
     private WallpaperService    wallpaperService;
     @Autowired
     private SystemConfigService configService;
+    @Autowired
+    private LockScreenService   lockSceneryService;
 
     @Override
     protected String getCollection() {
@@ -49,14 +53,22 @@ public class HotRankService extends MongoBaseDao<HotRankEntity> {
         return count != null ? count.intValue() : 0;
     }
 
-    public List<HotRankEntity> findAllByAppType(String appType) {
+    public List<HotRankEntity> findAllByAppType(String market, String appType) {
         Query query = new Query();
         if (StringUtility.isNotEmpty(appType) && !"all".equals(appType)) {
             Criteria criteria = Criteria.where("appType").is(appType);
             query.addCriteria(criteria);
         }
+        if (StringUtility.isNotEmpty(market) && !"all".equals(market)) {
+            Criteria criteria = Criteria.where("market").is(market);
+            query.addCriteria(criteria);
+        }
         query.with(new Sort(Direction.ASC, "sortNu"));
         return this.queryList(query);
+    }
+
+    public HotRankEntity findByElementId(String elementId) {
+        return this.queryOne(new Query(Criteria.where("elementId").is(elementId)));
     }
 
     /**
@@ -68,13 +80,62 @@ public class HotRankService extends MongoBaseDao<HotRankEntity> {
         if (AppEnum.wallpaper.getCollection().equals(appType)) {
             resetWallpaperHotRank();
         }
+        if (AppEnum.lockscreen.getCollection().equals(appType)) {
+            resetLocksceneryHotRank();
+        }
+
+        //重新按照下载量排序
+        List<HotRankEntity> allRanks = this.queryList(new Query());
+        
+    }
+
+    /**
+     * 锁屏的热门
+     */
+    private void resetLocksceneryHotRank() {
+        String appType = AppEnum.lockscreen.getCollection();
+        //删除原有的
+        this.delete(new Query(Criteria.where("appType").is(appType)));
+        //获取配置
+        SystemConfigEmtity config = configService.findByConfigType(SystemConfigEnum.config_hot.getType());
+        JSONObject hcj = config.getConfig();
+        JSONObject appCon = hcj.getJSONObject(appType);
+        int nu = appCon.getIntValue("nu");
+        //获取下载量最多的锁屏
+        List<LockscreenEntity> lockscenerys_china = lockSceneryService.findOrderByDownload(nu, "actionCount." + AppMarketEnum.China.getCode());
+        for (int i = 0; i < lockscenerys_china.size(); i++) {
+            LockscreenEntity lockscenery = lockscenerys_china.get(i);
+            HotRankEntity hotRank = new HotRankEntity();
+            hotRank.setElementId(lockscenery.getElementId());
+            hotRank.setPreviewImageUrl(lockscenery.getPreviewImageUrl());
+            hotRank.setAppType(appType);
+            hotRank.setAppTags(lockscenery.getTags());
+            hotRank.setActionCount((lockscenery.getActionCount()));
+            hotRank.setSortNu(i);
+            hotRank.setMarket(AppMarketEnum.China.getCode());
+            this.save(hotRank);
+        }
+        //googlplays
+        List<LockscreenEntity> lockscenerys_google = lockSceneryService.findOrderByDownload(nu, "actionCount." + AppMarketEnum.GooglePlay.getCode());
+        for (int i = 0; i < lockscenerys_google.size(); i++) {
+            LockscreenEntity lockscenery = lockscenerys_google.get(i);
+            HotRankEntity hotRank = new HotRankEntity();
+            hotRank.setElementId(lockscenery.getElementId());
+            hotRank.setPreviewImageUrl(lockscenery.getPreviewImageUrl());
+            hotRank.setAppType(appType);
+            hotRank.setAppTags(lockscenery.getTags());
+            hotRank.setActionCount((lockscenery.getActionCount()));
+            hotRank.setSortNu(i);
+            hotRank.setMarket(AppMarketEnum.GooglePlay.getCode());
+            this.save(hotRank);
+        }
     }
 
     /**
      * 壁纸的热门
      *
      */
-    public void resetWallpaperHotRank() {
+    private void resetWallpaperHotRank() {
         String appType = AppEnum.wallpaper.getCollection();
         //删除原有的
         this.delete(new Query(Criteria.where("appType").is(appType)));
@@ -84,7 +145,7 @@ public class HotRankService extends MongoBaseDao<HotRankEntity> {
         JSONObject appCon = hcj.getJSONObject(appType);
         int nu = appCon.getIntValue("nu");
         //获取下载量最多的壁纸
-        List<WallpaperEntity> wallpapers = wallpaperService.findOrderByDownload(nu, "actionCount.china");
+        List<WallpaperEntity> wallpapers = wallpaperService.findOrderByDownload(nu, "actionCount." + AppMarketEnum.China.getCode());
         for (int i = 0; i < wallpapers.size(); i++) {
             WallpaperEntity wallpaper = wallpapers.get(i);
             HotRankEntity hotRank = new HotRankEntity();
@@ -94,7 +155,7 @@ public class HotRankService extends MongoBaseDao<HotRankEntity> {
             hotRank.setAppTags(wallpaper.getTags());
             hotRank.setActionCount((wallpaper.getActionCount()));
             hotRank.setSortNu(i);
-
+            hotRank.setMarket(AppMarketEnum.China.getCode());
             this.save(hotRank);
         }
 

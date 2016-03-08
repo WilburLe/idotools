@@ -1,5 +1,7 @@
 package com.toolbox.entity;
 
+import java.util.Date;
+
 /**
 * @author E-mail:86yc@sina.com
 * 
@@ -13,6 +15,8 @@ public class UsersEntity {
     private String deviceid;
     private String appid;
     private String version;
+    private String usertype;
+    private Date   signindate;
 
     public int getId() {
         return id;
@@ -68,6 +72,22 @@ public class UsersEntity {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public Date getSignindate() {
+        return signindate;
+    }
+
+    public void setSignindate(Date signindate) {
+        this.signindate = signindate;
+    }
+
+    public String getUsertype() {
+        return usertype;
+    }
+
+    public void setUsertype(String usertype) {
+        this.usertype = usertype;
     }
 
 }

@@ -39,10 +39,12 @@ public class CommonInterceptor extends HandlerInterceptorAdapter {
         String requestUri = request.getRequestURI();
         String contextPath = request.getContextPath();
         String url = requestUri.substring(contextPath.length());
-
-        log.info("requestUri:" + requestUri);
-        log.info("contextPath:" + contextPath);
-        log.info("url:" + url);
+        if(url.lastIndexOf("login") >=0 ) {
+            return true;
+        }
+//        log.info("requestUri:" + requestUri);
+//        log.info("contextPath:" + contextPath);
+//        log.info("url:" + url);
 
         String username = (String) request.getSession().getAttribute("user");
         if (username == null) {

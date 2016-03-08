@@ -4,22 +4,22 @@ package com.toolbox.common;
 * @author E-mail:86yc@sina.com
 * 
 */
-public enum BannerResourceEnum {
-    H5("h5", "H5运营"), //
+public enum BannerEnum {
+    H5("h5", "H5"), //
     Subject("subject", "专题"), //
-    BannerGroup("bannerGroup", "合辑"),//
+    Group("group", "合辑"),//
     ;
     private String type;
     private String name;
 
-    BannerResourceEnum(String type, String name) {
+    BannerEnum(String type, String name) {
         this.name = name;
         this.type = type;
     }
 
-    public static BannerResourceEnum byType(String type) {
-        BannerResourceEnum[] banners = values();
-        for (BannerResourceEnum banner : banners) {
+    public static BannerEnum byType(String type) {
+        BannerEnum[] banners = values();
+        for (BannerEnum banner : banners) {
             if(banner.type.equals(type)) {
                 return banner;
             }

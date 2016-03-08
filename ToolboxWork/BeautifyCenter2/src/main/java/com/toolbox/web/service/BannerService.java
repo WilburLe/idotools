@@ -70,4 +70,5 @@ public class BannerService extends MongoBaseDao<BannerEntity> {
     public void delBanner(String elementId) {
         this.delete(new Query(Criteria.where("elementId").is(elementId)));
     }
+
 }

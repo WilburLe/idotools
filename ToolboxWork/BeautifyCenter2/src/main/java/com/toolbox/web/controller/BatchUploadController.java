@@ -3,6 +3,7 @@ package com.toolbox.web.controller;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -16,10 +17,14 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.toolbox.common.AppEnum;
 import com.toolbox.framework.utils.StringUtility;
 import com.toolbox.utils.UploadUtility;
+import com.toolbox.web.entity.LockscreenEntity;
 import com.toolbox.web.entity.WallpaperEntity;
+import com.toolbox.web.service.LockScreenService;
 import com.toolbox.web.service.WallpaperService;
 
 /**
@@ -29,11 +34,14 @@ import com.toolbox.web.service.WallpaperService;
 @Controller
 public class BatchUploadController {
     @Autowired
-    private WallpaperService wallpaperService;
+    private WallpaperService  wallpaperService;
+    @Autowired
+    private LockScreenService lockScreenService;
 
     @RequestMapping(value = "upload", method = RequestMethod.POST)
-    public @ResponseBody JSON upload(HttpServletRequest request, String tablename, String tags) {
+    public @ResponseBody JSON upload(HttpServletRequest request, String tablename, String tags, String market) {
         tags = StringUtility.isEmpty(tags) ? "[]" : tags;
+        market = StringUtility.isEmpty(market) ? "[]" : market;
 
         JSONObject result = new JSONObject();
         if (!ServletFileUpload.isMultipartContent(request)) {
@@ -41,37 +49,41 @@ public class BatchUploadController {
             result.put("msg", "It's not Multipart Content");
             return result;
         }
-        try {
-            MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-            Iterator<String> it = multipartRequest.getFileNames();
-            List<MultipartFile> files = new ArrayList<MultipartFile>();
-            int count = 0;
-
-            while (it.hasNext()) {
-                String filenindex = it.next();
-                MultipartFile file = multipartRequest.getFile(filenindex);
-                if (!file.isEmpty()) {
-                    files.add(file);
-                    count++;
+        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+        Iterator<String> it = multipartRequest.getFileNames();
+        List<MultipartFile> files = new ArrayList<MultipartFile>();
+        while (it.hasNext()) {
+            String filenindex = it.next();
+            MultipartFile file = multipartRequest.getFile(filenindex);
+            if (!file.isEmpty()) {
+                files.add(file);
+            }
+        }
+        int successNum = 0;
+        JSONArray msg = new JSONArray();
+        if (AppEnum.wallpaper.getCollection().equals(tablename)) {
+            Map<String, Object> upload_result = UploadUtility.upload_wallpapers(files, tags);
+            List<WallpaperEntity> wallpapers = (List<WallpaperEntity>) upload_result.get("wallpapers");
+            msg = (JSONArray) upload_result.get("errors");
+            successNum = wallpapers.size();
+            wallpaperService.saveList(wallpapers);
+        } else if (AppEnum.lockscreen.getCollection().equals(tablename)) {
+            List<LockscreenEntity> upload_result = UploadUtility.upload_lockscenery(files, market);
+            for (int i = 0; i < upload_result.size(); i++) {
+                LockscreenEntity saveEntity = upload_result.get(i);
+                LockscreenEntity check = lockScreenService.findByPackageName(saveEntity.getPackageName());
+                if (check == null) {
+                    lockScreenService.save(saveEntity);
+                    successNum++;
+                } else {
+                    msg.add("【" + saveEntity.getPackageName() + "包名重复】");
                 }
             }
-            List<WallpaperEntity> upload_result = UploadUtility.upload_wallpapers(files, tags);
-            switch (tablename) {
-                case "wallpaper":
-                    wallpaperService.saveList(upload_result);
-                    break;
-
-                default:
-                    break;
-            }
-
-            result.put("count", count);
-            result.put("statu", true);
-        } catch (Exception e) {
-            result.put("statu", false);
-            result.put("msg", e.getMessage());
         }
-
+        result.put("total", files.size());
+        result.put("successNum", successNum);
+        result.put("failNum", files.size() - successNum);
+        result.put("msg", msg);
         return result;
     }
 

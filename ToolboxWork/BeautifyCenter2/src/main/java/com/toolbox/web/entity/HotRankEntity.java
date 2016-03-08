@@ -3,8 +3,6 @@ package com.toolbox.web.entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.alibaba.fastjson.JSONArray;
-
 /**
 * @author E-mail:86yc@sina.com
 * 
@@ -16,7 +14,8 @@ public class HotRankEntity {
     private String        elementId;
     private String        previewImageUrl;
     private String        appType;
-    private JSONArray     appTags;
+    private String[]     appTags;
+    private String        market;         //上架范围
     private InActionCount actionCount;
     private int           sortNu;
 
@@ -52,11 +51,11 @@ public class HotRankEntity {
         this.appType = appType;
     }
 
-    public JSONArray getAppTags() {
+    public String[] getAppTags() {
         return appTags;
     }
 
-    public void setAppTags(JSONArray appTags) {
+    public void setAppTags(String[] appTags) {
         this.appTags = appTags;
     }
 
@@ -74,6 +73,14 @@ public class HotRankEntity {
 
     public void setSortNu(int sortNu) {
         this.sortNu = sortNu;
+    }
+
+    public String getMarket() {
+        return market;
+    }
+
+    public void setMarket(String market) {
+        this.market = market;
     }
 
 }

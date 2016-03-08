@@ -1,8 +1,7 @@
 <%@page import="com.toolbox.web.entity.AppTagEntity"%>
 <%@page import="java.util.List"%>
 <%@page import="com.toolbox.framework.utils.WebUtility"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
     String basePath = WebUtility.getBasePath(request);
 	String tablename = (String) request.getAttribute("tablename");
@@ -18,7 +17,7 @@
 <script src="<%=basePath %>static/dropzone.js"></script>
 
 <link rel="stylesheet" href="<%=basePath %>static/dropzone.css">
-<link rel="stylesheet" href="<%=basePath %>static/dialog.css">
+<link rel="stylesheet" href="<%=basePath %>static/dialog.css?<%=System.currentTimeMillis()%>">
 <script type="text/javascript">
 $(function() {
     $( "#dialog" ).dialog({
@@ -49,7 +48,7 @@ $(function() {
 	//Dropzone的初始化，myDropzone为form的id
 	Dropzone.options.myDropzone = {
 		//指定上传图片的路径
-		url : "<%=basePath %>/upload",
+		url : "<%=basePath %>upload",
 		//添加上传取消和删除预览图片的链接，默认不添加
 		addRemoveLinks : true,
 		//关闭自动上传功能，默认会true会自动上传//也就是添加一张图片向服务器发送一次请求
@@ -102,10 +101,11 @@ $(function() {
 选择分类：
 <%
 for(int i=0; i<apptags.size(); i++) {
-    AppTagEntity tag = apptags.get(i);%>
+    AppTagEntity tag = apptags.get(i);
+    if(tag.getStatus()!=-1) {%>
  	 <input type="checkbox"  class="tag" value="<%=tag.getElementId()%>">
  	 <%=tag.getName().getString("zh_CN") %>-<%=tag.getName().getString("en_US") %>
-<%}%>
+<%}}%>
 	
 	<form action="/" class="dropzone" enctype="multipart/form-data" id="my-dropzone" method="post">
 		<input type="hidden" name="tablename" value="<%=tablename%>">

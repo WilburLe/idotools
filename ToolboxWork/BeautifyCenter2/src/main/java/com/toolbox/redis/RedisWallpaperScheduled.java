@@ -32,18 +32,18 @@ public class RedisWallpaperScheduled extends AbstractRedisService<String, String
     private AppTagService    appTagService;
 
     //壁纸
-//    @Scheduled(fixedRate = 1000 * 60 * 5)
+    @Scheduled(fixedRate = 1000 * 60 * 5)
     public void wallpaper() {
         //分类
-        List<AppTagEntity> tags = new ArrayList<>();
+        List<AppTagEntity> tags = new ArrayList<AppTagEntity>();
         AppTagEntity all = new AppTagEntity();
         JSONObject allName = new JSONObject();
         allName.put("zh_CN", "全部");
-        allName.put("en_US", "all");
+        allName.put("en_US", "All");
         all.setElementId("all");
         all.setName(allName);
         tags.add(all);
-        tags.addAll(appTagService.findTagByAppType(AppEnum.wallpaper.getCollection()));
+        tags.addAll(appTagService.findTagByAppType(AppEnum.wallpaper.getCollection(), 0));
 
         this.set("zh_CN_wallpaper_tags", JSON.toJSONString(tags));
 
@@ -54,17 +54,15 @@ public class RedisWallpaperScheduled extends AbstractRedisService<String, String
 
             int count = wallpaperService.count(uuid);
             List<WallpaperEntity> wallpapers = wallpaperService.findByPage(uuid, 0, count);
-            List<List<WallpaperEntity>> list = ListUtiltiy.split(wallpapers, 8);
-            for (int k = 0; k < list.size(); k++) {
-                List<WallpaperEntity> plist = list.get(k);
+            List<List<WallpaperEntity>> pageList = ListUtiltiy.split(wallpapers, 8);
+            for (int k = 0; k < pageList.size(); k++) {
+                List<WallpaperEntity> plist = pageList.get(k);
                 JSONArray data = new JSONArray();
                 for (int l = 0; l < plist.size(); l++) {
                     WallpaperEntity wallpaper = plist.get(l);
-                    JSONObject json = JSON.parseObject(JSON.toJSONString(wallpaper));
-                    json.put("type", "idotools_wallpaper");
-                    data.add(json);
+                    data.add(RedisAppUtil.getWallpaper(wallpaper));
                 }
-                this.set("zh_CN_wallpaper_" + uuid + "_" + k, data.toJSONString());
+                this.set("zh_CN_wallpaper_" + uuid + "_" + (k + 1), data.toJSONString());
             }
         }
         log.info("redis >>> wallpaper cache success ~");

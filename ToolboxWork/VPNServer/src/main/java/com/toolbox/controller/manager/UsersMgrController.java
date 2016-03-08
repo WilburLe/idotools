@@ -17,6 +17,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.toolbox.common.RadgroupTypeEnum;
+import com.toolbox.common.UserEnum;
 import com.toolbox.entity.ExpirationEntity;
 import com.toolbox.entity.RadacctEntity;
 import com.toolbox.entity.UsersEntity;
@@ -26,7 +27,6 @@ import com.toolbox.framework.utils.UUIDUtility;
 import com.toolbox.framework.utils.XPathUtility;
 import com.toolbox.service.ExpirationService;
 import com.toolbox.service.RadacctService;
-import com.toolbox.service.SubscriptionService;
 import com.toolbox.service.UsersService;
 
 /**
@@ -37,13 +37,11 @@ import com.toolbox.service.UsersService;
 @RequestMapping("/mgr")
 public class UsersMgrController {
     @Autowired
-    private UsersService        usersService;
+    private UsersService      usersService;
     @Autowired
-    private RadacctService      radacctService;
+    private RadacctService    radacctService;
     @Autowired
-    private ExpirationService   expirationService;
-    @Autowired
-    private SubscriptionService subscriptionService;
+    private ExpirationService expirationService;
 
     @RequestMapping(value = "/alterusers1", method = RequestMethod.POST)
     public @ResponseBody JSON alterusers1(int userid, String subscribetype) {
@@ -70,14 +68,12 @@ public class UsersMgrController {
                 expiration.setUsername(users.getUsername());
                 expiration.setExpireddate(c.getTime());
                 expirationService.save(expiration);
-                
-                
 
                 //                subscriptionService.updateSubscribe(users.getUsername(), subscribetype, "test");
             } else {
                 Calendar c = Calendar.getInstance();
                 c.add(Calendar.DAY_OF_MONTH, type.getDays());
-                
+
                 expiration.setSubscribetype(type.getName());
                 expiration.setSubscribedate(date);
                 expiration.setExpireddate(c.getTime());
@@ -97,9 +93,14 @@ public class UsersMgrController {
         Date date = new Date();
         if (subscribetype.equals(RadgroupTypeEnum.FREE.getName())) {
             Date monthStart = DateUtility.parseDate(DateUtility.format(date), "yyyy-MM-dd");
-
+            long dataRemain = 0;
+            if (UserEnum.anonymous.name().equals(users.getUsertype())) {
+                dataRemain = UserEnum.anonymous.getDataRemain();
+            } else {
+                dataRemain = UserEnum.named.getDataRemain();
+            }
             //当前剩余流量 M
-            int frees = (int) ((1024 * 1024 - (radacctService.findUserFreeAcc(users.getUsername(), monthStart) / 1024)) / 1024);
+            int frees = (int) ((dataRemain - (radacctService.findUserFreeAcc(users.getUsername(), monthStart) / 1024)) / 1024);
             if (surplus > frees) {
                 radacctService.deleteUserFreeAcc(users.getUsername(), monthStart);
             } else {
@@ -158,7 +159,7 @@ public class UsersMgrController {
             data.put("userid", user.getId());
             data.put("username", username);
             data.put("bindid", user.getBindid());
-
+            data.put("usertype", user.getUsertype());
             ExpirationEntity expiration = expirationUserMap.get(username);
             /*
              * 时效表为空 和 时效过期 的都是FREE用户
@@ -169,8 +170,14 @@ public class UsersMgrController {
                  * 计算当月已使用的流量，数据库中存的是byte
                  * 展示要换算为kb，切是剩余的流量
                  */
+                long dataRemain = 0;
+                if (UserEnum.anonymous.name().equals(user.getUsertype())) {
+                    dataRemain = UserEnum.anonymous.getDataRemain();
+                } else {
+                    dataRemain = UserEnum.named.getDataRemain();
+                }
                 Date monthStart = DateUtility.parseDate(DateUtility.format(date), "yyyy-MM");
-                long freeaccts = 1024 * 1024 - (radacctService.findUserFreeAcc(username, monthStart) / 1024);
+                long freeaccts = dataRemain - (radacctService.findUserFreeAcc(username, monthStart) / 1024);
                 data.put("freeaccts", freeaccts);
                 data.put("differDays", -1);
                 data.put("subscribetype", RadgroupTypeEnum.FREE.getName());//等级

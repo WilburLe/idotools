@@ -62,7 +62,12 @@ public class ImageUtility {
         reader.setInput(iis, true);
         ImageReadParam param = reader.getDefaultReadParam();
         int imageIndex = 0;
-        Rectangle rect = new Rectangle((reader.getWidth(imageIndex) - w) / 2, (reader.getHeight(imageIndex) - h) / 2, w, h);
+        int ws = (reader.getWidth(imageIndex) - w);
+        ws = ws < 0 ? 0 : ws;
+        int hs = (reader.getHeight(imageIndex) - h);
+        hs = hs < 0 ? 0 : hs;
+        Rectangle rect = new Rectangle(ws / 2, hs / 2, w, h);
+        //        Rectangle rect = new Rectangle(reader.getWidth(imageIndex) / 2, reader.getHeight(imageIndex) / 2, w, h);
         param.setSourceRegion(rect);
         BufferedImage bi = reader.read(0, param);
         File tempFile = File.createTempFile(UUID.randomUUID().toString(), "." + suffix);
@@ -142,7 +147,8 @@ public class ImageUtility {
         double wr = w * 1.0 / bufImg.getWidth();
         double hr = h * 1.0 / bufImg.getHeight();
         if (hr > 1) {
-            return null;
+            hr = 1;
+            //            return null;
         }
         if (wr > 1) {
             wr = 1;
@@ -158,27 +164,29 @@ public class ImageUtility {
         File tempFile = File.createTempFile(UUID.randomUUID().toString(), "." + suffix);
         ImageIO.write((BufferedImage) Itemp, suffix, tempFile);
         //
-        if (zm * bufImg.getWidth() > w || zm * bufImg.getHeight() > h) {
-            File rfile = cutCenterImage(tempFile, w, h);
-            tempFile.delete();
-            return rfile;
-        }
+        //        if (zm * bufImg.getWidth() >= w || zm * bufImg.getHeight() >= h) {
+        //            File rfile = cutCenterImage(tempFile, w, h);
+        //            tempFile.delete();
+        //            return rfile;
+        //        }
 
-        return tempFile;
+        File rfile = cutCenterImage(tempFile, w, h);
+        tempFile.delete();
+        return rfile;
     }
 
-    public static File zoomImage(File file, int w, int h) throws Exception {
-        String fileName = file.getName();
-        String suffix = fileName.substring(fileName.indexOf(".") + 1); //jpg
-        BufferedImage bufImg = ImageIO.read(file);
-        Image Itemp = bufImg.getScaledInstance(w, h, bufImg.SCALE_SMOOTH);
-        double wr = w * 1.0 / bufImg.getWidth();
-        double hr = h * 1.0 / bufImg.getHeight();
-        AffineTransformOp ato = new AffineTransformOp(AffineTransform.getScaleInstance(wr, hr), null);
-        Itemp = ato.filter(bufImg, null);
-        File tempFile = File.createTempFile(UUID.randomUUID().toString(), "." + suffix);
-        ImageIO.write((BufferedImage) Itemp, suffix, tempFile);
-        return tempFile;
-    }
+    //    public static File zoomImage(File file, int w, int h) throws Exception {
+    //        String fileName = file.getName();
+    //        String suffix = fileName.substring(fileName.indexOf(".") + 1); //jpg
+    //        BufferedImage bufImg = ImageIO.read(file);
+    //        Image Itemp = bufImg.getScaledInstance(w, h, bufImg.SCALE_SMOOTH);
+    //        double wr = w * 1.0 / bufImg.getWidth();
+    //        double hr = h * 1.0 / bufImg.getHeight();
+    //        AffineTransformOp ato = new AffineTransformOp(AffineTransform.getScaleInstance(wr, hr), null);
+    //        Itemp = ato.filter(bufImg, null);
+    //        File tempFile = File.createTempFile(UUID.randomUUID().toString(), "." + suffix);
+    //        ImageIO.write((BufferedImage) Itemp, suffix, tempFile);
+    //        return tempFile;
+    //    }
 
 }

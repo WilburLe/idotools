@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
@@ -27,13 +28,22 @@ public class SharehistoryController {
     @Autowired
     private SharehistoryService sharehistoryService;
     @Autowired
-    private UsersService usersService;
+    private UsersService        usersService;
 
-    @RequestMapping(value = "share/{username}")
-    public @ResponseBody JSON share(@PathVariable("username") String username) {
+    @RequestMapping(value = "share/{username}", method = RequestMethod.GET)
+    public @ResponseBody JSON shareGet(@PathVariable("username") String username) {
+        return share(username);
+    }
+
+    @RequestMapping(value = "share", method = RequestMethod.POST)
+    public @ResponseBody JSON sharePost(String username) {
+        return share(username);
+    }
+
+    private JSON share(String username) {
         JSONObject result = new JSONObject();
-        UsersEntity user =  usersService.findByUsername(username);
-        if(user == null) {
+        UsersEntity user = usersService.findByUsername(username);
+        if (user == null) {
             result.put("status", SystemErrorEnum.nouser.getStatus());
             result.put("error", SystemErrorEnum.nouser.getError());
             return result;
@@ -43,7 +53,7 @@ public class SharehistoryController {
         c.add(Calendar.MONTH, 1);
         c.set(c.get(Calendar.YEAR), c.get(Calendar.MONTH), 1, 0, 0);
         Date next_moth_date = DateUtility.parseDate(DateUtility.format(c, "yyyy-MM-dd"), "yyyy-MM-dd");
-        
+
         //每个月只能分享一次
         if (sharehistory == null || sharehistory.getSharedate().after(next_moth_date)) {
             sharehistory = new SharehistoryEntity();

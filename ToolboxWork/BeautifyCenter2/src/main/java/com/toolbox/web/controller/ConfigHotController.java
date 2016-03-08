@@ -59,8 +59,8 @@ public class ConfigHotController {
         systemConfigService.save(hconfig);
         //重新启动任务
 //      String cron = "0 0 */" + cycle + " * * ?";
-        String cron = "0 */" + cycle + " * * * ?";
-        schedulerJobService.addJob(HotRankScheduleJob.class, code + "Job", "HotRankGroup", cron, code);
+        String cron = "0 0 2 */" + cycle + "  * ?";
+        schedulerJobService.addJob(HotRankScheduleJob.class, code + "HotJob", "HotRankGroup", cron, code);
         return null;
     }
 

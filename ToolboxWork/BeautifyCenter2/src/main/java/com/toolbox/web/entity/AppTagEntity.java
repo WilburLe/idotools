@@ -9,7 +9,7 @@ import com.alibaba.fastjson.JSONObject;
 * @author E-mail:86yc@sina.com
 * 
 */
-@Document(collection = "app_tag")
+@Document(collection = "apptag")
 public class AppTagEntity {
     @Id
     private String     id;
@@ -17,6 +17,7 @@ public class AppTagEntity {
     private String     appType;
     private JSONObject name;
     private int        sortNu;
+    private int        status;
 
     public String getId() {
         return id;
@@ -56,6 +57,14 @@ public class AppTagEntity {
 
     public void setSortNu(int sortNu) {
         this.sortNu = sortNu;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
 }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
@@ -21,18 +22,26 @@ public class SubscriptionController {
     private SubscriptionService subscriptionService;
 
     @RequestMapping(value = "subscribe/{username}/{subscribetype}/{subscribeno}")
-    public @ResponseBody JSON subscribe(//
+    public @ResponseBody JSON subscribeGet(//
             @PathVariable("username") String username//
             , @PathVariable("subscribetype") String subscribetype//
             , @PathVariable("subscribeno") String subscribeno//
     ) {
-        
+        return subscribe(username, subscribetype, subscribeno);
+    }
+
+    @RequestMapping(value = "subscribe", method = RequestMethod.POST)
+    public @ResponseBody JSON subscribePost(String username, String subscribetype, String subscribeno) {
+        return subscribe(username, subscribetype, subscribeno);
+    }
+
+    private JSONObject subscribe(String username, String subscribetype, String subscribeno) {
         JSONObject result = new JSONObject();
         if (RadgroupTypeEnum.byName(subscribetype) == null) {
             result.put("error", "can not find [subscribetype=" + subscribetype + "]");
             return result;
         }
-        
+
         long expiredDate = subscriptionService.updateSubscribe(username, subscribetype, subscribeno);
 
         result.put("expiredDate", expiredDate);
@@ -40,4 +49,5 @@ public class SubscriptionController {
         result.put("regType", 1); //已注册
         return result;
     }
+
 }
