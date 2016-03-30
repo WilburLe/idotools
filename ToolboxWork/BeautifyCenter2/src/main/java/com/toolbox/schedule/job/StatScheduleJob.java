@@ -22,7 +22,7 @@ public class StatScheduleJob implements Job {
         if (context.getJobDetail().getJobDataMap().containsKey("msg")) {
             appType = context.getJobDetail().getJobDataMap().get("msg").toString();
         }
-        Object obj = SpringUtility.getBean("HotRankService");
+        Object obj = SpringUtility.getBean("StatService");
         StatService statService = (StatService) obj;
         statService.statWallpaper();
         statService.statLockscreen();

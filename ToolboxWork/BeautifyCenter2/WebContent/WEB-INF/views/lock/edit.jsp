@@ -46,11 +46,15 @@ Object msg = request.getAttribute("msg");
 		</tr>			
 		<tr>
 			<td>中文名</td>
-			<td><%=lock.getName().getString(LanguageEnum.zh_CN.getCode()) %></td>
+			<td>
+			<input type="text" value="<%=lock.getName().getString(LanguageEnum.zh_CN.getCode()) %>" name="cnName">
+			</td>
 		</tr>
 		<tr>
 			<td>英文名</td>
-			<td><%=lock.getName().getString(LanguageEnum.en_US.getCode()) %></td>
+			<td>
+				<input type="text" value="<%=lock.getName().getString(LanguageEnum.en_US.getCode()) %>" name="enName">
+			</td>
 		</tr>
 		<tr>
 			<td>中文描述</td>

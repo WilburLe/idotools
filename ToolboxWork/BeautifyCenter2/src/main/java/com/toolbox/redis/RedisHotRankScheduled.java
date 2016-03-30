@@ -24,6 +24,7 @@ import com.toolbox.framework.utils.StringUtility;
 import com.toolbox.web.entity.HotRankEntity;
 import com.toolbox.web.entity.SystemConfigEmtity;
 import com.toolbox.web.service.CommonJSONService;
+import com.toolbox.web.service.RedisService;
 import com.toolbox.web.service.SystemConfigService;
 
 /**
@@ -31,13 +32,15 @@ import com.toolbox.web.service.SystemConfigService;
 * 
 */
 @Service
-public class RedisHotRankScheduled extends AbstractRedisService<String, String> {
+public class RedisHotRankScheduled  {
     private final static Log    log = LogFactory.getLog(RedisHotRankScheduled.class);
     @Autowired
     private CommonJSONService   commonJSONService;
     @Autowired
     private SystemConfigService systemConfigService;
-
+    @Autowired
+    private RedisService     redisService;
+    
     @Scheduled(fixedRate = 1000 * 60 * 30)
     public void hotrank() {
         hotrankData(AppMarketEnum.China.getCode());
@@ -91,7 +94,7 @@ public class RedisHotRankScheduled extends AbstractRedisService<String, String> 
                     JSONObject json = getApp(appId, appType);
                     arr.add(json);
                 }
-                this.set(rKey + app.getCollection() + "_" + (m + 1), arr.toJSONString());
+                redisService.set(rKey + app.getCollection() + "_" + (m + 1), arr.toJSONString());
             }
             log.info("redis >>> " + rKey + app.getCollection() + " cache success ~");
         }

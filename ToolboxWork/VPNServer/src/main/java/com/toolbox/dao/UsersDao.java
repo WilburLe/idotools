@@ -15,7 +15,7 @@ import com.toolbox.framework.spring.support.BaseDao;
 public class UsersDao extends BaseDao {
 
     public List<UsersEntity> findsByPage(int start, int limit) {
-        return queryForList("select * from users limit ?, ?", UsersEntity.class, start, limit);
+        return queryForList("select * from users order by signindate desc limit ?, ?", UsersEntity.class, start, limit);
     }
 
     public UsersEntity findByUsername(String username) {
@@ -33,4 +33,5 @@ public class UsersDao extends BaseDao {
     public void update(UsersEntity users) {
         updateBean("users", users, "username='" + users.getUsername() + "'");
     }
+    
 }

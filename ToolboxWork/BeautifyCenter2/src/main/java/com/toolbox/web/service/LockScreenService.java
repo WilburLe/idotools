@@ -50,7 +50,11 @@ public class LockScreenService extends MongoBaseDao<LockscreenEntity> {
             query.addCriteria(Criteria.where("market").is(market));
         }
         query.with(new Sort(Direction.DESC, "createDate"));
-        return this.getPage(query, start * size, size);
+        if (size == -1) {
+            return this.queryList(query);
+        } else {
+            return this.getPage(query, start * size, size);
+        }
     }
 
     public int count() {

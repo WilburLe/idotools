@@ -8,6 +8,9 @@ public enum SystemErrorEnum {
     pass(9001, "The password is not correct"), //
     share(9002, "Only once a month"), //
     nouser(9003, "Not find this user"), //
+    report(9004, "Only once a day"), //
+    report_vip(9005, "VIP user can not report"), //
+    report_anonymous(9006, "Anonymous user can not report"),
     ;
 
     private int status;

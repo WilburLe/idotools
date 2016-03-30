@@ -19,13 +19,14 @@ import com.toolbox.web.entity.BannerEntity;
 import com.toolbox.web.service.BannerContentService;
 import com.toolbox.web.service.BannerService;
 import com.toolbox.web.service.CommonJSONService;
+import com.toolbox.web.service.RedisService;
 
 /**
 * @author E-mail:86yc@sina.com
 * 
 */
 @Service
-public class RedisBannerScheduled extends AbstractRedisService<String, String> {
+public class RedisBannerScheduled {
     private final static Log     log = LogFactory.getLog(RedisBannerScheduled.class);
     @Autowired
     private BannerService        bannerService;
@@ -33,6 +34,8 @@ public class RedisBannerScheduled extends AbstractRedisService<String, String> {
     private CommonJSONService    commonJSONService;
     @Autowired
     private BannerContentService bannerContentService;
+    @Autowired
+    private RedisService     redisService;
 
     @Scheduled(fixedRate = 1000 * 60 * 5)
     public void banner() {
@@ -48,7 +51,7 @@ public class RedisBannerScheduled extends AbstractRedisService<String, String> {
             if (BannerEnum.H5.getType().equals(banner.getBannerType())) {
                 JSONObject content = banner.getContent();
                 result.put("data", content.getString("url"));
-                this.set("zh_CN_banner_" + banner.getBannerType() + "_" + banner.getElementId(), result.toJSONString());
+                redisService.set("zh_CN_banner_" + banner.getBannerType() + "_" + banner.getElementId(), result.toJSONString());
             } else {
                 JSONArray data = new JSONArray();
                 List<BannerContentEntity> contents = bannerContentService.findsByBannerId(banner.getElementId());
@@ -79,7 +82,7 @@ public class RedisBannerScheduled extends AbstractRedisService<String, String> {
                 } else if (BannerEnum.H5.getType().equals(bannerType)) {
                     redis_key = "zh_CN_h5_";
                 }
-                this.set(redis_key + banner.getElementId(), result.toJSONString());
+                redisService.set(redis_key + banner.getElementId(), result.toJSONString());
                 log.info("redis >>> " + redis_key + banner.getElementId() + "content cache success ~");
             }
         }

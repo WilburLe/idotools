@@ -157,7 +157,7 @@ function checkApp(code) {
 %>
     	<td>
  		    <button  onclick="openCycleDialog('<%=app.getCnName()+"-"+app.getEnName() %>', '<%=code%>', <%=cycle %>)">
-		   		<%=cycle %>/Day
+		   		<%=cycle %>/Hour
 		   	</button>
     	</td>
 <%}%>		

@@ -24,7 +24,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.toolbox.common.AppEnum;
+import com.toolbox.common.LanguageEnum;
+import com.toolbox.framework.utils.StringUtility;
 import com.toolbox.utils.UploadUtility;
 import com.toolbox.web.entity.LockscreenEntity;
 import com.toolbox.web.service.CommonJSONService;
@@ -65,7 +68,7 @@ public class LockScreenController {
 
     @RequestMapping(value = "view/{market}/{start}")
     public ModelAndView view(@PathVariable("market") String market, @PathVariable("start") int start) {
-        List<LockscreenEntity> locks = lockscreenService.findByPage(market, start, 1000);
+        List<LockscreenEntity> locks = lockscreenService.findByPage(market, start, -1);
         return new ModelAndView("lock/view").addObject("locks", locks).addObject("market", market);
     }
 
@@ -83,7 +86,7 @@ public class LockScreenController {
     }
 
     @RequestMapping(value = "edit", method = RequestMethod.POST)
-    public ModelAndView edit(HttpServletRequest request, String elementId, String[] market) {
+    public ModelAndView edit(HttpServletRequest request, String elementId, String cnName, String enName, String[] market) {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         Iterator<String> it = multipartRequest.getFileNames();
         MultipartFile fileData = null;
@@ -97,7 +100,14 @@ public class LockScreenController {
 
         LockscreenEntity lock = lockscreenService.findByElementId(elementId);
         Update update = new Update();
-
+        JSONObject name = lock.getName();
+        if (StringUtility.isNotEmpty(cnName)) {
+            name.put(LanguageEnum.zh_CN.getCode(), cnName);
+        }
+        if (StringUtility.isNotEmpty(enName)) {
+            name.put(LanguageEnum.en_US.getCode(), cnName);
+        }
+        lock.setName(name);
         if (market != null && market.length > 0) {
             JSONArray marketArr = new JSONArray();
             for (int i = 0; i < market.length; i++) {

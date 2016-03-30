@@ -79,7 +79,10 @@ for(int i=0; i<locks.size(); i++) {
 				<td colspan="2">ID:<%=lock.getElementId() %></td>
 			</tr>
 			<tr>
-				<td>下载量：0</td>
+				<td>
+					国内：<%=lock.getActionCount().getChina() %>
+					google：<%=lock.getActionCount().getGooglePlay() %>
+				</td>
 				<td><button onclick="dellockscreen('<%=lock.getElementId()%>')">删除</button></td>
 			</tr>
 		</table>

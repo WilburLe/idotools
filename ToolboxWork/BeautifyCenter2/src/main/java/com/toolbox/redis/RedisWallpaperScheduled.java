@@ -17,6 +17,7 @@ import com.toolbox.framework.utils.ListUtiltiy;
 import com.toolbox.web.entity.AppTagEntity;
 import com.toolbox.web.entity.WallpaperEntity;
 import com.toolbox.web.service.AppTagService;
+import com.toolbox.web.service.RedisService;
 import com.toolbox.web.service.WallpaperService;
 
 /**
@@ -24,15 +25,17 @@ import com.toolbox.web.service.WallpaperService;
 * 
 */
 @Service
-public class RedisWallpaperScheduled extends AbstractRedisService<String, String> {
+public class RedisWallpaperScheduled {
     private final static Log log = LogFactory.getLog(RedisWallpaperScheduled.class);
     @Autowired
     private WallpaperService wallpaperService;
     @Autowired
     private AppTagService    appTagService;
+    @Autowired
+    private RedisService     redisService;
 
     //壁纸
-    @Scheduled(fixedRate = 1000 * 60 * 5)
+    @Scheduled(fixedRate = 1000 * 60 * 15)
     public void wallpaper() {
         //分类
         List<AppTagEntity> tags = new ArrayList<AppTagEntity>();
@@ -45,7 +48,7 @@ public class RedisWallpaperScheduled extends AbstractRedisService<String, String
         tags.add(all);
         tags.addAll(appTagService.findTagByAppType(AppEnum.wallpaper.getCollection(), 0));
 
-        this.set("zh_CN_wallpaper_tags", JSON.toJSONString(tags));
+        redisService.set("zh_CN_wallpaper_tags", JSON.toJSONString(tags));
 
         //列表
         for (int j = 0; j < tags.size(); j++) {
@@ -62,7 +65,7 @@ public class RedisWallpaperScheduled extends AbstractRedisService<String, String
                     WallpaperEntity wallpaper = plist.get(l);
                     data.add(RedisAppUtil.getWallpaper(wallpaper));
                 }
-                this.set("zh_CN_wallpaper_" + uuid + "_" + (k + 1), data.toJSONString());
+                redisService.set("zh_CN_wallpaper_" + uuid + "_" + (k + 1), data.toJSONString());
             }
         }
         log.info("redis >>> wallpaper cache success ~");

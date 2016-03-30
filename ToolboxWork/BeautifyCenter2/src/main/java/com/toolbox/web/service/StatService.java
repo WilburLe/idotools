@@ -15,13 +15,12 @@ import com.toolbox.common.AppEnum;
 import com.toolbox.common.LanguageEnum;
 import com.toolbox.common.StatKeyEnum;
 import com.toolbox.framework.utils.StringUtility;
-import com.toolbox.redis.AbstractRedisService;
 
 /**
 * @author E-mail:86yc@sina.com
 * 
 */
-@Service
+@Service("StatService")
 public class StatService extends AbstractRedisService<String, String> {
     private static Log        log = LogFactory.getLog(StatService.class);
     @Autowired

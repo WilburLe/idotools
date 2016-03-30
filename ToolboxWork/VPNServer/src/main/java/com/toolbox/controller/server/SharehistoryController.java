@@ -1,6 +1,5 @@
 package com.toolbox.controller.server;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,19 +48,18 @@ public class SharehistoryController {
             return result;
         }
         SharehistoryEntity sharehistory = sharehistoryService.findByUsername(username);
-        Calendar c = Calendar.getInstance();
-        c.add(Calendar.MONTH, 1);
-        c.set(c.get(Calendar.YEAR), c.get(Calendar.MONTH), 1, 0, 0);
-        Date next_moth_date = DateUtility.parseDate(DateUtility.format(c, "yyyy-MM-dd"), "yyyy-MM-dd");
-
+        Date date = new Date();
+        String thisMonthDate = DateUtility.format(date, "yyyy-MM");
+        String lastShareDate = sharehistory!=null?DateUtility.format(sharehistory.getSharedate(), "yyyy-MM"):null;
+        
         //每个月只能分享一次
-        if (sharehistory == null || sharehistory.getSharedate().after(next_moth_date)) {
+        if (sharehistory == null || !lastShareDate.equals(thisMonthDate)) {
             sharehistory = new SharehistoryEntity();
             sharehistory.setUsername(username);
-            sharehistory.setSharedate(new Date());
-            long date = sharehistoryService.save(sharehistory);
+            sharehistory.setSharedate(date);
+            long expiredDate = sharehistoryService.save(sharehistory);
 
-            result.put("expiredDate", date);
+            result.put("expiredDate", expiredDate);
             result.put("isPro", 1); //高级用户
             result.put("regType", 1); //已注册
         } else {
@@ -70,5 +68,4 @@ public class SharehistoryController {
         }
         return result;
     }
-
 }

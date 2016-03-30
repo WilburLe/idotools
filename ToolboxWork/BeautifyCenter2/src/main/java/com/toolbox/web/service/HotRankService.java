@@ -86,49 +86,7 @@ public class HotRankService extends MongoBaseDao<HotRankEntity> {
 
         //重新按照下载量排序
         List<HotRankEntity> allRanks = this.queryList(new Query());
-        
-    }
-
-    /**
-     * 锁屏的热门
-     */
-    private void resetLocksceneryHotRank() {
-        String appType = AppEnum.lockscreen.getCollection();
-        //删除原有的
-        this.delete(new Query(Criteria.where("appType").is(appType)));
-        //获取配置
-        SystemConfigEmtity config = configService.findByConfigType(SystemConfigEnum.config_hot.getType());
-        JSONObject hcj = config.getConfig();
-        JSONObject appCon = hcj.getJSONObject(appType);
-        int nu = appCon.getIntValue("nu");
-        //获取下载量最多的锁屏
-        List<LockscreenEntity> lockscenerys_china = lockSceneryService.findOrderByDownload(nu, "actionCount." + AppMarketEnum.China.getCode());
-        for (int i = 0; i < lockscenerys_china.size(); i++) {
-            LockscreenEntity lockscenery = lockscenerys_china.get(i);
-            HotRankEntity hotRank = new HotRankEntity();
-            hotRank.setElementId(lockscenery.getElementId());
-            hotRank.setPreviewImageUrl(lockscenery.getPreviewImageUrl());
-            hotRank.setAppType(appType);
-            hotRank.setAppTags(lockscenery.getTags());
-            hotRank.setActionCount((lockscenery.getActionCount()));
-            hotRank.setSortNu(i);
-            hotRank.setMarket(AppMarketEnum.China.getCode());
-            this.save(hotRank);
-        }
-        //googlplays
-        List<LockscreenEntity> lockscenerys_google = lockSceneryService.findOrderByDownload(nu, "actionCount." + AppMarketEnum.GooglePlay.getCode());
-        for (int i = 0; i < lockscenerys_google.size(); i++) {
-            LockscreenEntity lockscenery = lockscenerys_google.get(i);
-            HotRankEntity hotRank = new HotRankEntity();
-            hotRank.setElementId(lockscenery.getElementId());
-            hotRank.setPreviewImageUrl(lockscenery.getPreviewImageUrl());
-            hotRank.setAppType(appType);
-            hotRank.setAppTags(lockscenery.getTags());
-            hotRank.setActionCount((lockscenery.getActionCount()));
-            hotRank.setSortNu(i);
-            hotRank.setMarket(AppMarketEnum.GooglePlay.getCode());
-            this.save(hotRank);
-        }
+        //
     }
 
     /**
@@ -160,4 +118,70 @@ public class HotRankService extends MongoBaseDao<HotRankEntity> {
         }
 
     }
+
+    /**
+     * 锁屏的热门
+     */
+    private void resetLocksceneryHotRank() {
+        String appType = AppEnum.lockscreen.getCollection();
+        //删除原有的
+        this.delete(new Query(Criteria.where("appType").is(appType)));
+        //获取配置
+        SystemConfigEmtity config = configService.findByConfigType(SystemConfigEnum.config_hot.getType());
+        JSONObject hcj = config.getConfig();
+        JSONObject appCon = hcj.getJSONObject(appType);
+        int nu = appCon.getIntValue("nu");
+        //China
+        List<LockscreenEntity> lockscenerys_china = lockSceneryService.findOrderByDownload(nu, "actionCount." + AppMarketEnum.China.getCode());
+        for (int i = 0; i < lockscenerys_china.size(); i++) {
+            LockscreenEntity lockscenery = lockscenerys_china.get(i);
+            boolean cs = false;
+            String[] mas = lockscenery.getMarket();
+            for (String ms : mas) {
+                if (AppMarketEnum.China.getCode().equals(ms)) {
+                    cs = true;
+                    break;
+                }
+            }
+            if (!cs) {
+                continue;
+            }
+            HotRankEntity hotRank = new HotRankEntity();
+            hotRank.setElementId(lockscenery.getElementId());
+            hotRank.setPreviewImageUrl(lockscenery.getPreviewImageUrl());
+            hotRank.setAppType(appType);
+            hotRank.setAppTags(lockscenery.getTags());
+            hotRank.setActionCount((lockscenery.getActionCount()));
+            hotRank.setSortNu(i);
+            hotRank.setMarket(AppMarketEnum.China.getCode());
+            this.save(hotRank);
+        }
+        //GooglePlay
+        List<LockscreenEntity> lockscenerys_google = lockSceneryService.findOrderByDownload(nu, "actionCount." + AppMarketEnum.GooglePlay.getCode());
+        for (int i = 0; i < lockscenerys_google.size(); i++) {
+            LockscreenEntity lockscenery = lockscenerys_google.get(i);
+            boolean cs = false;
+            String[] mas = lockscenery.getMarket();
+            for (String ms : mas) {
+                if (AppMarketEnum.GooglePlay.getCode().equals(ms)) {
+                    cs = true;
+                    break;
+                }
+            }
+            if (!cs) {
+                continue;
+            }
+
+            HotRankEntity hotRank = new HotRankEntity();
+            hotRank.setElementId(lockscenery.getElementId());
+            hotRank.setPreviewImageUrl(lockscenery.getPreviewImageUrl());
+            hotRank.setAppType(appType);
+            hotRank.setAppTags(lockscenery.getTags());
+            hotRank.setActionCount((lockscenery.getActionCount()));
+            hotRank.setSortNu(i);
+            hotRank.setMarket(AppMarketEnum.GooglePlay.getCode());
+            this.save(hotRank);
+        }
+    }
+
 }

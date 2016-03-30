@@ -11,5 +11,8 @@ import com.toolbox.entity.RadusergroupEntity;
 public interface RadusergroupService {
     public List<RadusergroupEntity> findsByUsernames(List<String> usernames);
 
-    public void updateSubscribetype(String username, String groupname);
+    public RadusergroupEntity findByUsername(String username);
+
+    public void update(RadusergroupEntity radusergroup);
+
 }

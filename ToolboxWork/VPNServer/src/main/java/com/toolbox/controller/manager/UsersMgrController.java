@@ -26,7 +26,9 @@ import com.toolbox.framework.utils.ListUtiltiy;
 import com.toolbox.framework.utils.UUIDUtility;
 import com.toolbox.framework.utils.XPathUtility;
 import com.toolbox.service.ExpirationService;
+import com.toolbox.service.MgrService;
 import com.toolbox.service.RadacctService;
+import com.toolbox.service.ReporthistoryService;
 import com.toolbox.service.UsersService;
 
 /**
@@ -37,14 +39,18 @@ import com.toolbox.service.UsersService;
 @RequestMapping("/mgr")
 public class UsersMgrController {
     @Autowired
-    private UsersService      usersService;
+    private UsersService         usersService;
     @Autowired
-    private RadacctService    radacctService;
+    private RadacctService       radacctService;
     @Autowired
-    private ExpirationService expirationService;
+    private ExpirationService    expirationService;
+    @Autowired
+    private ReporthistoryService reporthistoryService;
+    @Autowired
+    private MgrService           mgrService;
 
-    @RequestMapping(value = "/alterusers1", method = RequestMethod.POST)
-    public @ResponseBody JSON alterusers1(int userid, String subscribetype) {
+    @RequestMapping(value = "/subscribetype", method = RequestMethod.POST)
+    public @ResponseBody JSON subscribetype(int userid, String subscribetype) {
         UsersEntity users = usersService.findById(userid);
         if (users == null) {
             return null;
@@ -80,12 +86,11 @@ public class UsersMgrController {
                 expirationService.update(expiration);
             }
         }
-
         return null;
     }
 
-    @RequestMapping(value = "/alterusers2", method = RequestMethod.POST)
-    public @ResponseBody JSON alterusers2(int userid, String subscribetype, int surplus) {
+    @RequestMapping(value = "/alterDifferDays", method = RequestMethod.POST)
+    public @ResponseBody JSON alterDifferDays(int userid, String subscribetype, int surplus) {
         UsersEntity users = usersService.findById(userid);
         if (users == null) {
             return null;
@@ -140,7 +145,26 @@ public class UsersMgrController {
                 expirationService.update(expiration);
             }
         }
+        return null;
+    }
 
+    @RequestMapping(value = "/uncheckinday", method = RequestMethod.POST)
+    public @ResponseBody JSON uncheckinday(int userid, String date) {
+        UsersEntity user = usersService.findById(userid);
+        mgrService.delCheckin(user.getUsername(), date);
+        return null;
+    }
+
+    @RequestMapping(value = "/checkindays", method = RequestMethod.POST)
+    public @ResponseBody JSON checkindays(int userid, int days) {
+        UsersEntity user = usersService.findById(userid);
+        mgrService.checkinDays(user.getUsername(), days);
+        return null;
+    }
+
+    @RequestMapping(value = "/deluser", method = RequestMethod.POST)
+    public @ResponseBody JSON deluser(String username) {
+        mgrService.deleteUser(username);
         return null;
     }
 
@@ -168,19 +192,35 @@ public class UsersMgrController {
                 /*
                  * 免费用户一个月有1G的免费流量
                  * 计算当月已使用的流量，数据库中存的是byte
-                 * 展示要换算为kb，切是剩余的流量
+                 * 展示要换算为kb，而且是剩余的流量
                  */
+
+                //计算剩余流量
+                //每月固定的总流量
                 long dataRemain = 0;
                 if (UserEnum.anonymous.name().equals(user.getUsertype())) {
                     dataRemain = UserEnum.anonymous.getDataRemain();
+                    data.put("subscribetype", RadgroupTypeEnum.Guest.getName());//等级
                 } else {
                     dataRemain = UserEnum.named.getDataRemain();
+                    data.put("subscribetype", RadgroupTypeEnum.FREE.getName());//等级
                 }
+
                 Date monthStart = DateUtility.parseDate(DateUtility.format(date), "yyyy-MM");
-                long freeaccts = dataRemain - (radacctService.findUserFreeAcc(username, monthStart) / 1024);
-                data.put("freeaccts", freeaccts);
                 data.put("differDays", -1);
-                data.put("subscribetype", RadgroupTypeEnum.FREE.getName());//等级
+
+                //已使用流量
+                long useaccts = radacctService.findUserFreeAcc(username, monthStart);
+
+                //签到赢取的流量
+                JSONObject checkInData = reporthistoryService.checkInData(username, monthStart, "0");
+                long reportRemail = checkInData.getLongValue("reportRemail");
+                //剩余流量=每月固定的总流量+签到赢取的流量-已使用流量
+                data.put("freeaccts", (dataRemain + reportRemail) - (useaccts / 1024));
+                data.put("reportRemail", reportRemail); 
+                data.put("checkInCount", checkInData.getInteger("checkInCount")); //连续签到次数
+                data.put("isCheckedInToday", checkInData.getInteger("isCheckedInToday")); //今天已经签到
+                data.put("checkInDays", checkInData.getJSONArray("checkInDays"));
             } else {
                 //计算剩余时间
                 int differDays = DateUtility.differDays(date, expiration.getExpireddate());
@@ -195,7 +235,6 @@ public class UsersMgrController {
                 data.put("acctinputoctets", radacct.getAcctinputoctets()); //下行
                 data.put("acctoutputoctets", radacct.getAcctoutputoctets());//上行    
             }
-
             result.add(data);
         }
         return new ModelAndView("/mgr/viewusers").addObject("result", result);

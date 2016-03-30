@@ -32,7 +32,7 @@ public class ConfigHotController {
     @RequestMapping(value = "hot", method = RequestMethod.GET)
     public ModelAndView confighot() {
         SystemConfigEmtity hconfig = systemConfigService.findByConfigType(SystemConfigEnum.config_hot.getType());
-
+        
         return new ModelAndView("config/hot").addObject("hconfig", hconfig);
     }
 
@@ -59,7 +59,15 @@ public class ConfigHotController {
         systemConfigService.save(hconfig);
         //重新启动任务
 //      String cron = "0 0 */" + cycle + " * * ?";
-        String cron = "0 0 2 */" + cycle + "  * ?";
+        String day = cycle / 24 > 0 ? "*/" + cycle / 24 : "*";
+        int hour = cycle % 24;
+        //0 0 15 0/3 * ?
+        String cron = null;
+        if ("*".equals(day)) {
+            cron = "0 0 */" + hour + " *  * ?";
+        } else {
+            cron = "0 0 " + hour + " " + day + "  * ?";
+        }
         schedulerJobService.addJob(HotRankScheduleJob.class, code + "HotJob", "HotRankGroup", cron, code);
         return null;
     }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.toolbox.common.RadgroupTypeEnum;
+import com.toolbox.common.UserEnum;
 import com.toolbox.dao.RadcheckDao;
 import com.toolbox.dao.RadusergroupDao;
 import com.toolbox.dao.UsersDao;
@@ -50,7 +51,11 @@ public class UsersServiceImpl implements UsersService {
         //用户类型
         RadusergroupEntity radusergroup = new RadusergroupEntity();
         radusergroup.setUsername(users.getUsername());
-        radusergroup.setGroupname(RadgroupTypeEnum.FREE.getName());
+        if(UserEnum.named.name().equals(users.getUsertype())) {
+            radusergroup.setGroupname(RadgroupTypeEnum.FREE.getName());    
+        } else {
+            radusergroup.setGroupname(RadgroupTypeEnum.Guest.getName());    
+        }
         radusergroup.setPriority(1);
         radusergroupDao.save(radusergroup);
         //用户注册

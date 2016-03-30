@@ -14,6 +14,7 @@ import com.toolbox.utils.JSONUtility;
 import com.toolbox.web.entity.BannerEntity;
 import com.toolbox.web.entity.SystemConfigEmtity;
 import com.toolbox.web.service.BannerService;
+import com.toolbox.web.service.RedisService;
 import com.toolbox.web.service.SystemConfigService;
 
 /**
@@ -21,12 +22,14 @@ import com.toolbox.web.service.SystemConfigService;
 * 
 */
 @Service
-public class RedisBannerConfigScheduled extends AbstractRedisService<String, String> {
+public class RedisBannerConfigScheduled {
     private final static Log    log = LogFactory.getLog(RedisBannerConfigScheduled.class);
     @Autowired
     private SystemConfigService configService;
     @Autowired
     private BannerService       bannerService;
+    @Autowired
+    private RedisService redisService;
 
     @Scheduled(fixedRate = 1000 * 60 * 5)
     public void banner() {
@@ -54,7 +57,7 @@ public class RedisBannerConfigScheduled extends AbstractRedisService<String, Str
                 arr.add(json);
             }
             JSONArray result = JSONUtility.asc(arr, "sortNu");
-            this.set("zh_CN_banners_" + app.getCollection(), result.toJSONString());
+            redisService.set("zh_CN_banners_" + app.getCollection(), result.toJSONString());
         }
         log.info("redis >>> zh_CN_banners cache success ~");
     }

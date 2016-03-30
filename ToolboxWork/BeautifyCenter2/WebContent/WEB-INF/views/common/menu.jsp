@@ -51,6 +51,7 @@
 					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/tab')">Tab设置</a></li>
 					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/tag')">分类设置</a></li>
 					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/hot')">热门设置</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/ad')">广告设置</a></li>
 				</ul>				
 			</li>
 			<li class="treeview">

@@ -6,6 +6,7 @@ package com.toolbox.common;
 */
 public enum RadgroupTypeEnum {
     FREE("Free", -1), //
+    Guest("Guest", -2), //
     VIP1("VIP1", 7), //
     VIP2("VIP2", 30), //
     VIP3("VIP3", 365), //
@@ -44,7 +45,7 @@ public enum RadgroupTypeEnum {
             result = RadgroupTypeEnum.VIP1;
             return result;
         }
-        
+
         if (days < RadgroupTypeEnum.VIP3.getDays()) {
             result = RadgroupTypeEnum.VIP2;
             return result;

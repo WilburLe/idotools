@@ -1,13 +1,13 @@
+<%@page import="com.toolbox.common.TabEnum"%>
 <%@page import="com.alibaba.fastjson.JSONObject"%>
 <%@page import="com.toolbox.web.entity.AppTabEntity"%>
 <%@page import="java.util.List"%>
 <%@page import="com.toolbox.common.LanguageEnum"%>
-<%@page import="com.toolbox.common.AppEnum"%>
 <%@page import="com.toolbox.framework.utils.WebUtility"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <%
 String basePath = WebUtility.getBasePath(request);
-AppEnum[] apps = AppEnum.values();
+TabEnum[] apps = TabEnum.values();
 LanguageEnum[] lgs = LanguageEnum.values();
 List<AppTabEntity> tabs = (List<AppTabEntity>) request.getAttribute("tabs"); 
 %>
@@ -147,7 +147,7 @@ Tab列表
 		</td>
 		<td>
 			<%String[] sapps = tab.getApps();
-				for(AppEnum app : apps) {
+				for(TabEnum app : apps) {
 					boolean checked = false;
 					if(sapps != null && sapps.length>0) {
 					    for(String sapp : sapps) {
@@ -188,7 +188,7 @@ Tab列表
     <tr>
 		<td>所属APP</td>
 		<td>
-			<%for(AppEnum app : apps) {%>
+			<%for(TabEnum app : apps) {%>
 			<input type="checkbox" name="apps" id="apps" value="<%=app.getCollection()%>"><%=app.getAppName() %><br />
 			<%}%>
 		</td>
@@ -219,7 +219,7 @@ Tab列表
     <tr>
 		<td>所属APP</td>
 		<td>
-			<%for(AppEnum app : apps) {%>
+			<%for(TabEnum app : apps) {%>
 			<input type="checkbox" id="elgapps" value="<%=app.getCollection()%>"><%=app.getAppName() %><br />
 			<%}%>
 		</td>
