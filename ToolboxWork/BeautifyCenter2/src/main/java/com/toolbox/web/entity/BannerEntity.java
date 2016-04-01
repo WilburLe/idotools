@@ -18,6 +18,7 @@ public class BannerEntity {
     private JSONObject title;
     private String     shareUrl;
     private String     previewImageUrl;
+    private String     enPreviewImageUrl;
     private JSONObject content;
     private long       createDate;
 
@@ -83,6 +84,14 @@ public class BannerEntity {
 
     public void setCreateDate(long createDate) {
         this.createDate = createDate;
+    }
+
+    public String getEnPreviewImageUrl() {
+        return enPreviewImageUrl;
+    }
+
+    public void setEnPreviewImageUrl(String enPreviewImageUrl) {
+        this.enPreviewImageUrl = enPreviewImageUrl;
     }
 
 }

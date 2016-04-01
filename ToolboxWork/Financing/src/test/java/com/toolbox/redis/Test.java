@@ -2,9 +2,9 @@ package com.toolbox.redis;
 
 import java.util.Set;
 
-import com.toolbox.redis.clients.jedis.Jedis;
-
 import com.alibaba.fastjson.JSON;
+
+import redis.clients.jedis.Jedis;
 
 public class Test {
 

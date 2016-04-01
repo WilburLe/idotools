@@ -29,6 +29,7 @@
 		});
 	}
 	function alterDifferDays(userid, subscribetype) {
+		alert(userid+" > "+subscribetype);
 		var surplus = $("#surplus_"+userid).val();
 		$.post("<%=basePath%>mgr/alterDifferDays", {"userid":userid, "subscribetype":subscribetype, "surplus": surplus}, function(result) {
 			window.location.href=window.location.href;
@@ -63,6 +64,7 @@
 </script>
 </head>
 <body>
+	<a href="<%=basePath%>mgr/adconfig" target="_blank">广告开关配置</a>
 	<table border="1">
 		<tr>
 			<td>用户名</td>

@@ -1,3 +1,4 @@
+<%@page import="com.toolbox.common.TabEnum"%>
 <%@page import="com.toolbox.common.BannerEnum"%>
 <%@page import="com.toolbox.web.entity.HotRankEntity"%>
 <%@page import="com.toolbox.web.entity.SystemConfigEmtity"%>
@@ -17,6 +18,7 @@ SystemConfigEmtity hconfig =  (SystemConfigEmtity) request.getAttribute("hconfig
 List<HotRankEntity> hotRanks = (List<HotRankEntity>) request.getAttribute("hotRanks");
 String market = (String) request.getAttribute("market");
 String appType = (String) request.getAttribute("appType"); 
+System.out.print("appType > "+appType);
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -83,12 +85,12 @@ function editHot() {
 	<ul class="beautify_ul">
 <%
 	JSONObject hc = hconfig.getConfig();
-	Iterator<String> it =hc.keySet().iterator();
+	JSONObject appConfig = hc.getJSONObject("appConfig");
+	Iterator<String> it = appConfig.keySet().iterator();
 	while(it.hasNext()) {
 		String code = it.next();
-		JSONObject hcc = hc.getJSONObject(code);
-		int nu = hcc.getIntValue("nu");
-		AppEnum app = AppEnum.byCollection(code);
+		JSONObject hcc = appConfig.getJSONObject(code);
+		TabEnum app = TabEnum.byCollection(code);
 		String color = app.getCollection().equals(appType)?"green":"";
 %>
     	<li>
@@ -113,7 +115,7 @@ function editHot() {
 					<td>
 					序号：<%=hotRank.getSortNu() %>
 					分类：<%=AppEnum.byCollection(hotRank.getAppType()).getCnName() %>
-				</td>
+					</td>
 				</tr>				
 				<tr>
 					<td>ID:<%=hotRank.getElementId() %></td>

@@ -47,8 +47,10 @@ public class HotRankController {
     public ModelAndView hotrank(@PathVariable("market") String market, @PathVariable("appType") String appType) {
         SystemConfigEmtity hconfig = systemConfigService.findByConfigType(SystemConfigEnum.config_hot.getType());
         JSONObject config = hconfig.getConfig();
-        JSONObject appConfig = config.getJSONObject(appType);
-        JSONArray capps = appConfig.getJSONArray("apps");
+        JSONObject appConfig = config.getJSONObject("appConfig");
+        
+        JSONObject appCg = appConfig.getJSONObject(appType);
+        JSONArray capps = appCg.getJSONArray("apps");
         List<HotRankEntity> hotRanks = new ArrayList<HotRankEntity>();
         if (capps.size() == 0) {
             return new ModelAndView("hot/rank").addObject("hconfig", hconfig).addObject("hotRanks", hotRanks).addObject("market", market).addObject("appType", appType);
@@ -62,9 +64,7 @@ public class HotRankController {
         for (int i = 0; i < hotRankstr.size(); i++) {
             JSONObject json = JSONObject.parseObject(hotRankstr.get(i));
             HotRankEntity hot = JSONObject.toJavaObject(json, HotRankEntity.class);
-            if (AppEnum.wallpaper.getCollection().equals(hot.getAppType())) { //壁纸是不区分国内和海外的
-                ranks.add(hot);
-            } else if (hot.getMarket().equals(market)) {
+            if (hot.getMarket().equals(market)) {
                 ranks.add(hot);
             }
         }

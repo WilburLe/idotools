@@ -5,8 +5,8 @@ package com.toolbox.common;
 * 
 */
 public enum UserEnum {
-    named(1024 * 1024), // 
-    anonymous(512 * 1024);
+    named(1024 * 1024 * 2), // 
+    anonymous(512 * 1024 * 2);
 
     private long dataRemain;
 

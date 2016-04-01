@@ -21,18 +21,20 @@ import com.toolbox.framework.utils.StringUtility;
 * 
 */
 @Service("StatService")
-public class StatService extends AbstractRedisService<String, String> {
+public class StatService {
     private static Log        log = LogFactory.getLog(StatService.class);
     @Autowired
     private CommonJSONService commonJSONService;
+    @Autowired
+    private RedisService        redisService;
 
     private final static int dbIndex = 5;
 
     public void statWallpaper() {
         String pattern = StatKeyEnum.wallpaper.getStatCode();
-        List<String> keys = this.getKeys(pattern + "*", dbIndex);
+        List<String> keys = redisService.getKeys(pattern + "*", dbIndex);
         for (String key : keys) {
-            String count = this.get(key, dbIndex);
+            String count = redisService.get(key, dbIndex);
             String elementId = key.replace(pattern, "");
             String data = commonJSONService.findOne(new Query(Criteria.where("elementId").is(elementId)), AppEnum.wallpaper.getCollection());
             if (StringUtility.isEmpty(data)) {
@@ -54,17 +56,17 @@ public class StatService extends AbstractRedisService<String, String> {
 
             redisData.put(LanguageEnum.zh_CN.getCode(), 0);
             redisData.put(LanguageEnum.en_US.getCode(), 0);
-            this.set(key, redisData.toJSONString(), dbIndex);
+            redisService.set(key, redisData.toJSONString(), dbIndex);
         }
 
     }
 
     public void statLockscreen() {
         String pattern = StatKeyEnum.lockscreen.getStatCode();
-        List<String> keys = this.getKeys(pattern + "*", dbIndex);
+        List<String> keys = redisService.getKeys(pattern + "*", dbIndex);
         for (String key : keys) {
             String packageName = key.replace(pattern, "").replaceAll("_", ".");
-            String count = this.get(key, dbIndex);
+            String count = redisService.get(key, dbIndex);
             String data = commonJSONService.findOne(new Query(Criteria.where("packageName").is(packageName)), AppEnum.lockscreen.getCollection());
             if (StringUtility.isEmpty(data)) {
                 continue;
@@ -85,7 +87,7 @@ public class StatService extends AbstractRedisService<String, String> {
 
             redisData.put(LanguageEnum.zh_CN.getCode(), 0);
             redisData.put(LanguageEnum.en_US.getCode(), 0);
-            this.set(key, redisData.toJSONString(), dbIndex);
+            redisService.set(key, redisData.toJSONString(), dbIndex);
         }
     }
 }

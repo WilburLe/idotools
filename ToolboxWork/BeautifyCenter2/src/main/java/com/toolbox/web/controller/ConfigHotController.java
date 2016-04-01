@@ -13,7 +13,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.toolbox.common.SystemConfigEnum;
 import com.toolbox.framework.utils.StringUtility;
 import com.toolbox.schedule.SchedulerJobService;
-import com.toolbox.schedule.job.HotRankScheduleJob;
+import com.toolbox.schedule.job.Hot2RedisScheduleJob;
 import com.toolbox.web.entity.SystemConfigEmtity;
 import com.toolbox.web.service.SystemConfigService;
 
@@ -32,7 +32,7 @@ public class ConfigHotController {
     @RequestMapping(value = "hot", method = RequestMethod.GET)
     public ModelAndView confighot() {
         SystemConfigEmtity hconfig = systemConfigService.findByConfigType(SystemConfigEnum.config_hot.getType());
-        
+
         return new ModelAndView("config/hot").addObject("hconfig", hconfig);
     }
 
@@ -49,16 +49,15 @@ public class ConfigHotController {
     }
 
     @RequestMapping(value = "hot/updateCycle", method = RequestMethod.POST)
-    public @ResponseBody JSON updateCycle(String code, int cycle) {
+    public @ResponseBody JSON updateCycle(int cycle) {
         SystemConfigEmtity hconfig = systemConfigService.findByConfigType(SystemConfigEnum.config_hot.getType());
-        JSONObject hc = hconfig.getConfig();
-        JSONObject hcc = hc.getJSONObject(code);
-        hcc.put("cycle", cycle);
-        hc.put(code, hcc);
-        hconfig.setConfig(hc);
+        JSONObject config = hconfig.getConfig();
+        JSONObject appConfig = config.getJSONObject("appConfig");
+        appConfig.put("cycle", cycle);
+        hconfig.setConfig(config);
         systemConfigService.save(hconfig);
         //重新启动任务
-//      String cron = "0 0 */" + cycle + " * * ?";
+        //      String cron = "0 0 */" + cycle + " * * ?";
         String day = cycle / 24 > 0 ? "*/" + cycle / 24 : "*";
         int hour = cycle % 24;
         //0 0 15 0/3 * ?
@@ -68,7 +67,8 @@ public class ConfigHotController {
         } else {
             cron = "0 0 " + hour + " " + day + "  * ?";
         }
-        schedulerJobService.addJob(HotRankScheduleJob.class, code + "HotJob", "HotRankGroup", cron, code);
+        //        System.out.println("code>" + code + ", cron>" + cron);
+        schedulerJobService.addJob(Hot2RedisScheduleJob.class, "Hot2RedisJob", "Hot2RedisJobGroup", cron, null);
         return null;
     }
 

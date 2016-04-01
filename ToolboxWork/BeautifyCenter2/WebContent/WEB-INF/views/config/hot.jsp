@@ -1,3 +1,4 @@
+<%@page import="com.toolbox.common.TabEnum"%>
 <%@page import="com.toolbox.web.entity.SystemConfigEmtity"%>
 <%@page import="com.alibaba.fastjson.JSONArray"%>
 <%@page import="java.util.Iterator"%>
@@ -56,8 +57,7 @@ function changeNu() {
 }
 function changeCycle() {
 	var cycle = $("#hotCycle").val();
-	var code = $("#code").val();
-	$.post("<%=basePath%>config/hot/updateCycle", {"code":code, "cycle":cycle}, function(result) {
+	$.post("<%=basePath%>config/hot/updateCycle", {"cycle":cycle}, function(result) {
 		window.location.reload();
 	});
 }
@@ -66,10 +66,9 @@ function openNuDialog(title, code, nu) {
 	$("#code").val(code);
 	nudialog.dialog("option","title", "数量-"+title).dialog("open");
 }
-function openCycleDialog(title, code, cycle) {
+function openCycleDialog(cycle) {
 	$("#hotCycle").val(cycle);
-	$("#code").val(code);
-	cycledialog.dialog("option","title", "周期-"+title).dialog("open");
+	cycledialog.dialog("option","title", "更改刷新周期").dialog("open");
 }
 function checkApp(code) {
 	var apps=[];
@@ -92,30 +91,32 @@ function checkApp(code) {
 	AppEnum[] apps = AppEnum.values();
 	JSONObject hc = hconfig.getConfig();
 	hc = hc==null?new JSONObject():hc;
-	Iterator<String> it =hc.keySet().iterator();
+	JSONObject appconfig = hc.getJSONObject("appConfig");
+	
+	Iterator<String> it =appconfig.keySet().iterator();
 	while(it.hasNext()) {
 		String code = it.next();
-		JSONObject hcc = hc.getJSONObject(code);
+		JSONObject hcc = appconfig.getJSONObject(code);
 		int nu = hcc.getIntValue("nu");
-		AppEnum app = AppEnum.byCollection(code);
+		TabEnum tab = TabEnum.byCollection(code);
 %>
     	<td>
-    		<%=app.getAppName() %>
+    		<%=tab.getAppName() %>
     	</td>
 <%}%>		
 	</tr>
 	<tr>
 		<td>数量设置</td>
 <%
-	Iterator<String> it1 =hc.keySet().iterator();
+	Iterator<String> it1 =appconfig.keySet().iterator();
 	while(it1.hasNext()) {
 		String code = it1.next();
-		JSONObject hcc = hc.getJSONObject(code);
+		JSONObject hcc = appconfig.getJSONObject(code);
 		int nu = hcc.getIntValue("nu");
-		AppEnum app = AppEnum.byCollection(code);
+		TabEnum tab = TabEnum.byCollection(code);
 %>
     	<td>
-    	<button  onclick="openNuDialog('<%=app.getCnName()+"-"+app.getEnName() %>', '<%=code%>', <%=nu %>)">
+    	<button  onclick="openNuDialog('<%=tab.getCnName()+"-"+tab.getEnName() %>', '<%=code%>', <%=nu %>)">
     		TOP:<%=nu %>
     	</button>
     	</td>
@@ -124,10 +125,10 @@ function checkApp(code) {
 	<tr>
 		<td>包含的模块设置</td>
 <%
-	Iterator<String> it2 =hc.keySet().iterator();
+	Iterator<String> it2 =appconfig.keySet().iterator();
 	while(it2.hasNext()) {
 		String code = it2.next();
-		JSONObject hcc = hc.getJSONObject(code);
+		JSONObject hcc = appconfig.getJSONObject(code);
 		JSONArray dapps  = hcc.getJSONArray("apps");
 %>
     	<td>
@@ -146,21 +147,11 @@ function checkApp(code) {
 	</tr>
 	<tr>
 		<td>刷新周期设置</td>
-<%
-	Iterator<String> it3 =hc.keySet().iterator();
-	while(it3.hasNext()) {
-		String code = it3.next();
-		JSONObject hcc = hc.getJSONObject(code);
-		JSONArray dapps  = hcc.getJSONArray("apps");
-		int cycle  = hcc.getIntValue("cycle");
-		AppEnum app = AppEnum.byCollection(code);
-%>
-    	<td>
- 		    <button  onclick="openCycleDialog('<%=app.getCnName()+"-"+app.getEnName() %>', '<%=code%>', <%=cycle %>)">
-		   		<%=cycle %>/Hour
+    	<td colspan="<%=AppEnum.values().length%>">
+ 		    <button  onclick="openCycleDialog(<%=hc.getInteger("cycle") %>)">
+		   		<%=hc.getInteger("cycle")  %>/Hour
 		   	</button>
     	</td>
-<%}%>		
 	</tr>	
 	
 </table>
@@ -169,7 +160,6 @@ function checkApp(code) {
 	<input type="text" value="0" id="hotNu">
 </div>
 <div id="cycledialog" title="">
-	<input type="hidden" id="code">
 	<input type="text" value="0" id="hotCycle">
 </div>
 </body>

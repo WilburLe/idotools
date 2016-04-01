@@ -42,11 +42,11 @@ public class CheckinController {
         JSONObject result = new JSONObject();
         //匿名用户不允许签到
         UsersEntity user = usersService.findByUsername(username);
-        //        if (user == null || user.getUsertype().equals(UserEnum.anonymous.name())) {
-        //            result.put("status", SystemErrorEnum.report_anonymous.getStatus());
-        //            result.put("error", SystemErrorEnum.report_anonymous.getError());
-        //            return result;
-        //        }
+        if (user == null) {
+            result.put("status", SystemErrorEnum.nouser.getStatus());
+            result.put("error", SystemErrorEnum.nouser.getError());
+            return result;
+        }
         //时区
         Calendar c = Calendar.getInstance();
         try {
@@ -80,7 +80,8 @@ public class CheckinController {
         long useaccts = radacctService.findUserFreeAcc(username, monthStart);
         //每月固定的总流量
         long dataRemain = UserEnum.named.getDataRemain();
-        if (user.getUsertype().equals(UserEnum.anonymous.name())) {
+        System.out.println("checkin > username=" + username);
+        if (UserEnum.anonymous.name().equals(user.getUsertype())) {
             dataRemain = UserEnum.anonymous.getDataRemain();
         }
         //签到赢取的流量

@@ -20,11 +20,11 @@ import com.toolbox.web.service.RedisService;
 */
 @Service
 public class RedisAppTabScheduled {
-    private final static Log log = LogFactory.getLog(RedisAppTabScheduled.class);
+    private final static Log    log = LogFactory.getLog(RedisAppTabScheduled.class);
     @Autowired
-    private AppTabService    tabEditService;
+    private AppTabService tabEditService;
     @Autowired
-    private RedisService     redisService;
+    private RedisService  redisService;
 
     public void apptab() {
         List<AppTabEntity> tabs = tabEditService.findAllTab();
@@ -55,6 +55,6 @@ public class RedisAppTabScheduled {
             data.put("i18n", in8n);
             redisService.set("tabs_" + app.getCollection(), data.toJSONString());
         }
-        log.info("redis >>> tabs cache success ~");
+        log.info("------------ RedisAppTabScheduled cache success ------------");
     }
 }

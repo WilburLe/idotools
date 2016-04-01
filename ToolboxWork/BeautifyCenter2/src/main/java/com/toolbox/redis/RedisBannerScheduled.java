@@ -35,9 +35,9 @@ public class RedisBannerScheduled {
     @Autowired
     private BannerContentService bannerContentService;
     @Autowired
-    private RedisService     redisService;
+    private RedisService         redisService;
 
-    @Scheduled(fixedRate = 1000 * 60 * 5)
+    @Scheduled(fixedRate = 1000 * 60 * 40)
     public void banner() {
         List<BannerEntity> banners = bannerService.findAll();
         for (BannerEntity banner : banners) {
@@ -46,6 +46,7 @@ public class RedisBannerScheduled {
             result.put("elementId", banner.getElementId());
             result.put("title", banner.getTitle());
             result.put("previewImageUrl", banner.getPreviewImageUrl());
+            result.put("enPreviewImageUrl", banner.getEnPreviewImageUrl());
             result.put("bannerType", bannerType);
 
             if (BannerEnum.H5.getType().equals(banner.getBannerType())) {
@@ -83,9 +84,9 @@ public class RedisBannerScheduled {
                     redis_key = "zh_CN_h5_";
                 }
                 redisService.set(redis_key + banner.getElementId(), result.toJSONString());
-                log.info("redis >>> " + redis_key + banner.getElementId() + "content cache success ~");
             }
         }
+        log.info("------------ RedisBannerScheduled cache success ------------");
     }
 
 }

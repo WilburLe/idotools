@@ -2,11 +2,13 @@ package com.toolbox.web.service;
 
 import org.springframework.stereotype.Service;
 
+import com.toolbox.framework.spring.redis.RedisBaseService;
+
 /**
 * @author E-mail:86yc@sina.com
 * 
 */
 @Service
-public class RedisService extends AbstractRedisService<String, String> {
+public class RedisService extends RedisBaseService<String, String> {
 
 }

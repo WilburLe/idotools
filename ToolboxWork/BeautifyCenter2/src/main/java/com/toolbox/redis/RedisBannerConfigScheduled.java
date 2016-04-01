@@ -31,7 +31,7 @@ public class RedisBannerConfigScheduled {
     @Autowired
     private RedisService redisService;
 
-    @Scheduled(fixedRate = 1000 * 60 * 5)
+    @Scheduled(fixedRate = 1000 * 60 * 30)
     public void banner() {
         AppEnum[] apps = AppEnum.values();
         for (AppEnum app : apps) {
@@ -59,7 +59,7 @@ public class RedisBannerConfigScheduled {
             JSONArray result = JSONUtility.asc(arr, "sortNu");
             redisService.set("zh_CN_banners_" + app.getCollection(), result.toJSONString());
         }
-        log.info("redis >>> zh_CN_banners cache success ~");
+        log.info("------------ RedisBannerConfigScheduled cache success ------------");
     }
 
 }

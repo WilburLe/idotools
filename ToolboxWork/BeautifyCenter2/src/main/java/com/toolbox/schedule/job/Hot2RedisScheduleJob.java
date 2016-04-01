@@ -10,11 +10,15 @@ import com.toolbox.utils.SpringUtility;
 import com.toolbox.web.service.HotRankService;
 
 /**
+ * hot2redis
+ * 
+ * 将热门的数据存入redis
+ * 
 * @author E-mail:86yc@sina.com
 * 
 */
-public class HotRankScheduleJob implements Job {
-    private final static Log log = LogFactory.getLog(HotRankScheduleJob.class);
+public class Hot2RedisScheduleJob implements Job {
+    private final static Log log = LogFactory.getLog(Hot2RedisScheduleJob.class);
 
     @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
@@ -24,8 +28,9 @@ public class HotRankScheduleJob implements Job {
         }
         Object obj = SpringUtility.getBean("HotRankService");
         HotRankService hotRankService = (HotRankService) obj;
-        hotRankService.resetHotRank(appType);
-        log.info("schedule HotRankScheduleJob execute success, appType:" + appType);
+
+        hotRankService.hot2redis();
+        log.info("schedule Hot2RedisScheduleJob execute success, appType:" + appType);
     }
 
 }

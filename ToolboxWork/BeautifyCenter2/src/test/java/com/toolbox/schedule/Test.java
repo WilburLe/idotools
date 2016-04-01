@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
-import com.toolbox.schedule.job.HotRankScheduleJob;
+import com.toolbox.schedule.job.Hot2RedisScheduleJob;
 import com.toolbox.web.entity.WallpaperEntity;
 import com.toolbox.web.service.WallpaperService;
 
@@ -22,15 +22,15 @@ public class Test {
     private WallpaperService    wallpaperService;
 
     private void t1() {
-        scheduler.addJob(HotRankScheduleJob.class, "*/1 * * * * ?");
-        scheduler.addJob(HotRankScheduleJob.class, null, "*/2 * * * * ?", "hello");
+        scheduler.addJob(Hot2RedisScheduleJob.class, "*/1 * * * * ?");
+        scheduler.addJob(Hot2RedisScheduleJob.class, null, "*/2 * * * * ?", "hello");
     }
 
     private void t2() {
-        List<WallpaperEntity> wallpapers = wallpaperService.findOrderByDownload(50, "downloadCount.china");
-        for (WallpaperEntity wallpaper : wallpapers) {
-            System.out.println(wallpaper.getActionCount());
-        }
+//        List<WallpaperEntity> wallpapers = wallpaperService.findOrderByDownload(50, "downloadCount.china");
+//        for (WallpaperEntity wallpaper : wallpapers) {
+//            System.out.println(wallpaper.getActionCount());
+//        }
     }
 
     public static void main(String[] args) {

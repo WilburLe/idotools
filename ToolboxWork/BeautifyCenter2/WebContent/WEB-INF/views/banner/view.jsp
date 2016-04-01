@@ -62,7 +62,11 @@ function searchContent() {
 <table>
 	<tr>
 		<td>选择封面</td>
-		<td><input type="file" name="cover"></td>
+		<td>
+			国内:<input type="file" name="cover">
+			<br />
+			googleplay:<input type="file" name="encover">
+		</td>
 	</tr>
 	<tr>
 		<td>中文描述</td>
@@ -71,7 +75,7 @@ function searchContent() {
 	<tr>
 		<td>英文描述</td>
 		<td>
-			<td><input type="text" name="enTtitle"></td>
+			<input type="text" name="enTtitle">
 		</td>
 	</tr>
 <%if(BannerEnum.H5.getType().equals(bannerType)) {%>

@@ -15,7 +15,6 @@ import com.toolbox.common.AppEnum;
 import com.toolbox.common.AppMarketEnum;
 import com.toolbox.framework.utils.ListUtiltiy;
 import com.toolbox.web.entity.LockscreenEntity;
-import com.toolbox.web.service.CommonJSONService;
 import com.toolbox.web.service.LockScreenService;
 import com.toolbox.web.service.RedisService;
 
@@ -25,18 +24,18 @@ import com.toolbox.web.service.RedisService;
 */
 @Service
 public class RedisLockscreenScheduled  {
-    private final static Log  log = LogFactory.getLog(RedisLockscreenScheduled.class);
-    @Autowired
-    private CommonJSONService commonJSONService;
+    private final static Log log = LogFactory.getLog(RedisLockscreenScheduled.class);
     @Autowired
     private LockScreenService lockscreenService;
     @Autowired
     private RedisService     redisService;
     
-    @Scheduled(fixedRate = 1000 * 60 * 15)
+    @Scheduled(fixedRate = 1000 * 60 * 20)
     public void lockscenery() {
         dataRadis(AppMarketEnum.China.getCode());
         dataRadis(AppMarketEnum.GooglePlay.getCode());
+        
+        log.info("------------ RedisLockscreenScheduled cache success ------------");
     }
 
     public void dataRadis(String market) {
@@ -62,9 +61,8 @@ public class RedisLockscreenScheduled  {
                 JSONObject json = RedisAppUtil.getJSON(JSON.parseObject(JSON.toJSON(lockscreen).toString()), AppEnum.lockscreen.getCollection());
                 data.add(json);
             }
-            rKey = rKey + (k + 1);
-            redisService.set(rKey, data.toJSONString());
-            log.info("redis >>> " + rKey + "cache success ~");
+            String key = rKey + (k + 1);
+            redisService.set(key, data.toJSONString());
         }
 
     }

@@ -25,7 +25,7 @@ public class AdMgrController {
         JSONObject result = new JSONObject();
         try {
             String data = redisService.get("adconfig");
-            if(StringUtility.isNotEmpty(data)) {
+            if (StringUtility.isNotEmpty(data)) {
                 result = JSONObject.parseObject(data);
             }
         } catch (Exception e) {
@@ -33,17 +33,19 @@ public class AdMgrController {
         return new ModelAndView("/mgr/adconfig").addObject("result", result);
     }
 
-    @RequestMapping(value = "/adconfig", method = RequestMethod.POST)
-    public ModelAndView saveadconfig(int idotoolsad) {
+    @RequestMapping(value = "/saveadconfig", method = RequestMethod.GET)
+    public ModelAndView saveadconfig(int configToolbox, int configDu) {
         JSONObject result = new JSONObject();
         try {
             String data = redisService.get("adconfig");
-            if(StringUtility.isNotEmpty(data)) {
+            if (StringUtility.isNotEmpty(data)) {
                 result = JSONObject.parseObject(data);
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
-        result.put("idotoolsad", idotoolsad == 1 ? true : false);
+        result.put("configToolbox", configToolbox);
+        result.put("configDu", configDu);
         redisService.set("adconfig", result.toJSONString());
         return new ModelAndView("redirect:/mgr/adconfig");
     }

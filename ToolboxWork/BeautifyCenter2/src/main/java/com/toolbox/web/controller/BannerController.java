@@ -58,24 +58,32 @@ public class BannerController {
     public ModelAndView add(HttpServletRequest request, String bannerType, String cnTitle, String enTitle, String intro, String h5url) {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         Iterator<String> it = multipartRequest.getFileNames();
-        MultipartFile cover = null;
+        Map<String, MultipartFile> covers = new HashMap<String, MultipartFile>();
         while (it.hasNext()) {
             String filenindex = it.next();
             MultipartFile file = multipartRequest.getFile(filenindex);
             if (!file.isEmpty()) {
-                cover = file;
+                covers.put(file.getName(), file);
+                System.out.println(file.getName() + " > " + file.getSize());
                 break;
             }
         }
+
         String coverPath = null;
-        if (cover != null) {
-            coverPath = UploadUtility.upload_file(cover, UploadUtility.banner_voer_path);
+        if (covers.containsKey("cover")) {
+            coverPath = UploadUtility.upload_file(covers.get("cover"), UploadUtility.banner_voer_path);
         }
+        String enCoverPath = null;
+        if (covers.containsKey("encover")) {
+            enCoverPath = UploadUtility.upload_file(covers.get("encover"), UploadUtility.banner_voer_path);
+        }
+
         String bannerId = UUIDUtility.uuid32();
         BannerEntity banner = new BannerEntity();
         banner.setCreateDate(System.currentTimeMillis());
         banner.setElementId(bannerId);
         banner.setPreviewImageUrl(coverPath);
+        banner.setEnPreviewImageUrl(enCoverPath);
         JSONObject title = new JSONObject();
         title.put(LanguageEnum.zh_CN.getCode(), cnTitle);
         title.put(LanguageEnum.en_US.getCode(), enTitle);
@@ -120,23 +128,29 @@ public class BannerController {
     public ModelAndView edit(HttpServletRequest request, String elementId, String cnTitle, String enTitle, String intro, String h5url) {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         Iterator<String> it = multipartRequest.getFileNames();
-        MultipartFile cover = null;
+        Map<String, MultipartFile> covers = new HashMap<String, MultipartFile>();
         while (it.hasNext()) {
             String filenindex = it.next();
             MultipartFile file = multipartRequest.getFile(filenindex);
             if (!file.isEmpty()) {
-                cover = file;
-                break;
+                covers.put(file.getName(), file);
             }
         }
         String coverPath = null;
-        if (cover != null) {
-            coverPath = UploadUtility.upload_file(cover, UploadUtility.banner_voer_path);
+        if (covers.containsKey("cover")) {
+            coverPath = UploadUtility.upload_file(covers.get("cover"), UploadUtility.banner_voer_path);
+        }
+        String enCoverPath = null;
+        if (covers.containsKey("encover")) {
+            enCoverPath = UploadUtility.upload_file(covers.get("encover"), UploadUtility.banner_voer_path);
         }
 
         BannerEntity banner = bannerService.findByElementId(elementId);
         if (StringUtility.isNotEmpty(coverPath)) {
             banner.setPreviewImageUrl(coverPath);
+        }
+        if (StringUtility.isNotEmpty(enCoverPath)) {
+            banner.setEnPreviewImageUrl(enCoverPath);
         }
         JSONObject title = new JSONObject();
         title.put(LanguageEnum.zh_CN.getCode(), cnTitle);

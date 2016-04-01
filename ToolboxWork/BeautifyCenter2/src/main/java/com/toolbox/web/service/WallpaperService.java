@@ -83,10 +83,10 @@ public class WallpaperService extends MongoBaseDao<WallpaperEntity> {
      * @return
      *
      */
-    public List<WallpaperEntity> findOrderByDownload(int size, String downloadSource) {
+    public List<WallpaperEntity> findsShort(String filed, int size, boolean desc) {
         Query query = new Query();
-//        query.addCriteria(Criteria.where("tags.0").exists(false));
-        query.with(new Sort(new Order(Direction.DESC,   downloadSource)));
+        //        query.addCriteria(Criteria.where("tags.0").exists(false));
+        query.with(new Sort(new Order(desc ? Direction.DESC : Direction.ASC, filed)));
         return this.getPage(query, 0, size);
     }
 }

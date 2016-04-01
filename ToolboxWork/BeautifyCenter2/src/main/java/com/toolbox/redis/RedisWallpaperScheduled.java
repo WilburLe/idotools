@@ -35,7 +35,7 @@ public class RedisWallpaperScheduled {
     private RedisService     redisService;
 
     //壁纸
-    @Scheduled(fixedRate = 1000 * 60 * 15)
+    @Scheduled(fixedRate = 1000 * 60 * 30)
     public void wallpaper() {
         //分类
         List<AppTagEntity> tags = new ArrayList<AppTagEntity>();
@@ -65,10 +65,12 @@ public class RedisWallpaperScheduled {
                     WallpaperEntity wallpaper = plist.get(l);
                     data.add(RedisAppUtil.getWallpaper(wallpaper));
                 }
-                redisService.set("zh_CN_wallpaper_" + uuid + "_" + (k + 1), data.toJSONString());
+                String key = "zh_CN_wallpaper_" + uuid + "_" + (k + 1);
+                redisService.set(key, data.toJSONString());
             }
         }
-        log.info("redis >>> wallpaper cache success ~");
+        log.info("------------ RedisWallpaperScheduled cache success ------------");
+
     }
 
 }

@@ -14,9 +14,10 @@ public class HotRankEntity {
     private String        elementId;
     private String        previewImageUrl;
     private String        appType;
-    private String[]     appTags;
+    private String[]      appTags;
     private String        market;         //上架范围
     private InActionCount actionCount;
+    private float         weight;
     private int           sortNu;
 
     public String getId() {
@@ -81,6 +82,14 @@ public class HotRankEntity {
 
     public void setMarket(String market) {
         this.market = market;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
     }
 
 }

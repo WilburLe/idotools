@@ -74,8 +74,12 @@ function delBannerApp(bannerId, appId) {
 	<tr>
 		<td>选择封面</td>
 		<td>
-		<img alt="封面" src="<%=img_path+banner.getPreviewImageUrl()%>" width="330" height="292">
-		<input type="file" name="cover"></td>
+			国内:<img alt="封面" src="<%=img_path+banner.getPreviewImageUrl()%>" width="330" height="292">
+			<input type="file" name="cover">
+			<br />
+			googleplay:<img alt="封面" src="<%=img_path+banner.getEnPreviewImageUrl()%>" width="330" height="292">
+			<input type="file" name="encover">
+		</td>
 	</tr>
 	<tr>
 		<td>中文描述</td>

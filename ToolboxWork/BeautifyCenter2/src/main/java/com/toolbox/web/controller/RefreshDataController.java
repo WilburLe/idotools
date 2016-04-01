@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.toolbox.common.AppEnum;
 import com.toolbox.web.service.HotRankService;
 import com.toolbox.web.service.StatService;
 
@@ -30,11 +29,8 @@ public class RefreshDataController {
 
     @RequestMapping(value = "refresh/hot", method = RequestMethod.GET)
     public @ResponseBody String refreshHot() {
-        AppEnum[] apps = AppEnum.values();
-        for (AppEnum app : apps) {
-            String appType = app.getCollection();
-            hotRankService.resetHotRank(appType);
-        }
+        hotRankService.hot2DB();
+        hotRankService.hot2redis();
         return "refresh hot success";
     }
 }

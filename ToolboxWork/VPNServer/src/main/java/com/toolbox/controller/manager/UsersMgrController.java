@@ -62,6 +62,11 @@ public class UsersMgrController {
                 expiration.setExpireddate(date);
                 expirationService.update(expiration);
             }
+        } else if (subscribetype.equals(RadgroupTypeEnum.Guest.getName())) {
+            if (expiration != null && expiration.getExpireddate().after(date)) {
+                expiration.setExpireddate(date);
+                expirationService.update(expiration);
+            }
         } else {
             RadgroupTypeEnum type = RadgroupTypeEnum.byName(subscribetype);
             if (expiration == null) {
@@ -96,7 +101,7 @@ public class UsersMgrController {
             return null;
         }
         Date date = new Date();
-        if (subscribetype.equals(RadgroupTypeEnum.FREE.getName())) {
+        if (subscribetype.equals(RadgroupTypeEnum.FREE.getName()) || subscribetype.equals(RadgroupTypeEnum.Guest.getName())) {
             Date monthStart = DateUtility.parseDate(DateUtility.format(date), "yyyy-MM-dd");
             long dataRemain = 0;
             if (UserEnum.anonymous.name().equals(users.getUsertype())) {
@@ -104,6 +109,7 @@ public class UsersMgrController {
             } else {
                 dataRemain = UserEnum.named.getDataRemain();
             }
+            
             //当前剩余流量 M
             int frees = (int) ((dataRemain - (radacctService.findUserFreeAcc(users.getUsername(), monthStart) / 1024)) / 1024);
             if (surplus > frees) {
@@ -217,7 +223,7 @@ public class UsersMgrController {
                 long reportRemail = checkInData.getLongValue("reportRemail");
                 //剩余流量=每月固定的总流量+签到赢取的流量-已使用流量
                 data.put("freeaccts", (dataRemain + reportRemail) - (useaccts / 1024));
-                data.put("reportRemail", reportRemail); 
+                data.put("reportRemail", reportRemail);
                 data.put("checkInCount", checkInData.getInteger("checkInCount")); //连续签到次数
                 data.put("isCheckedInToday", checkInData.getInteger("isCheckedInToday")); //今天已经签到
                 data.put("checkInDays", checkInData.getJSONArray("checkInDays"));

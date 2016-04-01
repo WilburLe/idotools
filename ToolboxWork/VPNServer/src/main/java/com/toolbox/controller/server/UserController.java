@@ -50,8 +50,8 @@ public class UserController {
     @Autowired
     private ReporthistoryService reporthistoryService;
     @Autowired
-    private RedisService redisService;
-    
+    private RedisService         redisService;
+
     private final static String pass_append_1 = "f8Udt9diChCe";
     private final static String pass_append_2 = "Jdsd8fdLfh7O";
 
@@ -73,7 +73,7 @@ public class UserController {
 
     private JSON regist(String username, String bindid, String deviceid, String appid, String version, String usertype, String offset) {
         UsersEntity users = usersService.findByUsername(username);
-        JSON result = null;
+        JSONObject result = null;
         if (users == null) {
             result = reg(username, bindid, deviceid, appid, version, usertype);
         } else {
@@ -105,10 +105,26 @@ public class UserController {
         loginhistory.setUsername(username);
         loginhistory.setUsertype(usertype);
         loginhistoryService.save(loginhistory);
+
+        //广告开关
+        String data = redisService.get("adconfig");
+        int configToolbox = 0;
+        int configDu = 0;
+        if (StringUtility.isNotEmpty(data)) {
+            try {
+                JSONObject adconfig = JSONObject.parseObject(data);
+                configToolbox = adconfig.getInteger("configToolbox");
+                configDu = adconfig.getInteger("configDu");
+            } catch (Exception e) {
+            }
+
+        }
+        result.put("configToolbox", configToolbox);
+        result.put("configDu", configDu);
         return result;
     }
 
-    private JSON reg(String username, String bindid, String deviceid, String appid, String version, String usertype) {
+    private JSONObject reg(String username, String bindid, String deviceid, String appid, String version, String usertype) {
         UsersEntity users = new UsersEntity();
         users.setUsername(username);
         users.setPassword(getPass(username));
@@ -136,7 +152,7 @@ public class UserController {
         return result;
     }
 
-    private JSON login(UsersEntity users, String offset) {
+    private JSONObject login(UsersEntity users, String offset) {
         //更新用户信息
         usersService.update(users);
 
@@ -149,13 +165,13 @@ public class UserController {
             result.put("isPro", 1); //高级用户
         } else {
             result.put("isPro", 0); //普通用户
-            
+
             //每月固定的总流量
             long dataRemain = 0;
             String groupname = "";
             if (UserEnum.named.name().equals(users.getUsertype())) {
                 dataRemain = UserEnum.named.getDataRemain();
-                groupname =  RadgroupTypeEnum.FREE.getName();
+                groupname = RadgroupTypeEnum.FREE.getName();
             } else {
                 dataRemain = UserEnum.anonymous.getDataRemain();
                 groupname = RadgroupTypeEnum.Guest.getName();
@@ -166,12 +182,12 @@ public class UserController {
                 radusergroup.setGroupname(groupname);
                 radusergroupService.update(radusergroup);
             }
-           
+
             //计算剩余流量
             Date monthStart = DateUtility.parseDate(DateUtility.format(date), "yyyy-MM");
             //已使用流量
             long useaccts = radacctService.findUserFreeAcc(users.getUsername(), monthStart);
-         
+
             //签到赢取的流量
             JSONObject checkInData = reporthistoryService.checkInData(users.getUsername(), monthStart, offset);
             long reportRemail = checkInData.getLongValue("reportRemail");
@@ -179,16 +195,6 @@ public class UserController {
             result.put("dataRemain", (dataRemain + reportRemail) - (useaccts / 1024));
             result.put("checkInCount", checkInData.getInteger("checkInCount")); //连续签到次数
             result.put("isCheckedInToday", checkInData.getInteger("isCheckedInToday")); //今天是否签到
-            
-            try {
-                //广告开关
-                String data = redisService.get("adconfig");
-                if (StringUtility.isNotEmpty(data)) {
-                    result.put("adconfig", JSONObject.parseObject(data));
-                }
-                return result;
-            } catch (Exception e) {
-            }
         }
         return result;
     }

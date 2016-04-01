@@ -13,6 +13,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.toolbox.dao.ReporthistoryDao;
 import com.toolbox.entity.ReporthistoryEntity;
 import com.toolbox.framework.utils.DateUtility;
+import com.toolbox.framework.utils.StringUtility;
 import com.toolbox.service.ReporthistoryService;
 
 /**
@@ -41,9 +42,14 @@ public class ReporthistoryServiceImpl implements ReporthistoryService {
             String eday = DateUtility.format(entity.getReportdate(), dateformat);
             dates.add(eday);
         }
-
+        
         //今天是否签到    需要根据时区计算
-        int hour = Integer.parseInt(offset) / 1000 / 60 / 60;
+        int hour = 0;
+        try {
+            hour = Integer.parseInt(offset) / 1000 / 60 / 60;
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
         Calendar c = Calendar.getInstance();
         c.add(Calendar.HOUR_OF_DAY, hour);
         Date date = c.getTime();

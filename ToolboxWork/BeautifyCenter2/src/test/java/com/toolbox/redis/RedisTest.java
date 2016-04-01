@@ -3,7 +3,7 @@ package com.toolbox.redis;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
-import com.toolbox.web.service.AbstractRedisService;
+import com.toolbox.framework.spring.redis.RedisBaseService;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisShardInfo;
@@ -13,7 +13,7 @@ import redis.clients.jedis.JedisShardInfo;
 * 
 */
 @Component
-public class RedisTest extends AbstractRedisService<String, String> {
+public class RedisTest extends RedisBaseService<String, String> {
 
     public void test() {
         this.set("test", "10", 10);

@@ -67,10 +67,13 @@ public class LockScreenService extends MongoBaseDao<LockscreenEntity> {
         this.delete(new Query(Criteria.where("elementId").is(elementId)));
     }
 
-    public List<LockscreenEntity> findOrderByDownload(int size, String downloadSource) {
+    public List<LockscreenEntity> findsShort(String market, String filed, int size, boolean desc) {
         Query query = new Query();
+        if (StringUtility.isNotEmpty(market) && !"all".equals(market)) {
+            query.addCriteria(Criteria.where("market").is(market));
+        }
         //        query.addCriteria(Criteria.where("tags.0").exists(false));
-        query.with(new Sort(new Order(Direction.DESC, downloadSource)));
+        query.with(new Sort(new Order(Direction.DESC, filed)));
         return this.getPage(query, 0, size);
     }
 
