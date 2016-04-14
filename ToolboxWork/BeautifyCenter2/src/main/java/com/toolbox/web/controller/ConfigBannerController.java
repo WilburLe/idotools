@@ -15,6 +15,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.toolbox.common.SystemConfigEnum;
+import com.toolbox.redis.RedisBannerScheduled;
 import com.toolbox.utils.JSONUtility;
 import com.toolbox.web.entity.BannerEntity;
 import com.toolbox.web.entity.SystemConfigEmtity;
@@ -32,7 +33,9 @@ public class ConfigBannerController {
     private SystemConfigService configService;
     @Autowired
     private BannerService       bannerService;
-
+    @Autowired
+    private RedisBannerScheduled redisBannerScheduled;
+    
     @RequestMapping(value = "banner/{appType}", method = RequestMethod.GET)
     public ModelAndView banner(@PathVariable("appType") String appType) {
         SystemConfigEmtity bannerConfig = configService.findByConfigType(SystemConfigEnum.config_banner.getType() + "_" + appType);
@@ -86,6 +89,8 @@ public class ConfigBannerController {
         config.put("banners", banners);
         bannerConfig.setConfig(config);
         configService.updateInser(bannerConfig);
+        
+        redisBannerScheduled.banner();
         return null;
     }
 
@@ -105,6 +110,8 @@ public class ConfigBannerController {
         config.put("banners", banners);
         bannerConfig.setConfig(config);
         configService.updateInser(bannerConfig);
+        
+        redisBannerScheduled.banner();
         return null;
     }
 
@@ -132,6 +139,7 @@ public class ConfigBannerController {
         bannerConfig.setConfig(config);
         configService.updateInser(bannerConfig);
 
+        redisBannerScheduled.banner();
         return null;
     }
 }

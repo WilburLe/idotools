@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
+import com.toolbox.framework.spring.support.BaseDao;
 import com.toolbox.web.service.StatService;
 
 /**
@@ -11,7 +12,7 @@ import com.toolbox.web.service.StatService;
 * 
 */
 @Component
-public class StatTest  {
+public class StatTest  extends BaseDao{
     @Autowired
     private StatService service;
     

@@ -28,7 +28,8 @@ public class Hot2RedisScheduleJob implements Job {
         }
         Object obj = SpringUtility.getBean("HotRankService");
         HotRankService hotRankService = (HotRankService) obj;
-
+        
+        hotRankService.hot2DB();
         hotRankService.hot2redis();
         log.info("schedule Hot2RedisScheduleJob execute success, appType:" + appType);
     }

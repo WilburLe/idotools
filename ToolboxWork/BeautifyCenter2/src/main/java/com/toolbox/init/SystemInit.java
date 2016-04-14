@@ -105,7 +105,7 @@ public class SystemInit {
         } else {
             cron = "0 0 " + hour + " " + day + "  * ?";
         }
-        schedulerJobService.addJob(Hot2RedisScheduleJob.class, "HotRankJob", "HotRankGroup", cron, null);
+        schedulerJobService.addJob(Hot2RedisScheduleJob.class, "Hot2RedisJob", "Hot2RedisJobGroup", cron, null);
         log.info("init >>> schedulerHot init success ~");
     }
 

@@ -42,6 +42,7 @@ $(function() {
 function openDialog(elementId, sortNu, previewImageUrl) {
 	$("#sea_sortNu").val(sortNu);
 	$("#hotElementIdId").val(elementId);
+	$("#hotSortNu").val(sortNu);
 	var html = "<img src='<%=img_path%>"+previewImageUrl+"' width='330' height='292'>";
 	$("#searchInfoContent").show();
 	$("#searchInfoContent").html(html);
@@ -66,11 +67,13 @@ function searchContent() {
 }
 
 function editHot() {
-	var sortNu = $("#sea_sortNu").val();
+	var sortNuNew = $("#sea_sortNu").val();
 	var elementId = $("#hotElementIdId").val();
+	var sortNuOld = $("#hotSortNu").val();
+	
 	var sea_elementId = $("#sea_elementId").val();
 	var sea_appType = $("#sea_appType option:selected").val();
-	$.post("<%=basePath%>hot/rank/edit", {"elementId":elementId, "sea_elementId":sea_elementId, "sea_appType":sea_appType, "market":"<%=market %>", "sortNu":sortNu}, function(result) {
+	$.post("<%=basePath%>hot/rank/edit", {"elementId":elementId, "sea_elementId":sea_elementId, "sea_appType":sea_appType, "market":"<%=market %>", "sortNuNew":sortNuNew, "sortNuOld":sortNuOld}, function(result) {
 		window.location.reload();
 	});
 }
@@ -133,6 +136,7 @@ function editHot() {
 	
 <div id="dialog" title="编辑热门列表">
 	<input type="hidden" id="hotElementIdId">
+	<input type="hidden" id="hotSortNu">
 	<table>
 		<tr>
 			<td colspan="2"><div id="searchInfoContent" style="display: none"></div></td>

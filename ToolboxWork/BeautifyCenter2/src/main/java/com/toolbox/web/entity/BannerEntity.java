@@ -19,6 +19,7 @@ public class BannerEntity {
     private String     shareUrl;
     private String     previewImageUrl;
     private String     enPreviewImageUrl;
+    private boolean isOpenInBrowser;
     private JSONObject content;
     private long       createDate;
 
@@ -92,6 +93,14 @@ public class BannerEntity {
 
     public void setEnPreviewImageUrl(String enPreviewImageUrl) {
         this.enPreviewImageUrl = enPreviewImageUrl;
+    }
+
+    public boolean isOpenInBrowser() {
+        return isOpenInBrowser;
+    }
+
+    public void setOpenInBrowser(boolean isOpenInBrowser) {
+        this.isOpenInBrowser = isOpenInBrowser;
     }
 
 }

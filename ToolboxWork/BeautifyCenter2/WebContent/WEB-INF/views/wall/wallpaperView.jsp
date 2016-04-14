@@ -49,6 +49,7 @@ for(int i=0; i<apptags.size(); i++) {
  	 	<button style="background-color: <%=tag.equals("other")?"green":"" %>">其它</button>
  	 </a>
 <ul>
+<br />
 <%
 for(int i=0; i<wallpapers.size(); i++) {
     WallpaperEntity wallpaper = wallpapers.get(i);

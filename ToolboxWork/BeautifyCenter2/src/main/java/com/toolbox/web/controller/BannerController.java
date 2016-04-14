@@ -27,6 +27,7 @@ import com.toolbox.common.SystemConfigEnum;
 import com.toolbox.framework.utils.ConfigUtility;
 import com.toolbox.framework.utils.StringUtility;
 import com.toolbox.framework.utils.UUIDUtility;
+import com.toolbox.redis.RedisBannerScheduled;
 import com.toolbox.utils.UploadUtility;
 import com.toolbox.web.entity.BannerContentEntity;
 import com.toolbox.web.entity.BannerEntity;
@@ -47,6 +48,8 @@ public class BannerController {
     private BannerContentService bannerContentService;
     @Autowired
     private CommonJSONService    commonJSONService;
+    @Autowired
+    private RedisBannerScheduled redisBannerScheduled;
 
     @RequestMapping(value = "{bannerType}/view", method = RequestMethod.GET)
     public ModelAndView bannerview(@PathVariable("bannerType") String bannerType) {
@@ -55,7 +58,7 @@ public class BannerController {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public ModelAndView add(HttpServletRequest request, String bannerType, String cnTitle, String enTitle, String intro, String h5url) {
+    public ModelAndView add(HttpServletRequest request, String bannerType, String cnTitle, String enTitle, String intro, String h5url, boolean isOpenInBrowser) {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         Iterator<String> it = multipartRequest.getFileNames();
         Map<String, MultipartFile> covers = new HashMap<String, MultipartFile>();
@@ -64,7 +67,6 @@ public class BannerController {
             MultipartFile file = multipartRequest.getFile(filenindex);
             if (!file.isEmpty()) {
                 covers.put(file.getName(), file);
-                System.out.println(file.getName() + " > " + file.getSize());
                 break;
             }
         }
@@ -84,6 +86,8 @@ public class BannerController {
         banner.setElementId(bannerId);
         banner.setPreviewImageUrl(coverPath);
         banner.setEnPreviewImageUrl(enCoverPath);
+        banner.setOpenInBrowser(isOpenInBrowser);
+        
         JSONObject title = new JSONObject();
         title.put(LanguageEnum.zh_CN.getCode(), cnTitle);
         title.put(LanguageEnum.en_US.getCode(), enTitle);
@@ -91,7 +95,8 @@ public class BannerController {
         banner.setBannerType(bannerType);
         String shareUrl = ConfigUtility.getInstance().getString("app.service.share.url");
         if (BannerEnum.H5.getType().equals(bannerType)) {
-            shareUrl += "h5?id=" + bannerId;
+            //            shareUrl += "h5?id=" + bannerId;
+            shareUrl += h5url;
             JSONObject content = new JSONObject();
             content.put("url", h5url);
             banner.setContent(content);
@@ -104,6 +109,7 @@ public class BannerController {
         banner.setShareUrl(shareUrl);
         bannerService.save(banner);
 
+        redisBannerScheduled.banner();
         return new ModelAndView("redirect:" + bannerType + "/view/");
     }
 
@@ -125,7 +131,7 @@ public class BannerController {
     }
 
     @RequestMapping(value = "edit", method = RequestMethod.POST)
-    public ModelAndView edit(HttpServletRequest request, String elementId, String cnTitle, String enTitle, String intro, String h5url) {
+    public ModelAndView edit(HttpServletRequest request, String elementId, String cnTitle, String enTitle, String intro, String h5url, boolean isOpenInBrowser) {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         Iterator<String> it = multipartRequest.getFileNames();
         Map<String, MultipartFile> covers = new HashMap<String, MultipartFile>();
@@ -156,14 +162,17 @@ public class BannerController {
         title.put(LanguageEnum.zh_CN.getCode(), cnTitle);
         title.put(LanguageEnum.en_US.getCode(), enTitle);
         banner.setTitle(title);
-
+        banner.setOpenInBrowser(isOpenInBrowser);
         JSONObject content = banner.getContent();
         content = content == null ? new JSONObject() : content;
         if (BannerEnum.H5.getType().equals(banner.getBannerType())) {
             content.put("url", h5url);
+            banner.setShareUrl(h5url);
         }
         banner.setContent(content);
         bannerService.upsertBanner(banner);
+
+        redisBannerScheduled.banner();
         return new ModelAndView("redirect:edit/" + elementId);
     }
 
@@ -174,12 +183,16 @@ public class BannerController {
         content.setBannerId(bannerId);
         content.setAppType(appType);
         bannerContentService.save(content);
+
+        redisBannerScheduled.banner();
         return new ModelAndView("redirect:/banner/edit/" + bannerId);
     }
 
     @RequestMapping(value = "del/{elementId}", method = RequestMethod.GET)
     public @ResponseBody JSON del(@PathVariable("elementId") String elementId) {
         commonJSONService.delApp("banner", elementId);
+
+        redisBannerScheduled.banner();
         return null;
     }
 
@@ -200,6 +213,8 @@ public class BannerController {
     @RequestMapping(value = "app/del", method = RequestMethod.POST)
     public @ResponseBody JSON appDel(String bannerId, String appId) {
         bannerContentService.del(bannerId, appId);
+
+        redisBannerScheduled.banner();
         return null;
     }
 

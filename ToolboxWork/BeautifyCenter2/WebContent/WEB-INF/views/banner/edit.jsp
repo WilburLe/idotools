@@ -98,6 +98,15 @@ function delBannerApp(bannerId, appId) {
 	</tr>
 <%}%>	
 	<tr>
+		<td>打开方式</td>
+		<td>
+			<select name="isOpenInBrowser">
+				<option value="false">webview</option>
+				<option value="true" <%=banner.isOpenInBrowser()?"selected":"" %>>系统浏览器</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
 		<td colspan="2"><button type="submit">保  存</button></td>
 	</tr>
 </table>

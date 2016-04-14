@@ -141,8 +141,10 @@ public class UserController {
         result.put("isPro", 0); //普通用户
         //result.put("expiredDate", 0);
         if (UserEnum.anonymous.name().equals(usertype)) {
+            result.put("dataMaxLimit", UserEnum.anonymous.getDataRemain());
             result.put("dataRemain", UserEnum.anonymous.getDataRemain()); //剩余流量
         } else {
+            result.put("dataMaxLimit", UserEnum.named.getDataRemain());
             result.put("dataRemain", UserEnum.named.getDataRemain()); //剩余流量
         }
         //连续签到次数
@@ -191,8 +193,10 @@ public class UserController {
             //签到赢取的流量
             JSONObject checkInData = reporthistoryService.checkInData(users.getUsername(), monthStart, offset);
             long reportRemail = checkInData.getLongValue("reportRemail");
+            long dataMaxLimit = dataRemain + reportRemail;
+            result.put("dataMaxLimit", dataMaxLimit);
             //剩余流量=每月固定的总流量+签到赢取的流量-已使用流量
-            result.put("dataRemain", (dataRemain + reportRemail) - (useaccts / 1024));
+            result.put("dataRemain", dataMaxLimit - (useaccts / 1024));
             result.put("checkInCount", checkInData.getInteger("checkInCount")); //连续签到次数
             result.put("isCheckedInToday", checkInData.getInteger("isCheckedInToday")); //今天是否签到
         }

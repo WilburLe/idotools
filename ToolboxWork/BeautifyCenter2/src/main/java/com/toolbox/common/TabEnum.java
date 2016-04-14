@@ -16,6 +16,7 @@ public enum TabEnum {
     dtCompass("dtCompass", "dtCompass", "指南针", "指南针"),
     dtqrcode("dtqrcode", "dtqrcode", "二维码", "二维码"),
     lockscreenTheme("lockscreenTheme", "lockscreenTheme", "独立锁屏主题APK", "独立锁屏主题APK"),
+    dtclicklock ("dtclicklock ", "dtclicklock ", "一键锁屏", "一键锁屏"),
     ;
 
     private String collection;

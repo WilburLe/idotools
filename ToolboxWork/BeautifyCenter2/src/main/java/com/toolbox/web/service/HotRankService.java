@@ -1,7 +1,9 @@
 package com.toolbox.web.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -87,6 +89,13 @@ public class HotRankService extends MongoBaseDao<HotRankEntity> {
     public HotRankEntity findByElementId(String elementId) {
         return this.queryOne(new Query(Criteria.where("elementId").is(elementId)));
     }
+    
+    public HotRankEntity findByElementId(String elementId, int sortNu) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("elementId").is(elementId));
+        query.addCriteria(Criteria.where("sortNu").is(sortNu));
+        return this.queryOne(query);
+    }
 
     /////////////////////////// HOT RANK DB DATA START /////////////////////////////////////////////
     /**
@@ -132,8 +141,13 @@ public class HotRankService extends MongoBaseDao<HotRankEntity> {
         List<WallpaperEntity> dateDesc = wallpaperService.findsShort("createDate", nu, true);
         wallpapers.addAll(dateDesc);
 
+        Map<String, String> haveMap = new HashMap<String, String>();
         for (int i = 0; i < wallpapers.size(); i++) {
             WallpaperEntity wallpaper = wallpapers.get(i);
+            if (haveMap.containsKey(wallpaper.getElementId())) {
+                continue;
+            }
+            haveMap.put(wallpaper.getElementId(), wallpaper.getElementId());
             //权重值计算  下载量X时间流失
             long createdate = wallpaper.getCreateDate();
             long nodate = System.currentTimeMillis();
@@ -144,25 +158,26 @@ public class HotRankService extends MongoBaseDao<HotRankEntity> {
             dowanload = dowanload <= 0 ? 1 : dowanload;
             float weight = dowanload * d / 100f;
 
-            HotRankEntity hotRank = new HotRankEntity();
-            hotRank.setElementId(wallpaper.getElementId());
-            hotRank.setPreviewImageUrl(wallpaper.getPreviewImageUrl());
-            hotRank.setAppType(appType);
-            hotRank.setAppTags(wallpaper.getTags());
-            hotRank.setActionCount((wallpaper.getActionCount()));
-            hotRank.setWeight(weight);
-            hotRank.setMarket(AppMarketEnum.China.getCode());
-            this.save(hotRank);
+            HotRankEntity hotRankCn = new HotRankEntity();
+            hotRankCn.setElementId(wallpaper.getElementId());
+            hotRankCn.setPreviewImageUrl(wallpaper.getPreviewImageUrl());
+            hotRankCn.setAppType(appType);
+            hotRankCn.setAppTags(wallpaper.getTags());
+            hotRankCn.setActionCount((wallpaper.getActionCount()));
+            hotRankCn.setWeight(weight);
+            hotRankCn.setMarket(AppMarketEnum.China.getCode());
+            this.save(hotRankCn);
+
             //GooglePlay 也要保存一份
-            HotRankEntity hotRanken = new HotRankEntity();
-            hotRanken.setElementId(wallpaper.getElementId());
-            hotRanken.setPreviewImageUrl(wallpaper.getPreviewImageUrl());
-            hotRanken.setAppType(appType);
-            hotRanken.setAppTags(wallpaper.getTags());
-            hotRanken.setActionCount((wallpaper.getActionCount()));
-            hotRank.setWeight(weight);
-            hotRanken.setMarket(AppMarketEnum.GooglePlay.getCode());
-            this.save(hotRanken);
+            HotRankEntity hotRankEn = new HotRankEntity();
+            hotRankEn.setElementId(wallpaper.getElementId());
+            hotRankEn.setPreviewImageUrl(wallpaper.getPreviewImageUrl());
+            hotRankEn.setAppType(appType);
+            hotRankEn.setAppTags(wallpaper.getTags());
+            hotRankEn.setActionCount((wallpaper.getActionCount()));
+            hotRankEn.setWeight(weight);
+            hotRankEn.setMarket(AppMarketEnum.GooglePlay.getCode());
+            this.save(hotRankEn);
         }
 
     }
@@ -177,8 +192,17 @@ public class HotRankService extends MongoBaseDao<HotRankEntity> {
         int nu = 200;
         //China
         List<LockscreenEntity> lockscenerys_china = lockSceneryService.findsShort(AppMarketEnum.China.getCode(), "actionCount." + AppMarketEnum.China.getCode(), nu, true);
+        List<LockscreenEntity> lockscenerys_china_date = lockSceneryService.findsShort(AppMarketEnum.China.getCode(), "createDate", nu, true);
+        lockscenerys_china.addAll(lockscenerys_china_date);
+        Map<String, String> have_china_Map = new HashMap<String, String>();
+
         for (int i = 0; i < lockscenerys_china.size(); i++) {
             LockscreenEntity lockscenery = lockscenerys_china.get(i);
+            if (have_china_Map.containsKey(lockscenery.getElementId())) {
+                continue;
+            }
+            have_china_Map.put(lockscenery.getElementId(), lockscenery.getElementId());
+
             //权重值计算  下载量X时间流失
             long createdate = lockscenery.getCreateDate();
             long nodate = System.currentTimeMillis();
@@ -201,8 +225,17 @@ public class HotRankService extends MongoBaseDao<HotRankEntity> {
         }
         //GooglePlay
         List<LockscreenEntity> lockscenerys_google = lockSceneryService.findsShort(AppMarketEnum.GooglePlay.getCode(), "actionCount." + AppMarketEnum.GooglePlay.getCode(), nu, true);
+        List<LockscreenEntity> lockscenerys_google_date = lockSceneryService.findsShort(AppMarketEnum.GooglePlay.getCode(), "createDate", nu, true);
+        lockscenerys_google.addAll(lockscenerys_google_date);
+        Map<String, String> have_google_Map = new HashMap<String, String>();
+
         for (int i = 0; i < lockscenerys_google.size(); i++) {
             LockscreenEntity lockscenery = lockscenerys_google.get(i);
+            if (have_google_Map.containsKey(lockscenery.getElementId())) {
+                continue;
+            }
+            have_google_Map.put(lockscenery.getElementId(), lockscenery.getElementId());
+
             //权重值计算  下载量X时间流失
             long createdate = lockscenery.getCreateDate();
             long nodate = System.currentTimeMillis();

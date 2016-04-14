@@ -52,18 +52,17 @@ public class ConfigHotController {
     public @ResponseBody JSON updateCycle(int cycle) {
         SystemConfigEmtity hconfig = systemConfigService.findByConfigType(SystemConfigEnum.config_hot.getType());
         JSONObject config = hconfig.getConfig();
-        JSONObject appConfig = config.getJSONObject("appConfig");
-        appConfig.put("cycle", cycle);
+        config.put("cycle", cycle);
         hconfig.setConfig(config);
         systemConfigService.save(hconfig);
         //重新启动任务
-        //      String cron = "0 0 */" + cycle + " * * ?";
         String day = cycle / 24 > 0 ? "*/" + cycle / 24 : "*";
         int hour = cycle % 24;
         //0 0 15 0/3 * ?
         String cron = null;
         if ("*".equals(day)) {
             cron = "0 0 */" + hour + " *  * ?";
+//            cron = "0 */" + hour + " * *  * ?";
         } else {
             cron = "0 0 " + hour + " " + day + "  * ?";
         }

@@ -59,7 +59,7 @@ function searchContent() {
 <br />
 <form action="<%=basePath%>banner/add" method="post" enctype="multipart/form-data" style="display: none;" id="addForm">
 <input type="hidden" name="bannerType" value="<%=bannerType%>">
-<table>
+<table border="1">
 	<tr>
 		<td>选择封面</td>
 		<td>
@@ -85,7 +85,16 @@ function searchContent() {
 			<input type="text" name="h5url">
 		</td>
 	</tr>
-<%}%>	
+<%}%>
+	<tr>
+		<td>打开方式</td>
+		<td>
+			<select name="isOpenInBrowser">
+				<option value="false">webview</option>
+				<option value="true">系统浏览器</option>
+			</select>
+		</td>
+	</tr>
 	<tr>
 		<td colspan="2"><button type="submit">保  存</button></td>
 	</tr>

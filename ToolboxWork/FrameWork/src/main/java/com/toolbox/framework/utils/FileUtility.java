@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
@@ -24,10 +26,10 @@ import org.springframework.util.Base64Utils;
 
 import com.toolbox.framework.spring.exception.SysException;
 
-
 public class FileUtility extends FileUtils {
 
     protected static final Log log = LogFactory.getLog(FileUtility.class);
+
     public static Resource[] getResources(String locationPattern) {
         PathMatchingResourcePatternResolver patternResolver = new PathMatchingResourcePatternResolver();
         Resource[] resources = new Resource[0];
@@ -38,6 +40,7 @@ public class FileUtility extends FileUtils {
         }
         return resources;
     }
+
     public static String getMD5(File file) {
         try {
             return DigestUtility.md5DigestAsHex(FileUtility.readFileToByteArray(file));
@@ -122,4 +125,28 @@ public class FileUtility extends FileUtils {
         byte[] data = Base64Utils.decode(base64String.getBytes());
         writeByteArrayToFile(file, data);
     }
+
+    public static String SHA1(byte[] data) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-1");
+            digest.update(data);
+            byte messageDigest[] = digest.digest();
+            // Create Hex String
+            StringBuffer hexString = new StringBuffer();
+            // 字节数组转换为 十六进制 数
+            for (int i = 0; i < messageDigest.length; i++) {
+                String shaHex = Integer.toHexString(messageDigest[i] & 0xFF);
+                if (shaHex.length() < 2) {
+                    hexString.append(0);
+                }
+                hexString.append(shaHex);
+            }
+            return hexString.toString();
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

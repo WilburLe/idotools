@@ -19,8 +19,6 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
-import com.toolbox.common.AppEnum;
-import com.toolbox.common.AppMarketEnum;
 import com.toolbox.common.SystemConfigEnum;
 import com.toolbox.framework.utils.StringUtility;
 import com.toolbox.web.entity.HotRankEntity;
@@ -48,7 +46,7 @@ public class HotRankController {
         SystemConfigEmtity hconfig = systemConfigService.findByConfigType(SystemConfigEnum.config_hot.getType());
         JSONObject config = hconfig.getConfig();
         JSONObject appConfig = config.getJSONObject("appConfig");
-        
+
         JSONObject appCg = appConfig.getJSONObject(appType);
         JSONArray capps = appCg.getJSONArray("apps");
         List<HotRankEntity> hotRanks = new ArrayList<HotRankEntity>();
@@ -72,9 +70,9 @@ public class HotRankController {
     }
 
     @RequestMapping(value = "hot/rank/edit", method = RequestMethod.POST)
-    public @ResponseBody JSON hotrankedit(String elementId, String sea_elementId, String sea_appType, int sortNu, String market) {
-        HotRankEntity hotRank = hotRankService.findByElementId(elementId);
-        hotRank.setSortNu(sortNu);
+    public @ResponseBody JSON hotrankedit(String elementId, String sea_elementId, String sea_appType, int sortNuOld, int sortNuNew, String market) {
+        HotRankEntity hotRank = hotRankService.findByElementId(elementId, sortNuOld);
+        hotRank.setSortNu(sortNuOld);
 
         String app = commonJSONService.findOne(new Query(Criteria.where("elementId").is(sea_elementId)), sea_appType);
         if (StringUtility.isNotEmpty(sea_elementId) && StringUtility.isNotEmpty(app)) {
@@ -94,18 +92,16 @@ public class HotRankController {
                 }
                 hotRank.setAppTags(tags);
             }
-            if (AppEnum.wallpaper.getCollection().equals(sea_appType)) {
-                hotRank.setMarket(AppMarketEnum.China.getCode());
-            } else {
-                hotRank.setMarket(market);
-            }
-            hotRankService.delete(new Query(Criteria.where("elementId").is(elementId).andOperator(Criteria.where("market").is(market))));
+            hotRank.setMarket(market);
+//            hotRankService.delete(new Query(Criteria.where("elementId").is(elementId).andOperator(Criteria.where("market").is(market))));
             hotRankService.save(hotRank);
         } else {
             Update update = new Update();
-            update.set("sortNu", sortNu);
+            update.set("sortNu", sortNuNew);
             hotRankService.updateFirst(new Query(Criteria.where("elementId").is(elementId)), update);
         }
+        
+        hotRankService.hot2redis();
         return null;
     }
 

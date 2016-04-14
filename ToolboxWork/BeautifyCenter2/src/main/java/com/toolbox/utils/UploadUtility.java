@@ -24,6 +24,7 @@ import com.toolbox.common.LanguageEnum;
 import com.toolbox.framework.utils.ConfigUtility;
 import com.toolbox.framework.utils.FileUtility;
 import com.toolbox.framework.utils.ImageUtility;
+import com.toolbox.framework.utils.MD5Utility;
 import com.toolbox.framework.utils.UUIDUtility;
 import com.toolbox.web.entity.InActionCount;
 import com.toolbox.web.entity.LockscreenEntity;
@@ -236,6 +237,11 @@ public class UploadUtility {
     public static LockscreenEntity parseAPK(MultipartFile fileData, String market) {
         LockscreenEntity lock = new LockscreenEntity();
         try {
+            String sha1 = FileUtility.SHA1(fileData.getBytes());
+            String md5 = MD5Utility.md5Hex(fileData.getBytes());
+            lock.setSha1(sha1);
+            lock.setMd5(md5);
+
             String uuid = UUIDUtility.uuid32();
             String fileName = fileData.getOriginalFilename();
             String apkSuffix = fileName.substring(fileName.lastIndexOf('.'));
@@ -322,6 +328,5 @@ public class UploadUtility {
         }
         return lock;
     }
-    
-    
+
 }

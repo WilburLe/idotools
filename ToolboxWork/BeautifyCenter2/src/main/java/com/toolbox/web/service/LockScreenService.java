@@ -73,7 +73,7 @@ public class LockScreenService extends MongoBaseDao<LockscreenEntity> {
             query.addCriteria(Criteria.where("market").is(market));
         }
         //        query.addCriteria(Criteria.where("tags.0").exists(false));
-        query.with(new Sort(new Order(Direction.DESC, filed)));
+        query.with(new Sort(new Order(desc ? Direction.DESC : Direction.ASC, filed)));
         return this.getPage(query, 0, size);
     }
 

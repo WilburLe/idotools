@@ -91,6 +91,14 @@ Object msg = request.getAttribute("msg");
 			</td>
 		</tr>
 		<tr>
+			<td>SHA1/MD5</td>
+			<td>
+				SHA1:<%=lock.getSha1()%>
+				<br />
+				MD5:<%=lock.getMd5()%>
+			</td>
+		</tr>
+		<tr>
 			<td colspan="2">
 				<%String[] aus = lock.getDetailUrl();
 					for(int i=0; i<aus.length; i++) {%>

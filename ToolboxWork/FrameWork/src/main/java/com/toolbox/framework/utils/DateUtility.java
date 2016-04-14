@@ -126,4 +126,28 @@ public class DateUtility extends DateUtils {
         return (int) (differ / 1000 / 60 / 60 / 24);
     }
 
+    public static int getTodayToUnixTime() {
+        return (int) (getToday().getTime() / 1000);
+    }
+
+    public static Date getToday() {
+        Calendar c = Calendar.getInstance();
+        c.setTimeZone(timeZone);
+        c.set(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH), 0, 0, 0);
+        return c.getTime();
+    }
+
+    public static boolean isToday(int date) {
+        Calendar c = Calendar.getInstance();
+        int tY = c.get(Calendar.YEAR);
+        int tM = c.get(Calendar.MONTH);
+        int tD = c.get(Calendar.DAY_OF_MONTH);
+
+        c.setTimeInMillis(date * 1000L);
+        int Y = c.get(Calendar.YEAR);
+        int M = c.get(Calendar.MONTH);
+        int D = c.get(Calendar.DAY_OF_MONTH);
+
+        return tY == Y && tM == M && tD == D;
+    }
 }

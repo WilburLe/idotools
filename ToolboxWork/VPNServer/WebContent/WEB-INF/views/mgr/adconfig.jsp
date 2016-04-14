@@ -6,7 +6,7 @@ String basepath = WebUtility.getBasePath(request);
 JSONObject result = (JSONObject) request.getAttribute("result");
 boolean configToolbox = result.containsKey("configToolbox")?result.getBooleanValue("configToolbox"):false;
 boolean configDu = result.containsKey("configDu")?result.getBooleanValue("configDu"):false;
-%>	
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
