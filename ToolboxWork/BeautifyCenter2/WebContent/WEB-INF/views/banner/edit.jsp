@@ -1,3 +1,4 @@
+<%@page import="com.toolbox.common.AppMarketEnum"%>
 <%@page import="com.toolbox.common.LanguageEnum"%>
 <%@page import="java.util.Map"%>
 <%@page import="com.toolbox.web.entity.BannerContentEntity"%>
@@ -74,20 +75,13 @@ function delBannerApp(bannerId, appId) {
 	<tr>
 		<td>选择封面</td>
 		<td>
-			国内:<img alt="封面" src="<%=img_path+banner.getPreviewImageUrl()%>" width="330" height="292">
+			<img alt="封面" src="<%=img_path+banner.getPreviewImageUrl()%>" width="330" height="292">
 			<input type="file" name="cover">
-			<br />
-			googleplay:<img alt="封面" src="<%=img_path+banner.getEnPreviewImageUrl()%>" width="330" height="292">
-			<input type="file" name="encover">
 		</td>
 	</tr>
 	<tr>
-		<td>中文描述</td>
-		<td><input type="text" name="cnTitle" value="<%=banner.getTitle().getString(LanguageEnum.zh_CN.getCode())%>"></td>
-	</tr>
-	<tr>
-		<td>英文描述</td>
-		<td><input type="text" name="enTitle"  value="<%=banner.getTitle().getString(LanguageEnum.en_US.getCode())%>"></td>
+		<td>描述</td>
+		<td><input type="text" name="title" value="<%=banner.getTitle()%>"></td>
 	</tr>
 <%if(BannerEnum.H5.getType().equals(banner.getBannerType())) {%>
 	<tr>
@@ -106,6 +100,21 @@ function delBannerApp(bannerId, appId) {
 			</select>
 		</td>
 	</tr>
+	<tr>
+		<td>上架范围</td>
+		<td>
+			<%
+					boolean chinaMarket = false, googleMarket=false;
+				    if(AppMarketEnum.China.getCode().equals(banner.getMarket())) {
+				        chinaMarket = true;
+				    }
+				    if(AppMarketEnum.GooglePlay.getCode().equals(banner.getMarket())) {
+				        googleMarket = true;
+				    }%>
+			<input type="radio" name="market" class="market" value="<%=AppMarketEnum.China.getCode() %>" <%=chinaMarket?"checked":"" %>><%=AppMarketEnum.China.getName() %>
+			<input type="radio" name="market" class="market" value="<%=AppMarketEnum.GooglePlay.getCode() %>" <%=googleMarket?"checked":"" %>><%=AppMarketEnum.GooglePlay.getName() %>
+		</td>
+	</tr>		
 	<tr>
 		<td colspan="2"><button type="submit">保  存</button></td>
 	</tr>

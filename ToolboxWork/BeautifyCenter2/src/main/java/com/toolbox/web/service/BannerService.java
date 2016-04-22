@@ -53,6 +53,19 @@ public class BannerService extends MongoBaseDao<BannerEntity> {
         return this.queryList(query);
     }
 
+    public List<BannerEntity> findByBannerType(String bannerType, String market) {
+        Query query = new Query();
+        if (StringUtility.isNotEmpty(bannerType) && !"all".equals(bannerType)) {
+            query.addCriteria(Criteria.where("bannerType").is(bannerType));
+        }
+        if (StringUtility.isNotEmpty(market) && !"all".equals(market)) {
+            query.addCriteria(Criteria.where("market").is(market));
+        }
+
+        query.with(new Sort(Direction.DESC, "createDate"));
+        return this.queryList(query);
+    }
+
     public void upsertBanner(BannerEntity banner) {
         final BasicDBObject dbDoc = new BasicDBObject();
         this.mongoTemplate.getConverter().write(banner, dbDoc);

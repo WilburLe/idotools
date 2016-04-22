@@ -1,3 +1,4 @@
+<%@page import="com.toolbox.common.AppMarketEnum"%>
 <%@page import="com.toolbox.utils.JSONUtility"%>
 <%@page import="com.toolbox.common.LanguageEnum"%>
 <%@page import="com.toolbox.common.BannerEnum"%>
@@ -56,6 +57,8 @@ function searchContent() {
 </head>
 <body>
 <button onclick="addBanner()">添加<%=BannerEnum.byType(bannerType).getName() %></button>
+<a href="<%=basePath %>banner/<%=BannerEnum.byType(bannerType).getType() %>/view/<%=AppMarketEnum.China.getCode()%>">国内列表</a>
+<a href="<%=basePath %>banner/<%=BannerEnum.byType(bannerType).getType() %>/view/<%=AppMarketEnum.GooglePlay.getCode()%>">海外列表</a>
 <br />
 <form action="<%=basePath%>banner/add" method="post" enctype="multipart/form-data" style="display: none;" id="addForm">
 <input type="hidden" name="bannerType" value="<%=bannerType%>">
@@ -63,20 +66,12 @@ function searchContent() {
 	<tr>
 		<td>选择封面</td>
 		<td>
-			国内:<input type="file" name="cover">
-			<br />
-			googleplay:<input type="file" name="encover">
+			<input type="file" name="cover">
 		</td>
 	</tr>
 	<tr>
-		<td>中文描述</td>
-		<td><input type="text" name="cnTitle"></td>
-	</tr>
-	<tr>
-		<td>英文描述</td>
-		<td>
-			<input type="text" name="enTtitle">
-		</td>
+		<td>描述</td>
+		<td><input type="text" name="title"></td>
 	</tr>
 <%if(BannerEnum.H5.getType().equals(bannerType)) {%>
 	<tr>
@@ -95,6 +90,13 @@ function searchContent() {
 			</select>
 		</td>
 	</tr>
+	<tr>
+		<td>上架范围</td>
+		<td>
+			<input type="radio" name="market" class="market" value="<%=AppMarketEnum.China.getCode() %>" checked ><%=AppMarketEnum.China.getName() %>
+			<input type="radio" name="market" class="market" value="<%=AppMarketEnum.GooglePlay.getCode() %>"><%=AppMarketEnum.GooglePlay.getName() %>
+		</td>
+	</tr>	
 	<tr>
 		<td colspan="2"><button type="submit">保  存</button></td>
 	</tr>
@@ -115,7 +117,7 @@ function searchContent() {
 					<td>ID:<%=banner.getElementId() %></td>
 				</tr>
 				<tr>
-					<td>Title: <%=banner.getTitle().getString(LanguageEnum.zh_CN.getCode()) %></td>
+					<td>Title: <%=banner.getTitle() %></td>
 				</tr>
 				<tr>
 					<td>

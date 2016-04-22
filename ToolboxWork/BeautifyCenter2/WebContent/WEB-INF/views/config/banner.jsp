@@ -1,3 +1,4 @@
+<%@page import="com.toolbox.common.AppMarketEnum"%>
 <%@page import="com.toolbox.common.LanguageEnum"%>
 <%@page import="com.toolbox.web.entity.BannerEntity"%>
 <%@page import="java.util.List"%>
@@ -14,7 +15,7 @@ String img_path = ConfigUtility.getInstance().getString("file.server.path");
 AppEnum[] apps = AppEnum.values();
 SystemConfigEmtity bannerConfig = (SystemConfigEmtity) request.getAttribute("bannerConfig");
 JSONArray banners = (JSONArray) request.getAttribute("banners");
-String appType = (String) request.getAttribute("appType");
+String market = (String) request.getAttribute("market");
 
 //JSONObject 
 %>
@@ -45,17 +46,17 @@ $(function() {
         }
       });	
 });
-function openNuDialog(appType, sortNu, elementId) {
-	$("#config_appType").val(appType);
+function openNuDialog(market, sortNu, elementId) {
+	$("#config_market").val(market);
 	$("#config_sortNu").val(sortNu);
 	$("#config_elementId").val(elementId);
 	nudialog.dialog("option","title", "修改排序").dialog("open");
 }
 function changeSortNu() {
-	var appType = $("#config_appType").val();
+	var market = $("#config_market").val();
 	var sortNu = $("#config_sortNu").val();
 	var bannerId = $("#config_elementId").val();
-	$.post("<%=basePath%>config/banner/edit/", {"appType":appType, "bannerId":bannerId, "sortNu":sortNu}, function(banner) {
+	$.post("<%=basePath%>config/banner/edit/", {"market":market, "bannerId":bannerId, "sortNu":sortNu}, function(banner) {
 		window.location.reload();
 	});
 }
@@ -73,15 +74,15 @@ function searchContent() {
 		$("#searchInfoContent").html(html);
 	});
 }
-function addBanner(appType) {
+function addBanner(market) {
 	var bannerId = $("#sea_elementId").val();
-	$.post("<%=basePath%>config/banner/add/", {"appType":appType, "bannerId":bannerId}, function(result) {
+	$.post("<%=basePath%>config/banner/add/", {"market":market, "bannerId":bannerId}, function(result) {
 		window.location.reload();
 	});
 }
-function delBanner(appType, bannerId) {
+function delBanner(market, bannerId) {
 	if(confirm("确定删除么？")) {
-		$.get("<%=basePath%>config/banner/del/"+appType+"/"+bannerId, {}, function(result) {
+		$.get("<%=basePath%>config/banner/del/"+market+"/"+bannerId, {}, function(result) {
 			window.location.reload();
 		});
 	}
@@ -92,14 +93,8 @@ function delBanner(appType, bannerId) {
 <table>
 	<tr>
 		<td>
-<ul>
-	<li>APP类型</li>
-	<%for(AppEnum app : apps) {%>
-	<li><a href="<%=basePath %>config/banner/<%=app.getCollection()%>">
-			<button style="background-color: <%=app.getCollection().equals(appType)?"green":""%>">
-				<%=app.getCnName() %>-<%=app.getEnName() %></button></a></li>	    
-	<%} %>
-</ul>
+			<a href="<%=basePath %>config/banner/<%=AppMarketEnum.China.getCode()%>">国内列表</a>
+			<a href="<%=basePath %>config/banner/<%=AppMarketEnum.GooglePlay.getCode()%>">海外列表</a>
 		</td>
 	</tr>
 	<tr>
@@ -108,7 +103,7 @@ function delBanner(appType, bannerId) {
 		    <a href="javascript:searchContent()">查找</a>
 		   	 <div id="searchContent" style="display: none">
 		   	 	<div id="searchInfoContent"></div>
-		   	 	<button onclick="addBanner('<%=appType%>')">添加</button>
+		   	 	<button onclick="addBanner('<%=market%>')">添加</button>
 		   	 </div>
 		</td>
 	</tr>
@@ -128,13 +123,13 @@ function delBanner(appType, bannerId) {
 				<td>ID:<%=banner.getString("elementId") %></td>
 			</tr>
 			<tr>
-				<td>Title: <%=banner.getJSONObject("title").getString(LanguageEnum.zh_CN.getCode()) %></td>
+				<td>Title: <%=banner.getString("title")%></td>
 			</tr>
 			<tr>
 				<td>
 					序号:
-					<button  onclick="openNuDialog('<%=appType%>', '<%=banner.getIntValue("sortNu")%>', '<%=banner.getString("elementId")%>')"><%=banner.getIntValue("sortNu")%></button>
-					<a href="javascript:delBanner('<%=appType%>', '<%=banner.getString("elementId")%>')">删除</a>
+					<button  onclick="openNuDialog('<%=market%>', '<%=banner.getIntValue("sortNu")%>', '<%=banner.getString("elementId")%>')"><%=banner.getIntValue("sortNu")%></button>
+					<a href="javascript:delBanner('<%=market%>', '<%=banner.getString("elementId")%>')">删除</a>
 					<a href="<%=basePath%>banner/edit/<%=banner.getString("elementId")%>">详情</a>
 				</td>
 			</tr>						
@@ -144,7 +139,7 @@ function delBanner(appType, bannerId) {
 </ul>
 
 <div id="nudialog" title="">
-	<input type="hidden" id="config_appType">
+	<input type="hidden" id="config_market">
 	<input type="hidden" id="config_elementId">
 	<input type="text" value="0" id="config_sortNu">
 </div>

@@ -15,12 +15,12 @@ public class BannerEntity {
     private String     id;
     private String     elementId;
     private String     bannerType;     //H5/专题/合辑
-    private JSONObject title;
+    private String     title;
     private String     shareUrl;
     private String     previewImageUrl;
-    private String     enPreviewImageUrl;
-    private boolean isOpenInBrowser;
+    private boolean    isOpenInBrowser;
     private JSONObject content;
+    private String   market;         //上架范围
     private long       createDate;
 
     public String getId() {
@@ -45,14 +45,6 @@ public class BannerEntity {
 
     public void setBannerType(String bannerType) {
         this.bannerType = bannerType;
-    }
-
-    public JSONObject getTitle() {
-        return title;
-    }
-
-    public void setTitle(JSONObject title) {
-        this.title = title;
     }
 
     public String getShareUrl() {
@@ -87,12 +79,12 @@ public class BannerEntity {
         this.createDate = createDate;
     }
 
-    public String getEnPreviewImageUrl() {
-        return enPreviewImageUrl;
+    public String getTitle() {
+        return title;
     }
 
-    public void setEnPreviewImageUrl(String enPreviewImageUrl) {
-        this.enPreviewImageUrl = enPreviewImageUrl;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public boolean isOpenInBrowser() {
@@ -101,6 +93,14 @@ public class BannerEntity {
 
     public void setOpenInBrowser(boolean isOpenInBrowser) {
         this.isOpenInBrowser = isOpenInBrowser;
+    }
+
+    public String getMarket() {
+        return market;
+    }
+
+    public void setMarket(String market) {
+        this.market = market;
     }
 
 }

@@ -15,6 +15,7 @@ import com.toolbox.common.AppEnum;
 import com.toolbox.common.LanguageEnum;
 import com.toolbox.common.StatKeyEnum;
 import com.toolbox.framework.utils.StringUtility;
+import com.toolbox.redis.tools.RedisPoolFactory;
 
 /**
 * @author E-mail:86yc@sina.com
@@ -26,13 +27,24 @@ public class StatService {
     @Autowired
     private CommonJSONService commonJSONService;
     @Autowired
-    private RedisService        redisService;
+    private RedisService      redisService;
 
     private final static int dbIndex = 5;
 
     public void statWallpaper() {
-        String pattern = StatKeyEnum.wallpaper.getStatCode();
-        List<String> keys = redisService.getKeys(pattern + "*", dbIndex);
+        statWallpaper(RedisPoolFactory.poolName.china.name());
+        statWallpaper(RedisPoolFactory.poolName.abroad.name());
+    }
+
+    public void statLockscreen() {
+        statLockscreen(RedisPoolFactory.poolName.china.name());
+        statLockscreen(RedisPoolFactory.poolName.abroad.name());
+    }
+
+    public void statWallpaper(String poolName) {
+        String pattern = StatKeyEnum.wallpaper.getStatCode() + "*";
+        List<String> keys = RedisPoolFactory.getInstance().keys(poolName, pattern, dbIndex);
+
         for (String key : keys) {
             String count = redisService.get(key, dbIndex);
             String elementId = key.replace(pattern, "");
@@ -61,9 +73,10 @@ public class StatService {
 
     }
 
-    public void statLockscreen() {
-        String pattern = StatKeyEnum.lockscreen.getStatCode();
-        List<String> keys = redisService.getKeys(pattern + "*", dbIndex);
+    public void statLockscreen(String poolName) {
+        String pattern = StatKeyEnum.lockscreen.getStatCode() + "*";
+        List<String> keys = RedisPoolFactory.getInstance().keys(poolName, pattern, dbIndex);
+
         for (String key : keys) {
             String packageName = key.replace(pattern, "").replaceAll("_", ".");
             String count = redisService.get(key, dbIndex);
@@ -90,4 +103,5 @@ public class StatService {
             redisService.set(key, redisData.toJSONString(), dbIndex);
         }
     }
+
 }

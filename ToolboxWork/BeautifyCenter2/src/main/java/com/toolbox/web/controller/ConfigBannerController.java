@@ -36,9 +36,9 @@ public class ConfigBannerController {
     @Autowired
     private RedisBannerScheduled redisBannerScheduled;
     
-    @RequestMapping(value = "banner/{appType}", method = RequestMethod.GET)
-    public ModelAndView banner(@PathVariable("appType") String appType) {
-        SystemConfigEmtity bannerConfig = configService.findByConfigType(SystemConfigEnum.config_banner.getType() + "_" + appType);
+    @RequestMapping(value = "banner/{market}", method = RequestMethod.GET)
+    public ModelAndView banner(@PathVariable("market") String market) {
+        SystemConfigEmtity bannerConfig = configService.findByConfigType(SystemConfigEnum.config_banner.getType() + "_" + market);
         List<BannerEntity> banners = new ArrayList<BannerEntity>();
         JSONArray result = new JSONArray();
         if (bannerConfig != null) {
@@ -67,12 +67,12 @@ public class ConfigBannerController {
                 configService.updateInser(bannerConfig);
             }
         }
-        return new ModelAndView("config/banner").addObject("bannerConfig", bannerConfig).addObject("appType", appType).addObject("banners", JSONUtility.asc(result, "sortNu"));
+        return new ModelAndView("config/banner").addObject("bannerConfig", bannerConfig).addObject("market", market).addObject("banners", JSONUtility.asc(result, "sortNu"));
     }
 
     @RequestMapping(value = "banner/add", method = RequestMethod.POST)
-    public @ResponseBody JSON banneradd(String appType, String bannerId) {
-        String configType = SystemConfigEnum.config_banner.getType() + "_" + appType;
+    public @ResponseBody JSON banneradd(String market, String bannerId) {
+        String configType = SystemConfigEnum.config_banner.getType() + "_" + market;
         SystemConfigEmtity bannerConfig = configService.findByConfigType(configType);
         JSONObject config = new JSONObject();
         if (bannerConfig == null) {
@@ -95,8 +95,8 @@ public class ConfigBannerController {
     }
 
     @RequestMapping(value = "banner/edit", method = RequestMethod.POST)
-    public @ResponseBody JSON banneredit(String appType, String bannerId, int sortNu) {
-        String configType = SystemConfigEnum.config_banner.getType() + "_" + appType;
+    public @ResponseBody JSON banneredit(String market, String bannerId, int sortNu) {
+        String configType = SystemConfigEnum.config_banner.getType() + "_" + market;
         SystemConfigEmtity bannerConfig = configService.findByConfigType(configType);
         JSONObject config =  bannerConfig.getConfig();
         JSONArray banners = config.getJSONArray("banners");
@@ -115,9 +115,9 @@ public class ConfigBannerController {
         return null;
     }
 
-    @RequestMapping(value = "banner/del/{appType}/{bannerId}", method = RequestMethod.GET)
-    public @ResponseBody JSON bannerdel(@PathVariable("appType") String appType, @PathVariable("bannerId") String bannerId) {
-        String configType = SystemConfigEnum.config_banner.getType() + "_" + appType;
+    @RequestMapping(value = "banner/del/{market}/{bannerId}", method = RequestMethod.GET)
+    public @ResponseBody JSON bannerdel(@PathVariable("market") String market, @PathVariable("bannerId") String bannerId) {
+        String configType = SystemConfigEnum.config_banner.getType() + "_" + market;
         SystemConfigEmtity bannerConfig = configService.findByConfigType(configType);
         JSONObject config = new JSONObject();
         if (bannerConfig == null) {

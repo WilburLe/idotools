@@ -21,17 +21,15 @@ import org.springframework.core.io.Resource;
 
 import com.toolbox.framework.spring.exception.SysException;
 
-
 public class ConfigUtility {
-    private static final Log          log         = LogFactory.getLog(ConfigUtility.class);
-    private static final String       CONFIG_FILE = "classpath:**/*.properties";
-    private final Map<String, String> configCache = new HashMap<String, String>();
-    private static final ConfigUtility       instance    = new ConfigUtility();
+    private static final Log           log         = LogFactory.getLog(ConfigUtility.class);
+    private static final String        CONFIG_FILE = "classpath:**/*.properties";
+    private final Map<String, String>  configCache = new HashMap<String, String>();
+    private static final ConfigUtility instance    = new ConfigUtility();
 
     private ConfigUtility() {
         Resource[] resources = FileUtility.getResources(CONFIG_FILE);
         for (Resource resource : resources) {
-
             InputStream in = null;
             try {
                 Properties properties = new Properties();

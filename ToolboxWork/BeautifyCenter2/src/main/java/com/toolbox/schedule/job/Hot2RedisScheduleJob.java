@@ -12,7 +12,7 @@ import com.toolbox.web.service.HotRankService;
 /**
  * hot2redis
  * 
- * 将热门的数据存入redis
+ * 将热门的数据存入DB和redis
  * 
 * @author E-mail:86yc@sina.com
 * 

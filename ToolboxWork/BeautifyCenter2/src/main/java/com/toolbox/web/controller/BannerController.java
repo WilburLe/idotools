@@ -21,8 +21,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.toolbox.common.AppMarketEnum;
 import com.toolbox.common.BannerEnum;
-import com.toolbox.common.LanguageEnum;
 import com.toolbox.common.SystemConfigEnum;
 import com.toolbox.framework.utils.ConfigUtility;
 import com.toolbox.framework.utils.StringUtility;
@@ -51,14 +51,14 @@ public class BannerController {
     @Autowired
     private RedisBannerScheduled redisBannerScheduled;
 
-    @RequestMapping(value = "{bannerType}/view", method = RequestMethod.GET)
-    public ModelAndView bannerview(@PathVariable("bannerType") String bannerType) {
-        List<BannerEntity> banners = bannerService.findByBannerType(bannerType);
+    @RequestMapping(value = "{bannerType}/view/{market}", method = RequestMethod.GET)
+    public ModelAndView bannerview(@PathVariable("bannerType") String bannerType, @PathVariable("market") String market) {
+        List<BannerEntity> banners = bannerService.findByBannerType(bannerType, market);
         return new ModelAndView("banner/view").addObject("banners", banners).addObject("bannerType", bannerType);
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public ModelAndView add(HttpServletRequest request, String bannerType, String cnTitle, String enTitle, String intro, String h5url, boolean isOpenInBrowser) {
+    public ModelAndView add(HttpServletRequest request, String bannerType, String title, String intro, String h5url, String market, boolean isOpenInBrowser) {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         Iterator<String> it = multipartRequest.getFileNames();
         Map<String, MultipartFile> covers = new HashMap<String, MultipartFile>();
@@ -75,28 +75,24 @@ public class BannerController {
         if (covers.containsKey("cover")) {
             coverPath = UploadUtility.upload_file(covers.get("cover"), UploadUtility.banner_voer_path);
         }
-        String enCoverPath = null;
-        if (covers.containsKey("encover")) {
-            enCoverPath = UploadUtility.upload_file(covers.get("encover"), UploadUtility.banner_voer_path);
-        }
 
         String bannerId = UUIDUtility.uuid32();
         BannerEntity banner = new BannerEntity();
         banner.setCreateDate(System.currentTimeMillis());
         banner.setElementId(bannerId);
         banner.setPreviewImageUrl(coverPath);
-        banner.setEnPreviewImageUrl(enCoverPath);
         banner.setOpenInBrowser(isOpenInBrowser);
-        
-        JSONObject title = new JSONObject();
-        title.put(LanguageEnum.zh_CN.getCode(), cnTitle);
-        title.put(LanguageEnum.en_US.getCode(), enTitle);
+
         banner.setTitle(title);
         banner.setBannerType(bannerType);
-        String shareUrl = ConfigUtility.getInstance().getString("app.service.share.url");
+        String shareUrl = ConfigUtility.getInstance().getString("app.service.cn.share.url");
+        if(AppMarketEnum.GooglePlay.getCode().equals(market)) {
+            shareUrl = ConfigUtility.getInstance().getString("app.service.en.share.url");
+        }
+        
         if (BannerEnum.H5.getType().equals(bannerType)) {
             //            shareUrl += "h5?id=" + bannerId;
-            shareUrl += h5url;
+            shareUrl = h5url;
             JSONObject content = new JSONObject();
             content.put("url", h5url);
             banner.setContent(content);
@@ -105,10 +101,10 @@ public class BannerController {
         } else if (BannerEnum.Group.getType().equals(bannerType)) {
             shareUrl += "topicColl?id=" + bannerId;
         }
-
+        banner.setMarket(market);
         banner.setShareUrl(shareUrl);
         bannerService.save(banner);
-
+        //更新redis
         redisBannerScheduled.banner();
         return new ModelAndView("redirect:" + bannerType + "/view/");
     }
@@ -131,7 +127,7 @@ public class BannerController {
     }
 
     @RequestMapping(value = "edit", method = RequestMethod.POST)
-    public ModelAndView edit(HttpServletRequest request, String elementId, String cnTitle, String enTitle, String intro, String h5url, boolean isOpenInBrowser) {
+    public ModelAndView edit(HttpServletRequest request, String elementId, String title, String h5url, String intro, String market, boolean isOpenInBrowser) {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         Iterator<String> it = multipartRequest.getFileNames();
         Map<String, MultipartFile> covers = new HashMap<String, MultipartFile>();
@@ -146,32 +142,34 @@ public class BannerController {
         if (covers.containsKey("cover")) {
             coverPath = UploadUtility.upload_file(covers.get("cover"), UploadUtility.banner_voer_path);
         }
-        String enCoverPath = null;
-        if (covers.containsKey("encover")) {
-            enCoverPath = UploadUtility.upload_file(covers.get("encover"), UploadUtility.banner_voer_path);
-        }
 
         BannerEntity banner = bannerService.findByElementId(elementId);
         if (StringUtility.isNotEmpty(coverPath)) {
             banner.setPreviewImageUrl(coverPath);
         }
-        if (StringUtility.isNotEmpty(enCoverPath)) {
-            banner.setEnPreviewImageUrl(enCoverPath);
-        }
-        JSONObject title = new JSONObject();
-        title.put(LanguageEnum.zh_CN.getCode(), cnTitle);
-        title.put(LanguageEnum.en_US.getCode(), enTitle);
         banner.setTitle(title);
         banner.setOpenInBrowser(isOpenInBrowser);
         JSONObject content = banner.getContent();
         content = content == null ? new JSONObject() : content;
+     
+        String shareUrl = ConfigUtility.getInstance().getString("app.service.cn.share.url");
+        if(AppMarketEnum.GooglePlay.getCode().equals(market)) {
+            shareUrl = ConfigUtility.getInstance().getString("app.service.en.share.url");
+        }
         if (BannerEnum.H5.getType().equals(banner.getBannerType())) {
             content.put("url", h5url);
-            banner.setShareUrl(h5url);
+            shareUrl = h5url;
+        }else if (BannerEnum.Subject.getType().equals(banner.getBannerType())) {
+            shareUrl += "topic?id=" + banner.getElementId();
+        } else if (BannerEnum.Group.getType().equals(banner.getBannerType())) {
+            shareUrl += "topicColl?id=" + banner.getElementId();
         }
+        banner.setShareUrl(shareUrl);
+        banner.setMarket(market);
         banner.setContent(content);
         bannerService.upsertBanner(banner);
 
+        //更新redis
         redisBannerScheduled.banner();
         return new ModelAndView("redirect:edit/" + elementId);
     }
@@ -183,7 +181,7 @@ public class BannerController {
         content.setBannerId(bannerId);
         content.setAppType(appType);
         bannerContentService.save(content);
-
+        //更新redis
         redisBannerScheduled.banner();
         return new ModelAndView("redirect:/banner/edit/" + bannerId);
     }
@@ -191,7 +189,7 @@ public class BannerController {
     @RequestMapping(value = "del/{elementId}", method = RequestMethod.GET)
     public @ResponseBody JSON del(@PathVariable("elementId") String elementId) {
         commonJSONService.delApp("banner", elementId);
-
+        //更新redis
         redisBannerScheduled.banner();
         return null;
     }

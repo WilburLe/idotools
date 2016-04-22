@@ -90,7 +90,7 @@ public class SystemInit {
     }
 
     /**
-     * 将热门的数据存入redis
+     * 将热门的数据存入DB和redis
      */
     private void schedulerHot() {
         SystemConfigEmtity config = systemConfigService.findByConfigType(SystemConfigEnum.config_hot.getType());
@@ -111,10 +111,10 @@ public class SystemInit {
 
     /**
      * 统计的定时任务初始化
-     * 每隔3小时执行一次
+     * 每天凌晨1点执行一次：                     0 0 1 * * ?
      */
     private void schedulerStat() {
-        String cron = "0 0 */3 * * ?";
+        String cron = "0 0 1 * * ?";
         schedulerJobService.addJob(StatScheduleJob.class, "StatScheduleJob", "StatScheduleGroup", cron, null);
         log.info("init >>> schedulerStat init success ~");
     }

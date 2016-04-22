@@ -1,3 +1,4 @@
+<%@page import="com.toolbox.common.AppMarketEnum"%>
 <%@page import="com.toolbox.common.BannerEnum"%>
 <%@page import="com.toolbox.common.AppEnum"%>
 <%@page import="com.toolbox.framework.utils.WebUtility"%>
@@ -61,10 +62,10 @@
 					<i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>banner/<%=BannerEnum.Group.getType() %>/view')">合辑管理</a></li>
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>banner/<%=BannerEnum.Subject.getType() %>/view')">专题管理</a></li>
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>banner/<%=BannerEnum.H5.getType() %>/view')">H5管理</a></li>
-					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/banner/<%=AppEnum.wallpaper.getCollection()%>')">展示设置</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>banner/<%=BannerEnum.Group.getType() %>/view/<%=AppMarketEnum.China.getCode()%>')">合辑管理</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>banner/<%=BannerEnum.Subject.getType() %>/view/<%=AppMarketEnum.China.getCode()%>')">专题管理</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>banner/<%=BannerEnum.H5.getType() %>/view/<%=AppMarketEnum.China.getCode()%>')">H5管理</a></li>
+					<li><a href="javascript: loadData('<%=WebUtility.getBasePath(request) %>config/banner/<%=AppMarketEnum.China.getCode()%>')">展示设置</a></li>
 					<li><a href="#">回收站</a></li>
 				</ul>
 			</li>			
