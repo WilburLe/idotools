@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AppCode</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script src="/AdminLTE-2.3.0/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script>
+        $(function () {
+            $("input[name=scale]").change(drawChart);
+            $("input[name=app]").change(drawChart);
+        })
+        function drawChart() {
+            var scale = $("input[name=scale]:checked").val();
+            var apps = [];
+            $("input[name=app]").each(function () {
+                if ($(this).is(":checked")) {
+                    apps.push($(this).val());
+                }
+            });
+            $("#web_content").attr("src", "/scaledata?days=10&apps=" + apps + "&scale=" + scale);
+//            $("#web_content").attr("src", "/stat?days=10&apps="+apps+"&scale="+scale);
+        }
+
+
+    </script>
+</head>
+<body>
+<h2>新增App</h2>
+
+<form action="/appcode/save">
+    AppCode:<input type="text" name="app">
+    AppName:<input type="text" name="name">
+    <button type="submit">保存</button>
+</form>
+<h2>统计项目</h2>
+<% for (var app in JSON.parse(scale)) { %>
+<input type="radio" value="<%= app %>" name="scale"><%= JSON.parse(scale)[app] %>
+<% } %>
+<h2>App列表</h2>
+<%
+for (var i = 0; i < data.length; i++) {
+    var app = data[i]; %>
+<input type="checkbox" name="app" value="<%= app.app %>"><%= app.name %>
+<% } %>
+<hr/>
+<iframe id="web_content" frameborder="0" width="100%" height="780px"></iframe>
+</body>
+</html>
