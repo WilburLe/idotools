@@ -42,7 +42,6 @@ import com.toolbox.weather.service.WeatherService;
  * 
  */
 @Component
-@ScheduleJob(name = "WeatherAlarmFetcherJob", cron = "0 0/10 * * * ?")
 public class WeatherAlarmFetcherJob implements Job {
     private Log            log = LogFactory.getLog(WeatherAlarmFetcherJob.class);
     @Autowired

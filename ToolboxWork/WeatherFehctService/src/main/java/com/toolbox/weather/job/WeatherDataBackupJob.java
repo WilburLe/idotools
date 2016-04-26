@@ -14,7 +14,6 @@ import com.toolbox.framework.utils.DateUtility;
 import com.toolbox.weather.service.WeatherService;
 
 @PersistJobDataAfterExecution
-@ScheduleJob(name = "WeatherDataBackupJob", cron = "0 15,45 * * * ?")
 public class WeatherDataBackupJob implements Job {
 
     private Log            log = LogFactory.getLog(getClass());

@@ -28,7 +28,6 @@ import com.toolbox.weather.data.RankingListProcessor;
  * 
  */
 @PersistJobDataAfterExecution
-@ScheduleJob(name = "RankingListJob", cron = "0 0/5 * * * ?")
 public class RankingListJob implements Job {
     @Autowired
     private RankingListProcessor rankingListProcessor;

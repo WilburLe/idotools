@@ -12,7 +12,6 @@ import com.toolbox.weather.data.WeatherDataFetcher;
 
 @PersistJobDataAfterExecution
 //@DisallowConcurrentExecution
-@ScheduleJob(name = "WeatherParseJob", cron = "0 0/15 * * * ?")
 public class WeatherParseJob implements Job {
 
     private Log                log = LogFactory.getLog(getClass());
