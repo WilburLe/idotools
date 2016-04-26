@@ -1,0 +1,117 @@
+var weathercode = {
+    "晴": {d: {en: 'Sunny', code: 0}, n: {en: 'Clear', code: 1}},
+    "多云": {d: {en: 'Cloudy', code: 4}},
+    "晴间多云": {d: {en: 'Partly Cloudy', code: 5}, n: {en: 'Partly Cloudy', code: 6}},
+    "大部多云": {d: {en: 'Mostly Cloudy', code: 7}, n: {en: 'Mostly Cloudy', code: 8}},
+    "阴": {d: {en: 'Overcast', code: 9}},
+    "阵雨": {d: {en: 'Shower', code: 10}},
+    "雷阵雨": {d: {en: 'Thundershower', code: 11}},
+    "雷阵雨伴有冰雹": {d: {en: 'Thundershower with hail', code: 12}},
+    "小雨": {d: {en: 'Light rain', code: 13}},
+    "中雨": {d: {en: 'Moderate rain', code: 14}},
+    "大雨": {d: {en: 'Heavy rain', code: 15}},
+    "暴雨": {d: {en: 'Storm', code: 16}},
+    "大暴雨": {d: {en: 'Heavy storm', code: 17}},
+    "特大暴雨": {d: {en: 'Serere storm', code: 18}},
+    "冻雨": {d: {en: 'Ice rain', code: 19}},
+    "雨夹雪": {d: {en: 'Sleet', code: 20}},
+    "阵雪": {d: {en: 'Snow flurry', code: 21}},
+    "小雪": {d: {en: 'Light snow', code: 22}},
+    "中雪": {d: {en: 'Moderate snow', code: 23}},
+    "大雪": {d: {en: 'Heavy snow', code: 24}},
+    "暴雪": {d: {en: 'Snowstorm', code: 25}},
+    "浮尘": {d: {en: 'Dust', code: 26}},
+    "扬沙": {d: {en: 'Sand', code: 27}},
+    "沙尘暴": {d: {en: 'Duststorm', code: 28}},
+    "强沙尘暴": {d: {en: 'Sandstorm', code: 29}},
+    "雾": {d: {en: 'Foggy', code: 30}},
+    "霾": {d: {en: 'Haze', code: 31}},
+
+    //天气API没有提供的天气状态
+    "风": {d: {en: 'Windy', code: 32}},
+    "大风": {d: {en: 'Blustery', code: 33}},
+    "飓风": {d: {en: 'Hurricane', code: 34}},
+    "热带风暴": {d: {en: 'Tropical Storm', code: 35}},
+    "龙卷风": {d: {en: 'Tornado', code: 36}},
+    "冷": {d: {en: 'Cold', code: 37}},
+    "热": {d: {en: 'Hot', code: 38}},
+
+    //心知没有提供的天气状态
+    "小到中雨": {d: {en: 'Light to moderate rain', code: 14}},
+    "中到大雨": {d: {en: 'Moderate to heavy rain', code: 15}},
+    "大到暴雨": {d: {en: 'Heavy to storm', code: 16}},
+    "暴雨到大暴雨": {d: {en: 'Storm to heavy stom', code: 17}},
+    "大暴雨到特大暴雨": {d: {en: 'Heavy to severe storm', code: 18}},
+    "小到中雪": {d: {en: 'Light to moderate snow', code: 23}},
+    "中到大雪": {d: {en: 'Moderate to heavy snow', code: 24}},
+    "大到暴雪": {d: {en: 'Heavy snow to snowstorm', code: 25}},
+
+    "无": {d: {en: 'Unknown', code: 99}}
+};
+var getweather = function (text) {
+    var weather = weathercode[text];
+    if (!weather) {
+        return weathercode.无;
+    }
+    return weather;
+};
+
+var windLev = {
+    "无风": {lev: 0, sp: '<1'},
+    '软风': {lev: 1, sp: '1-5'},
+    '0-1级': {lev: 1, sp: '1-5'},
+    '轻风': {lev: 2, sp: '6-11'},
+    '1-2级': {lev: 2, sp: '6-11'},
+    '微风': {lev: 3, sp: '12-19'},
+    '2-3级': {lev: 3, sp: '12-19'},
+    '和风': {lev: 4, sp: '20-28'},
+    '3-4级': {lev: 4, sp: '20-28'},
+    '清风': {lev: 5, sp: '29-38'},
+    '4-5级': {lev: 5, sp: '29-38'},
+    '强风': {lev: 6, sp: '39-49'},
+    '5-6级': {lev: 6, sp: '39-49'},
+    '劲风（疾风）': {lev: 7, sp: '50-61'},
+    '6-7级': {lev: 7, sp: '50-61'},
+    '大风': {lev: 8, sp: '62-74'},
+    '7-8级': {lev: 8, sp: '62-74'},
+    '烈风': {lev: 9, sp: '62-74'},
+    '8-9级': {lev: 9, sp: '62-74'},
+    '狂风': {lev: 10, sp: '89-102'},
+    '9-10级': {lev: 10, sp: '89-102'},
+    '暴风': {lev: 11, sp: '103-117'},
+    '10-11级': {lev: 11, sp: '103-117'},
+    '台风（飓风）': {lev: 12, sp: '>117'},
+    '11-12级': {lev: 12, sp: '>117'},
+
+}
+var getwindlev = function (text) {
+    for (var m in windLev) {
+        if (text.indexOf(m) >= 0) {
+            return windLev[m].lev;
+        }
+    }
+    return null;
+};
+
+var winDir = {
+    '东风': 'E',
+    '东北风': 'NE',
+    '东南风': 'SE',
+    '西风': 'W',
+    '西北风': 'NW',
+    '西南风': 'SW',
+    '南风': 'S',
+    '北风': 'N',
+}
+var getwinddir = function (text) {
+    for (var m in winDir) {
+        if (text == m || text.indexOf(m) >= 0) {
+            return winDir[m];
+        }
+    }
+    return "";
+};
+
+module.exports.getweather = getweather;
+module.exports.getwindlev = getwindlev;
+module.exports.getwinddir = getwinddir;

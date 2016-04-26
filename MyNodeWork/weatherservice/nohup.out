@@ -1,0 +1,29 @@
+Worker 22717 is online.
+Worker 22718 is online.
+Worker 22720 is online.
+Worker 22722 is online.
+HTTPS Server listening on localhost:8000
+HTTPS Server listening on localhost:8000
+HTTPS Server listening on localhost:8000
+HTTPS Server listening on localhost:8000
+find > 曲阜 > {"status":"OK","result":[{"locations":[{"Version":1,"Key":"101120710","Type":"City","LocalizedName":"曲阜","EnglishName":"qufu","Region":{"ID":"ASI","LocalizedName":"亚洲","EnglishName":"Asia"},"Country":{"ID":"CN","LocalizedName":"中国","EnglishName":"China"},"AdministrativeArea":{},"SupplementalAdminAreas":[],"TimeZone":{"Code":"CST","Name":"Asia/Shanghai","GmtOffset":8}}]}]}
+[0mPOST /searchLocationByKeyword/ [32m200 [0m41.119 ms - -[0m
+Worker 1452 is online.
+Worker 1453 is online.
+Worker 1455 is online.
+Worker 1456 is online.
+HTTPS Server listening on localhost:8000
+HTTPS Server listening on localhost:8000
+HTTPS Server listening on localhost:8000
+HTTPS Server listening on localhost:8000
+[0mPOST / [32m200 [0m712.972 ms - -[0m
+[0mPOST / [32m200 [0m1.367 ms - -[0m
+[0mPOST / [32m200 [0m1286.775 ms - -[0m
+[0mGET /aaa [36m304 [0m109.057 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m5.840 ms - -[0m
+[0mPOST / [32m200 [0m1000.908 ms - -[0m
+[0mPOST / [32m200 [0m920.173 ms - -[0m
+[0mPOST / [32m200 [0m3.212 ms - -[0m
+[0mPOST / [32m200 [0m621.741 ms - -[0m
+[0mPOST / [32m200 [0m1352.725 ms - -[0m
+[0mPOST / [32m200 [0m3.729 ms - -[0m
