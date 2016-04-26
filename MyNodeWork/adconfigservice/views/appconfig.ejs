@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>APP CONFIG</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script src="/javascripts/jquery-2.2.0.min.js"></script>
+    <script src="/javascripts/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/stylesheets/dialog.css">
+    <style>
+        .gridtable {
+            font-family: verdana, arial, sans-serif;
+            font-size: 16px;
+            color: #333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+        }
+
+        .gridtable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+        }
+
+        .gridtable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+        }
+
+    </style>
+    <script type="text/javascript">
+        var dialogapp;
+        var dialogchannel;
+        var dialogad;
+        var dialogver;
+        $(function () {
+            dialogapp = $("#dialogapp").dialog({
+                autoOpen: false,
+                height: 200,
+                width: 400,
+                modal: true,
+                buttons: {},
+                close: function () {
+                }
+            });
+            dialogchannel = $("#dialogchannel").dialog({
+                autoOpen: false,
+                height: 200,
+                width: 400,
+                modal: true,
+                buttons: {},
+                close: function () {
+                }
+            });
+            dialogad = $("#dialogad").dialog({
+                autoOpen: false,
+                height: 200,
+                width: 400,
+                modal: true,
+                buttons: {},
+                close: function () {
+                }
+            });
+            dialogver = $("#dialogver").dialog({
+                autoOpen: false,
+                show: {effect: "blind", duration: 500},
+                hide: {effect: "explode", duration: 500},
+                //open: function(event, ui) { $(".ui-dialog-titlebar-close", ui.dialog | ui).hide(); },
+                height: 120,
+                width: 400,
+                modal: true,
+                buttons: {
+                    "保存": savever,
+                    "取消": function () {
+                        $(this).dialog("close");
+                    }
+                },
+                close: function () {
+                }
+            });
+            Array.prototype.contains = function (item) {
+                return RegExp("\\b" + item + "\\b").test(this);
+            };
+        })
+
+        function cleanForm() {
+            $("#version").val('');
+        }
+        function addAppDialog() {
+            $("#appcode").val('');
+            $("#appname").val('');
+            dialogapp.dialog("open");
+        }
+        function addChannelDialog() {
+            $("#channelcode").val('');
+            $("#channelname").val('');
+            dialogchannel.dialog("open");
+        }
+        function addAdDialog() {
+            $("#adname").val('');
+            $("#adcode").val('');
+            dialogad.dialog("open");
+        }
+        function addVerDialog(app) {
+            $("#vername").val('');
+            $("#vercode").val('');
+            $("#verappcode").val(app);
+            dialogver.dialog("open");
+        }
+        function savever() {
+            var name = $("#vername").val();
+            var code = $("#vercode").val();
+            code = $.trim(code);
+            var app = $("#verappcode").val();
+            var isnum = /^\d+(\.\d+)?$/;
+            if (isnum.test(code) == false) {
+                alert("请输入数字！");
+            } else {
+                $.post("/appconfig/saveversion", {app: app, name: name, code: code}, function (result) {
+                    window.location.reload();
+//                var html = name + '-' + code + '<button onclick="delversion(\'' + app + '\', \'' + code + '\')">删除</button><br/>';
+//                $("#" + app + "_vertb").append(html);
+//                $("#dialogver").dialog("close");
+                });
+            }
+
+        }
+        function delversion(app, code) {
+            if (confirm("确认删除这个版本么？")) {
+                $.ajax({
+                    type: "post",
+                    url: "/appconfig/delversion",
+                    data: {code: code, app: app},
+                    success: function (result) {
+                        window.location.reload();
+                    }
+                });
+            }
+        }
+        function delConfig(code, type) {
+            if (confirm('确定要删除么？')) {
+                $.ajax({
+                    type: "post",
+                    url: "/appconfig/delconfig",
+                    data: {code: code, type: type},
+                    success: function (result) {
+                        window.location.reload();
+                    }
+                });
+            }
+        }
+        function openapp(app, state) {
+            var alterstr = "";
+            if (state == 1) {
+                alterstr = '确定要关闭这个APP下的广告位么？';
+            } else {
+                alterstr = '确定要打开这个APP下的广告位么？';
+            }
+            if (confirm(alterstr)) {
+                $.ajax({
+                    type: "post",
+                    url: "/appconfig/openad",
+                    data: {app: app, state: state, type: "app"},
+                    success: function (result) {
+                        window.location.reload();
+                    }
+                });
+            }
+        }
+        function openchannel(app, channel, state) {
+            var alterstr = "";
+            if (state == 1) {
+                alterstr = '确定要关闭这个渠道下的广告位么？';
+            } else {
+                alterstr = '确定要打开这个渠道下的广告位么？';
+            }
+            if (confirm(alterstr)) {
+                $.ajax({
+                    type: "post",
+                    url: "/appconfig/openad",
+                    data: {app: app, channel: channel, state: state, type: "channel"},
+                    success: function (result) {
+                        window.location.reload();
+                    }
+                });
+            }
+        }
+        function openad(app, channel, ad, state) {
+            var alterstr = "";
+            if (state == 1) {
+                alterstr = '确定要关闭这个广告位么？';
+            } else {
+                alterstr = '确定要打开这个广告位么？';
+            }
+            if (confirm(alterstr)) {
+                $.ajax({
+                    type: "post",
+                    url: "/appconfig/openad",
+                    data: {app: app, channel: channel, ad: ad, state: state, type: "ad"},
+                    success: function (result) {
+                        console.log(result)
+                        if (result.status == -1) {
+                            alert(result.msg);
+                        } else {
+                            window.location.reload();
+                        }
+                    }
+                });
+            }
+        }
+
+        function checkchannel(app, channel) {
+
+            window.location.href = "/appconfig?checkapp=" + app + "&checkchannel=" + channel;
+        }
+        function openallad(state) {
+            if (state) {
+                if (confirm("确定关闭所有广告么？")) {
+                    $.post('/adconfig/openad', {state: state}, function (result) {
+                        window.location.reload();
+                    });
+                }
+            } else {
+                if (confirm("确定打开所有广告么？")) {
+                    $.post('/adconfig/openad', {state: state}, function (result) {
+                        window.location.reload();
+                    });
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+<table class="gridtable">
+    <tr>
+        <th colspan="2">
+            <button type="button" onclick="addAppDialog()">添加APP</button>
+            <button type="button" onclick="addChannelDialog()">添加渠道</button>
+            <button type="button" onclick="addAdDialog()">添加广告位</button>
+            <% if(adopen == 1) { %><!--已开启，需关闭-->
+            <button type="button" onclick="openallad(0)" style="background-color: chartreuse">关闭所有广告</button>
+            <% } else { %><!--已关闭，需开启-->
+            <button type="button" onclick="openallad(1)" style="background-color: red">开启所有广告</button>
+            <% } %>
+        </th>
+    </tr>
+    <tr>
+        <th>APP</th>
+        <td>
+            <%
+            var apparr = JSON.parse(apps);
+                    for (var m in apparr) {
+                var app = apparr[m]; %>
+            [<%= app.name %>-<%= app.code %>
+            <button type="button" onclick="delConfig('<%= app.code %>', 'app')">删除</button>
+            ]
+            <% } %>
+        </td>
+    </tr>
+    <tr>
+        <th>渠道</th>
+        <td>
+            <%
+            var channelarr = JSON.parse(channels);
+                    for (var m in channelarr) {
+                var channel = channelarr[m]; %>
+            [<%= channel.name %>-<%= channel.code %>
+            <button type="button" onclick="delConfig('<%= channel.code %>', 'channel')">删除</button>
+            ]
+            <% } %>
+        </td>
+    </tr>
+    <tr>
+        <th>广告位</th>
+        <td>
+            <%
+            var adarr = JSON.parse(ads);
+                    for (var m in adarr) {
+                var ad = adarr[m]; %>
+            [<%= ad.name %>-<%= ad.code %>
+            <button type="button" onclick="delConfig('<%= ad.code %>', 'ad')">删除</button>
+            ]
+            <% } %>
+        </td>
+    </tr>
+</table>
+<br/>
+<%
+var apphavearr = JSON.parse(apphaves);
+var channelhavearr = JSON.parse(channelhaves);
+        for (var m in apparr) {
+    var app = apparr[m];
+    var appcode = app.code;
+    var appname = app.name;
+    var ishaveads = false;
+    for (var n in apphavearr) {
+        if (apphavearr[n] == appcode) {
+            ishaveads = true;
+            break;
+        }
+    } %>
+<table class="gridtable">
+    <tr>
+        <th colspan="2">
+            <%= (m) + ". " + appname %>
+            <% if(ishaveads) { %>
+            <button type="button" onclick="openapp('<%= appcode %>', 0)"
+                    style="background-color: chartreuse">开启
+            </button>
+            <% } else { %>
+            <button type="button" onclick="openapp('<%= appcode %>', 1)">关闭</button>
+            <% } %>
+            <%= appcode %>
+        </th>
+    </tr>
+    <tr>
+        <th>选择渠道</th>
+        <td>
+            <%
+                var thisChannelChecked = false;
+                    for (var m in channelarr) {
+                var channel = channelarr[m];
+                var checkcolor = "";
+                if (appcode == checkapp && checkchannel == channel.code) {
+                    checkcolor = "cornflowerblue";
+                    thisChannelChecked = true;
+                }
+                var ishaveads = false;
+                for (var n in channelhavearr) {
+                    if (channelhavearr[n].app == appcode && channelhavearr[n].channel == channel.code) {
+                        ishaveads = true;
+                        break;
+                    }
+                }
+            if(m > 0) { %>
+            &nbsp;|&nbsp;
+            <% } %>
+            <button onclick="checkchannel('<%= appcode %>', '<%= channel.code %>')"
+                    style="background-color: <%= checkcolor %>"><%= channel.name %></button>
+            <% if(ishaveads) { %>
+            <button type="button" onclick="openchannel('<%= appcode %>', '<%= channel.code %>', 0)"
+                    style="background-color: chartreuse">开启
+            </button>
+            <% } else { %>
+            <button type="button" onclick="openchannel('<%= appcode %>', '<%= channel.code %>', 1)">关闭</button>
+            <% }
+            } %>
+        </td>
+    </tr>
+    <tr>
+        <th>选择广告位</th>
+        <td>
+            <%
+            for (var m in adarr) {
+                var ad = adarr[m];
+                var ishaveads = false;
+                if (appcode == checkapp) {
+                    for (var j in adhaves) {
+                        if (adhaves[j] == ad.code) {
+                            ishaveads = true;
+                            break;
+                        }
+                    }
+                }
+
+            if(m > 0) { %>
+            &nbsp;|&nbsp;
+            <% } %>
+            %>
+            <%= ad.name %>
+            <% if(ishaveads) { %>
+            <button type="button"
+                    onclick="openad('<%= appcode %>', '<%= thisChannelChecked ? checkchannel : "" %>', '<%= ad.code %>', 0)"
+                    style="background-color: chartreuse">开启
+            </button>
+            <% } else { %>
+            <button type="button"
+                    onclick="openad('<%= appcode %>', '<%= thisChannelChecked ? checkchannel : "" %>', '<%= ad.code %>', 1)">
+                关闭
+            </button>
+            <% } } %>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            版本
+            <button onclick="addVerDialog('<%= appcode %>')">添加</button>
+        </th>
+        <td id="<%= appcode %>_vertb">
+            <%
+                var vers = app.version;
+                    for(var k in vers) {
+                var ver = vers[k]; %>
+            <%= ver.name %>-<%= ver.code %>
+            <button onclick="delversion('<%= appcode %>', '<%= ver.code %>')">删除</button>
+            <br/>
+            <% } %>
+        </td>
+    </tr>
+</table>
+<br/>
+<% } %>
+
+<div id="dialogapp" title="添加一个APP">
+    <form action="/appconfig/saveapp" method="post">
+        <table>
+            <tr>
+                <td>应用名</td>
+                <td><input type="text" name="appname" id="appname"></td>
+            </tr>
+            <tr>
+                <td>应用包名</td>
+                <td><input type="text" name="appcode" id="appcode"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">添加APP</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div id="dialogchannel" title="添加一个渠道">
+    <form action="/appconfig/savechannel" method="post">
+        <table>
+            <tr>
+                <td>渠道名称</td>
+                <td><input type="text" name="channelname" id="channelname"></td>
+            </tr>
+            <tr>
+                <td>渠道代码</td>
+                <td><input type="text" name="channelcode" id="channelcode"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">添加渠道</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div id="dialogad" title="添加一个广告位">
+    <form action="/appconfig/savead" method="post">
+        <table>
+            <tr>
+                <td>广告位名称</td>
+                <td><input type="text" name="adname" id="adname"></td>
+            </tr>
+            <tr>
+                <td>广告位Code</td>
+                <td><input type="text" name="adcode" id="adcode"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">添加广告位</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div id="dialogver" title="添加一个版本">
+    <input type="hidden" name="verappcode" id="verappcode">
+    <table>
+        <tr>
+            <td>版本描述</td>
+            <td><input type="text" name="vername" id="vername"></td>
+        </tr>
+        <tr>
+            <td>版本号</td>
+            <td><input type="text" name="vercode" id="vercode"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
