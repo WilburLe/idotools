@@ -1,9 +1,8 @@
 package com.toolbox.common;
 
 /**
-* @author E-mail:86yc@sina.com
-* 
-*/
+ * @author E-mail:86yc@sina.com
+ */
 public enum AppEnum {
     wallpaper("wallpaper", "wallpaper", "壁纸", "每日壁纸 iDO Daily Wallpaper"), //
     lockscreen("lockscreen", "lockscreen", "锁屏", "闪电锁屏 iDO Lockscreen"), //

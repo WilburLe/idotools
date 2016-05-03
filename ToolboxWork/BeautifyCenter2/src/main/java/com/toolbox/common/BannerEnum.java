@@ -1,9 +1,8 @@
 package com.toolbox.common;
 
 /**
-* @author E-mail:86yc@sina.com
-* 
-*/
+ * @author E-mail:86yc@sina.com
+ */
 public enum BannerEnum {
     H5("h5", "H5"), //
     Subject("subject", "专题"), //
@@ -20,12 +19,13 @@ public enum BannerEnum {
     public static BannerEnum byType(String type) {
         BannerEnum[] banners = values();
         for (BannerEnum banner : banners) {
-            if(banner.type.equals(type)) {
+            if (banner.type.equals(type)) {
                 return banner;
             }
         }
         return null;
     }
+
     public String getType() {
         return type;
     }
