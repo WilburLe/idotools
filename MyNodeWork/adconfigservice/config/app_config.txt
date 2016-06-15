@@ -1,0 +1,1 @@
+{"code":"test","name":"测试","version":[{"name":"55","code":"55"},{"name":"tt","code":"tt"}]},{"code":"com.idotools.cala","name":"计算器","version":[{"name":"www","code":"www"},{"name":"333","code":"333"},{"name":"1222","code":"22"}]},{"code":"com.idotools.flight","name":"手电筒","version":[{"name":"123","code":"123"}]}

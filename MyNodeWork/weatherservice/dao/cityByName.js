@@ -1,14 +1,10 @@
-var mysql = require('mysql');
-var $conf = require('../conf/db');
-var $util = require('../util/util');
 var $sql = require('./weatherSqlMapping');
 var async = require('async');
-var pool = mysql.createPool($util.extend({}, $conf.mysql));
-
+var mysql = require('../conf/mysql-client').mysql;
 
 module.exports.find = function (name, callback) {
     name = name + '%';
-    pool.getConnection(function (err, connection) {
+    mysql.getConnection(function (err, connection) {
             connection.query($sql.name, [name, name], function (err, result) {
                 var data = {
                     "status": "OK"
@@ -36,7 +32,7 @@ module.exports.find = function (name, callback) {
                                     }
                                     async.waterfall([
                                         function (callback) {
-                                            pool.getConnection(function (err, connection) {
+                                            mysql.getConnection(function (err, connection) {
                                                 connection.query($sql.ids_city + ps, ids, function (err, result) {
                                                     callback(null, cityPackge(city, ids, result));
                                                     connection.release();

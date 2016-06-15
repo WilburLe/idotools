@@ -27,8 +27,9 @@ var msg = [
     {topic: 't3', messages: 'hi-t3 p11111111111', partition: 1},
     {topic: 't3', messages: 'hi-t3 p222222222', partition: 2},
     {topic: 't3', messages: 'hi-t3 33333333333', partition: 3},
-    //{topic: 't3', messages: 'hi-t3 p222222222', partition: 2},
-    {topic: 't1', messages: ['hello 1', 'world 2', km], partition: 0},
+    {topic: 't3', messages: 'hi-t3 p222222222', partition: 2},
+    // {topic: 't1', messages: ['hello 1', 'world 2', km], partition: 0},
+    {topic: 'test', messages: '你还哦啊',partition: 0},
 ];
 
 producer.on('ready', function () {

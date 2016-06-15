@@ -17,5 +17,4 @@ client.on("error", function (err) {
 //    console.log("replies>> "+replies);
 //});
 
-
 module.exports.redis = client;

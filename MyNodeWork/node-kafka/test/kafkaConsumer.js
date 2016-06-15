@@ -5,15 +5,16 @@ var kafka = require('kafka-node'),
     consumer = new Consumer(
         client,
         [
-            {topic: 't', partition: 0, offset: 0},
-            {topic: 't1', partition: 0},
+            // {topic: 't', partition: 0, offset: 0},
+            // {topic: 't1', partition: 0},
             {topic: 't3', partition: 0},
             {topic: 't3', partition: 1},
             {topic: 't3', partition: 2},
             {topic: 't3', partition: 3},
             {topic: 't1p1', partition: 0},
             {topic: 't1p1', partition: 1},
-            {topic: 't1p1', partition: 2}
+            {topic: 't1p1', partition: 2},
+            {topic: 'test'}
         ],
         {
             groupId: 'kafka-node-group',//consumer group id, default `kafka-node-group`

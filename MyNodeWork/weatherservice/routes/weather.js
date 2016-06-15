@@ -27,15 +27,18 @@ router.post('/searchLocationByKeyword', function (req, res, next) {
     var cityid_key = "findCity_" + keyword;
     redis.get(cityid_key, function (err, result) {
         if (result) {
-            $util.gzipAesWrite(req, res, result);
+            $util.gzipAesWrite(200, req, res, result);
         } else {
             cityByName.find(keyword, function (result) {
                 if (result && !result.err) {
                     redis.set(cityid_key, JSON.stringify(result), function (err, reply) {
                         redis.expire(cityid_key, 60 * 60 * 24);
                     });
+                    $util.gzipAesWrite(200, req, res, JSON.stringify(result));
+                } else {
+                    $util.gzipAesWrite(404, req, res, JSON.stringify({"text":"Not Found"}));
                 }
-                $util.gzipAesWrite(req, res, JSON.stringify(result));
+
             });
 
         }
@@ -70,7 +73,7 @@ router.post('/searchLocationByCoordinate', function (req, res, next) {
     var latlng = p.latitude + "," + p.longitude;
     var url = "api.map.baidu.com";
     var path = "/geocoder/v2/?ak=FDb8a96df0329f10675a4d84fd172b8a" + //
-            //"&callback=result" +//
+        //"&callback=result" +//
         "&location=" + latlng + //
         "&output=json" + //
         "&pois=0";
@@ -78,26 +81,28 @@ router.post('/searchLocationByCoordinate', function (req, res, next) {
         var r = JSON.parse(result);
         var address = r.result.addressComponent;
         if (!address || address.adcode == 0) {
-            $util.gzipAesWrite(req, res, JSON.stringify({err: "no find", msg: address}));
-        } else {
-            var cityid_key = "geoCityId_" + address.adcode;
-            redis.get(cityid_key, function (err, result) {
-                    if (result) {
-                        $util.gzipAesWrite(req, res, result);
-                    } else {
-                        cityByGeo.geo(address, function (result) {
-                                if (result && !result.err) {
-                                    redis.set(cityid_key, JSON.stringify(result), function (err, reply) {
-                                        //redis.expire(cityid_key, 60 * 5);
-                                    });
-                                }
-                                $util.gzipAesWrite(req, res, JSON.stringify(result));
-                            }
-                        );
-                    }
-                }
-            );
+            $util.gzipAesWrite(404, req, res, JSON.stringify({"text": "Not Found"}));
+            return;
         }
+        var cityid_key = "geoCityId_" + address.adcode;
+        redis.get(cityid_key, function (err, result) {
+            if (result) {
+                $util.gzipAesWrite(200, req, res, result);
+            } else {
+                cityByGeo.geo(address, function (err, result) {
+                        if (err) {
+                            $util.gzipAesWrite(404, req, res, JSON.stringify({"text": "Not Found"}));
+                        } else {
+                            redis.set(cityid_key, JSON.stringify(result), function (err, reply) {
+                                redis.expire(cityid_key, 60 * 5);
+                            });
+                            $util.gzipAesWrite(200, req, res, JSON.stringify(result));
+                        }
+                    }
+                );
+            }
+        });
+
     });
 });
 
@@ -122,7 +127,7 @@ router.post('/', function (req, res, next) {
 
     redis.get(cityid_key, function (err, result) {
         if (result) {
-            $util.gzipAesWrite(req, res, result);
+            $util.gzipAesWrite(200, req, res, result);
         } else {
             weatherDao.weather(cityId, function (result) {
                 if (result && !result.err) {
@@ -130,7 +135,7 @@ router.post('/', function (req, res, next) {
                         redis.expire(cityid_key, 60 * 5);
                     });
                 }
-                $util.gzipAesWrite(req, res, JSON.stringify(result));
+                $util.gzipAesWrite(200, req, res, JSON.stringify(result));
             });
         }
     });
@@ -139,7 +144,7 @@ router.post('/', function (req, res, next) {
 });
 
 router.get('/aaa', function (req, res, next) {
-    res.render('index', { title: 'Jade' });
+    res.render('index', {title: 'Jade'});
 });
 //getSearchHots
 router.post('/getSearchHots', function (req, res, next) {
@@ -157,7 +162,7 @@ router.post('/getSearchHots', function (req, res, next) {
     //});
     var Normal = req.body.Normal[0];
     hotCity.hots(function (result) {
-        $util.gzipAesWrite(req, res, JSON.stringify(result));
+        $util.gzipAesWrite(200, req, res, JSON.stringify(result));
     });
 
 });

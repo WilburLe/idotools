@@ -33,7 +33,7 @@ module.exports.weather = function (cityid, callback) {
 
 var weatherPackge = function (today, daylist) {
     if (today.errNum != 0) {
-        return {err:'no weather'};
+        return {err: 'no weather'};
     }
     var c = today.retData;
     var weacode = $weathercode.getweather(c.weather);
@@ -136,6 +136,7 @@ var future = function (daylist) {
     var forecast = daylist.retData.forecast;
 
     var today = daylist.retData.today;
+
     var todaycode = $weathercode.getweather(today.type);
     var weat = todaycode.d;
     var weant = todaycode.n ? todaycode.n : weat;

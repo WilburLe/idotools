@@ -1,0 +1,973 @@
+[2016-03-28 10:49:46.061] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 10:49:46.152] [INFO] normal - GET /appconfig
+[2016-03-28 10:49:46.231] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 10:49:46.287] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 10:49:46.365] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 10:49:46.416] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 10:49:46.586] [INFO] normal - GET /favicon.ico
+[2016-03-28 10:50:05.531] [INFO] normal - GET /server/ddata?packageName=test&channel=xiaomi&version=3
+[2016-03-28 10:50:10.738] [INFO] normal - GET /server/dadata?packageName=test&channel=xiaomi&version=3
+[2016-03-28 10:56:50.246] [INFO] normal - GET /server/ad?packageName=test&channel=xiaomi&version=3
+[2016-03-28 10:56:50.557] [INFO] normal - GET /favicon.ico
+[2016-03-28 10:56:52.355] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 10:56:52.363] [INFO] normal - GET /appconfig
+[2016-03-28 10:56:52.483] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 10:56:52.491] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 10:56:52.500] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 10:56:52.623] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 10:57:21.933] [INFO] normal - GET /server/dadata?packageName=test&channel=xiaomi&version=3
+[2016-03-28 10:57:39.167] [INFO] normal - POST /appconfig/openad
+[2016-03-28 10:57:39.196] [INFO] console - redis set k=com.idotools.cala@baidu@aaa, v=gjx,wjj success~
+[2016-03-28 10:57:39.196] [INFO] console - redis set k=com.idotools.cala@baidu@sddsd, v=gjx,wjj success~
+[2016-03-28 10:57:39.196] [INFO] console - redis set k=com.idotools.cala@wandoujia@aaa, v=gjx,wjj success~
+[2016-03-28 10:57:39.197] [INFO] console - redis set k=com.idotools.cala@wandoujia@sddsd, v=gjx,wjj success~
+[2016-03-28 10:57:39.197] [INFO] console - redis set k=com.idotools.cala@xiaomi@aaa, v=gjx,wjj success~
+[2016-03-28 10:57:39.197] [INFO] console - redis set k=com.idotools.cala@xiaomi@sddsd, v=gjx,wjj success~
+[2016-03-28 10:57:39.197] [INFO] console - redis set k=com.idotools.cala@youpin@aaa, v=gjx,wjj success~
+[2016-03-28 10:57:39.197] [INFO] console - redis set k=com.idotools.cala@youpin@sddsd, v=gjx,wjj success~
+[2016-03-28 10:57:39.198] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 10:57:39.198] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 10:57:39.198] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 10:57:39.198] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 10:57:39.199] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 10:57:39.199] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 10:57:39.200] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 10:57:39.203] [INFO] normal - GET /appconfig
+[2016-03-28 10:57:39.286] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 10:57:39.286] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 10:57:39.286] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 10:57:39.403] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 10:57:42.920] [INFO] normal - POST /appconfig/openad
+[2016-03-28 10:57:42.921] [INFO] console - redis set k=com.idotools.cala@baidu@aaa, v=gjx,wjj success~
+[2016-03-28 10:57:42.922] [INFO] console - redis set k=com.idotools.cala@baidu@sddsd, v=gjx,wjj success~
+[2016-03-28 10:57:42.922] [INFO] console - redis set k=com.idotools.cala@wandoujia@aaa, v=gjx,wjj success~
+[2016-03-28 10:57:42.922] [INFO] console - redis set k=com.idotools.cala@wandoujia@sddsd, v=gjx,wjj success~
+[2016-03-28 10:57:42.922] [INFO] console - redis set k=com.idotools.cala@xiaomi@aaa, v=gjx,wjj success~
+[2016-03-28 10:57:42.923] [INFO] console - redis set k=com.idotools.cala@xiaomi@sddsd, v=gjx,wjj success~
+[2016-03-28 10:57:42.923] [INFO] console - redis set k=com.idotools.cala@youpin@aaa, v=gjx,wjj success~
+[2016-03-28 10:57:42.923] [INFO] console - redis set k=com.idotools.cala@youpin@sddsd, v=gjx,wjj success~
+[2016-03-28 10:57:42.923] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 10:57:42.923] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 10:57:42.923] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 10:57:42.923] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 10:57:42.923] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 10:57:42.924] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 10:57:42.924] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 10:57:42.924] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 10:57:42.944] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 10:57:42.947] [INFO] normal - GET /appconfig
+[2016-03-28 10:57:42.970] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 10:57:42.971] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 10:57:42.971] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 10:57:42.972] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 10:58:01.301] [INFO] normal - GET /server/dadata?packageName=test&channel=uu&version=3
+[2016-03-28 10:58:26.047] [INFO] normal - GET /server/dadata?packageName=test&channel=xiaomi&version=3
+[2016-03-28 11:11:50.160] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:11:50.168] [INFO] normal - GET /appconfig
+[2016-03-28 11:11:50.183] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:11:50.189] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:11:50.193] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:11:50.263] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:11:50.479] [INFO] normal - GET /favicon.ico
+[2016-03-28 11:13:24.354] [INFO] normal - GET /server/dadata?packageName=test&channel=xiaomi&version=3
+[2016-03-28 11:13:30.617] [INFO] normal - POST /adconfig/openad
+[2016-03-28 11:13:30.634] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:13:30.644] [INFO] normal - GET /appconfig
+[2016-03-28 11:13:30.653] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:13:30.656] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:13:30.673] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:13:30.673] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:13:33.206] [INFO] normal - GET /server/dadata?packageName=test&channel=xiaomi&version=3
+[2016-03-28 11:13:39.615] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:13:39.619] [INFO] normal - GET /appconfig?checkapp=test&checkchannel=xiaomi
+[2016-03-28 11:13:39.632] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:13:39.633] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:13:39.633] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:13:39.634] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:13:43.404] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:13:43.406] [INFO] normal - GET /appconfig?checkapp=test&checkchannel=xiaomi
+[2016-03-28 11:13:43.418] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:13:43.418] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:13:43.419] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:13:43.419] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:13:45.372] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:13:45.374] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 11:13:45.383] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:13:45.384] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:13:45.384] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:13:45.384] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:13:47.235] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:13:47.242] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=baidu
+[2016-03-28 11:13:47.265] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:13:47.274] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:13:47.956] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:13:48.269] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:13:50.659] [INFO] normal - GET /server/dadata?packageName=test&channel=xiaomi&version=3
+[2016-03-28 11:14:18.118] [INFO] normal - POST /appconfig/openad
+[2016-03-28 11:14:18.121] [INFO] console - redis set k=com.idotools.cala@baidu@aaa, v=gjx success~
+[2016-03-28 11:14:18.121] [INFO] console - redis set k=com.idotools.cala@baidu@sddsd, v=gjx success~
+[2016-03-28 11:14:18.122] [INFO] console - redis set k=com.idotools.cala@wandoujia@aaa, v=gjx,wjj success~
+[2016-03-28 11:14:18.122] [INFO] console - redis set k=com.idotools.cala@wandoujia@sddsd, v=gjx,wjj success~
+[2016-03-28 11:14:18.123] [INFO] console - redis set k=com.idotools.cala@xiaomi@aaa, v=gjx,wjj success~
+[2016-03-28 11:14:18.123] [INFO] console - redis set k=com.idotools.cala@xiaomi@sddsd, v=gjx,wjj success~
+[2016-03-28 11:14:18.123] [INFO] console - redis set k=com.idotools.cala@youpin@aaa, v=gjx,wjj success~
+[2016-03-28 11:14:18.124] [INFO] console - redis set k=com.idotools.cala@youpin@sddsd, v=gjx,wjj success~
+[2016-03-28 11:14:18.124] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 11:14:18.124] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 11:14:18.124] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 11:14:18.124] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 11:14:18.125] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 11:14:18.125] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 11:14:18.125] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 11:14:18.125] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 11:14:18.127] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:14:18.132] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=baidu
+[2016-03-28 11:14:18.142] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:14:18.143] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:14:18.143] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:14:18.144] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:14:20.290] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:14:20.292] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 11:14:20.301] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:14:20.301] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:14:20.303] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:14:20.303] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:14:56.950] [INFO] normal - POST /appconfig/openad
+[2016-03-28 11:14:56.951] [INFO] console - redis set k=com.idotools.cala@baidu@aaa, v=gjx success~
+[2016-03-28 11:14:56.951] [INFO] console - redis set k=com.idotools.cala@baidu@sddsd, v=gjx success~
+[2016-03-28 11:14:56.951] [INFO] console - redis set k=com.idotools.cala@wandoujia@aaa, v=gjx,wjj success~
+[2016-03-28 11:14:56.951] [INFO] console - redis set k=com.idotools.cala@wandoujia@sddsd, v=gjx,wjj success~
+[2016-03-28 11:14:56.952] [INFO] console - redis set k=com.idotools.cala@xiaomi@aaa, v=wjj success~
+[2016-03-28 11:14:56.952] [INFO] console - redis set k=com.idotools.cala@xiaomi@sddsd, v=wjj success~
+[2016-03-28 11:14:56.952] [INFO] console - redis set k=com.idotools.cala@youpin@aaa, v=gjx,wjj success~
+[2016-03-28 11:14:56.952] [INFO] console - redis set k=com.idotools.cala@youpin@sddsd, v=gjx,wjj success~
+[2016-03-28 11:14:56.952] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 11:14:56.952] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 11:14:56.952] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 11:14:56.952] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 11:14:56.952] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 11:14:56.953] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 11:14:56.953] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 11:14:56.953] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 11:14:56.964] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:14:56.966] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 11:14:56.977] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:14:56.979] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:14:56.979] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:14:56.979] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:14:59.973] [INFO] normal - POST /appconfig/openad
+[2016-03-28 11:14:59.975] [INFO] console - redis set k=com.idotools.cala@baidu@aaa, v=gjx success~
+[2016-03-28 11:14:59.975] [INFO] console - redis set k=com.idotools.cala@baidu@sddsd, v=gjx success~
+[2016-03-28 11:14:59.975] [INFO] console - redis set k=com.idotools.cala@wandoujia@aaa, v=gjx,wjj success~
+[2016-03-28 11:14:59.977] [INFO] console - redis set k=com.idotools.cala@wandoujia@sddsd, v=gjx,wjj success~
+[2016-03-28 11:14:59.977] [INFO] console - redis set k=com.idotools.cala@xiaomi@aaa, v=gjx,wjj success~
+[2016-03-28 11:14:59.978] [INFO] console - redis set k=com.idotools.cala@xiaomi@sddsd, v=gjx,wjj success~
+[2016-03-28 11:14:59.978] [INFO] console - redis set k=com.idotools.cala@youpin@aaa, v=gjx,wjj success~
+[2016-03-28 11:14:59.978] [INFO] console - redis set k=com.idotools.cala@youpin@sddsd, v=gjx,wjj success~
+[2016-03-28 11:14:59.978] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 11:14:59.979] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 11:14:59.979] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 11:14:59.979] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 11:14:59.979] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 11:14:59.980] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 11:14:59.980] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 11:14:59.980] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 11:15:00.000] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:15:00.009] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 11:15:00.020] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:15:00.021] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:15:00.022] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:15:00.023] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:15:05.562] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:15:05.565] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=baidu
+[2016-03-28 11:15:05.572] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:15:05.575] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:15:05.576] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:15:05.576] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:15:28.074] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:15:28.082] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=youpin
+[2016-03-28 11:15:28.109] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:15:28.110] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:15:28.111] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:15:28.112] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:15:31.627] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:15:31.635] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=baidu
+[2016-03-28 11:15:31.647] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:15:31.675] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:15:31.675] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:15:31.676] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:15:40.225] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:15:40.229] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 11:15:40.237] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:15:40.237] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:15:40.238] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:15:40.238] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:15:50.171] [INFO] normal - POST /appconfig/openad
+[2016-03-28 11:15:50.173] [INFO] console - redis set k=com.idotools.cala@baidu@aaa, v=gjx success~
+[2016-03-28 11:15:50.173] [INFO] console - redis set k=com.idotools.cala@baidu@sddsd, v=gjx success~
+[2016-03-28 11:15:50.174] [INFO] console - redis set k=com.idotools.cala@wandoujia@aaa, v=gjx,wjj success~
+[2016-03-28 11:15:50.174] [INFO] console - redis set k=com.idotools.cala@wandoujia@sddsd, v=gjx,wjj success~
+[2016-03-28 11:15:50.174] [INFO] console - redis set k=com.idotools.cala@youpin@aaa, v=gjx,wjj success~
+[2016-03-28 11:15:50.174] [INFO] console - redis set k=com.idotools.cala@youpin@sddsd, v=gjx,wjj success~
+[2016-03-28 11:15:50.174] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 11:15:50.174] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 11:15:50.174] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 11:15:50.174] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 11:15:50.174] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 11:15:50.174] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 11:15:50.174] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 11:15:50.174] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 11:15:50.190] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:15:50.192] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 11:15:50.204] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:15:50.205] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:15:50.206] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:15:50.206] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:15:52.776] [INFO] normal - POST /appconfig/openad
+[2016-03-28 11:15:52.779] [INFO] console - redis set k=com.idotools.cala@baidu@aaa, v=gjx success~
+[2016-03-28 11:15:52.779] [INFO] console - redis set k=com.idotools.cala@baidu@sddsd, v=gjx success~
+[2016-03-28 11:15:52.780] [INFO] console - redis set k=com.idotools.cala@wandoujia@aaa, v=gjx,wjj success~
+[2016-03-28 11:15:52.780] [INFO] console - redis set k=com.idotools.cala@wandoujia@sddsd, v=gjx,wjj success~
+[2016-03-28 11:15:52.780] [INFO] console - redis set k=com.idotools.cala@xiaomi@aaa, v=gjx,wjj success~
+[2016-03-28 11:15:52.780] [INFO] console - redis set k=com.idotools.cala@xiaomi@sddsd, v=gjx,wjj success~
+[2016-03-28 11:15:52.781] [INFO] console - redis set k=com.idotools.cala@youpin@aaa, v=gjx,wjj success~
+[2016-03-28 11:15:52.781] [INFO] console - redis set k=com.idotools.cala@youpin@sddsd, v=gjx,wjj success~
+[2016-03-28 11:15:52.781] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 11:15:52.781] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 11:15:52.781] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 11:15:52.784] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 11:15:52.785] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 11:15:52.785] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 11:15:52.785] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 11:15:52.785] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 11:15:52.805] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:15:52.815] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 11:15:52.851] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:15:52.851] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:15:52.852] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:15:52.852] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:15:55.626] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:15:55.633] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=wandoujia
+[2016-03-28 11:15:55.647] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:15:55.647] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:15:55.648] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:15:55.649] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:15:56.736] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:15:56.742] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 11:15:56.752] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:15:56.753] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:15:56.754] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:15:56.754] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:15:57.786] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:15:57.791] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=wandoujia
+[2016-03-28 11:15:57.811] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:15:57.811] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:15:57.812] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:15:57.812] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:15:58.784] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:15:58.791] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=youpin
+[2016-03-28 11:15:58.798] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:15:58.799] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:15:58.800] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:15:58.806] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:16:06.153] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:16:06.160] [INFO] normal - GET /appconfig
+[2016-03-28 11:16:06.193] [INFO] normal - GET /favicon.ico
+[2016-03-28 11:16:06.195] [INFO] normal - GET /apple-touch-icon-precomposed.png
+[2016-03-28 11:16:06.199] [INFO] normal - GET /apple-touch-icon.png
+[2016-03-28 11:16:06.284] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:16:06.288] [INFO] normal - GET /appconfig
+[2016-03-28 11:16:06.298] [INFO] normal - GET /apple-touch-icon-precomposed.png
+[2016-03-28 11:16:06.301] [INFO] normal - GET /apple-touch-icon.png
+[2016-03-28 11:16:09.386] [INFO] normal - GET /server/dadata?packageName=com.idotools.cala&channel=xiaomi&version=3
+[2016-03-28 11:16:09.421] [INFO] normal - GET /apple-touch-icon-precomposed.png
+[2016-03-28 11:16:09.428] [INFO] normal - GET /apple-touch-icon.png
+[2016-03-28 11:16:45.919] [INFO] normal - GET /server/dadata?packageName=com.idotools.cala&channel=xiaomi&version=3
+[2016-03-28 11:16:48.492] [INFO] normal - GET /server/dadata?packageName=com.idotools.cala&channel=xiaomi&version=aaa
+[2016-03-28 11:17:15.641] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:17:15.648] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=youpin
+[2016-03-28 11:17:15.662] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:17:15.671] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:17:15.673] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:17:15.674] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:17:19.794] [INFO] normal - POST /adconfig/openad
+[2016-03-28 11:17:19.851] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:17:19.857] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=youpin
+[2016-03-28 11:17:19.976] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:17:19.977] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:17:19.978] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:17:19.987] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:17:22.938] [INFO] normal - POST /adconfig/openad
+[2016-03-28 11:17:22.971] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 11:17:22.977] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=youpin
+[2016-03-28 11:17:22.985] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 11:17:22.986] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 11:17:22.987] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 11:17:22.988] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 11:17:25.230] [INFO] normal - GET /server/dadata?packageName=com.idotools.cala&channel=xiaomi&version=aaa
+[2016-03-28 12:07:41.139] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:07:41.141] [INFO] normal - GET /appconfig
+[2016-03-28 12:07:41.225] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:07:41.226] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:07:41.226] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:07:41.227] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:12:22.064] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:12:22.067] [INFO] normal - GET /appconfig
+[2016-03-28 12:12:22.140] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:12:22.141] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:12:22.142] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:12:22.142] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:12:22.730] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:12:22.736] [INFO] normal - GET /appconfig
+[2016-03-28 12:12:22.820] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:12:22.821] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:12:22.822] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:12:22.823] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:12:30.656] [INFO] normal - POST /appconfig/delversion
+[2016-03-28 12:12:30.657] [INFO] console - redis set k=com.idotools.cala@baidu@0, v=gjx success~
+[2016-03-28 12:12:30.657] [INFO] console - redis set k=com.idotools.cala@baidu@1, v=gjx success~
+[2016-03-28 12:12:30.657] [INFO] console - redis set k=com.idotools.cala@wandoujia@0, v=gjx,wjj success~
+[2016-03-28 12:12:30.658] [INFO] console - redis set k=com.idotools.cala@wandoujia@1, v=gjx,wjj success~
+[2016-03-28 12:12:30.658] [INFO] console - redis set k=com.idotools.cala@xiaomi@0, v=gjx,wjj success~
+[2016-03-28 12:12:30.658] [INFO] console - redis set k=com.idotools.cala@xiaomi@1, v=gjx,wjj success~
+[2016-03-28 12:12:30.658] [INFO] console - redis set k=com.idotools.cala@youpin@0, v=gjx,wjj success~
+[2016-03-28 12:12:30.658] [INFO] console - redis set k=com.idotools.cala@youpin@1, v=gjx,wjj success~
+[2016-03-28 12:12:30.658] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 12:12:30.659] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 12:12:30.659] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 12:12:30.659] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 12:12:30.659] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 12:12:30.659] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 12:12:30.659] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 12:12:30.659] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 12:12:30.668] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:12:30.671] [INFO] normal - GET /appconfig
+[2016-03-28 12:12:30.719] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:12:30.720] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:12:30.721] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:12:30.723] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:12:34.082] [INFO] normal - POST /appconfig/delversion
+[2016-03-28 12:12:34.083] [INFO] console - redis set k=com.idotools.cala@baidu@0, v=gjx success~
+[2016-03-28 12:12:34.083] [INFO] console - redis set k=com.idotools.cala@baidu@1, v=gjx success~
+[2016-03-28 12:12:34.083] [INFO] console - redis set k=com.idotools.cala@wandoujia@0, v=gjx,wjj success~
+[2016-03-28 12:12:34.083] [INFO] console - redis set k=com.idotools.cala@wandoujia@1, v=gjx,wjj success~
+[2016-03-28 12:12:34.084] [INFO] console - redis set k=com.idotools.cala@xiaomi@0, v=gjx,wjj success~
+[2016-03-28 12:12:34.084] [INFO] console - redis set k=com.idotools.cala@xiaomi@1, v=gjx,wjj success~
+[2016-03-28 12:12:34.084] [INFO] console - redis set k=com.idotools.cala@youpin@0, v=gjx,wjj success~
+[2016-03-28 12:12:34.084] [INFO] console - redis set k=com.idotools.cala@youpin@1, v=gjx,wjj success~
+[2016-03-28 12:12:34.084] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 12:12:34.084] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 12:12:34.084] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 12:12:34.084] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 12:12:34.084] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 12:12:34.084] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 12:12:34.084] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 12:12:34.084] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 12:12:34.107] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:12:34.109] [INFO] normal - GET /appconfig
+[2016-03-28 12:12:34.240] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:12:34.241] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:12:34.242] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:12:34.243] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:12:50.990] [INFO] normal - POST /appconfig/saveversion
+[2016-03-28 12:12:50.992] [INFO] console - redis set k=com.idotools.cala@baidu@0, v=gjx success~
+[2016-03-28 12:12:50.992] [INFO] console - redis set k=com.idotools.cala@baidu@1, v=gjx success~
+[2016-03-28 12:12:50.992] [INFO] console - redis set k=com.idotools.cala@baidu@111, v=gjx success~
+[2016-03-28 12:12:50.992] [INFO] console - redis set k=com.idotools.cala@wandoujia@0, v=gjx,wjj success~
+[2016-03-28 12:12:50.992] [INFO] console - redis set k=com.idotools.cala@wandoujia@1, v=gjx,wjj success~
+[2016-03-28 12:12:50.992] [INFO] console - redis set k=com.idotools.cala@wandoujia@111, v=gjx,wjj success~
+[2016-03-28 12:12:50.993] [INFO] console - redis set k=com.idotools.cala@xiaomi@0, v=gjx,wjj success~
+[2016-03-28 12:12:50.993] [INFO] console - redis set k=com.idotools.cala@xiaomi@1, v=gjx,wjj success~
+[2016-03-28 12:12:50.993] [INFO] console - redis set k=com.idotools.cala@xiaomi@111, v=gjx,wjj success~
+[2016-03-28 12:12:50.993] [INFO] console - redis set k=com.idotools.cala@youpin@0, v=gjx,wjj success~
+[2016-03-28 12:12:50.993] [INFO] console - redis set k=com.idotools.cala@youpin@1, v=gjx,wjj success~
+[2016-03-28 12:12:50.993] [INFO] console - redis set k=com.idotools.cala@youpin@111, v=gjx,wjj success~
+[2016-03-28 12:12:50.993] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 12:12:50.993] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 12:12:50.993] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 12:12:50.993] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 12:12:50.993] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 12:12:50.993] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 12:12:50.994] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 12:12:50.994] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 12:12:51.004] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:12:51.006] [INFO] normal - GET /appconfig
+[2016-03-28 12:12:51.052] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:12:51.053] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:12:51.054] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:12:51.056] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:12:55.557] [INFO] normal - POST /appconfig/saveversion
+[2016-03-28 12:12:55.558] [INFO] console - redis set k=com.idotools.cala@baidu@0, v=gjx success~
+[2016-03-28 12:12:55.558] [INFO] console - redis set k=com.idotools.cala@baidu@1, v=gjx success~
+[2016-03-28 12:12:55.558] [INFO] console - redis set k=com.idotools.cala@baidu@111, v=gjx success~
+[2016-03-28 12:12:55.558] [INFO] console - redis set k=com.idotools.cala@baidu@222, v=gjx success~
+[2016-03-28 12:12:55.559] [INFO] console - redis set k=com.idotools.cala@wandoujia@0, v=gjx,wjj success~
+[2016-03-28 12:12:55.559] [INFO] console - redis set k=com.idotools.cala@wandoujia@1, v=gjx,wjj success~
+[2016-03-28 12:12:55.559] [INFO] console - redis set k=com.idotools.cala@wandoujia@111, v=gjx,wjj success~
+[2016-03-28 12:12:55.559] [INFO] console - redis set k=com.idotools.cala@wandoujia@222, v=gjx,wjj success~
+[2016-03-28 12:12:55.559] [INFO] console - redis set k=com.idotools.cala@xiaomi@0, v=gjx,wjj success~
+[2016-03-28 12:12:55.559] [INFO] console - redis set k=com.idotools.cala@xiaomi@1, v=gjx,wjj success~
+[2016-03-28 12:12:55.559] [INFO] console - redis set k=com.idotools.cala@xiaomi@111, v=gjx,wjj success~
+[2016-03-28 12:12:55.559] [INFO] console - redis set k=com.idotools.cala@xiaomi@222, v=gjx,wjj success~
+[2016-03-28 12:12:55.559] [INFO] console - redis set k=com.idotools.cala@youpin@0, v=gjx,wjj success~
+[2016-03-28 12:12:55.559] [INFO] console - redis set k=com.idotools.cala@youpin@1, v=gjx,wjj success~
+[2016-03-28 12:12:55.559] [INFO] console - redis set k=com.idotools.cala@youpin@111, v=gjx,wjj success~
+[2016-03-28 12:12:55.559] [INFO] console - redis set k=com.idotools.cala@youpin@222, v=gjx,wjj success~
+[2016-03-28 12:12:55.559] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 12:12:55.559] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 12:12:55.559] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 12:12:55.560] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 12:12:55.560] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 12:12:55.560] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 12:12:55.560] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 12:12:55.560] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 12:12:55.568] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:12:55.571] [INFO] normal - GET /appconfig
+[2016-03-28 12:12:55.618] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:12:55.619] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:12:55.622] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:12:55.622] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:13:06.934] [INFO] normal - POST /appconfig/saveversion
+[2016-03-28 12:13:06.935] [INFO] console - redis set k=com.idotools.cala@baidu@0, v=gjx success~
+[2016-03-28 12:13:06.935] [INFO] console - redis set k=com.idotools.cala@baidu@1, v=gjx success~
+[2016-03-28 12:13:06.935] [INFO] console - redis set k=com.idotools.cala@baidu@111, v=gjx success~
+[2016-03-28 12:13:06.936] [INFO] console - redis set k=com.idotools.cala@baidu@222, v=gjx success~
+[2016-03-28 12:13:06.936] [INFO] console - redis set k=com.idotools.cala@baidu@333, v=gjx success~
+[2016-03-28 12:13:06.936] [INFO] console - redis set k=com.idotools.cala@wandoujia@0, v=gjx,wjj success~
+[2016-03-28 12:13:06.936] [INFO] console - redis set k=com.idotools.cala@wandoujia@1, v=gjx,wjj success~
+[2016-03-28 12:13:06.936] [INFO] console - redis set k=com.idotools.cala@wandoujia@111, v=gjx,wjj success~
+[2016-03-28 12:13:06.936] [INFO] console - redis set k=com.idotools.cala@wandoujia@222, v=gjx,wjj success~
+[2016-03-28 12:13:06.936] [INFO] console - redis set k=com.idotools.cala@wandoujia@333, v=gjx,wjj success~
+[2016-03-28 12:13:06.937] [INFO] console - redis set k=com.idotools.cala@xiaomi@0, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=com.idotools.cala@xiaomi@1, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=com.idotools.cala@xiaomi@111, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=com.idotools.cala@xiaomi@222, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=com.idotools.cala@xiaomi@333, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=com.idotools.cala@youpin@0, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=com.idotools.cala@youpin@1, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=com.idotools.cala@youpin@111, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=com.idotools.cala@youpin@222, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=com.idotools.cala@youpin@333, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 12:13:06.938] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 12:13:06.945] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:13:06.947] [INFO] normal - GET /appconfig
+[2016-03-28 12:13:06.995] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:13:06.996] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:13:06.998] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:13:06.999] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:13:16.190] [INFO] normal - POST /appconfig/saveversion
+[2016-03-28 12:13:16.191] [INFO] console - redis set k=com.idotools.cala@baidu@0, v=gjx success~
+[2016-03-28 12:13:16.191] [INFO] console - redis set k=com.idotools.cala@baidu@1, v=gjx success~
+[2016-03-28 12:13:16.191] [INFO] console - redis set k=com.idotools.cala@baidu@111, v=gjx success~
+[2016-03-28 12:13:16.191] [INFO] console - redis set k=com.idotools.cala@baidu@222, v=gjx success~
+[2016-03-28 12:13:16.191] [INFO] console - redis set k=com.idotools.cala@baidu@333, v=gjx success~
+[2016-03-28 12:13:16.191] [INFO] console - redis set k=com.idotools.cala@baidu@444, v=gjx success~
+[2016-03-28 12:13:16.191] [INFO] console - redis set k=com.idotools.cala@wandoujia@0, v=gjx,wjj success~
+[2016-03-28 12:13:16.191] [INFO] console - redis set k=com.idotools.cala@wandoujia@1, v=gjx,wjj success~
+[2016-03-28 12:13:16.191] [INFO] console - redis set k=com.idotools.cala@wandoujia@111, v=gjx,wjj success~
+[2016-03-28 12:13:16.191] [INFO] console - redis set k=com.idotools.cala@wandoujia@222, v=gjx,wjj success~
+[2016-03-28 12:13:16.191] [INFO] console - redis set k=com.idotools.cala@wandoujia@333, v=gjx,wjj success~
+[2016-03-28 12:13:16.191] [INFO] console - redis set k=com.idotools.cala@wandoujia@444, v=gjx,wjj success~
+[2016-03-28 12:13:16.192] [INFO] console - redis set k=com.idotools.cala@xiaomi@0, v=gjx,wjj success~
+[2016-03-28 12:13:16.192] [INFO] console - redis set k=com.idotools.cala@xiaomi@1, v=gjx,wjj success~
+[2016-03-28 12:13:16.192] [INFO] console - redis set k=com.idotools.cala@xiaomi@111, v=gjx,wjj success~
+[2016-03-28 12:13:16.192] [INFO] console - redis set k=com.idotools.cala@xiaomi@222, v=gjx,wjj success~
+[2016-03-28 12:13:16.192] [INFO] console - redis set k=com.idotools.cala@xiaomi@333, v=gjx,wjj success~
+[2016-03-28 12:13:16.192] [INFO] console - redis set k=com.idotools.cala@xiaomi@444, v=gjx,wjj success~
+[2016-03-28 12:13:16.192] [INFO] console - redis set k=com.idotools.cala@youpin@0, v=gjx,wjj success~
+[2016-03-28 12:13:16.192] [INFO] console - redis set k=com.idotools.cala@youpin@1, v=gjx,wjj success~
+[2016-03-28 12:13:16.192] [INFO] console - redis set k=com.idotools.cala@youpin@111, v=gjx,wjj success~
+[2016-03-28 12:13:16.192] [INFO] console - redis set k=com.idotools.cala@youpin@222, v=gjx,wjj success~
+[2016-03-28 12:13:16.193] [INFO] console - redis set k=com.idotools.cala@youpin@333, v=gjx,wjj success~
+[2016-03-28 12:13:16.193] [INFO] console - redis set k=com.idotools.cala@youpin@444, v=gjx,wjj success~
+[2016-03-28 12:13:16.193] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 12:13:16.193] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 12:13:16.193] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 12:13:16.193] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 12:13:16.193] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 12:13:16.193] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 12:13:16.193] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 12:13:16.193] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 12:13:16.203] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:13:16.205] [INFO] normal - GET /appconfig
+[2016-03-28 12:13:16.255] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:13:16.256] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:13:16.260] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:13:16.260] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:17:29.547] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:17:29.550] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 12:17:29.621] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:17:29.622] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:17:29.623] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:17:29.624] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:17:33.159] [INFO] normal - POST /appconfig/delversion
+[2016-03-28 12:17:33.161] [INFO] console - redis set k=com.idotools.cala@baidu@0, v=gjx success~
+[2016-03-28 12:17:33.161] [INFO] console - redis set k=com.idotools.cala@baidu@1, v=gjx success~
+[2016-03-28 12:17:33.161] [INFO] console - redis set k=com.idotools.cala@baidu@2, v=gjx success~
+[2016-03-28 12:17:33.161] [INFO] console - redis set k=com.idotools.cala@baidu@3, v=gjx success~
+[2016-03-28 12:17:33.161] [INFO] console - redis set k=com.idotools.cala@baidu@4, v=gjx success~
+[2016-03-28 12:17:33.161] [INFO] console - redis set k=com.idotools.cala@baidu@5, v=gjx success~
+[2016-03-28 12:17:33.161] [INFO] console - redis set k=com.idotools.cala@wandoujia@0, v=gjx,wjj success~
+[2016-03-28 12:17:33.162] [INFO] console - redis set k=com.idotools.cala@wandoujia@1, v=gjx,wjj success~
+[2016-03-28 12:17:33.162] [INFO] console - redis set k=com.idotools.cala@wandoujia@2, v=gjx,wjj success~
+[2016-03-28 12:17:33.162] [INFO] console - redis set k=com.idotools.cala@wandoujia@3, v=gjx,wjj success~
+[2016-03-28 12:17:33.162] [INFO] console - redis set k=com.idotools.cala@wandoujia@4, v=gjx,wjj success~
+[2016-03-28 12:17:33.162] [INFO] console - redis set k=com.idotools.cala@wandoujia@5, v=gjx,wjj success~
+[2016-03-28 12:17:33.162] [INFO] console - redis set k=com.idotools.cala@xiaomi@0, v=gjx,wjj success~
+[2016-03-28 12:17:33.162] [INFO] console - redis set k=com.idotools.cala@xiaomi@1, v=gjx,wjj success~
+[2016-03-28 12:17:33.162] [INFO] console - redis set k=com.idotools.cala@xiaomi@2, v=gjx,wjj success~
+[2016-03-28 12:17:33.162] [INFO] console - redis set k=com.idotools.cala@xiaomi@3, v=gjx,wjj success~
+[2016-03-28 12:17:33.162] [INFO] console - redis set k=com.idotools.cala@xiaomi@4, v=gjx,wjj success~
+[2016-03-28 12:17:33.162] [INFO] console - redis set k=com.idotools.cala@xiaomi@5, v=gjx,wjj success~
+[2016-03-28 12:17:33.162] [INFO] console - redis set k=com.idotools.cala@youpin@0, v=gjx,wjj success~
+[2016-03-28 12:17:33.162] [INFO] console - redis set k=com.idotools.cala@youpin@1, v=gjx,wjj success~
+[2016-03-28 12:17:33.162] [INFO] console - redis set k=com.idotools.cala@youpin@2, v=gjx,wjj success~
+[2016-03-28 12:17:33.162] [INFO] console - redis set k=com.idotools.cala@youpin@3, v=gjx,wjj success~
+[2016-03-28 12:17:33.163] [INFO] console - redis set k=com.idotools.cala@youpin@4, v=gjx,wjj success~
+[2016-03-28 12:17:33.163] [INFO] console - redis set k=com.idotools.cala@youpin@5, v=gjx,wjj success~
+[2016-03-28 12:17:33.163] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 12:17:33.163] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 12:17:33.164] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 12:17:33.164] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 12:17:33.164] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 12:17:33.164] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 12:17:33.164] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 12:17:33.164] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 12:17:33.172] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:17:33.174] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 12:17:33.228] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:17:33.229] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:17:33.230] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:17:33.231] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:18:37.178] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:18:37.180] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 12:18:37.224] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:18:37.225] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:18:37.226] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:18:37.227] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:18:37.691] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:18:37.693] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 12:18:37.737] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:18:37.739] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:18:37.739] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:18:37.741] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:19:33.001] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:19:33.003] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 12:19:33.048] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:19:33.050] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:19:33.051] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:19:33.052] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:19:35.160] [INFO] normal - POST /appconfig/openad
+[2016-03-28 12:19:35.161] [INFO] console - redis set k=com.idotools.cala@baidu@111, v=gjx,wjj success~
+[2016-03-28 12:19:35.161] [INFO] console - redis set k=com.idotools.cala@baidu@333, v=gjx,wjj success~
+[2016-03-28 12:19:35.161] [INFO] console - redis set k=com.idotools.cala@baidu@444, v=gjx,wjj success~
+[2016-03-28 12:19:35.161] [INFO] console - redis set k=com.idotools.cala@wandoujia@111, v=gjx,wjj success~
+[2016-03-28 12:19:35.161] [INFO] console - redis set k=com.idotools.cala@wandoujia@333, v=gjx,wjj success~
+[2016-03-28 12:19:35.161] [INFO] console - redis set k=com.idotools.cala@wandoujia@444, v=gjx,wjj success~
+[2016-03-28 12:19:35.161] [INFO] console - redis set k=com.idotools.cala@xiaomi@111, v=gjx,wjj success~
+[2016-03-28 12:19:35.161] [INFO] console - redis set k=com.idotools.cala@xiaomi@333, v=gjx,wjj success~
+[2016-03-28 12:19:35.161] [INFO] console - redis set k=com.idotools.cala@xiaomi@444, v=gjx,wjj success~
+[2016-03-28 12:19:35.161] [INFO] console - redis set k=com.idotools.cala@youpin@111, v=gjx,wjj success~
+[2016-03-28 12:19:35.162] [INFO] console - redis set k=com.idotools.cala@youpin@333, v=gjx,wjj success~
+[2016-03-28 12:19:35.162] [INFO] console - redis set k=com.idotools.cala@youpin@444, v=gjx,wjj success~
+[2016-03-28 12:19:35.162] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 12:19:35.162] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 12:19:35.162] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 12:19:35.162] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 12:19:35.162] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 12:19:35.162] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 12:19:35.162] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 12:19:35.162] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 12:19:35.169] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:19:35.171] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 12:19:35.223] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:19:35.224] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:19:35.225] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:19:35.226] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:20:37.309] [INFO] normal - POST /appconfig/saveversion
+[2016-03-28 12:20:37.311] [INFO] console - redis set k=com.idotools.cala@baidu@111, v=gjx,wjj success~
+[2016-03-28 12:20:37.312] [INFO] console - redis set k=com.idotools.cala@baidu@333, v=gjx,wjj success~
+[2016-03-28 12:20:37.312] [INFO] console - redis set k=com.idotools.cala@baidu@444, v=gjx,wjj success~
+[2016-03-28 12:20:37.312] [INFO] console - redis set k=com.idotools.cala@baidu@www, v=gjx,wjj success~
+[2016-03-28 12:20:37.312] [INFO] console - redis set k=com.idotools.cala@wandoujia@111, v=gjx,wjj success~
+[2016-03-28 12:20:37.312] [INFO] console - redis set k=com.idotools.cala@wandoujia@333, v=gjx,wjj success~
+[2016-03-28 12:20:37.312] [INFO] console - redis set k=com.idotools.cala@wandoujia@444, v=gjx,wjj success~
+[2016-03-28 12:20:37.312] [INFO] console - redis set k=com.idotools.cala@wandoujia@www, v=gjx,wjj success~
+[2016-03-28 12:20:37.312] [INFO] console - redis set k=com.idotools.cala@xiaomi@111, v=gjx,wjj success~
+[2016-03-28 12:20:37.312] [INFO] console - redis set k=com.idotools.cala@xiaomi@333, v=gjx,wjj success~
+[2016-03-28 12:20:37.312] [INFO] console - redis set k=com.idotools.cala@xiaomi@444, v=gjx,wjj success~
+[2016-03-28 12:20:37.312] [INFO] console - redis set k=com.idotools.cala@xiaomi@www, v=gjx,wjj success~
+[2016-03-28 12:20:37.312] [INFO] console - redis set k=com.idotools.cala@youpin@111, v=gjx,wjj success~
+[2016-03-28 12:20:37.313] [INFO] console - redis set k=com.idotools.cala@youpin@333, v=gjx,wjj success~
+[2016-03-28 12:20:37.313] [INFO] console - redis set k=com.idotools.cala@youpin@444, v=gjx,wjj success~
+[2016-03-28 12:20:37.314] [INFO] console - redis set k=com.idotools.cala@youpin@www, v=gjx,wjj success~
+[2016-03-28 12:20:37.314] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 12:20:37.314] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 12:20:37.314] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 12:20:37.314] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 12:20:37.314] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 12:20:37.314] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 12:20:37.314] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 12:20:37.314] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 12:20:37.319] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:20:37.327] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 12:20:37.377] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:20:37.378] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:20:37.379] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:20:37.380] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:20:50.819] [INFO] console - >>> {"version":["0","1","2","3"],"app":"com.idotools.cala","channel":"baidu","ad":"gjx"}
+[2016-03-28 12:20:50.819] [INFO] console - >>> {"version":["0","1","2","3"],"app":"com.idotools.cala","channel":"baidu","ad":"wjj"}
+[2016-03-28 12:20:50.819] [INFO] console - >>> {"version":["0","1","2","3"],"app":"com.idotools.cala","channel":"wandoujia","ad":"gjx"}
+[2016-03-28 12:20:50.819] [INFO] console - >>> {"version":["0","1","2","3"],"app":"com.idotools.cala","channel":"wandoujia","ad":"wjj"}
+[2016-03-28 12:20:50.820] [INFO] console - >>> {"version":["0","1","2","3"],"app":"com.idotools.cala","channel":"xiaomi","ad":"gjx"}
+[2016-03-28 12:20:50.820] [INFO] console - >>> {"version":["0","1","2","3"],"app":"com.idotools.cala","channel":"xiaomi","ad":"wjj"}
+[2016-03-28 12:20:50.820] [INFO] console - >>> {"version":["0","1","2","3"],"app":"com.idotools.cala","channel":"youpin","ad":"gjx"}
+[2016-03-28 12:20:50.820] [INFO] console - >>> {"version":["0","1","2","3"],"app":"com.idotools.cala","channel":"youpin","ad":"wjj"}
+[2016-03-28 12:20:50.820] [INFO] normal - POST /appconfig/delversion
+[2016-03-28 12:20:50.821] [INFO] console - redis set k=com.idotools.cala@baidu@111, v=gjx,wjj success~
+[2016-03-28 12:20:50.822] [INFO] console - redis set k=com.idotools.cala@baidu@333, v=gjx,wjj success~
+[2016-03-28 12:20:50.822] [INFO] console - redis set k=com.idotools.cala@baidu@444, v=gjx,wjj success~
+[2016-03-28 12:20:50.822] [INFO] console - redis set k=com.idotools.cala@baidu@www, v=gjx,wjj success~
+[2016-03-28 12:20:50.822] [INFO] console - redis set k=com.idotools.cala@wandoujia@111, v=gjx,wjj success~
+[2016-03-28 12:20:50.822] [INFO] console - redis set k=com.idotools.cala@wandoujia@333, v=gjx,wjj success~
+[2016-03-28 12:20:50.822] [INFO] console - redis set k=com.idotools.cala@wandoujia@444, v=gjx,wjj success~
+[2016-03-28 12:20:50.822] [INFO] console - redis set k=com.idotools.cala@wandoujia@www, v=gjx,wjj success~
+[2016-03-28 12:20:50.822] [INFO] console - redis set k=com.idotools.cala@xiaomi@111, v=gjx,wjj success~
+[2016-03-28 12:20:50.823] [INFO] console - redis set k=com.idotools.cala@xiaomi@333, v=gjx,wjj success~
+[2016-03-28 12:20:50.823] [INFO] console - redis set k=com.idotools.cala@xiaomi@444, v=gjx,wjj success~
+[2016-03-28 12:20:50.823] [INFO] console - redis set k=com.idotools.cala@xiaomi@www, v=gjx,wjj success~
+[2016-03-28 12:20:50.823] [INFO] console - redis set k=com.idotools.cala@youpin@111, v=gjx,wjj success~
+[2016-03-28 12:20:50.823] [INFO] console - redis set k=com.idotools.cala@youpin@333, v=gjx,wjj success~
+[2016-03-28 12:20:50.823] [INFO] console - redis set k=com.idotools.cala@youpin@444, v=gjx,wjj success~
+[2016-03-28 12:20:50.823] [INFO] console - redis set k=com.idotools.cala@youpin@www, v=gjx,wjj success~
+[2016-03-28 12:20:50.823] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 12:20:50.824] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 12:20:50.824] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 12:20:50.824] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 12:20:50.824] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 12:20:50.824] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 12:20:50.824] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 12:20:50.824] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 12:20:50.833] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:20:50.838] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 12:20:50.889] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:20:50.889] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:20:50.890] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:20:50.891] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:21:56.918] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:21:56.929] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 12:21:56.977] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:21:56.979] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:21:56.980] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:21:56.981] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:21:58.385] [INFO] normal - POST /appconfig/openad
+[2016-03-28 12:21:58.388] [INFO] console - redis set k=com.idotools.cala@baidu@111, v=gjx,wjj success~
+[2016-03-28 12:21:58.389] [INFO] console - redis set k=com.idotools.cala@baidu@333, v=gjx,wjj success~
+[2016-03-28 12:21:58.389] [INFO] console - redis set k=com.idotools.cala@baidu@www, v=gjx,wjj success~
+[2016-03-28 12:21:58.390] [INFO] console - redis set k=com.idotools.cala@wandoujia@111, v=gjx,wjj success~
+[2016-03-28 12:21:58.390] [INFO] console - redis set k=com.idotools.cala@wandoujia@333, v=gjx,wjj success~
+[2016-03-28 12:21:58.390] [INFO] console - redis set k=com.idotools.cala@wandoujia@www, v=gjx,wjj success~
+[2016-03-28 12:21:58.390] [INFO] console - redis set k=com.idotools.cala@xiaomi@111, v=gjx,wjj success~
+[2016-03-28 12:21:58.390] [INFO] console - redis set k=com.idotools.cala@xiaomi@333, v=gjx,wjj success~
+[2016-03-28 12:21:58.390] [INFO] console - redis set k=com.idotools.cala@xiaomi@www, v=gjx,wjj success~
+[2016-03-28 12:21:58.390] [INFO] console - redis set k=com.idotools.cala@youpin@111, v=gjx,wjj success~
+[2016-03-28 12:21:58.390] [INFO] console - redis set k=com.idotools.cala@youpin@333, v=gjx,wjj success~
+[2016-03-28 12:21:58.391] [INFO] console - redis set k=com.idotools.cala@youpin@www, v=gjx,wjj success~
+[2016-03-28 12:21:58.391] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 12:21:58.391] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 12:21:58.391] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 12:21:58.391] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 12:21:58.391] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 12:21:58.391] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 12:21:58.391] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 12:21:58.392] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 12:21:58.401] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:21:58.404] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 12:21:58.580] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:21:58.581] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:21:58.582] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:21:58.584] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:22:03.557] [INFO] console - >>> 0 >> 111
+[2016-03-28 12:22:03.557] [INFO] console - >>> 1 >> 333
+[2016-03-28 12:22:03.557] [INFO] console - >>> 2 >> www
+[2016-03-28 12:22:03.557] [INFO] console - >>> {"version":["0","1","2"],"app":"com.idotools.cala","channel":"baidu","ad":"gjx"}
+[2016-03-28 12:22:03.558] [INFO] console - >>> 0 >> 111
+[2016-03-28 12:22:03.558] [INFO] console - >>> 1 >> 333
+[2016-03-28 12:22:03.558] [INFO] console - >>> 2 >> www
+[2016-03-28 12:22:03.558] [INFO] console - >>> {"version":["0","1","2"],"app":"com.idotools.cala","channel":"baidu","ad":"wjj"}
+[2016-03-28 12:22:03.558] [INFO] console - >>> 0 >> 111
+[2016-03-28 12:22:03.558] [INFO] console - >>> 1 >> 333
+[2016-03-28 12:22:03.558] [INFO] console - >>> 2 >> www
+[2016-03-28 12:22:03.558] [INFO] console - >>> {"version":["0","1","2"],"app":"com.idotools.cala","channel":"wandoujia","ad":"gjx"}
+[2016-03-28 12:22:03.558] [INFO] console - >>> 0 >> 111
+[2016-03-28 12:22:03.558] [INFO] console - >>> 1 >> 333
+[2016-03-28 12:22:03.559] [INFO] console - >>> 2 >> www
+[2016-03-28 12:22:03.559] [INFO] console - >>> {"version":["0","1","2"],"app":"com.idotools.cala","channel":"wandoujia","ad":"wjj"}
+[2016-03-28 12:22:03.559] [INFO] console - >>> 0 >> 111
+[2016-03-28 12:22:03.560] [INFO] console - >>> 1 >> 333
+[2016-03-28 12:22:03.560] [INFO] console - >>> 2 >> www
+[2016-03-28 12:22:03.560] [INFO] console - >>> {"version":["0","1","2"],"app":"com.idotools.cala","channel":"xiaomi","ad":"gjx"}
+[2016-03-28 12:22:03.560] [INFO] console - >>> 0 >> 111
+[2016-03-28 12:22:03.560] [INFO] console - >>> 1 >> 333
+[2016-03-28 12:22:03.560] [INFO] console - >>> 2 >> www
+[2016-03-28 12:22:03.560] [INFO] console - >>> {"version":["0","1","2"],"app":"com.idotools.cala","channel":"xiaomi","ad":"wjj"}
+[2016-03-28 12:22:03.560] [INFO] console - >>> 0 >> 111
+[2016-03-28 12:22:03.560] [INFO] console - >>> 1 >> 333
+[2016-03-28 12:22:03.560] [INFO] console - >>> 2 >> www
+[2016-03-28 12:22:03.560] [INFO] console - >>> {"version":["0","1","2"],"app":"com.idotools.cala","channel":"youpin","ad":"gjx"}
+[2016-03-28 12:22:03.560] [INFO] console - >>> 0 >> 111
+[2016-03-28 12:22:03.560] [INFO] console - >>> 1 >> 333
+[2016-03-28 12:22:03.561] [INFO] console - >>> 2 >> www
+[2016-03-28 12:22:03.561] [INFO] console - >>> {"version":["0","1","2"],"app":"com.idotools.cala","channel":"youpin","ad":"wjj"}
+[2016-03-28 12:22:03.561] [INFO] normal - POST /appconfig/delversion
+[2016-03-28 12:22:03.565] [INFO] console - redis set k=com.idotools.cala@baidu@111, v=gjx,wjj success~
+[2016-03-28 12:22:03.565] [INFO] console - redis set k=com.idotools.cala@baidu@333, v=gjx,wjj success~
+[2016-03-28 12:22:03.565] [INFO] console - redis set k=com.idotools.cala@baidu@www, v=gjx,wjj success~
+[2016-03-28 12:22:03.565] [INFO] console - redis set k=com.idotools.cala@wandoujia@111, v=gjx,wjj success~
+[2016-03-28 12:22:03.566] [INFO] console - redis set k=com.idotools.cala@wandoujia@333, v=gjx,wjj success~
+[2016-03-28 12:22:03.566] [INFO] console - redis set k=com.idotools.cala@wandoujia@www, v=gjx,wjj success~
+[2016-03-28 12:22:03.566] [INFO] console - redis set k=com.idotools.cala@xiaomi@111, v=gjx,wjj success~
+[2016-03-28 12:22:03.566] [INFO] console - redis set k=com.idotools.cala@xiaomi@333, v=gjx,wjj success~
+[2016-03-28 12:22:03.566] [INFO] console - redis set k=com.idotools.cala@xiaomi@www, v=gjx,wjj success~
+[2016-03-28 12:22:03.566] [INFO] console - redis set k=com.idotools.cala@youpin@111, v=gjx,wjj success~
+[2016-03-28 12:22:03.566] [INFO] console - redis set k=com.idotools.cala@youpin@333, v=gjx,wjj success~
+[2016-03-28 12:22:03.566] [INFO] console - redis set k=com.idotools.cala@youpin@www, v=gjx,wjj success~
+[2016-03-28 12:22:03.567] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 12:22:03.567] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 12:22:03.567] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 12:22:03.567] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 12:22:03.568] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 12:22:03.568] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 12:22:03.568] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 12:22:03.568] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 12:22:03.575] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:22:03.581] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 12:22:03.624] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:22:03.626] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:22:03.626] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:22:03.629] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:22:44.957] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:22:44.976] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 12:22:45.038] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:22:45.039] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:22:45.039] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:22:45.040] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:22:58.305] [INFO] console - >>> {"version":["111","www"],"app":"com.idotools.cala","channel":"baidu","ad":"gjx"}
+[2016-03-28 12:22:58.305] [INFO] console - >>> {"version":["111","www"],"app":"com.idotools.cala","channel":"baidu","ad":"wjj"}
+[2016-03-28 12:22:58.305] [INFO] console - >>> {"version":["111","www"],"app":"com.idotools.cala","channel":"wandoujia","ad":"gjx"}
+[2016-03-28 12:22:58.305] [INFO] console - >>> {"version":["111","www"],"app":"com.idotools.cala","channel":"wandoujia","ad":"wjj"}
+[2016-03-28 12:22:58.305] [INFO] console - >>> {"version":["111","www"],"app":"com.idotools.cala","channel":"xiaomi","ad":"gjx"}
+[2016-03-28 12:22:58.305] [INFO] console - >>> {"version":["111","www"],"app":"com.idotools.cala","channel":"xiaomi","ad":"wjj"}
+[2016-03-28 12:22:58.306] [INFO] console - >>> {"version":["111","www"],"app":"com.idotools.cala","channel":"youpin","ad":"gjx"}
+[2016-03-28 12:22:58.306] [INFO] console - >>> {"version":["111","www"],"app":"com.idotools.cala","channel":"youpin","ad":"wjj"}
+[2016-03-28 12:22:58.307] [INFO] normal - POST /appconfig/delversion
+[2016-03-28 12:22:58.309] [INFO] console - redis set k=com.idotools.cala@baidu@111, v=gjx,wjj success~
+[2016-03-28 12:22:58.310] [INFO] console - redis set k=com.idotools.cala@baidu@www, v=gjx,wjj success~
+[2016-03-28 12:22:58.310] [INFO] console - redis set k=com.idotools.cala@wandoujia@111, v=gjx,wjj success~
+[2016-03-28 12:22:58.310] [INFO] console - redis set k=com.idotools.cala@wandoujia@www, v=gjx,wjj success~
+[2016-03-28 12:22:58.310] [INFO] console - redis set k=com.idotools.cala@xiaomi@111, v=gjx,wjj success~
+[2016-03-28 12:22:58.310] [INFO] console - redis set k=com.idotools.cala@xiaomi@www, v=gjx,wjj success~
+[2016-03-28 12:22:58.310] [INFO] console - redis set k=com.idotools.cala@youpin@111, v=gjx,wjj success~
+[2016-03-28 12:22:58.311] [INFO] console - redis set k=com.idotools.cala@youpin@www, v=gjx,wjj success~
+[2016-03-28 12:22:58.311] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 12:22:58.311] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 12:22:58.311] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 12:22:58.312] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 12:22:58.312] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 12:22:58.312] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 12:22:58.312] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 12:22:58.312] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 12:22:58.321] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:22:58.324] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 12:22:58.371] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:22:58.372] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:22:58.376] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:22:58.376] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:23:17.025] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:23:17.028] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 12:23:17.074] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:23:17.074] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:23:17.078] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:23:17.080] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:23:18.905] [INFO] normal - POST /appconfig/openad
+[2016-03-28 12:23:18.907] [INFO] console - redis set k=com.idotools.cala@baidu@www, v=gjx,wjj success~
+[2016-03-28 12:23:18.907] [INFO] console - redis set k=com.idotools.cala@wandoujia@www, v=gjx,wjj success~
+[2016-03-28 12:23:18.907] [INFO] console - redis set k=com.idotools.cala@xiaomi@www, v=gjx,wjj success~
+[2016-03-28 12:23:18.907] [INFO] console - redis set k=com.idotools.cala@youpin@www, v=gjx,wjj success~
+[2016-03-28 12:23:18.907] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 12:23:18.907] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 12:23:18.907] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 12:23:18.907] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 12:23:18.908] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 12:23:18.908] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 12:23:18.908] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 12:23:18.908] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 12:23:18.916] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:23:18.925] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 12:23:18.975] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:23:18.976] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:23:18.977] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:23:18.978] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 12:25:02.259] [INFO] normal - POST /appconfig/saveversion
+[2016-03-28 12:25:02.261] [INFO] console - redis set k=com.idotools.cala@baidu@www, v=gjx,wjj success~
+[2016-03-28 12:25:02.261] [INFO] console - redis set k=com.idotools.cala@baidu@333, v=gjx,wjj success~
+[2016-03-28 12:25:02.262] [INFO] console - redis set k=com.idotools.cala@wandoujia@www, v=gjx,wjj success~
+[2016-03-28 12:25:02.262] [INFO] console - redis set k=com.idotools.cala@wandoujia@333, v=gjx,wjj success~
+[2016-03-28 12:25:02.262] [INFO] console - redis set k=com.idotools.cala@xiaomi@www, v=gjx,wjj success~
+[2016-03-28 12:25:02.262] [INFO] console - redis set k=com.idotools.cala@xiaomi@333, v=gjx,wjj success~
+[2016-03-28 12:25:02.262] [INFO] console - redis set k=com.idotools.cala@youpin@www, v=gjx,wjj success~
+[2016-03-28 12:25:02.262] [INFO] console - redis set k=com.idotools.cala@youpin@333, v=gjx,wjj success~
+[2016-03-28 12:25:02.262] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 12:25:02.262] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 12:25:02.263] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 12:25:02.263] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 12:25:02.263] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 12:25:02.263] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 12:25:02.263] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 12:25:02.264] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 12:25:02.271] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 12:25:02.281] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 12:25:02.365] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 12:25:02.366] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 12:25:02.367] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 12:25:02.368] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 15:53:19.423] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 15:53:19.428] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 15:53:19.478] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 15:53:19.495] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 15:53:19.505] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 15:53:19.515] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 15:53:19.820] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 15:53:19.824] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 15:53:19.873] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 15:53:19.874] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 15:53:19.874] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 15:53:19.876] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 15:53:20.037] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 15:53:20.062] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 15:53:20.175] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 15:53:20.176] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 15:53:20.177] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 15:53:20.177] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 15:53:20.310] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 15:53:20.313] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 15:53:20.370] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 15:53:20.371] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 15:53:20.371] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 15:53:20.372] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 15:53:20.390] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 15:53:20.394] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 15:53:20.446] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 15:53:20.447] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 15:53:20.447] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 15:53:20.448] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 16:16:04.193] [INFO] normal - POST /appconfig/openad
+[2016-03-28 16:16:04.194] [INFO] console - redis set k=com.idotools.cala@baidu@www, v=gjx,wjj success~
+[2016-03-28 16:16:04.194] [INFO] console - redis set k=com.idotools.cala@baidu@333, v=gjx,wjj success~
+[2016-03-28 16:16:04.195] [INFO] console - redis set k=com.idotools.cala@wandoujia@www, v=gjx,wjj success~
+[2016-03-28 16:16:04.195] [INFO] console - redis set k=com.idotools.cala@wandoujia@333, v=gjx,wjj success~
+[2016-03-28 16:16:04.195] [INFO] console - redis set k=com.idotools.cala@xiaomi@www, v=gjx,wjj success~
+[2016-03-28 16:16:04.195] [INFO] console - redis set k=com.idotools.cala@xiaomi@333, v=gjx,wjj success~
+[2016-03-28 16:16:04.195] [INFO] console - redis set k=com.idotools.cala@youpin@www, v=gjx,wjj success~
+[2016-03-28 16:16:04.195] [INFO] console - redis set k=com.idotools.cala@youpin@333, v=gjx,wjj success~
+[2016-03-28 16:16:04.204] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 16:16:04.208] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 16:16:04.261] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 16:16:04.262] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 16:16:04.263] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 16:16:04.264] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 16:16:06.687] [INFO] normal - POST /appconfig/openad
+[2016-03-28 16:16:06.688] [INFO] console - redis set k=com.idotools.cala@baidu@www, v=gjx,wjj success~
+[2016-03-28 16:16:06.688] [INFO] console - redis set k=com.idotools.cala@baidu@333, v=gjx,wjj success~
+[2016-03-28 16:16:06.688] [INFO] console - redis set k=com.idotools.cala@wandoujia@www, v=gjx,wjj success~
+[2016-03-28 16:16:06.688] [INFO] console - redis set k=com.idotools.cala@wandoujia@333, v=gjx,wjj success~
+[2016-03-28 16:16:06.688] [INFO] console - redis set k=com.idotools.cala@xiaomi@www, v=gjx,wjj success~
+[2016-03-28 16:16:06.688] [INFO] console - redis set k=com.idotools.cala@xiaomi@333, v=gjx,wjj success~
+[2016-03-28 16:16:06.688] [INFO] console - redis set k=com.idotools.cala@youpin@www, v=gjx,wjj success~
+[2016-03-28 16:16:06.688] [INFO] console - redis set k=com.idotools.cala@youpin@333, v=gjx,wjj success~
+[2016-03-28 16:16:06.689] [INFO] console - redis set k=test@baidu@55, v=gjx,wjj success~
+[2016-03-28 16:16:06.689] [INFO] console - redis set k=test@baidu@tt, v=gjx,wjj success~
+[2016-03-28 16:16:06.689] [INFO] console - redis set k=test@wandoujia@55, v=gjx,wjj success~
+[2016-03-28 16:16:06.689] [INFO] console - redis set k=test@wandoujia@tt, v=gjx,wjj success~
+[2016-03-28 16:16:06.689] [INFO] console - redis set k=test@xiaomi@55, v=gjx,wjj success~
+[2016-03-28 16:16:06.689] [INFO] console - redis set k=test@xiaomi@tt, v=gjx,wjj success~
+[2016-03-28 16:16:06.689] [INFO] console - redis set k=test@youpin@55, v=gjx,wjj success~
+[2016-03-28 16:16:06.689] [INFO] console - redis set k=test@youpin@tt, v=gjx,wjj success~
+[2016-03-28 16:16:06.695] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 16:16:06.698] [INFO] normal - GET /appconfig?checkapp=com.idotools.cala&checkchannel=xiaomi
+[2016-03-28 16:16:06.747] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 16:16:06.749] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 16:16:06.749] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 16:16:06.751] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 19:27:55.678] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-28 19:27:55.689] [INFO] normal - GET /appconfig
+[2016-03-28 19:27:55.769] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 19:27:55.770] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 19:27:55.771] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 19:27:55.771] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 19:28:35.996] [INFO] normal - GET /adconfig
+[2016-03-28 19:28:38.938] [INFO] normal - GET /adconfig/openad
+[2016-03-28 19:29:22.286] [INFO] normal - GET /adconfig
+[2016-03-28 19:29:24.952] [INFO] normal - GET /appconfig
+[2016-03-28 19:29:24.997] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 19:29:24.998] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 19:29:24.999] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 19:29:25.000] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 19:29:29.333] [INFO] normal - GET /appconfig
+[2016-03-28 19:29:29.491] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 19:29:29.492] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 19:29:29.493] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 19:29:29.493] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 19:29:55.404] [INFO] normal - GET /appconfig
+[2016-03-28 19:29:55.448] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 19:29:55.449] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 19:29:55.452] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 19:29:55.453] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 19:29:59.702] [INFO] console - >>> Infinity
+[2016-03-28 19:29:59.732] [INFO] normal - GET /appconfig
+[2016-03-28 19:29:59.808] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 19:29:59.810] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 19:29:59.813] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 19:29:59.815] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 19:30:38.585] [INFO] normal - GET /appconfig
+[2016-03-28 19:30:42.969] [INFO] normal - GET /appconfig
+[2016-03-28 19:31:25.158] [INFO] normal - GET /appconfig
+[2016-03-28 19:31:44.645] [INFO] normal - GET /appconfig
+[2016-03-28 19:31:44.688] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 19:31:44.689] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 19:31:44.690] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 19:31:44.690] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 19:32:03.829] [INFO] normal - GET /appconfig
+[2016-03-28 19:33:34.262] [INFO] normal - GET /appconfig
+[2016-03-28 19:34:18.811] [INFO] normal - GET /appconfig
+[2016-03-28 19:34:19.235] [INFO] normal - GET /appconfig
+[2016-03-28 19:34:19.401] [INFO] normal - GET /appconfig
+[2016-03-28 19:41:24.520] [INFO] normal - GET /appconfig
+[2016-03-28 19:41:30.410] [INFO] normal - GET /appconfig
+[2016-03-28 20:21:16.992] [INFO] normal - GET /appconfig
+[2016-03-28 20:21:17.949] [INFO] normal - GET /appconfig
+[2016-03-28 20:21:18.147] [INFO] normal - GET /appconfig
+[2016-03-28 20:21:18.292] [INFO] normal - GET /appconfig
+[2016-03-28 20:21:28.037] [INFO] normal - GET /appconfig?app=a1
+[2016-03-28 20:24:39.892] [INFO] normal - GET /appconfig?app=a1
+[2016-03-28 20:24:40.007] [INFO] normal - GET /stylesheets/style.css
+[2016-03-28 20:24:40.009] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-28 20:24:40.010] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-28 20:24:40.016] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-28 21:32:58.131] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-03-28 21:32:58.132] [INFO] console - Redis Error Error: Redis connection lost and command aborted in uncertain state. It might have been processed.
+[2016-03-28 21:32:58.132] [INFO] console - Redis Error Error: Redis connection lost and commands aborted in uncertain state. They might have been processed.
+[2016-03-28 21:32:58.136] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-03-28 21:32:58.137] [INFO] console - Redis Error Error: Redis connection lost and command aborted in uncertain state. It might have been processed.
+[2016-03-28 21:32:58.138] [INFO] console - Redis Error Error: Redis connection lost and commands aborted in uncertain state. They might have been processed.
+[2016-03-28 21:32:58.146] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-03-28 21:32:58.147] [INFO] console - Redis Error Error: Redis connection lost and command aborted in uncertain state. It might have been processed.
+[2016-03-28 21:32:58.148] [INFO] console - Redis Error Error: Redis connection lost and commands aborted in uncertain state. They might have been processed.
+[2016-03-28 21:32:58.349] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED

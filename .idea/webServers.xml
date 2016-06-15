@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="89643884-e54d-4993-9ec8-ebf8b948bc0d" name="configure.chinacloudapp.cn" url="http://configure.chinacloudapp.cn">
+        <fileTransfer host="configure.chinacloudapp.cn" port="22" rootFolder="/home/toolbox/Projects" accessType="SFTP" username="toolbox">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="d7e7da45-a749-459f-9f53-4f1f6ce060a8" name="idoproxy.chinacloudapp.cn-2202" url="http://idoproxy.chinacloudapp.cn">
+        <fileTransfer host="idoproxy.chinacloudapp.cn" port="2202" accessType="SFTP" password="dfdedfc5dfc5dfe6dfe8dfc5dfd2df8bdfc3dfeedfe5df98df99df92" username="toolbox">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="2202" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="ad3f6913-a111-46b8-90c1-e05b3b298ee6" name="configure.chinacloudapp.cn-2201" url="http://configure.chinacloudapp.cn">
+        <fileTransfer host="configure.chinacloudapp.cn" port="2201" accessType="SFTP" password="dfdedfc5dfc5dfe6dfc8dfc5dfd2dfeadf9bdf9ddf92" username="toolbox">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="2201" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="55ef4af0-4cef-43a6-ba92-3924c7bd32b1" name="configure.chinacloudapp.cn-2203" url="http://configure.chinacloudapp.cn">
+        <fileTransfer host="configure.chinacloudapp.cn" port="2203" accessType="SFTP" password="dfdedfc5dfc5dfe6dfc8dfc5dfd2dfeadf9cdf9bdf99" username="toolbox">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="2203" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

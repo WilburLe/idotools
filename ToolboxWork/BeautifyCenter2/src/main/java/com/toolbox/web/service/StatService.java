@@ -42,14 +42,15 @@ public class StatService {
     }
 
     public void statWallpaper(String poolName) {
-        String pattern = StatKeyEnum.wallpaper.getStatCode() + "*";
-        List<String> keys = RedisPoolFactory.getInstance().keys(poolName, pattern, dbIndex);
+        String pattern = StatKeyEnum.wallpaper.getStatCode();
+        List<String> keys = RedisPoolFactory.getInstance().keys(poolName, pattern + "*", dbIndex);
 
         for (String key : keys) {
             String count = redisService.get(key, dbIndex);
             String elementId = key.replace(pattern, "");
             String data = commonJSONService.findOne(new Query(Criteria.where("elementId").is(elementId)), AppEnum.wallpaper.getCollection());
             if (StringUtility.isEmpty(data)) {
+                log.info("redis stat >>> k:"+key+", id:"+elementId+", not find");
                 continue;
             }
             JSONObject redisData = JSONObject.parseObject(count);
@@ -74,8 +75,8 @@ public class StatService {
     }
 
     public void statLockscreen(String poolName) {
-        String pattern = StatKeyEnum.lockscreen.getStatCode() + "*";
-        List<String> keys = RedisPoolFactory.getInstance().keys(poolName, pattern, dbIndex);
+        String pattern = StatKeyEnum.lockscreen.getStatCode();
+        List<String> keys = RedisPoolFactory.getInstance().keys(poolName, pattern + "*", dbIndex);
 
         for (String key : keys) {
             String packageName = key.replace(pattern, "").replaceAll("_", ".");

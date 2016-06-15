@@ -1,0 +1,12 @@
+[2016-03-31 18:50:14.180] [INFO] normal - GET /appconfig
+[2016-03-31 18:50:14.256] [INFO] normal - GET /stylesheets/style.css
+[2016-03-31 18:50:14.311] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-31 18:50:14.409] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-31 18:50:14.471] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-31 18:50:14.675] [INFO] normal - GET /favicon.ico
+[2016-03-31 18:50:14.689] [INFO] normal - GET /favicon.ico
+[2016-03-31 18:50:53.445] [INFO] normal - GET /appconfig
+[2016-03-31 18:50:53.517] [INFO] normal - GET /stylesheets/style.css
+[2016-03-31 18:50:53.526] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-31 18:50:53.534] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-31 18:50:53.551] [INFO] normal - GET /javascripts/jquery-ui.js

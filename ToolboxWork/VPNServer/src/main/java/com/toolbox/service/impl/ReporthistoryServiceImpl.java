@@ -119,7 +119,7 @@ public class ReporthistoryServiceImpl implements ReporthistoryService {
 
     /**
      * 签到送流量：
-     *  第一条签到送5M流量，
+     *  第一天签到送5M流量，
      *  第二天签到送10M流量，
      *  第三条签到送20M流量，
      *  第四天签到送30M流量。

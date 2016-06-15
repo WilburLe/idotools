@@ -1,0 +1,171 @@
+[2016-04-01 18:41:33.811] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:33.811] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:33.812] [INFO] console - Redis Error Error: Redis connection lost and command aborted in uncertain state. It might have been processed.
+[2016-04-01 18:41:33.812] [INFO] console - Redis Error Error: Redis connection lost and command aborted in uncertain state. It might have been processed.
+[2016-04-01 18:41:33.813] [INFO] console - Redis Error Error: Redis connection lost and commands aborted in uncertain state. They might have been processed.
+[2016-04-01 18:41:33.813] [INFO] console - Redis Error Error: Redis connection lost and commands aborted in uncertain state. They might have been processed.
+[2016-04-01 18:41:33.815] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:33.816] [INFO] console - Redis Error Error: Redis connection lost and command aborted in uncertain state. It might have been processed.
+[2016-04-01 18:41:33.817] [INFO] console - Redis Error Error: Redis connection lost and commands aborted in uncertain state. They might have been processed.
+[2016-04-01 18:41:33.817] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:33.819] [INFO] console - Redis Error Error: Redis connection lost and command aborted in uncertain state. It might have been processed.
+[2016-04-01 18:41:33.819] [INFO] console - Redis Error Error: Redis connection lost and commands aborted in uncertain state. They might have been processed.
+[2016-04-01 18:41:34.014] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:34.014] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:34.018] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:34.020] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:34.356] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:34.356] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:34.359] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:34.361] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:34.935] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:34.935] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:34.939] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:34.940] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:35.918] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:35.919] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:35.924] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:35.925] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:37.590] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:37.591] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:37.595] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:37.596] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:40.432] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:40.432] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:40.437] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:40.438] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:45.263] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:45.263] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:45.268] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:45.269] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:49.925] [INFO] normal - GET /appconfig
+[2016-04-01 18:41:49.983] [INFO] normal - GET /stylesheets/style.css
+[2016-04-01 18:41:49.987] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-04-01 18:41:49.991] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-04-01 18:41:50.001] [INFO] normal - GET /stylesheets/dialog.css
+[2016-04-01 18:41:50.211] [INFO] normal - GET /favicon.ico
+[2016-04-01 18:41:50.222] [INFO] normal - GET /favicon.ico
+[2016-04-01 18:41:53.475] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:53.475] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:53.480] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:53.481] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:41:58.658] [INFO] normal - POST /appconfig/saveversion
+[2016-04-01 18:41:58.691] [INFO] normal - GET /appconfig
+[2016-04-01 18:41:58.742] [INFO] normal - GET /stylesheets/style.css
+[2016-04-01 18:41:58.743] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-04-01 18:41:58.748] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-04-01 18:41:58.753] [INFO] normal - GET /stylesheets/dialog.css
+[2016-04-01 18:42:07.435] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:42:07.435] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:42:07.440] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:42:07.442] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:42:31.166] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:42:31.166] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:42:31.170] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:42:31.172] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:43:11.508] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:43:11.508] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:43:11.512] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:43:11.515] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:44:19.087] [INFO] normal - POST /appconfig/saveversion
+[2016-04-01 18:44:19.101] [INFO] normal - GET /appconfig
+[2016-04-01 18:44:19.192] [INFO] normal - GET /stylesheets/style.css
+[2016-04-01 18:44:19.193] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-04-01 18:44:19.198] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-04-01 18:44:19.204] [INFO] normal - GET /stylesheets/dialog.css
+[2016-04-01 18:44:20.089] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:44:20.090] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:44:20.092] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:44:20.095] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:44:21.413] [INFO] normal - POST /appconfig/delversion
+[2016-04-01 18:44:21.427] [INFO] normal - GET /appconfig
+[2016-04-01 18:44:21.478] [INFO] normal - GET /stylesheets/style.css
+[2016-04-01 18:44:21.479] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-04-01 18:44:21.480] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-04-01 18:44:21.483] [INFO] normal - GET /stylesheets/dialog.css
+[2016-04-01 18:46:16.675] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:46:16.676] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:46:16.679] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:46:16.682] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:49:34.872] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:49:34.873] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:49:34.876] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:49:34.879] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:04.362] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:04.363] [INFO] console - Redis Error Error: Redis connection lost and command aborted in uncertain state. It might have been processed.
+[2016-04-01 18:54:04.363] [INFO] console - Redis Error Error: Redis connection lost and commands aborted in uncertain state. They might have been processed.
+[2016-04-01 18:54:04.544] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:04.545] [INFO] console - Redis Error Error: Redis connection lost and command aborted in uncertain state. It might have been processed.
+[2016-04-01 18:54:04.545] [INFO] console - Redis Error Error: Redis connection lost and commands aborted in uncertain state. They might have been processed.
+[2016-04-01 18:54:04.565] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:04.726] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:04.727] [INFO] console - Redis Error Error: Redis connection lost and command aborted in uncertain state. It might have been processed.
+[2016-04-01 18:54:04.727] [INFO] console - Redis Error Error: Redis connection lost and commands aborted in uncertain state. They might have been processed.
+[2016-04-01 18:54:04.746] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:04.906] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:04.907] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:04.908] [INFO] console - Redis Error Error: Redis connection lost and command aborted in uncertain state. It might have been processed.
+[2016-04-01 18:54:04.908] [INFO] console - Redis Error Error: Redis connection lost and commands aborted in uncertain state. They might have been processed.
+[2016-04-01 18:54:04.929] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:05.087] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:05.110] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:05.270] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:05.451] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:05.485] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:05.666] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:05.849] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:06.031] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:06.470] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:06.651] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:06.833] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:07.014] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:08.142] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:08.324] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:08.506] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:08.686] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:10.985] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:11.166] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:11.348] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:11.528] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:15.816] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:15.997] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:16.179] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:16.359] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:24.029] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:24.209] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:24.391] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:24.571] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:37.990] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:38.169] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:38.351] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:54:38.531] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:55:01.721] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:55:01.901] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:55:02.083] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:55:02.262] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:55:42.063] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:55:42.243] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:55:42.425] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:55:42.605] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:56:50.646] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:56:50.826] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:56:51.008] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:56:51.187] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:58:47.233] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:58:47.414] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:58:47.595] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 18:58:47.775] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 19:02:05.430] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 19:02:05.611] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 19:02:05.793] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 19:02:05.973] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 19:04:16.851] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 19:04:16.852] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 19:04:16.853] [INFO] console - Redis Error Error: Redis connection lost and command aborted in uncertain state. It might have been processed.
+[2016-04-01 19:04:16.853] [INFO] console - Redis Error Error: Redis connection lost and command aborted in uncertain state. It might have been processed.
+[2016-04-01 19:04:16.853] [INFO] console - Redis Error Error: Redis connection lost and commands aborted in uncertain state. They might have been processed.
+[2016-04-01 19:04:16.853] [INFO] console - Redis Error Error: Redis connection lost and commands aborted in uncertain state. They might have been processed.
+[2016-04-01 19:04:16.855] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED
+[2016-04-01 19:04:16.856] [INFO] console - Redis Error Error: Redis connection lost and command aborted in uncertain state. It might have been processed.
+[2016-04-01 19:04:16.856] [INFO] console - Redis Error Error: Redis connection lost and commands aborted in uncertain state. They might have been processed.
+[2016-04-01 19:04:17.058] [INFO] console - Redis Error Error: Redis connection to 127.0.0.1:8378 failed - connect ECONNREFUSED

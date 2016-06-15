@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="configure.chinacloudapp.cn">
+    <serverData>
+      <paths name="configure.chinacloudapp.cn-2201">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/ToolboxWork/BeautifyCenter" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="configure.chinacloudapp.cn-2203">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/ToolboxWork/BeautifyCenter" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="idoproxy.chinacloudapp.cn-2202">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/toolbox/Projects/tomcat/tomcat8-beautify-8081/webapps/ROOT/WEB-INF/classes/com" local="$PROJECT_DIR$/ToolboxWork/BeautifyCenter2/target/BeautifyCenter2/WEB-INF/classes/com" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

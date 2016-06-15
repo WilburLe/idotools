@@ -1,0 +1,15 @@
+[2016-03-24 19:39:21.592] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-24 19:39:21.605] [INFO] normal - GET /appconfig?checkapp=test&checkchannel=xiaomi
+[2016-03-24 19:39:21.729] [INFO] normal - GET /stylesheets/style.css
+[2016-03-24 19:39:21.730] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-24 19:39:21.731] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-24 19:39:21.731] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-24 19:39:22.442] [INFO] normal - GET /server/ad?packageName=test&channel=xiaomi&version=55
+[2016-03-24 19:48:11.590] [INFO] normal - POST /adconfig/openad
+[2016-03-24 19:48:11.602] [INFO] appconfig - /home/hope/MyWork/workspace/yc_node_work/adconfigservice
+[2016-03-24 19:48:11.606] [INFO] normal - GET /appconfig?checkapp=test&checkchannel=xiaomi
+[2016-03-24 19:48:11.690] [INFO] normal - GET /stylesheets/style.css
+[2016-03-24 19:48:11.691] [INFO] normal - GET /javascripts/jquery-2.2.0.min.js
+[2016-03-24 19:48:11.692] [INFO] normal - GET /javascripts/jquery-ui.js
+[2016-03-24 19:48:11.692] [INFO] normal - GET /stylesheets/dialog.css
+[2016-03-24 19:49:27.241] [INFO] normal - GET /server/ad?packageName=test&channel=xiaomi&version=55

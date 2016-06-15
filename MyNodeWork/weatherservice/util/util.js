@@ -21,7 +21,7 @@ module.exports = {
             res.json(result);
         }
     },
-    gzipAesWrite: function (req, res, body) {
+    gzipAesWrite: function (code, req, res, body) {
         if (!req || !res) {
             return;
         }
@@ -31,7 +31,7 @@ module.exports = {
         if (acceptEncoding.indexOf('gzip') >= 0) {
             zlib.gzip(encryptedBody, function (err, data) {
                 if (!err) {
-                    res.writeHead(200, {
+                    res.writeHead(code, {
                         'Content-Length': data.length,
                         'Content-Type': 'application/json;charset=utf-8',
                         'Content-Encoding': 'gzip',
@@ -45,7 +45,7 @@ module.exports = {
                 res.end();
             });
         } else {
-            res.writeHead(200, {
+            res.writeHead(code, {
                 'Content-Length': body.length,
                 'Content-Type': 'application/json;charset=utf-8',
                 'Connection': 'close'

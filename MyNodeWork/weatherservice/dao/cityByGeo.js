@@ -1,38 +1,88 @@
-var mysql = require('mysql');
-var $conf = require('../conf/db');
 var $util = require('../util/util');
 var $sql = require('./weatherSqlMapping');
 var async = require('async');
-var pool = mysql.createPool($util.extend({}, $conf.mysql));
+var mysql = require('../conf/mysql-client').mysql;
+var redis = require('../conf/redis').redis;
 
 module.exports.geo = function (address, callback) {
+    // callback({"text": "Not Found"}, null);
+    // return;
+    if (!address || address.adcode == 0) {
+        callback({"text": "Not Found"}, null);
+        return;
+    }
+
     async.waterfall([
-        function (callback) {
-            if (!address || address.adcode == 0) {
-                callback(null, {err: "no find", msg: address});
+        getConnectionFunction,
+        geoidFunction,
+        cityFunction
+    ], function (err, data, connection) {
+        connection.release();
+        callback(err, data);
+    });
+
+
+    function getConnectionFunction(callback) {
+        mysql.getConnection(function (err, connection) {
+            callback(null, err, connection);
+        });
+    }
+
+    function geoidFunction(err, connection, callback) {
+        // callback(null, {err: "no find", msg: address}, connection);
+        // return;
+        //
+        var rkey = "geo_" + address.adcode;
+        redis.get(rkey, function (err, result) {
+            if (result) {
+                callback(null, null, result, connection);
             } else {
-                pool.getConnection(function (err, connection) {
-                    connection.query($sql.geoid, address.adcode, function (err, result) {
-                        if (!result || result.length == 0) {
-                            var pName = address.province;
-                            var cName = address.city;
-                            connection.query($sql.name2, [replaceName(cName), replaceName(pName)], function (err, result) {
-                                callback(null, result);
+                connection.query($sql.geoid, address.adcode, function (err, result) {
+                    if (err || result.length == 0) {
+                        var pName = address.province;
+                        var cName = address.city;
+                        if (pName == cName) {
+                            connection.query($sql.name, [replaceName(cName), replaceName(pName)], function (err, result) {
+                                if (err || result.length == 0) {
+                                    callback(null, {code: 404, err: "Not Found", msg: address}, null, connection);
+                                } else {
+                                    redis.set(rkey, JSON.stringify(result[0]), function (err, reply) {
+                                        // redis.expire(rkey, 60 * 60 * 24);
+                                    });
+                                    callback(null, null, result[0], connection);
+                                }
+
                             });
                         } else {
-                            callback(null, result);
+                            connection.query($sql.name2, [replaceName(cName), replaceName(pName)], function (err, result) {
+                                if (err || result.length == 0) {
+                                    callback(null, {code: 404, err: "Not Found", msg: address}, null, connection);
+                                } else {
+                                    redis.set(rkey, JSON.stringify(result[0]), function (err, reply) {
+                                        // redis.expire(rkey, 60 * 60 * 24);
+                                    });
+                                    callback(null, null, result[0], connection);
+                                }
+                            });
                         }
-                        connection.release();
-                    });
+                    } else {
+                        redis.set(rkey, JSON.stringify(result[0]), function (err, reply) {
+                            // redis.expire(rkey, 60 * 60 * 24);
+                        });
+                        callback(null, null, result[0], connection);
+                    }
                 });
             }
-        }
-    ], function (err, city) {
-        if (city.err) {
-            $util.gzipAesWrite(req, res, cityPackge(city, [], []));
+        });
+    }
+
+    function cityFunction(err, city, connection, callback) {
+        if (err) {
+            callback(err, null, connection);
         } else {
-            var city = city[0];
+            var city = JSON.parse(city);
             var treePath = city.treePath.replace('[1]', '').replace(/\]\[/ig, ',');
+            treePath = treePath == '' ? '[' + city.id + ']' : treePath;
             var ids = JSON.parse(treePath);
             var ps = '';
             if (ids.length == 1) {
@@ -40,23 +90,20 @@ module.exports.geo = function (address, callback) {
             } else if (ids.length == 2) {
                 ps += '(?,?)';
             }
-            pool.getConnection(function (err, connection) {
-                connection.query($sql.ids_city + ps, ids, function (err, result) {
-                    var data = {};
-                    data.status = 'OK';
-                    data.result = [
-                        {
-                            "locations": [
-                                cityPackge(city, ids, result)
-                            ]
-                        }
-                    ];
-                    callback(data);
-                    connection.release();
-                });
+            connection.query($sql.ids_city + ps, ids, function (err, result) {
+                var data = {};
+                data.status = 'OK';
+                data.result = [
+                    {
+                        "locations": [
+                            cityPackge(city, ids, result)
+                        ]
+                    }
+                ];
+                callback(null, data, connection);
             });
         }
-    });
+    }
 
 };
 
@@ -81,7 +128,6 @@ var replaceName = function (name) {
  * @returns {*[]}
  */
 var cityPackge = function (city, ids, parents) {
-    console.log("ids > " + JSON.stringify(ids) + " > " + JSON.stringify(parents));
     var map = {};
     for (var n in parents) {
         map[parents[n].id] = parents[n];

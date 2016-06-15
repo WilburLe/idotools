@@ -27,6 +27,7 @@ httpClient.doGet = function (hostname, path, port, headers, callback) {
             responseData += chunk;
         });
         res.on('end', function () {
+            console.log("http res > "+JSON.stringify(responseData));
             callback(responseData, res.statusCode, res.headers);
         });
     }).on('error', function (e) {
