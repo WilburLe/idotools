@@ -48,6 +48,14 @@ $(function() {
 		<td><input type="text" name="content_adurl" value="<%=content.getString("adurl") %>"></td>
 	</tr>
 	<tr>
+		<td>中文文案</td>
+		<td><input type="text" name="content_cnName" value="<%=content.getString("cnName") %>"></td>
+	</tr>
+	<tr>
+		<td>英文文案</td>
+		<td><input type="text" name="content_enName" value="<%=content.getString("enName") %>"></td>
+	</tr>
+	<tr>
 		<td colspan="2"><button type="submit">更新</button> </td>
 	</tr>
 </table>

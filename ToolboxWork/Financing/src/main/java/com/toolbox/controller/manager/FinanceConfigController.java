@@ -25,16 +25,17 @@ public class FinanceConfigController {
     @RequestMapping(value = "/finance", method = RequestMethod.GET)
     public ModelAndView financingConfig() {
         ToolboxConfigEntity config = toolboxConfigService.findByCode(code);
-
         return new ModelAndView("/mgr/financeConfig").addObject("config", config);
     }
 
     @RequestMapping(value = "/finance", method = RequestMethod.POST)
-    public ModelAndView updateConfig(boolean content_open, String content_adurl) {
+    public ModelAndView updateConfig(boolean content_open, String content_adurl, String content_cnName, String content_enName) {
         ToolboxConfigEntity entity = toolboxConfigService.findByCode(code);
         JSONObject content = new JSONObject();
         content.put("open", content_open);
         content.put("adurl", content_adurl);
+        content.put("cnName", content_cnName);
+        content.put("enName", content_enName);
         entity.setContent(content.toJSONString());
         toolboxConfigService.updateByCode(entity);
 
