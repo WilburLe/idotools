@@ -42,6 +42,10 @@ public class FinanceController {
         return result;
     }
 
+    /**
+     * @param uid  客户端生成的唯一码，用于UV的统计
+     * @param response
+     */
     @RequestMapping(value = "/openad/{uid}", method = RequestMethod.GET)
     public void openad(//
             @PathVariable(value = "uid") String uid,//

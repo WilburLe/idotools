@@ -46,6 +46,16 @@ public class RedisLockscreenScheduled  {
             rKey = "en_US_lockscreen_";
         }
         List<LockscreenEntity> entities = lockscreenService.findByPage(market, 0, -1);
+
+        for (int i = 0; i < entities.size(); i++) {
+            LockscreenEntity lockscreen = entities.get(i);
+            JSONObject json = RedisAppUtil.getJSON(JSON.parseObject(JSON.toJSON(lockscreen).toString()), AppEnum.lockscreen.getCollection());
+            String key = rKey + "all";
+            redisService.hset(key, lockscreen.getId(), json.toJSONString());
+        }
+
+
+        //page
         List<List<LockscreenEntity>> pageList = ListUtiltiy.split(entities, 8);
 
         //        Query query = new Query(Criteria.where("market").in(market));

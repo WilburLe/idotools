@@ -12,11 +12,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
-import org.springframework.data.redis.core.BoundValueOperations;
-import org.springframework.data.redis.core.RedisCallback;
-import org.springframework.data.redis.core.RedisOperations;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.SessionCallback;
+import org.springframework.data.redis.core.*;
 import org.springframework.data.redis.serializer.RedisSerializer;
 
 public abstract class RedisBaseService<K, V> {
@@ -49,6 +45,11 @@ public abstract class RedisBaseService<K, V> {
         } else {
             valueOper.set(value, expiredTime, TimeUnit.MILLISECONDS);
         }
+    }
+
+    public <HK, HV>  void hset(K key, HK  hkey, HV value) {
+        BoundHashOperations<K, HK, HV> valueOper = redisTemplate.boundHashOps(key);
+        valueOper.put(hkey, value);
     }
 
     public V get(final K key) {
