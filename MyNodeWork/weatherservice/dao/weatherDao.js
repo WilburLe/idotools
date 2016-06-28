@@ -136,7 +136,9 @@ var future = function (daylist) {
     var forecast = daylist.retData.forecast;
 
     var today = daylist.retData.today;
-
+    if(!today) {
+        return future;
+    }
     var todaycode = $weathercode.getweather(today.type);
     var weat = todaycode.d;
     var weant = todaycode.n ? todaycode.n : weat;

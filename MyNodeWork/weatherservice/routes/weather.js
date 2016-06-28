@@ -7,6 +7,7 @@ var cityByName = require('../dao/cityByName');
 var cityByGeo = require('../dao/cityByGeo');
 var hotCity = require('../dao/hotCity');
 var redis = require('../conf/redis').redis;
+var async = require('async');
 
 //searchLocationByKeyword
 router.post('/searchLocationByKeyword', function (req, res, next) {
@@ -36,7 +37,7 @@ router.post('/searchLocationByKeyword', function (req, res, next) {
                     });
                     $util.gzipAesWrite(200, req, res, JSON.stringify(result));
                 } else {
-                    $util.gzipAesWrite(404, req, res, JSON.stringify({"text":"Not Found"}));
+                    $util.gzipAesWrite(404, req, res, JSON.stringify({"text": "Not Found"}));
                 }
 
             });
@@ -77,33 +78,66 @@ router.post('/searchLocationByCoordinate', function (req, res, next) {
         "&location=" + latlng + //
         "&output=json" + //
         "&pois=0";
-    $http.doGet(url, path, null, null, function (result, status, headers) {
-        var r = JSON.parse(result);
+
+    async.waterfall([
+        geoFunction,
+        parseFunction,
+        resultFunction
+    ], function (status, result) {
+        $util.gzipAesWrite(status, req, res, result);
+    });
+
+    var cycle = 0;
+
+    function geoFunction(callback) {
+        $http.doGet(url, path, null, null, function (result, status, headers) {
+            if (status != 200 && cycle < 3) {
+                cycle++;
+                geoFunction(callback);
+            }
+            callback(null, result, status);
+        });
+    }
+
+    function parseFunction(geoData, httpStatus, callback) {
+        if (httpStatus != 200) {
+            callback(null, 404, JSON.stringify({"text": "Not Found"}));
+            return;
+        }
+        var r = JSON.parse(geoData);
         var address = r.result.addressComponent;
         if (!address || address.adcode == 0) {
-            $util.gzipAesWrite(404, req, res, JSON.stringify({"text": "Not Found"}));
+            callback(null, 404, JSON.stringify({"text": "Not Found"}));
+            return;
+        }
+        callback(null, 200, address);
+    }
+
+    function resultFunction(status, address, callback) {
+        if (status != 200) {
+            callback(status, address);
             return;
         }
         var cityid_key = "geoCityId_" + address.adcode;
         redis.get(cityid_key, function (err, result) {
             if (result) {
-                $util.gzipAesWrite(200, req, res, result);
-            } else {
-                cityByGeo.geo(address, function (err, result) {
-                        if (err) {
-                            $util.gzipAesWrite(404, req, res, JSON.stringify({"text": "Not Found"}));
-                        } else {
-                            redis.set(cityid_key, JSON.stringify(result), function (err, reply) {
-                                redis.expire(cityid_key, 60 * 5);
-                            });
-                            $util.gzipAesWrite(200, req, res, JSON.stringify(result));
-                        }
-                    }
-                );
+                callback(200, result);
+                return;
             }
+            cityByGeo.geo(address, function (err, result) {
+                    if (err) {
+                        callback(404, JSON.stringify({"text": "Not Found"}));
+                        return;
+                    }
+                    redis.set(cityid_key, JSON.stringify(result), function (err, reply) {
+                        redis.expire(cityid_key, 60 * 5);
+                    });
+                    callback(200, JSON.stringify(result));
+                }
+            );
         });
+    }
 
-    });
 });
 
 
@@ -143,9 +177,6 @@ router.post('/', function (req, res, next) {
 
 });
 
-router.get('/aaa', function (req, res, next) {
-    res.render('index', {title: 'Jade'});
-});
 //getSearchHots
 router.post('/getSearchHots', function (req, res, next) {
     //$util.getRequestBody(req, function (body) {

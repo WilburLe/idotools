@@ -23,7 +23,7 @@
                 if (confirm('确定删除应用['+app.name+']?')) {
                     $http({
                         method: 'POST',
-                        url: '/apps/del',
+                        url: '/mgr/apps/del',
                         data: app
                     }).success(function (data) {
                         if (data.err) {
@@ -37,7 +37,7 @@
             $scope.updateApp = function (app) {
                 $http({
                     method: 'POST',
-                    url: '/apps/update',
+                    url: '/mgr/apps/update',
                     data: app
                 }).success(function (data) {
                     if (data.err) {
@@ -78,7 +78,7 @@
         </td>
     </script>
 
-    <form action="/apps/save" method="post">
+    <form action="/mgr/apps/save" method="post">
         <div class="form-group">
             <label class="col-sm-2 control-label">应用名:</label>
             <div class="col-sm-10">

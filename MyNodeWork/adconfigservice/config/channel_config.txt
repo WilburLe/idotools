@@ -1,1 +1,1 @@
-{"name":"小米","code":"xiaomi"},{"name":"豌豆荚","code":"wandoujia"},{"name":"百度","code":"baidu"},{"name":"百度手助","code":"youpin"}
+{"name":"小米","code":"xiaomi"},{"name":"uc","code":"uc"},{"name":"华为","code":"huawei"},{"name":"联想","code":"lenovo"},{"name":"安智","code":"anzhi"},{"name":"OPPO","code":"oppo"},{"name":"优亿","code":"eoem"},{"name":"搜狗","code":"sogou"},{"name":"vivo","code":"bubugao"},{"name":"测试","code":"111"}

@@ -1,1 +1,0 @@
-{"version":["www","333","22"],"app":"com.idotools.cala","channel":"xiaomi","ad":"wjj"}

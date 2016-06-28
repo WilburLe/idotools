@@ -35,64 +35,77 @@ module.exports.geo = function (address, callback) {
         var rkey = "geo_" + address.adcode;
         redis.get(rkey, function (err, result) {
             if (result) {
-                callback(null, null, result, connection);
-            } else {
-                connection.query($sql.geoid, address.adcode, function (err, result) {
-                    if (err || result.length == 0) {
-                        var pName = address.province;
-                        var cName = address.city;
-                        if (pName == cName) {
-                            connection.query($sql.name, [replaceName(cName), replaceName(pName)], function (err, result) {
-                                if (err || result.length == 0) {
-                                    callback(null, {code: 404, err: "Not Found", msg: address}, null, connection);
-                                } else {
-                                    redis.set(rkey, JSON.stringify(result[0]), function (err, reply) {
-                                        // redis.expire(rkey, 60 * 60 * 24);
-                                    });
-                                    callback(null, null, result[0], connection);
-                                }
-
-                            });
-                        } else {
-                            connection.query($sql.name2, [replaceName(cName), replaceName(pName)], function (err, result) {
-                                if (err || result.length == 0) {
-                                    callback(null, {code: 404, err: "Not Found", msg: address}, null, connection);
-                                } else {
-                                    redis.set(rkey, JSON.stringify(result[0]), function (err, reply) {
-                                        // redis.expire(rkey, 60 * 60 * 24);
-                                    });
-                                    callback(null, null, result[0], connection);
-                                }
-                            });
-                        }
-                    } else {
-                        redis.set(rkey, JSON.stringify(result[0]), function (err, reply) {
-                            // redis.expire(rkey, 60 * 60 * 24);
-                        });
-                        callback(null, null, result[0], connection);
-                    }
-                });
+                callback(null, null, JSON.parse(result), connection);
+                return;
             }
+            connection.query($sql.geoid, address.adcode, function (err, result) {
+                if (!err && result.length > 0) {
+                    redis.set(rkey, JSON.stringify(result[0]), function (err, reply) {
+                        redis.expire(rkey, 60 * 60);
+                    });
+                    callback(null, null, result[0], connection);
+                    return;
+                }
+                var pName = address.province;
+                var cName = address.city;
+                if (pName == cName) {
+                    connection.query($sql.name, [replaceName(cName), replaceName(pName)], function (err, result) {
+                        if (err || result.length == 0) {
+                            callback(null, {code: 404, err: "Not Found", msg: address}, null, connection);
+                        } else {
+                            redis.set(rkey, JSON.stringify(result[0]), function (err, reply) {
+                                // redis.expire(rkey, 60 * 60 * 24);
+                            });
+                            callback(null, null, result[0], connection);
+                        }
+
+                    });
+                } else {
+                    connection.query($sql.name2, [replaceName(cName), replaceName(pName)], function (err, result) {
+                        if (err || result.length == 0) {
+                            callback(null, {code: 404, err: "Not Found", msg: address}, null, connection);
+                        } else {
+                            redis.set(rkey, JSON.stringify(result[0]), function (err, reply) {
+                                // redis.expire(rkey, 60 * 60 * 24);
+                            });
+                            callback(null, null, result[0], connection);
+                        }
+                    });
+                }
+
+            });
+
         });
     }
 
     function cityFunction(err, city, connection, callback) {
         if (err) {
             callback(err, null, connection);
-        } else {
-            var city = JSON.parse(city);
-            var treePath = city.treePath.replace('[1]', '').replace(/\]\[/ig, ',');
-            treePath = treePath == '' ? '[' + city.id + ']' : treePath;
-            var ids = JSON.parse(treePath);
-            var ps = '';
-            if (ids.length == 1) {
-                ps += '(?)';
-            } else if (ids.length == 2) {
-                ps += '(?,?)';
-            }
-            connection.query($sql.ids_city + ps, ids, function (err, result) {
-                var data = {};
-                data.status = 'OK';
+            return;
+        }
+        var treePath = JSON.stringify(city.treePath);
+        treePath = treePath.replace('[1]', '').replace(/\]\[/ig, ',');
+        treePath = treePath == '' ? '[' + city.id + ']' : treePath;
+        var ids = JSON.parse(treePath);
+        var ps = '';
+        if (ids.length == 1) {
+            ps += '(?)';
+        } else if (ids.length == 2) {
+            ps += '(?,?)';
+        }
+        connection.query($sql.ids_city + ps, ids, function (err, result) {
+            var data = {};
+            data.status = 'OK';
+
+            if (err || result.length == 0) {
+                data.result = [
+                    {
+                        "locations": [
+                            cityPackge(city, [], [])
+                        ]
+                    }
+                ];
+            } else {
                 data.result = [
                     {
                         "locations": [
@@ -100,9 +113,10 @@ module.exports.geo = function (address, callback) {
                         ]
                     }
                 ];
-                callback(null, data, connection);
-            });
-        }
+            }
+            callback(null, data, connection);
+        });
+
     }
 
 };

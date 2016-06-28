@@ -1,5 +1,25 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  p city: #{city.text} #{city.status}
+  each cit in city.result
+    each loc in cit.locations
+      li #{loc.Key} - #{loc.LocalizedName}
+
+
+  p weather: #{weather.status}
+  each wea in weather.weather
+    li 城市ID：#{wea.city_id} - 当前温度：#{wea.now.temperature}
+
+  h1 通过经纬度获取天气
+  form(method='post', action='/test/wea')
+      div.form-row
+          label
+              span Lat:
+              input(type='text',name='lat',value=lat)
+      div.form-row
+          label
+              span Lng:
+              input(type='text',name='lng',value=lng)
+      div.form-row
+          input(type='submit')

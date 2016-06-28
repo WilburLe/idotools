@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var weather = require('./routes/weather');
+var weather_test = require('./routes/weather-test');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use(logger('combined', {stream: accessLogStream}));
 //app.use('/', routes);
 app.use('/users', users);
 app.use('/', weather);
+app.use('/test', weather_test);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

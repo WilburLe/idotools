@@ -1,1 +1,1 @@
-{"name":"文件夹","code":"wjj"},{"name":"工具箱","code":"gjx"}
+{"name":"文件夹","code":"wjj"},{"name":"工具箱","code":"gjx"},{"name":"通知栏","code":"tzl"},{"name":"退出闪屏","code":"tcsp"},{"name":"开屏","code":"kp"},{"name":"信息流","code":"xxl"},{"name":"礼盒","code":"gift"},{"name":"文字链","code":"word"},{"name":"计算器理财","code":"money"},{"name":"计算器源生广告","code":"jsqys"},{"name":"webview","code":"webview"},{"name":"美化中心应用成功","code":"yycg"},{"name":"周历通知栏","code":"zhouli"}
