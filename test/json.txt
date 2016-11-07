@@ -1,0 +1,3324 @@
+{
+    "0": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "1": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "2": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "3": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "4": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "5": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "6": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "7": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "8": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "9": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "10": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "11": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "12": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "13": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "14": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "15": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "16": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "17": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "18": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "19": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "20": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "21": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "22": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "23": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "24": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "25": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "26": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "27": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "28": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "29": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "30": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "31": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "32": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "33": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "34": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "35": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "36": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "37": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "38": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "39": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "40": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "41": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "42": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "43": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "44": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "45": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "46": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "47": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "48": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "49": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "50": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "51": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "52": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "53": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "54": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "55": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "56": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "57": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "58": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "59": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "extend": {
+                "inner": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "number"
+                    }
+                },
+                "type": "json"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "60": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "61": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "62": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "63": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "64": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "65": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "66": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "67": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "68": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    },
+    "69": {
+        "inner": {
+            "tseq": {
+                "type": "number"
+            },
+            "created_at": {
+                "type": "string"
+            },
+            "_status": {
+                "type": "number"
+            },
+            "seq": {
+                "type": "number"
+            },
+            "chat_type": {
+                "type": "number"
+            },
+            "message_type": {
+                "type": "number"
+            },
+            "media_type": {
+                "type": "number"
+            },
+            "content": {
+                "type": "string"
+            },
+            "creator": {
+                "type": "string"
+            },
+            "channel_id": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            }
+        },
+        "type": "json"
+    }
+}
+
+[{"tseq":"14761748345336684998554","created_at":"2016-10-11T08:33:54.554Z","_status":"1","extend":{"user_id":"57fca3f128c90c0001daf74b","type":"1"},"seq":"29653","chat_type":"0","message_type":"3","media_type":"-1","content":"xs68 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"57fca3f2609df200010876eb"},{"tseq":"14761775778942679423840","created_at":"2016-10-11T09:19:37.906Z","_status":"1","extend":{"user_id":"57fcaea928c90c0001daf756","type":"1"},"seq":"29654","chat_type":"0","message_type":"3","media_type":"-1","content":"sun 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"57fcaea9609df200010877b7"},{"tseq":"14761797245131173402537","created_at":"2016-10-11T09:55:24.526Z","_status":"1","extend":{"user_id":"57fcb70c28c90c0001daf786","type":"1"},"seq":"29655","chat_type":"0","message_type":"3","media_type":"-1","content":"冯晓华 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"57fcb70c609df200010877e4"},{"tseq":"14762481270685558368121","created_at":"2016-10-12T04:55:27.089Z","_status":"1","extend":{"user_id":"57fdc23e8eae7a00018a27bd","type":"1"},"seq":"29656","chat_type":"0","message_type":"3","media_type":"-1","content":"xs77 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"57fdc23f483f410001a98453"},{"tseq":"14762628384186046979418","created_at":"2016-10-12T09:00:38.450Z","_status":"1","extend":{"user_id":"57fdfbb68eae7a00018a27ea","type":"1"},"seq":"29657","chat_type":"0","message_type":"3","media_type":"-1","content":"邵益寿 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"57fdfbb6483f410001a98713"},{"tseq":"14763517979979648410041","created_at":"2016-10-13T09:43:18.014Z","_status":"1","extend":{"user_id":"57ff57358eae7a00018a2893","type":"1"},"seq":"29658","chat_type":"0","message_type":"3","media_type":"-1","content":"啊不 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"57ff5736483f410001a98a29"},{"tseq":"14763531367259861235604","created_at":"2016-10-13T10:05:36.747Z","_status":"1","extend":{"user_id":"57ff5c708eae7a00018a289e","type":"1"},"seq":"29659","chat_type":"0","message_type":"3","media_type":"-1","content":"孙晨 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"57ff5c70483f410001a98a45"},{"tseq":"14764185533743388063755","created_at":"2016-10-14T04:15:53.391Z","_status":"1","extend":{"user_id":"58005bf982978e0001f9932b","type":"1"},"seq":"29660","chat_type":"0","message_type":"3","media_type":"-1","content":"back 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58005bf9483f410001a98a93"},{"tseq":"14764302888811500579915","created_at":"2016-10-14T07:31:28.893Z","_status":"1","extend":{"user_id":"580089d082978e0001f99344","type":"1"},"seq":"29661","chat_type":"0","message_type":"3","media_type":"-1","content":"哈士奇 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"580089d0483f410001a98af0"},{"tseq":"14764305545731690187841","created_at":"2016-10-14T07:35:54.591Z","_status":"1","extend":{"user_id":"58008ada82978e0001f99346","type":"1"},"seq":"29662","chat_type":"0","message_type":"3","media_type":"-1","content":"泰迪 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58008ada483f410001a98b0b"},{"tseq":"14766704311548953615348","created_at":"2016-10-17T02:13:51.169Z","_status":"1","extend":{"user_id":"580433de0754c000018d67b1","type":"1"},"seq":"29663","chat_type":"0","message_type":"3","media_type":"-1","content":"张若琛 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"580433df483f410001a98ba5"},{"tseq":"14770392923093222920650","created_at":"2016-10-21T08:41:32.324Z","_status":"1","extend":{"user_id":"5809d4bc397e99000162f2d3","type":"1"},"seq":"29664","chat_type":"0","message_type":"3","media_type":"-1","content":"k1 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5809d4bc127a4200013f5f1d"},{"tseq":"14773788956028111871146","created_at":"2016-10-25T07:01:35.612Z","_status":"1","extend":{"user_id":"5809bb9e397e99000162f2cf","type":"1"},"seq":"29665","chat_type":"0","message_type":"3","media_type":"-1","content":"张荣宾 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"580f034fcb28800001ea24c6"},{"tseq":"14774657932636341766691","created_at":"2016-10-26T07:09:53.273Z","_status":"1","extend":{"user_id":"58104d33344465000108c3e2","type":"1"},"seq":"29666","chat_type":"0","message_type":"3","media_type":"-1","content":"wolf 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581056c1cb28800001ea28b8"},{"tseq":"14774665829578268204745","created_at":"2016-10-26T07:23:02.972Z","_status":"1","extend":{"user_id":"581059d6344465000108c3ed","type":"1"},"seq":"29667","chat_type":"0","message_type":"3","media_type":"-1","content":"xs90 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581059d6cb28800001ea2911"},{"tseq":"14775673310511359280377","created_at":"2016-10-27T11:22:11.064Z","_status":"1","extend":{"user_id":"5811e3627576df000111ed30","type":"1"},"seq":"29668","chat_type":"0","message_type":"3","media_type":"-1","content":"2222 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5811e363cb28800001ea2bf0"},{"tseq":"14775771512894686557781","created_at":"2016-10-27T14:05:51.306Z","_status":"1","extend":{"user_id":"581209bf7576df000111ed60","type":"1"},"seq":"29669","chat_type":"0","message_type":"3","media_type":"-1","content":":) 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581209bfcb28800001ea2c10"},{"tseq":"14776240342879489821310","created_at":"2016-10-28T03:07:14.296Z","_status":"1","extend":{"user_id":"5812c0e27576df000111edc3","type":"1"},"seq":"29670","chat_type":"0","message_type":"3","media_type":"-1","content":"张闪 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812c0e2d613ca0001440331"},{"tseq":"14776247946083067432448","created_at":"2016-10-28T03:19:54.614Z","_status":"1","extend":{"user_id":"5812c3da7576df000111edd8","type":"1"},"seq":"29671","chat_type":"0","message_type":"3","media_type":"-1","content":"zzz@grr.la 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812c3dad613ca000144033e"},{"tseq":"14776253492819694592489","created_at":"2016-10-28T03:29:09.287Z","_status":"1","extend":{"user_id":"5812c6057576df000111edf5","type":"1"},"seq":"29672","chat_type":"0","message_type":"3","media_type":"-1","content":"张张 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812c605d613ca000144036e"},{"tseq":"14776257879867424045173","created_at":"2016-10-28T03:36:27.997Z","_status":"1","extend":{"user_id":"5812c7bb7576df000111edfd","type":"1"},"seq":"29673","chat_type":"0","message_type":"3","media_type":"-1","content":"日子我是 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812c7bbd613ca0001440394"},{"tseq":"14776261656626316328933","created_at":"2016-10-28T03:42:45.667Z","_status":"1","extend":{"user_id":"5812c9357576df000111ee03","type":"1"},"seq":"29674","chat_type":"0","message_type":"3","media_type":"-1","content":"婆婆婆婆 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812c935d613ca00014403c2"},{"tseq":"14776266952361615041059","created_at":"2016-10-28T03:51:35.242Z","_status":"1","extend":{"user_id":"5812cb47548a9c0001e932ff","type":"1"},"seq":"29675","chat_type":"0","message_type":"3","media_type":"-1","content":"哈哈哈 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812cb47d613ca00014403ea"},{"tseq":"14776268500031508098340","created_at":"2016-10-28T03:54:10.015Z","_status":"1","extend":{"user_id":"5812cbe1548a9c0001e93303","type":"1"},"seq":"29676","chat_type":"0","message_type":"3","media_type":"-1","content":"gong'g 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812cbe2d613ca00014403ef"},{"tseq":"14776274073396922202130","created_at":"2016-10-28T04:03:27.346Z","_status":"1","extend":{"user_id":"5812ce0f548a9c0001e93306","type":"1"},"seq":"29677","chat_type":"0","message_type":"3","media_type":"-1","content":"ROM婆婆 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812ce0fd613ca0001440406"},{"tseq":"14776280444958506364802","created_at":"2016-10-28T04:14:04.501Z","_status":"1","extend":{"user_id":"5812d08c548a9c0001e93309","type":"1"},"seq":"29678","chat_type":"0","message_type":"3","media_type":"-1","content":"fghh 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812d08cd613ca0001440420"},{"tseq":"14776282372522003830038","created_at":"2016-10-28T04:17:17.260Z","_status":"1","extend":{"user_id":"5812d14d548a9c0001e93314","type":"1"},"seq":"29679","chat_type":"0","message_type":"3","media_type":"-1","content":"婆婆哦是 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812d14dd613ca0001440439"},{"tseq":"14776285812284326516533","created_at":"2016-10-28T04:23:01.240Z","_status":"1","extend":{"user_id":"5812d2a5548a9c0001e93317","type":"1"},"seq":"29680","chat_type":"0","message_type":"3","media_type":"-1","content":"yuj 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812d2a5d613ca0001440453"},{"tseq":"14776290157378448680652","created_at":"2016-10-28T04:30:15.745Z","_status":"1","extend":{"user_id":"5812d457548a9c0001e93320","type":"1"},"seq":"29681","chat_type":"0","message_type":"3","media_type":"-1","content":"gbhhj 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812d457d613ca000144046b"},{"tseq":"14776291671652822140517","created_at":"2016-10-28T04:32:47.173Z","_status":"1","extend":{"user_id":"5812d4ef548a9c0001e93323","type":"1"},"seq":"29682","chat_type":"0","message_type":"3","media_type":"-1","content":"Sass 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812d4efd613ca0001440484"},{"tseq":"14776316939893913108670","created_at":"2016-10-28T05:14:53.998Z","_status":"1","extend":{"user_id":"5812decd548a9c0001e9332c","type":"1"},"seq":"29683","chat_type":"0","message_type":"3","media_type":"-1","content":"gyhh 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812decde67e6f0001dd4618"},{"tseq":"14776364310729355456097","created_at":"2016-10-28T06:33:51.085Z","_status":"1","extend":{"user_id":"5812f14e548a9c0001e9333b","type":"1"},"seq":"29684","chat_type":"0","message_type":"3","media_type":"-1","content":"xs88 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812f14fe67e6f0001dd4631"},{"tseq":"14776368555757476864147","created_at":"2016-10-28T06:40:55.589Z","_status":"1","extend":{"user_id":"5812f2f7548a9c0001e93345","type":"1"},"seq":"29685","chat_type":"0","message_type":"3","media_type":"-1","content":"依依 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812f2f7e67e6f0001dd4634"},{"tseq":"14776370763795408729676","created_at":"2016-10-28T06:44:36.394Z","_status":"1","extend":{"user_id":"5812f3d4548a9c0001e93349","type":"1"},"seq":"29686","chat_type":"0","message_type":"3","media_type":"-1","content":"jvj 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812f3d4e67e6f0001dd464c"},{"tseq":"14776377974500160916418","created_at":"2016-10-28T06:56:37.464Z","_status":"1","extend":{"user_id":"5812f6a5548a9c0001e9334d","type":"1"},"seq":"29687","chat_type":"0","message_type":"3","media_type":"-1","content":"王庆光 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812f6a5e67e6f0001dd4661"},{"tseq":"14776381089722992353578","created_at":"2016-10-28T07:01:48.986Z","_status":"1","extend":{"user_id":"5812f7dc548a9c0001e9334f","type":"1"},"seq":"29688","chat_type":"0","message_type":"3","media_type":"-1","content":"CNBC 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812f7dce67e6f0001dd4679"},{"tseq":"14776381508310316625176","created_at":"2016-10-28T07:02:30.841Z","_status":"1","extend":{"user_id":"5812f806548a9c0001e93351","type":"1"},"seq":"29689","chat_type":"0","message_type":"3","media_type":"-1","content":"王庆光 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812f806e67e6f0001dd468b"},{"tseq":"14776388105636345285553","created_at":"2016-10-28T07:13:30.580Z","_status":"1","extend":{"user_id":"5812fa9a548a9c0001e93354","type":"1"},"seq":"29690","chat_type":"0","message_type":"3","media_type":"-1","content":"王庆光 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812fa9ae67e6f0001dd46a6"},{"tseq":"14776392766419002103006","created_at":"2016-10-28T07:21:16.656Z","_status":"1","extend":{"user_id":"5812fc6c548a9c0001e93357","type":"1"},"seq":"29691","chat_type":"0","message_type":"3","media_type":"-1","content":"王庆光 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812fc6ce67e6f0001dd46bb"},{"tseq":"14776395002183330837487","created_at":"2016-10-28T07:25:00.230Z","_status":"1","extend":{"user_id":"5812fd4c548a9c0001e9335d","type":"1"},"seq":"29692","chat_type":"0","message_type":"3","media_type":"-1","content":"djdj 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812fd4ce67e6f0001dd46ce"},{"tseq":"14776402632583030507238","created_at":"2016-10-28T07:37:43.268Z","_status":"1","extend":{"user_id":"58130047aa74e100017953a3","type":"1"},"seq":"29693","chat_type":"0","message_type":"3","media_type":"-1","content":"snns 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58130047e67e6f0001dd46e9"},{"tseq":"14776403870954425947467","created_at":"2016-10-28T07:39:47.107Z","_status":"1","extend":{"user_id":"581300c2aa74e100017953a5","type":"1"},"seq":"29694","chat_type":"0","message_type":"3","media_type":"-1","content":"王培勇 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581300c3e67e6f0001dd46f1"},{"tseq":"14776405724515868498142","created_at":"2016-10-28T07:42:52.460Z","_status":"1","extend":{"user_id":"5813017caa74e100017953a7","type":"1"},"seq":"29695","chat_type":"0","message_type":"3","media_type":"-1","content":"jd 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5813017ce67e6f0001dd470d"},{"tseq":"14776406585339136191548","created_at":"2016-10-28T07:44:18.542Z","_status":"1","extend":{"user_id":"581301d2aa74e100017953a9","type":"1"},"seq":"29696","chat_type":"0","message_type":"3","media_type":"-1","content":"王培勇 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581301d2e67e6f0001dd4728"},{"tseq":"14776407575846515661773","created_at":"2016-10-28T07:45:57.594Z","_status":"1","extend":{"user_id":"58130235aa74e100017953ac","type":"1"},"seq":"29697","chat_type":"0","message_type":"3","media_type":"-1","content":"凄凄切切 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58130235e67e6f0001dd4743"},{"tseq":"14776459117206533540434","created_at":"2016-10-28T09:11:51.733Z","_status":"1","extend":{"user_id":"58131657c0aaa9000136e1c7","type":"1"},"seq":"29698","chat_type":"0","message_type":"3","media_type":"-1","content":"俊介 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58131657f403bd00013c989d"},{"tseq":"14776461412140258758616","created_at":"2016-10-28T09:15:41.229Z","_status":"1","extend":{"user_id":"5813173dc0aaa9000136e1c9","type":"1"},"seq":"29699","chat_type":"0","message_type":"3","media_type":"-1","content":"sjjs 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5813173df403bd00013c98a0"},{"tseq":"14776461908426246984311","created_at":"2016-10-28T09:16:30.854Z","_status":"1","extend":{"user_id":"5813176ec0aaa9000136e1cb","type":"1"},"seq":"29700","chat_type":"0","message_type":"3","media_type":"-1","content":"王培勇 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5813176ef403bd00013c98bf"},{"tseq":"14776462955504337596740","created_at":"2016-10-28T09:18:15.561Z","_status":"1","extend":{"user_id":"581317d7c0aaa9000136e1ce","type":"1"},"seq":"29701","chat_type":"0","message_type":"3","media_type":"-1","content":"榴莲 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581317d7f403bd00013c98dc"},{"tseq":"14776483743388809202451","created_at":"2016-10-28T09:52:54.355Z","_status":"1","extend":{"user_id":"58131ff6c0aaa9000136e1d1","type":"1"},"seq":"29702","chat_type":"0","message_type":"3","media_type":"-1","content":"xn 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58131ff6f403bd00013c9920"},{"tseq":"14778968205798885420437","created_at":"2016-10-31T06:53:40.596Z","_status":"1","extend":{"user_id":"5816ea74c0aaa9000136e23d","type":"1"},"seq":"29703","chat_type":"0","message_type":"3","media_type":"-1","content":"沫沫 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5816ea74f403bd00013c9aa6"},{"tseq":"14778978327318287824292","created_at":"2016-10-31T07:10:32.744Z","_status":"1","extend":{"user_id":"5816ee68c0aaa9000136e24c","type":"1"},"seq":"29704","chat_type":"0","message_type":"3","media_type":"-1","content":"马昕悦 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5816ee68f403bd00013c9ac6"},{"tseq":"14779718224292543404968","created_at":"2016-11-01T03:43:42.441Z","_status":"1","extend":{"user_id":"58180f6e6645df0001cf09f8","type":"1"},"seq":"29705","chat_type":"0","message_type":"3","media_type":"-1","content":"大珉 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58180f6ef403bd00013c9b1d"},{"tseq":"14779867134575125129979","created_at":"2016-11-01T07:51:53.465Z","_status":"1","extend":{"user_id":"5818499946eecb00015d9218","type":"1"},"seq":"29706","chat_type":"0","message_type":"3","media_type":"-1","content":"大珉 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58184999f403bd00013c9b3c"},{"tseq":"14780006905133822499850","created_at":"2016-11-01T11:44:50.523Z","_status":"1","extend":{"user_id":"5818803246eecb00015d9249","type":"1"},"seq":"29707","chat_type":"0","message_type":"3","media_type":"-1","content":"叶芳 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58188032f403bd00013cbc52"},{"tseq":"14780613308326272190399","created_at":"2016-11-02T04:35:30.849Z","_status":"1","extend":{"user_id":"58196d1246eecb00015d925c","type":"1"},"seq":"29708","chat_type":"0","message_type":"3","media_type":"-1","content":"那种 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58196d12f403bd00013cd7be"},{"tseq":"14781432428870729523269","created_at":"2016-11-03T03:20:42.000Z","_status":"1","extend":{"user_id":"581aad0a46eecb00015d92ef","type":"1"},"seq":"29709","chat_type":"0","message_type":"3","media_type":"-1","content":"sunchen37 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581aad0a160c980001931e5f"},{"tseq":"14781550362750364191697","created_at":"2016-11-03T06:37:16.000Z","_status":"1","extend":{"user_id":"581adb1c46eecb00015d9374","type":"1"},"seq":"29710","chat_type":"0","message_type":"3","media_type":"-1","content":"小子 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581adb1c578be4000193d0ba"},{"tseq":"14781559350677137063047","created_at":"2016-11-03T06:52:15.000Z","_status":"1","extend":{"user_id":"581ade9e46eecb00015d9386","type":"1"},"seq":"29711","chat_type":"0","message_type":"3","media_type":"-1","content":"🍁 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581ade9f578be4000193d0f7"},{"tseq":"14781565763192837248814","created_at":"2016-11-03T07:02:56.000Z","_status":"1","extend":{"user_id":"581ae12046eecb00015d93a1","type":"1"},"seq":"29712","chat_type":"0","message_type":"3","media_type":"-1","content":"小子 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581ae120578be4000193e21c"},{"tseq":"14781666870820646207663","created_at":"2016-11-03T09:51:27.083Z","_status":"1","seq":"29713","chat_type":"0","message_type":"1","media_type":"-1","content":"ollooolol","creator":"57e12041fac4ca0001ae9009","channel_id":"56d4481e7ebb20624f7545be","id":"581b089ffbb4330001a639e1"},{"tseq":"14781666913757821994967","created_at":"2016-11-03T09:51:31.376Z","_status":"1","seq":"29714","chat_type":"0","message_type":"1","media_type":"-1","content":"他善于与他相遇","creator":"57e12041fac4ca0001ae9009","channel_id":"56d4481e7ebb20624f7545be","id":"581b08a3fbb4330001a639e2"},{"tseq":"14781666941560912108008","created_at":"2016-11-03T09:51:34.156Z","_status":"1","seq":"29715","chat_type":"0","message_type":"1","media_type":"-1","content":"wuxutpus","creator":"57e12041fac4ca0001ae9009","channel_id":"56d4481e7ebb20624f7545be","id":"581b08a6fbb4330001a639e3"},{"tseq":"14781667000527355846503","created_at":"2016-11-03T09:51:40.052Z","_status":"1","seq":"29716","chat_type":"0","message_type":"1","media_type":"-1","content":"Chchhcgxch","creator":"5751249b20316a7222269a26","channel_id":"56d4481e7ebb20624f7545be","id":"581b08acfbb4330001a639e4"},{"tseq":"14781667020180585388617","created_at":"2016-11-03T09:51:42.018Z","_status":"1","seq":"29717","chat_type":"0","message_type":"1","media_type":"-1","content":"Jvvjjvgj","creator":"5751249b20316a7222269a26","channel_id":"56d4481e7ebb20624f7545be","id":"581b08aefbb4330001a639e5"},{"tseq":"14781789962698780409134","created_at":"2016-11-03T13:16:36.270Z","_status":"1","seq":"29718","chat_type":"0","message_type":"1","media_type":"-1","content":"电话电话","creator":"57453e35b27f275120d403ce","channel_id":"56d4481e7ebb20624f7545be","id":"581b38b4d12516000182ec63"},{"tseq":"14782312438177703226233","created_at":"2016-11-04T03:47:23.817Z","_status":"1","seq":"29719","chat_type":"0","message_type":"1","media_type":"-1","content":"哈比二爹","creator":"574be5e86bc71f626550b4d1","channel_id":"56d4481e7ebb20624f7545be","id":"581c04cbd12516000182ecfc"},{"tseq":"14782312517250283694843","created_at":"2016-11-04T03:47:31.725Z","_status":"1","seq":"29720","chat_type":"0","message_type":"1","media_type":"-1","content":"😣😣😔😫","creator":"574be5e86bc71f626550b4d1","channel_id":"56d4481e7ebb20624f7545be","id":"581c04d3d12516000182ecfd"},{"tseq":"14782445270473118594679","created_at":"2016-11-04T07:28:47.047Z","_status":"1","seq":"29721","chat_type":"0","message_type":"1","media_type":"-1","content":"😬😴😴😴😵","creator":"571f55a2357ca04722f8823d","channel_id":"56d4481e7ebb20624f7545be","id":"581c38afd12516000182ed0e"},{"tseq":"14782464171146020839717","created_at":"2016-11-04T08:00:17.114Z","_status":"1","seq":"29722","chat_type":"0","message_type":"1","media_type":"-1","content":"梧桐默默哦","creator":"571f55a2357ca04722f8823d","channel_id":"56d4481e7ebb20624f7545be","id":"581c4011d12516000182ed23"}]
