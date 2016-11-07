@@ -10,17 +10,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -58,17 +47,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -108,17 +86,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -156,17 +123,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -206,17 +162,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -254,17 +199,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -304,17 +238,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -352,17 +275,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -402,17 +314,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -450,17 +351,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -500,17 +390,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -548,17 +427,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -598,17 +466,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -646,17 +503,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -696,17 +542,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -744,17 +579,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -794,17 +618,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -842,17 +655,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -894,10 +696,10 @@
             },
             "extend": {
                 "inner": {
-                    "user_id": {
-                        "type": "string"
+                    "img_h": {
+                        "type": "number"
                     },
-                    "type": {
+                    "img_w": {
                         "type": "number"
                     }
                 },
@@ -941,17 +743,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -989,17 +780,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -1039,17 +819,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -1087,17 +856,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -1137,17 +895,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -1185,17 +932,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -1235,17 +971,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -1283,17 +1008,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -1382,17 +1096,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -1430,17 +1133,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -1480,17 +1172,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -1504,7 +1185,7 @@
                 "type": "number"
             },
             "content": {
-                "type": "string"
+                "type": "number"
             },
             "creator": {
                 "type": "string"
@@ -1528,17 +1209,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -1578,17 +1248,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -1602,7 +1261,7 @@
                 "type": "number"
             },
             "content": {
-                "type": "string"
+                "type": "number"
             },
             "creator": {
                 "type": "string"
@@ -1626,17 +1285,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -1675,17 +1323,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -1727,10 +1364,7 @@
             },
             "extend": {
                 "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
+                    "seconds": {
                         "type": "number"
                     }
                 },
@@ -1774,17 +1408,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -1798,7 +1421,7 @@
                 "type": "number"
             },
             "content": {
-                "type": "string"
+                "type": "number"
             },
             "creator": {
                 "type": "string"
@@ -1822,17 +1445,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -1874,10 +1486,10 @@
             },
             "extend": {
                 "inner": {
-                    "user_id": {
-                        "type": "string"
+                    "img_w": {
+                        "type": "number"
                     },
-                    "type": {
+                    "img_h": {
                         "type": "number"
                     }
                 },
@@ -1923,10 +1535,10 @@
             },
             "extend": {
                 "inner": {
-                    "user_id": {
-                        "type": "string"
+                    "img_w": {
+                        "type": "number"
                     },
-                    "type": {
+                    "img_h": {
                         "type": "number"
                     }
                 },
@@ -1972,10 +1584,10 @@
             },
             "extend": {
                 "inner": {
-                    "user_id": {
-                        "type": "string"
+                    "img_w": {
+                        "type": "number"
                     },
-                    "type": {
+                    "img_h": {
                         "type": "number"
                     }
                 },
@@ -2021,11 +1633,14 @@
             },
             "extend": {
                 "inner": {
-                    "user_id": {
+                    "title": {
                         "type": "string"
                     },
-                    "type": {
-                        "type": "number"
+                    "cover": {
+                        "type": "string"
+                    },
+                    "host": {
+                        "type": "string"
                     }
                 },
                 "type": "json"
@@ -2068,17 +1683,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -2116,17 +1720,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -2166,17 +1759,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -2215,17 +1797,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -2239,7 +1810,7 @@
                 "type": "number"
             },
             "content": {
-                "type": "string"
+                "type": "number"
             },
             "creator": {
                 "type": "string"
@@ -2264,17 +1835,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -2288,7 +1848,7 @@
                 "type": "number"
             },
             "content": {
-                "type": "string"
+                "type": "number"
             },
             "creator": {
                 "type": "string"
@@ -2313,17 +1873,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -2337,7 +1886,7 @@
                 "type": "number"
             },
             "content": {
-                "type": "string"
+                "type": "number"
             },
             "creator": {
                 "type": "string"
@@ -2362,17 +1911,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -2386,7 +1924,7 @@
                 "type": "number"
             },
             "content": {
-                "type": "string"
+                "type": "number"
             },
             "creator": {
                 "type": "string"
@@ -2411,17 +1949,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -2435,7 +1962,7 @@
                 "type": "number"
             },
             "content": {
-                "type": "string"
+                "type": "number"
             },
             "creator": {
                 "type": "string"
@@ -2460,17 +1987,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -2484,7 +2000,7 @@
                 "type": "number"
             },
             "content": {
-                "type": "string"
+                "type": "number"
             },
             "creator": {
                 "type": "string"
@@ -2509,17 +2025,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -2533,7 +2038,7 @@
                 "type": "number"
             },
             "content": {
-                "type": "string"
+                "type": "number"
             },
             "creator": {
                 "type": "string"
@@ -2558,17 +2063,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -2582,7 +2076,7 @@
                 "type": "number"
             },
             "content": {
-                "type": "string"
+                "type": "number"
             },
             "creator": {
                 "type": "string"
@@ -2607,17 +2101,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -2631,7 +2114,7 @@
                 "type": "number"
             },
             "content": {
-                "type": "string"
+                "type": "number"
             },
             "creator": {
                 "type": "string"
@@ -2656,17 +2139,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -2680,7 +2152,7 @@
                 "type": "number"
             },
             "content": {
-                "type": "string"
+                "type": "number"
             },
             "creator": {
                 "type": "string"
@@ -2704,17 +2176,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -2754,17 +2215,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -2802,17 +2252,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -2852,17 +2291,6 @@
             "_status": {
                 "type": "number"
             },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
-            },
             "seq": {
                 "type": "number"
             },
@@ -2900,17 +2328,6 @@
             },
             "_status": {
                 "type": "number"
-            },
-            "extend": {
-                "inner": {
-                    "user_id": {
-                        "type": "string"
-                    },
-                    "type": {
-                        "type": "number"
-                    }
-                },
-                "type": "json"
             },
             "seq": {
                 "type": "number"
@@ -3216,6 +2633,14 @@
             "_status": {
                 "type": "number"
             },
+            "extend": {
+                "inner": {
+                    "atUserIds": {
+                        "type": "string"
+                    }
+                },
+                "type": "json"
+            },
             "seq": {
                 "type": "number"
             },
@@ -3229,7 +2654,7 @@
                 "type": "number"
             },
             "content": {
-                "type": "string"
+                "type": "number"
             },
             "creator": {
                 "type": "string"
@@ -3321,4 +2746,4 @@
     }
 }
 
-[{"tseq":"14761748345336684998554","created_at":"2016-10-11T08:33:54.554Z","_status":"1","extend":{"user_id":"57fca3f128c90c0001daf74b","type":"1"},"seq":"29653","chat_type":"0","message_type":"3","media_type":"-1","content":"xs68 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"57fca3f2609df200010876eb"},{"tseq":"14761775778942679423840","created_at":"2016-10-11T09:19:37.906Z","_status":"1","extend":{"user_id":"57fcaea928c90c0001daf756","type":"1"},"seq":"29654","chat_type":"0","message_type":"3","media_type":"-1","content":"sun 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"57fcaea9609df200010877b7"},{"tseq":"14761797245131173402537","created_at":"2016-10-11T09:55:24.526Z","_status":"1","extend":{"user_id":"57fcb70c28c90c0001daf786","type":"1"},"seq":"29655","chat_type":"0","message_type":"3","media_type":"-1","content":"冯晓华 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"57fcb70c609df200010877e4"},{"tseq":"14762481270685558368121","created_at":"2016-10-12T04:55:27.089Z","_status":"1","extend":{"user_id":"57fdc23e8eae7a00018a27bd","type":"1"},"seq":"29656","chat_type":"0","message_type":"3","media_type":"-1","content":"xs77 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"57fdc23f483f410001a98453"},{"tseq":"14762628384186046979418","created_at":"2016-10-12T09:00:38.450Z","_status":"1","extend":{"user_id":"57fdfbb68eae7a00018a27ea","type":"1"},"seq":"29657","chat_type":"0","message_type":"3","media_type":"-1","content":"邵益寿 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"57fdfbb6483f410001a98713"},{"tseq":"14763517979979648410041","created_at":"2016-10-13T09:43:18.014Z","_status":"1","extend":{"user_id":"57ff57358eae7a00018a2893","type":"1"},"seq":"29658","chat_type":"0","message_type":"3","media_type":"-1","content":"啊不 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"57ff5736483f410001a98a29"},{"tseq":"14763531367259861235604","created_at":"2016-10-13T10:05:36.747Z","_status":"1","extend":{"user_id":"57ff5c708eae7a00018a289e","type":"1"},"seq":"29659","chat_type":"0","message_type":"3","media_type":"-1","content":"孙晨 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"57ff5c70483f410001a98a45"},{"tseq":"14764185533743388063755","created_at":"2016-10-14T04:15:53.391Z","_status":"1","extend":{"user_id":"58005bf982978e0001f9932b","type":"1"},"seq":"29660","chat_type":"0","message_type":"3","media_type":"-1","content":"back 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58005bf9483f410001a98a93"},{"tseq":"14764302888811500579915","created_at":"2016-10-14T07:31:28.893Z","_status":"1","extend":{"user_id":"580089d082978e0001f99344","type":"1"},"seq":"29661","chat_type":"0","message_type":"3","media_type":"-1","content":"哈士奇 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"580089d0483f410001a98af0"},{"tseq":"14764305545731690187841","created_at":"2016-10-14T07:35:54.591Z","_status":"1","extend":{"user_id":"58008ada82978e0001f99346","type":"1"},"seq":"29662","chat_type":"0","message_type":"3","media_type":"-1","content":"泰迪 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58008ada483f410001a98b0b"},{"tseq":"14766704311548953615348","created_at":"2016-10-17T02:13:51.169Z","_status":"1","extend":{"user_id":"580433de0754c000018d67b1","type":"1"},"seq":"29663","chat_type":"0","message_type":"3","media_type":"-1","content":"张若琛 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"580433df483f410001a98ba5"},{"tseq":"14770392923093222920650","created_at":"2016-10-21T08:41:32.324Z","_status":"1","extend":{"user_id":"5809d4bc397e99000162f2d3","type":"1"},"seq":"29664","chat_type":"0","message_type":"3","media_type":"-1","content":"k1 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5809d4bc127a4200013f5f1d"},{"tseq":"14773788956028111871146","created_at":"2016-10-25T07:01:35.612Z","_status":"1","extend":{"user_id":"5809bb9e397e99000162f2cf","type":"1"},"seq":"29665","chat_type":"0","message_type":"3","media_type":"-1","content":"张荣宾 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"580f034fcb28800001ea24c6"},{"tseq":"14774657932636341766691","created_at":"2016-10-26T07:09:53.273Z","_status":"1","extend":{"user_id":"58104d33344465000108c3e2","type":"1"},"seq":"29666","chat_type":"0","message_type":"3","media_type":"-1","content":"wolf 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581056c1cb28800001ea28b8"},{"tseq":"14774665829578268204745","created_at":"2016-10-26T07:23:02.972Z","_status":"1","extend":{"user_id":"581059d6344465000108c3ed","type":"1"},"seq":"29667","chat_type":"0","message_type":"3","media_type":"-1","content":"xs90 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581059d6cb28800001ea2911"},{"tseq":"14775673310511359280377","created_at":"2016-10-27T11:22:11.064Z","_status":"1","extend":{"user_id":"5811e3627576df000111ed30","type":"1"},"seq":"29668","chat_type":"0","message_type":"3","media_type":"-1","content":"2222 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5811e363cb28800001ea2bf0"},{"tseq":"14775771512894686557781","created_at":"2016-10-27T14:05:51.306Z","_status":"1","extend":{"user_id":"581209bf7576df000111ed60","type":"1"},"seq":"29669","chat_type":"0","message_type":"3","media_type":"-1","content":":) 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581209bfcb28800001ea2c10"},{"tseq":"14776240342879489821310","created_at":"2016-10-28T03:07:14.296Z","_status":"1","extend":{"user_id":"5812c0e27576df000111edc3","type":"1"},"seq":"29670","chat_type":"0","message_type":"3","media_type":"-1","content":"张闪 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812c0e2d613ca0001440331"},{"tseq":"14776247946083067432448","created_at":"2016-10-28T03:19:54.614Z","_status":"1","extend":{"user_id":"5812c3da7576df000111edd8","type":"1"},"seq":"29671","chat_type":"0","message_type":"3","media_type":"-1","content":"zzz@grr.la 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812c3dad613ca000144033e"},{"tseq":"14776253492819694592489","created_at":"2016-10-28T03:29:09.287Z","_status":"1","extend":{"user_id":"5812c6057576df000111edf5","type":"1"},"seq":"29672","chat_type":"0","message_type":"3","media_type":"-1","content":"张张 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812c605d613ca000144036e"},{"tseq":"14776257879867424045173","created_at":"2016-10-28T03:36:27.997Z","_status":"1","extend":{"user_id":"5812c7bb7576df000111edfd","type":"1"},"seq":"29673","chat_type":"0","message_type":"3","media_type":"-1","content":"日子我是 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812c7bbd613ca0001440394"},{"tseq":"14776261656626316328933","created_at":"2016-10-28T03:42:45.667Z","_status":"1","extend":{"user_id":"5812c9357576df000111ee03","type":"1"},"seq":"29674","chat_type":"0","message_type":"3","media_type":"-1","content":"婆婆婆婆 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812c935d613ca00014403c2"},{"tseq":"14776266952361615041059","created_at":"2016-10-28T03:51:35.242Z","_status":"1","extend":{"user_id":"5812cb47548a9c0001e932ff","type":"1"},"seq":"29675","chat_type":"0","message_type":"3","media_type":"-1","content":"哈哈哈 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812cb47d613ca00014403ea"},{"tseq":"14776268500031508098340","created_at":"2016-10-28T03:54:10.015Z","_status":"1","extend":{"user_id":"5812cbe1548a9c0001e93303","type":"1"},"seq":"29676","chat_type":"0","message_type":"3","media_type":"-1","content":"gong'g 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812cbe2d613ca00014403ef"},{"tseq":"14776274073396922202130","created_at":"2016-10-28T04:03:27.346Z","_status":"1","extend":{"user_id":"5812ce0f548a9c0001e93306","type":"1"},"seq":"29677","chat_type":"0","message_type":"3","media_type":"-1","content":"ROM婆婆 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812ce0fd613ca0001440406"},{"tseq":"14776280444958506364802","created_at":"2016-10-28T04:14:04.501Z","_status":"1","extend":{"user_id":"5812d08c548a9c0001e93309","type":"1"},"seq":"29678","chat_type":"0","message_type":"3","media_type":"-1","content":"fghh 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812d08cd613ca0001440420"},{"tseq":"14776282372522003830038","created_at":"2016-10-28T04:17:17.260Z","_status":"1","extend":{"user_id":"5812d14d548a9c0001e93314","type":"1"},"seq":"29679","chat_type":"0","message_type":"3","media_type":"-1","content":"婆婆哦是 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812d14dd613ca0001440439"},{"tseq":"14776285812284326516533","created_at":"2016-10-28T04:23:01.240Z","_status":"1","extend":{"user_id":"5812d2a5548a9c0001e93317","type":"1"},"seq":"29680","chat_type":"0","message_type":"3","media_type":"-1","content":"yuj 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812d2a5d613ca0001440453"},{"tseq":"14776290157378448680652","created_at":"2016-10-28T04:30:15.745Z","_status":"1","extend":{"user_id":"5812d457548a9c0001e93320","type":"1"},"seq":"29681","chat_type":"0","message_type":"3","media_type":"-1","content":"gbhhj 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812d457d613ca000144046b"},{"tseq":"14776291671652822140517","created_at":"2016-10-28T04:32:47.173Z","_status":"1","extend":{"user_id":"5812d4ef548a9c0001e93323","type":"1"},"seq":"29682","chat_type":"0","message_type":"3","media_type":"-1","content":"Sass 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812d4efd613ca0001440484"},{"tseq":"14776316939893913108670","created_at":"2016-10-28T05:14:53.998Z","_status":"1","extend":{"user_id":"5812decd548a9c0001e9332c","type":"1"},"seq":"29683","chat_type":"0","message_type":"3","media_type":"-1","content":"gyhh 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812decde67e6f0001dd4618"},{"tseq":"14776364310729355456097","created_at":"2016-10-28T06:33:51.085Z","_status":"1","extend":{"user_id":"5812f14e548a9c0001e9333b","type":"1"},"seq":"29684","chat_type":"0","message_type":"3","media_type":"-1","content":"xs88 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812f14fe67e6f0001dd4631"},{"tseq":"14776368555757476864147","created_at":"2016-10-28T06:40:55.589Z","_status":"1","extend":{"user_id":"5812f2f7548a9c0001e93345","type":"1"},"seq":"29685","chat_type":"0","message_type":"3","media_type":"-1","content":"依依 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812f2f7e67e6f0001dd4634"},{"tseq":"14776370763795408729676","created_at":"2016-10-28T06:44:36.394Z","_status":"1","extend":{"user_id":"5812f3d4548a9c0001e93349","type":"1"},"seq":"29686","chat_type":"0","message_type":"3","media_type":"-1","content":"jvj 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812f3d4e67e6f0001dd464c"},{"tseq":"14776377974500160916418","created_at":"2016-10-28T06:56:37.464Z","_status":"1","extend":{"user_id":"5812f6a5548a9c0001e9334d","type":"1"},"seq":"29687","chat_type":"0","message_type":"3","media_type":"-1","content":"王庆光 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812f6a5e67e6f0001dd4661"},{"tseq":"14776381089722992353578","created_at":"2016-10-28T07:01:48.986Z","_status":"1","extend":{"user_id":"5812f7dc548a9c0001e9334f","type":"1"},"seq":"29688","chat_type":"0","message_type":"3","media_type":"-1","content":"CNBC 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812f7dce67e6f0001dd4679"},{"tseq":"14776381508310316625176","created_at":"2016-10-28T07:02:30.841Z","_status":"1","extend":{"user_id":"5812f806548a9c0001e93351","type":"1"},"seq":"29689","chat_type":"0","message_type":"3","media_type":"-1","content":"王庆光 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812f806e67e6f0001dd468b"},{"tseq":"14776388105636345285553","created_at":"2016-10-28T07:13:30.580Z","_status":"1","extend":{"user_id":"5812fa9a548a9c0001e93354","type":"1"},"seq":"29690","chat_type":"0","message_type":"3","media_type":"-1","content":"王庆光 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812fa9ae67e6f0001dd46a6"},{"tseq":"14776392766419002103006","created_at":"2016-10-28T07:21:16.656Z","_status":"1","extend":{"user_id":"5812fc6c548a9c0001e93357","type":"1"},"seq":"29691","chat_type":"0","message_type":"3","media_type":"-1","content":"王庆光 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812fc6ce67e6f0001dd46bb"},{"tseq":"14776395002183330837487","created_at":"2016-10-28T07:25:00.230Z","_status":"1","extend":{"user_id":"5812fd4c548a9c0001e9335d","type":"1"},"seq":"29692","chat_type":"0","message_type":"3","media_type":"-1","content":"djdj 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5812fd4ce67e6f0001dd46ce"},{"tseq":"14776402632583030507238","created_at":"2016-10-28T07:37:43.268Z","_status":"1","extend":{"user_id":"58130047aa74e100017953a3","type":"1"},"seq":"29693","chat_type":"0","message_type":"3","media_type":"-1","content":"snns 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58130047e67e6f0001dd46e9"},{"tseq":"14776403870954425947467","created_at":"2016-10-28T07:39:47.107Z","_status":"1","extend":{"user_id":"581300c2aa74e100017953a5","type":"1"},"seq":"29694","chat_type":"0","message_type":"3","media_type":"-1","content":"王培勇 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581300c3e67e6f0001dd46f1"},{"tseq":"14776405724515868498142","created_at":"2016-10-28T07:42:52.460Z","_status":"1","extend":{"user_id":"5813017caa74e100017953a7","type":"1"},"seq":"29695","chat_type":"0","message_type":"3","media_type":"-1","content":"jd 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5813017ce67e6f0001dd470d"},{"tseq":"14776406585339136191548","created_at":"2016-10-28T07:44:18.542Z","_status":"1","extend":{"user_id":"581301d2aa74e100017953a9","type":"1"},"seq":"29696","chat_type":"0","message_type":"3","media_type":"-1","content":"王培勇 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581301d2e67e6f0001dd4728"},{"tseq":"14776407575846515661773","created_at":"2016-10-28T07:45:57.594Z","_status":"1","extend":{"user_id":"58130235aa74e100017953ac","type":"1"},"seq":"29697","chat_type":"0","message_type":"3","media_type":"-1","content":"凄凄切切 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58130235e67e6f0001dd4743"},{"tseq":"14776459117206533540434","created_at":"2016-10-28T09:11:51.733Z","_status":"1","extend":{"user_id":"58131657c0aaa9000136e1c7","type":"1"},"seq":"29698","chat_type":"0","message_type":"3","media_type":"-1","content":"俊介 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58131657f403bd00013c989d"},{"tseq":"14776461412140258758616","created_at":"2016-10-28T09:15:41.229Z","_status":"1","extend":{"user_id":"5813173dc0aaa9000136e1c9","type":"1"},"seq":"29699","chat_type":"0","message_type":"3","media_type":"-1","content":"sjjs 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5813173df403bd00013c98a0"},{"tseq":"14776461908426246984311","created_at":"2016-10-28T09:16:30.854Z","_status":"1","extend":{"user_id":"5813176ec0aaa9000136e1cb","type":"1"},"seq":"29700","chat_type":"0","message_type":"3","media_type":"-1","content":"王培勇 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5813176ef403bd00013c98bf"},{"tseq":"14776462955504337596740","created_at":"2016-10-28T09:18:15.561Z","_status":"1","extend":{"user_id":"581317d7c0aaa9000136e1ce","type":"1"},"seq":"29701","chat_type":"0","message_type":"3","media_type":"-1","content":"榴莲 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581317d7f403bd00013c98dc"},{"tseq":"14776483743388809202451","created_at":"2016-10-28T09:52:54.355Z","_status":"1","extend":{"user_id":"58131ff6c0aaa9000136e1d1","type":"1"},"seq":"29702","chat_type":"0","message_type":"3","media_type":"-1","content":"xn 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58131ff6f403bd00013c9920"},{"tseq":"14778968205798885420437","created_at":"2016-10-31T06:53:40.596Z","_status":"1","extend":{"user_id":"5816ea74c0aaa9000136e23d","type":"1"},"seq":"29703","chat_type":"0","message_type":"3","media_type":"-1","content":"沫沫 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5816ea74f403bd00013c9aa6"},{"tseq":"14778978327318287824292","created_at":"2016-10-31T07:10:32.744Z","_status":"1","extend":{"user_id":"5816ee68c0aaa9000136e24c","type":"1"},"seq":"29704","chat_type":"0","message_type":"3","media_type":"-1","content":"马昕悦 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"5816ee68f403bd00013c9ac6"},{"tseq":"14779718224292543404968","created_at":"2016-11-01T03:43:42.441Z","_status":"1","extend":{"user_id":"58180f6e6645df0001cf09f8","type":"1"},"seq":"29705","chat_type":"0","message_type":"3","media_type":"-1","content":"大珉 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58180f6ef403bd00013c9b1d"},{"tseq":"14779867134575125129979","created_at":"2016-11-01T07:51:53.465Z","_status":"1","extend":{"user_id":"5818499946eecb00015d9218","type":"1"},"seq":"29706","chat_type":"0","message_type":"3","media_type":"-1","content":"大珉 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58184999f403bd00013c9b3c"},{"tseq":"14780006905133822499850","created_at":"2016-11-01T11:44:50.523Z","_status":"1","extend":{"user_id":"5818803246eecb00015d9249","type":"1"},"seq":"29707","chat_type":"0","message_type":"3","media_type":"-1","content":"叶芳 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58188032f403bd00013cbc52"},{"tseq":"14780613308326272190399","created_at":"2016-11-02T04:35:30.849Z","_status":"1","extend":{"user_id":"58196d1246eecb00015d925c","type":"1"},"seq":"29708","chat_type":"0","message_type":"3","media_type":"-1","content":"那种 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"58196d12f403bd00013cd7be"},{"tseq":"14781432428870729523269","created_at":"2016-11-03T03:20:42.000Z","_status":"1","extend":{"user_id":"581aad0a46eecb00015d92ef","type":"1"},"seq":"29709","chat_type":"0","message_type":"3","media_type":"-1","content":"sunchen37 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581aad0a160c980001931e5f"},{"tseq":"14781550362750364191697","created_at":"2016-11-03T06:37:16.000Z","_status":"1","extend":{"user_id":"581adb1c46eecb00015d9374","type":"1"},"seq":"29710","chat_type":"0","message_type":"3","media_type":"-1","content":"小子 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581adb1c578be4000193d0ba"},{"tseq":"14781559350677137063047","created_at":"2016-11-03T06:52:15.000Z","_status":"1","extend":{"user_id":"581ade9e46eecb00015d9386","type":"1"},"seq":"29711","chat_type":"0","message_type":"3","media_type":"-1","content":"🍁 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581ade9f578be4000193d0f7"},{"tseq":"14781565763192837248814","created_at":"2016-11-03T07:02:56.000Z","_status":"1","extend":{"user_id":"581ae12046eecb00015d93a1","type":"1"},"seq":"29712","chat_type":"0","message_type":"3","media_type":"-1","content":"小子 加入聊天","creator":"","channel_id":"56d4481e7ebb20624f7545be","id":"581ae120578be4000193e21c"},{"tseq":"14781666870820646207663","created_at":"2016-11-03T09:51:27.083Z","_status":"1","seq":"29713","chat_type":"0","message_type":"1","media_type":"-1","content":"ollooolol","creator":"57e12041fac4ca0001ae9009","channel_id":"56d4481e7ebb20624f7545be","id":"581b089ffbb4330001a639e1"},{"tseq":"14781666913757821994967","created_at":"2016-11-03T09:51:31.376Z","_status":"1","seq":"29714","chat_type":"0","message_type":"1","media_type":"-1","content":"他善于与他相遇","creator":"57e12041fac4ca0001ae9009","channel_id":"56d4481e7ebb20624f7545be","id":"581b08a3fbb4330001a639e2"},{"tseq":"14781666941560912108008","created_at":"2016-11-03T09:51:34.156Z","_status":"1","seq":"29715","chat_type":"0","message_type":"1","media_type":"-1","content":"wuxutpus","creator":"57e12041fac4ca0001ae9009","channel_id":"56d4481e7ebb20624f7545be","id":"581b08a6fbb4330001a639e3"},{"tseq":"14781667000527355846503","created_at":"2016-11-03T09:51:40.052Z","_status":"1","seq":"29716","chat_type":"0","message_type":"1","media_type":"-1","content":"Chchhcgxch","creator":"5751249b20316a7222269a26","channel_id":"56d4481e7ebb20624f7545be","id":"581b08acfbb4330001a639e4"},{"tseq":"14781667020180585388617","created_at":"2016-11-03T09:51:42.018Z","_status":"1","seq":"29717","chat_type":"0","message_type":"1","media_type":"-1","content":"Jvvjjvgj","creator":"5751249b20316a7222269a26","channel_id":"56d4481e7ebb20624f7545be","id":"581b08aefbb4330001a639e5"},{"tseq":"14781789962698780409134","created_at":"2016-11-03T13:16:36.270Z","_status":"1","seq":"29718","chat_type":"0","message_type":"1","media_type":"-1","content":"电话电话","creator":"57453e35b27f275120d403ce","channel_id":"56d4481e7ebb20624f7545be","id":"581b38b4d12516000182ec63"},{"tseq":"14782312438177703226233","created_at":"2016-11-04T03:47:23.817Z","_status":"1","seq":"29719","chat_type":"0","message_type":"1","media_type":"-1","content":"哈比二爹","creator":"574be5e86bc71f626550b4d1","channel_id":"56d4481e7ebb20624f7545be","id":"581c04cbd12516000182ecfc"},{"tseq":"14782312517250283694843","created_at":"2016-11-04T03:47:31.725Z","_status":"1","seq":"29720","chat_type":"0","message_type":"1","media_type":"-1","content":"😣😣😔😫","creator":"574be5e86bc71f626550b4d1","channel_id":"56d4481e7ebb20624f7545be","id":"581c04d3d12516000182ecfd"},{"tseq":"14782445270473118594679","created_at":"2016-11-04T07:28:47.047Z","_status":"1","seq":"29721","chat_type":"0","message_type":"1","media_type":"-1","content":"😬😴😴😴😵","creator":"571f55a2357ca04722f8823d","channel_id":"56d4481e7ebb20624f7545be","id":"581c38afd12516000182ed0e"},{"tseq":"14782464171146020839717","created_at":"2016-11-04T08:00:17.114Z","_status":"1","seq":"29722","chat_type":"0","message_type":"1","media_type":"-1","content":"梧桐默默哦","creator":"571f55a2357ca04722f8823d","channel_id":"56d4481e7ebb20624f7545be","id":"581c4011d12516000182ed23"}]
+[{"tseq":"14761003697391787851131","created_at":"2016-10-10T11:52:49.739Z","_status":"1","seq":"3405","chat_type":"0","message_type":"1","media_type":"-1","content":"asdf","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"57fb8111609df2000108767d"},{"tseq":"14761003760594857712151","created_at":"2016-10-10T11:52:56.059Z","_status":"1","seq":"3406","chat_type":"0","message_type":"1","media_type":"-1","content":"asdf","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"57fb8118609df2000108767e"},{"tseq":"14761003803648331423353","created_at":"2016-10-10T11:53:00.364Z","_status":"1","seq":"3407","chat_type":"0","message_type":"1","media_type":"-1","content":"aaa","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"57fb811c609df2000108767f"},{"tseq":"14761003867050003587777","created_at":"2016-10-10T11:53:06.705Z","_status":"1","seq":"3408","chat_type":"0","message_type":"1","media_type":"-1","content":"asdf","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"57fb8122609df20001087685"},{"tseq":"14761003917726789326002","created_at":"2016-10-10T11:53:11.772Z","_status":"1","seq":"3409","chat_type":"0","message_type":"1","media_type":"-1","content":"asdf","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"57fb8127609df20001087686"},{"tseq":"14761004054594176972189","created_at":"2016-10-10T11:53:25.459Z","_status":"1","seq":"3410","chat_type":"0","message_type":"1","media_type":"-1","content":"asdf","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"57fb8135609df20001087687"},{"tseq":"14761018199245347529913","created_at":"2016-10-10T12:16:59.924Z","_status":"1","seq":"3411","chat_type":"0","message_type":"1","media_type":"-1","content":"俱乐部","creator":"57427e5ab27f275120d3b80b","channel_id":"57248504e1f3399b789a4b08","id":"57fb86bb609df2000108769d"},{"tseq":"14761770776174309592269","created_at":"2016-10-11T09:11:17.617Z","_status":"1","seq":"3412","chat_type":"0","message_type":"1","media_type":"-1","content":"twut","creator":"574be5e86bc71f626550b4d1","channel_id":"57248504e1f3399b789a4b08","id":"57fcacb5609df2000108778e"},{"tseq":"14761770902643268920323","created_at":"2016-10-11T09:11:30.264Z","_status":"1","seq":"3413","chat_type":"0","message_type":"1","media_type":"-1","content":"绝对经典","creator":"56f3a828b8df540c19a25585","channel_id":"57248504e1f3399b789a4b08","id":"57fcacc2609df20001087790"},{"tseq":"14761770950313991411336","created_at":"2016-10-11T09:11:35.031Z","_status":"1","seq":"3414","chat_type":"0","message_type":"1","media_type":"-1","content":"嗯呢","creator":"56f3a828b8df540c19a25585","channel_id":"57248504e1f3399b789a4b08","id":"57fcacc7609df20001087791"},{"tseq":"14761771082604935094735","created_at":"2016-10-11T09:11:48.260Z","_status":"1","seq":"3415","chat_type":"0","message_type":"1","media_type":"-1","content":"青海湖活动","creator":"56f3a828b8df540c19a25585","channel_id":"57248504e1f3399b789a4b08","id":"57fcacd4609df20001087792"},{"tseq":"14761771234667091417742","created_at":"2016-10-11T09:12:03.466Z","_status":"1","seq":"3416","chat_type":"0","message_type":"1","media_type":"-1","content":"嘿嘿说","creator":"56f3a828b8df540c19a25585","channel_id":"57248504e1f3399b789a4b08","id":"57fcace3609df20001087793"},{"tseq":"14761771428323673620709","created_at":"2016-10-11T09:12:22.832Z","_status":"1","seq":"3417","chat_type":"0","message_type":"1","media_type":"-1","content":"哈哈哈","creator":"56f3a828b8df540c19a25585","channel_id":"57248504e1f3399b789a4b08","id":"57fcacf6609df20001087794"},{"tseq":"14761771615658444303067","created_at":"2016-10-11T09:12:41.565Z","_status":"1","seq":"3418","chat_type":"0","message_type":"1","media_type":"-1","content":"哦举办关于环境","creator":"56f3a828b8df540c19a25585","channel_id":"57248504e1f3399b789a4b08","id":"57fcad09609df20001087795"},{"tseq":"14761771804482456981295","created_at":"2016-10-11T09:13:00.448Z","_status":"1","seq":"3419","chat_type":"0","message_type":"1","media_type":"-1","content":"英语","creator":"56f3a828b8df540c19a25585","channel_id":"57248504e1f3399b789a4b08","id":"57fcad1c609df20001087797"},{"tseq":"14761771903490761744787","created_at":"2016-10-11T09:13:10.349Z","_status":"1","seq":"3420","chat_type":"0","message_type":"1","media_type":"-1","content":"回家后","creator":"56f3a828b8df540c19a25585","channel_id":"57248504e1f3399b789a4b08","id":"57fcad26609df20001087798"},{"tseq":"14761771921173654907309","created_at":"2016-10-11T09:13:12.117Z","_status":"1","seq":"3421","chat_type":"0","message_type":"1","media_type":"-1","content":"不后悔","creator":"56f3a828b8df540c19a25585","channel_id":"57248504e1f3399b789a4b08","id":"57fcad28609df20001087799"},{"tseq":"14761772015516718712007","created_at":"2016-10-11T09:13:21.551Z","_status":"1","seq":"3422","chat_type":"0","message_type":"1","media_type":"-1","content":"环境","creator":"56f3a828b8df540c19a25585","channel_id":"57248504e1f3399b789a4b08","id":"57fcad31609df2000108779a"},{"tseq":"14761772369531300693964","created_at":"2016-10-11T09:13:56.953Z","_status":"1","extend":{"img_h":"1440","img_w":"1080"},"seq":"3423","chat_type":"0","message_type":"1","media_type":"4","content":"http://o4a7cbihz.qnssl.com/message/b24e26ff-2ebe-44d4-9f9e-6233721a27b4","creator":"56f3a828b8df540c19a25585","channel_id":"57248504e1f3399b789a4b08","id":"57fcad54609df2000108779b"},{"tseq":"14762532043756060782068","created_at":"2016-10-12T06:20:04.375Z","_status":"1","seq":"3424","chat_type":"0","message_type":"1","media_type":"-1","content":"asdfasd","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"57fdd614483f410001a9846d"},{"tseq":"14762644960348492717354","created_at":"2016-10-12T09:28:16.034Z","_status":"1","seq":"3425","chat_type":"0","message_type":"1","media_type":"-1","content":"module-black-board .board-content {\n height: 200px;\n line-height: 24px;\n text-align: center;\n padding: 20px;\n color: #fff;\n overflow-y: auto;\n overflow-x: hidden;\n word-break: break-all;\n background: #444649;\n background-image: url(//o3pvuu23u.qnssl.com/image/blackBoard.png);\n background-size: 80%;\n}","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"57fe0230483f410001a98747"},{"tseq":"14762649348519005031495","created_at":"2016-10-12T09:35:34.851Z","_status":"1","seq":"3426","chat_type":"0","message_type":"1","media_type":"-1","content":"我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们我们","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"57fe03e6483f410001a9876c"},{"tseq":"14762649825377476287192","created_at":"2016-10-12T09:36:22.537Z","_status":"1","seq":"3427","chat_type":"0","message_type":"1","media_type":"-1","content":"沃恩沃恩沃恩沃恩沃恩沃恩沃恩沃恩沃恩沃恩沃恩沃恩沃恩沃恩","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"57fe0416483f410001a98797"},{"tseq":"14762652125733007574744","created_at":"2016-10-12T09:40:12.573Z","_status":"1","seq":"3428","chat_type":"0","message_type":"1","media_type":"-1","content":"mmj","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"57fe04fc483f410001a987de"},{"tseq":"14762652671193960624770","created_at":"2016-10-12T09:41:07.119Z","_status":"1","seq":"3429","chat_type":"0","message_type":"1","media_type":"-1","content":"哈哈哈","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"57fe0533483f410001a987df"},{"tseq":"14762652705594357549450","created_at":"2016-10-12T09:41:10.559Z","_status":"1","seq":"3430","chat_type":"0","message_type":"1","media_type":"-1","content":"哈哈\n哈哈哈","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"57fe0536483f410001a987e0"},{"tseq":"14762738127972836874052","created_at":"2016-10-12T12:03:32.797Z","_status":"1","seq":"3431","chat_type":"0","message_type":"1","media_type":"-1","content":"asdfasdf","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"57fe2694483f410001a989d4"},{"tseq":"14762764866273673465830","created_at":"2016-10-12T12:48:06.643Z","_status":"1","extend":{"user_id":"57ee3f9a374b9600017b4fe4","type":"1"},"seq":"3432","chat_type":"0","message_type":"3","media_type":"-1","content":"孙晨 加入聊天","creator":"","channel_id":"57248504e1f3399b789a4b08","id":"57fe3106483f410001a989da"},{"tseq":"14764474831019193082300","created_at":"2016-10-14T12:18:03.101Z","_status":"1","seq":"3433","chat_type":"0","message_type":"1","media_type":"-1","content":"http:&#x2F;&#x2F;debugx5.qq.com&#x2F;","creator":"57427e5ab27f275120d3b80b","channel_id":"57248504e1f3399b789a4b08","id":"5800ccfb483f410001a98b34"},{"tseq":"14765195340084595812413","created_at":"2016-10-15T08:18:54.008Z","_status":"1","seq":"3434","chat_type":"0","message_type":"1","media_type":"-1","content":"http:&#x2F;&#x2F;debugtbs.qq.com&#x2F;","creator":"57427e5ab27f275120d3b80b","channel_id":"57248504e1f3399b789a4b08","id":"5801e66e483f410001a98ba3"},{"tseq":"14766916536884101497122","created_at":"2016-10-17T08:07:33.688Z","_status":"1","seq":"3435","chat_type":"0","message_type":"1","media_type":"-1","content":"1","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"580486c5483f410001a98c9d"},{"tseq":"14766919452047590975308","created_at":"2016-10-17T08:12:25.204Z","_status":"1","seq":"3436","chat_type":"0","message_type":"1","media_type":"-1","content":"kjlj","creator":"574be5e86bc71f626550b4d1","channel_id":"57248504e1f3399b789a4b08","id":"580487e9483f410001a98ca4"},{"tseq":"14766921284957391548773","created_at":"2016-10-17T08:15:28.495Z","_status":"1","seq":"3437","chat_type":"0","message_type":"1","media_type":"-1","content":"2","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"580488a0483f410001a98ca6"},{"tseq":"14767615278000782136813","created_at":"2016-10-18T03:32:07.800Z","_status":"1","seq":"3438","chat_type":"0","message_type":"1","media_type":"-1","content":"http:&#x2F;&#x2F;debugtbs.qq.com","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"580597b7483f410001a98d5d"},{"tseq":"14767865705474991770247","created_at":"2016-10-18T10:29:30.548Z","_status":"1","seq":"3439","chat_type":"0","message_type":"1","media_type":"-1","content":"将考虑考虑","creator":"57ee3f9a374b9600017b4fe4","channel_id":"57248504e1f3399b789a4b08","id":"5805f98a483f410001a98d79"},{"tseq":"14768811486124601822034","created_at":"2016-10-19T12:45:48.612Z","_status":"1","extend":{"seconds":"1.3000001907348633"},"seq":"3440","chat_type":"0","message_type":"1","media_type":"0","content":"http://o4a7cbihz.qnssl.com/voice/31f62c1c-41f1-4f32-ac12-cebec32aa6f4","creator":"5711cbd93d09d9a26ec47e75","channel_id":"57248504e1f3399b789a4b08","id":"58076afcaaf9c00001114a9d"},{"tseq":"14775543448984522085118","created_at":"2016-10-27T07:45:44.898Z","_status":"1","seq":"3441","chat_type":"0","message_type":"1","media_type":"-1","content":"1","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"5811b0a8cb28800001ea2bc9"},{"tseq":"14776228036497222084693","created_at":"2016-10-28T02:46:43.649Z","_status":"1","seq":"3442","chat_type":"0","message_type":"1","media_type":"4","content":"http://o3b126ie1.qnssl.com/cover/ed7b5d69-8856-4b29-81d2-65ae359a9399","creator":"57427e5ab27f275120d3b80b","channel_id":"57248504e1f3399b789a4b08","id":"5812bc13d613ca000144032a"},{"tseq":"14776230056800253178002","created_at":"2016-10-28T02:50:05.680Z","_status":"1","extend":{"img_w":"540","img_h":"960"},"seq":"3443","chat_type":"0","message_type":"1","media_type":"4","content":"http://o3b126ie1.qnssl.com/cover/ed7b5d69-8856-4b29-81d2-65ae359a9399","creator":"57427e5ab27f275120d3b80b","channel_id":"57248504e1f3399b789a4b08","id":"5812bcddd613ca000144032f"},{"tseq":"14776241851204360362139","created_at":"2016-10-28T03:09:45.120Z","_status":"1","extend":{"img_w":"580","img_h":"435"},"seq":"3444","chat_type":"0","message_type":"1","media_type":"4","content":"http://o3b126ie1.qnssl.com/cover/ed7b5d69-8856-4b29-81d2-65ae359a9399","creator":"57427e5ab27f275120d3b80b","channel_id":"57248504e1f3399b789a4b08","id":"5812c179d613ca0001440333"},{"tseq":"14776359786912017297251","created_at":"2016-10-28T06:26:18.691Z","_status":"1","extend":{"img_w":"1920","img_h":"1080"},"seq":"3445","chat_type":"0","message_type":"1","media_type":"4","content":"http://o4a7cbihz.qnssl.com/cover/94da3c66-5d74-424c-95cb-eb48df3b3ab3","creator":"574be5e86bc71f626550b4d1","channel_id":"57248504e1f3399b789a4b08","id":"5812ef8ae67e6f0001dd462f"},{"tseq":"14776469395386449390960","created_at":"2016-10-28T09:28:59.538Z","_status":"1","extend":{"title":"打赏详情","cover":"","host":"h5-dev.xinshengdaxue.com"},"seq":"3446","chat_type":"0","message_type":"1","media_type":"10","content":"http://h5-dev.xinshengdaxue.com/post_rewardlist.html?title=%E6%B5%8B%E8%AF%95%E6%89%93%E8%B5%8F%E7%9A%84%E6%96%87%E7%AB%A0&scan=119&dig=0&author=%E5%88%98%E6%94%BF&avatar=http%3A%2F%2Fo4a7cbihz.qnssl.com%2Favatar%2Fd55ee7ef-d433-4a6d-a78e-c0c4382da335&postId=5812bd9d6152af0001c2fb4f&digActive=0","creator":"574be5e86bc71f626550b4d1","channel_id":"57248504e1f3399b789a4b08","id":"58131a5bf403bd00013c9904"},{"tseq":"14776506612570423123030","created_at":"2016-10-28T10:31:01.257Z","_status":"1","seq":"3447","chat_type":"0","message_type":"1","media_type":"-1","content":"好","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"581328e5f403bd00013c996b"},{"tseq":"14776508303645336625245","created_at":"2016-10-28T10:33:50.364Z","_status":"1","seq":"3448","chat_type":"0","message_type":"1","media_type":"-1","content":"km","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"5813298ef403bd00013c996f"},{"tseq":"14776508327733100870199","created_at":"2016-10-28T10:33:52.773Z","_status":"1","seq":"3449","chat_type":"0","message_type":"1","media_type":"-1","content":"简历","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"58132990f403bd00013c9970"},{"tseq":"14779863278929304299497","created_at":"2016-11-01T07:45:27.892Z","_status":"1","seq":"3450","chat_type":"0","message_type":"1","media_type":"-1","content":"3","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"58184817f403bd00013c9b2b"},{"tseq":"14779863304578290098983","created_at":"2016-11-01T07:45:30.457Z","_status":"1","seq":"3451","chat_type":"0","message_type":"1","media_type":"-1","content":"4","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"5818481af403bd00013c9b2c"},{"tseq":"14779863318171879743598","created_at":"2016-11-01T07:45:31.817Z","_status":"1","seq":"3452","chat_type":"0","message_type":"1","media_type":"-1","content":"5","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"5818481bf403bd00013c9b2d"},{"tseq":"14779863332764757357576","created_at":"2016-11-01T07:45:33.276Z","_status":"1","seq":"3453","chat_type":"0","message_type":"1","media_type":"-1","content":"6","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"5818481df403bd00013c9b2e"},{"tseq":"14779863347763899838759","created_at":"2016-11-01T07:45:34.776Z","_status":"1","seq":"3454","chat_type":"0","message_type":"1","media_type":"-1","content":"7","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"5818481ef403bd00013c9b2f"},{"tseq":"14779863362202186188063","created_at":"2016-11-01T07:45:36.220Z","_status":"1","seq":"3455","chat_type":"0","message_type":"1","media_type":"-1","content":"8","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"58184820f403bd00013c9b30"},{"tseq":"14779863375391991924210","created_at":"2016-11-01T07:45:37.539Z","_status":"1","seq":"3456","chat_type":"0","message_type":"1","media_type":"-1","content":"9","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"58184821f403bd00013c9b31"},{"tseq":"14779863389830060886042","created_at":"2016-11-01T07:45:38.983Z","_status":"1","seq":"3457","chat_type":"0","message_type":"1","media_type":"-1","content":"10","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"58184823f403bd00013c9b32"},{"tseq":"14779863402499923363579","created_at":"2016-11-01T07:45:40.249Z","_status":"1","seq":"3458","chat_type":"0","message_type":"1","media_type":"-1","content":"11","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"58184824f403bd00013c9b33"},{"tseq":"14779863414863795219202","created_at":"2016-11-01T07:45:41.487Z","_status":"1","seq":"3459","chat_type":"0","message_type":"1","media_type":"-1","content":"12","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"58184825f403bd00013c9b34"},{"tseq":"14779881424766689321193","created_at":"2016-11-01T08:15:42.476Z","_status":"1","seq":"3460","chat_type":"0","message_type":"1","media_type":"-1","content":"gyh\n","creator":"574be5e86bc71f626550b4d1","channel_id":"57248504e1f3399b789a4b08","id":"58184f2ef403bd00013c9b9b"},{"tseq":"14779881432732737446868","created_at":"2016-11-01T08:15:43.273Z","_status":"1","seq":"3461","chat_type":"0","message_type":"1","media_type":"-1","content":"g","creator":"574be5e86bc71f626550b4d1","channel_id":"57248504e1f3399b789a4b08","id":"58184f2ff403bd00013c9b9c"},{"tseq":"14779881443070343899005","created_at":"2016-11-01T08:15:44.307Z","_status":"1","seq":"3462","chat_type":"0","message_type":"1","media_type":"-1","content":"fg","creator":"574be5e86bc71f626550b4d1","channel_id":"57248504e1f3399b789a4b08","id":"58184f30f403bd00013c9b9d"},{"tseq":"14779881447392757592768","created_at":"2016-11-01T08:15:44.739Z","_status":"1","seq":"3463","chat_type":"0","message_type":"1","media_type":"-1","content":"g","creator":"574be5e86bc71f626550b4d1","channel_id":"57248504e1f3399b789a4b08","id":"58184f30f403bd00013c9b9e"},{"tseq":"14779881455478019410295","created_at":"2016-11-01T08:15:45.547Z","_status":"1","seq":"3464","chat_type":"0","message_type":"1","media_type":"-1","content":"yh","creator":"574be5e86bc71f626550b4d1","channel_id":"57248504e1f3399b789a4b08","id":"58184f31f403bd00013c9b9f"},{"tseq":"14779881459130749859698","created_at":"2016-11-01T08:15:45.913Z","_status":"1","seq":"3465","chat_type":"0","message_type":"1","media_type":"-1","content":"g","creator":"574be5e86bc71f626550b4d1","channel_id":"57248504e1f3399b789a4b08","id":"58184f31f403bd00013c9ba0"},{"tseq":"14779893081312681574683","created_at":"2016-11-01T08:35:08.131Z","_status":"-2","seq":"3466","chat_type":"0","message_type":"3","media_type":"-1","content":"李卓撤回了一条消息","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"581853bcf403bd00013c9ba4"},{"tseq":"14779894220785161412385","created_at":"2016-11-01T08:37:02.079Z","_status":"-2","seq":"3467","chat_type":"0","message_type":"3","media_type":"-1","content":"李卓撤回了一条消息","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"5818542ef403bd00013c9ba8"},{"tseq":"14779894464369892664266","created_at":"2016-11-01T08:37:26.436Z","_status":"-2","seq":"3468","chat_type":"0","message_type":"3","media_type":"-1","content":"李卓撤回了一条消息","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"58185446f403bd00013c9ba9"},{"tseq":"14779907758861155796514","created_at":"2016-11-01T08:59:35.886Z","_status":"1","seq":"3469","chat_type":"0","message_type":"1","media_type":"-1","content":"@-@jerry&amp;tom$-$..","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"58185977f403bd00013c9ca5"},{"tseq":"14780005247467920264999","created_at":"2016-11-01T11:42:04.746Z","_status":"1","seq":"3470","chat_type":"0","message_type":"1","media_type":"-1","content":"@-@jerry&amp;tom$-$.","creator":"56f3a79bb8df540c19a2556d","channel_id":"57248504e1f3399b789a4b08","id":"58187f8cf403bd00013cbc50"},{"tseq":"14782392774897889267080","created_at":"2016-11-04T06:01:17.489Z","_status":"1","seq":"3471","chat_type":"0","message_type":"1","media_type":"-1","content":"asdfasdf","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"581c242dd12516000182ed0d"},{"tseq":"14784044434076669978124","created_at":"2016-11-06T03:54:03.407Z","_status":"1","extend":{"atUserIds":""},"seq":"3472","chat_type":"0","message_type":"1","media_type":"-1","content":"22","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"581ea95bd12516000182ed2e"},{"tseq":"14784150103124250432445","created_at":"2016-11-06T06:50:10.312Z","_status":"1","seq":"3473","chat_type":"0","message_type":"1","media_type":"-1","content":"http://baidu.com","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"581ed2a2d12516000182ed2f"},{"tseq":"14784150548171641760035","created_at":"2016-11-06T06:50:54.817Z","_status":"1","seq":"3474","chat_type":"0","message_type":"1","media_type":"-1","content":"http://debugtbs.qq.com","creator":"56d5318e88ef75545531fc09","channel_id":"57248504e1f3399b789a4b08","id":"581ed2ced12516000182ed30"}]
